@@ -1,0 +1,179 @@
+\hypertarget{classMultiTexturedCubeRenderable}{\section{Multi\+Textured\+Cube\+Renderable Class Reference}
+\label{classMultiTexturedCubeRenderable}\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+}
+
+
+{\ttfamily \#include $<$Multi\+Textured\+Cube\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Multi\+Textured\+Cube\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{classMultiTexturedCubeRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Multi\+Textured\+Cube\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMultiTexturedCubeRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMultiTexturedCubeRenderable_a8ded5e8d9273ed29dfbd8e07be48e883}{$\sim$\+Multi\+Textured\+Cube\+Renderable} ()
+\item 
+\hyperlink{classMultiTexturedCubeRenderable_a1abd417c2cbe9e71ad409e2f807bcf02}{Multi\+Textured\+Cube\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} shader\+Program, const std\+::string \&filename1, const std\+::string \&filename2)
+\item 
+void \hyperlink{classMultiTexturedCubeRenderable_a799f37e64905b22f1622d7492ebd3de0}{set\+Material} (const \hyperlink{Material_8hpp_a1d47cd05ca683e287435cf0b363fbfe1}{Material\+Ptr} \&material)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMultiTexturedCubeRenderable_a3dafc49b8a8b6b5f9ed2928c91c2cd6f}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classMultiTexturedCubeRenderable_a1db1e5f6c10f62874aef22e346906979}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classMultiTexturedCubeRenderable_a60daa9382a5a20272fe5aff5f06c7fac}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classMultiTexturedCubeRenderable_a6b898288adb8ab29e4faf8557094d81d}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classMultiTexturedCubeRenderable_a240496a75e60b0ed5af4dfafad198fa7}{m\+\_\+normals}
+\item 
+std\+::vector$<$ glm\+::vec2 $>$ \hyperlink{classMultiTexturedCubeRenderable_a527036e4aa13864829e20a897a16f8cf}{m\+\_\+tex\+Coords1}
+\item 
+std\+::vector$<$ glm\+::vec2 $>$ \hyperlink{classMultiTexturedCubeRenderable_adcab47d5610c8f989658103a3cd2e8c8}{m\+\_\+tex\+Coords2}
+\item 
+unsigned int \hyperlink{classMultiTexturedCubeRenderable_aa9e62d83d66f405662bf3e92be2564ea}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classMultiTexturedCubeRenderable_af11d0075bbe8aa521fae8fb437ff98af}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classMultiTexturedCubeRenderable_a49898f71f097b8e6ffe3383a019f3d5c}{m\+\_\+n\+Buffer}
+\item 
+unsigned int \hyperlink{classMultiTexturedCubeRenderable_a789fa5e3d95bb43f2fe209ddf0a68884}{m\+\_\+t\+Buffer1}
+\item 
+unsigned int \hyperlink{classMultiTexturedCubeRenderable_ae541f09397856a5bde7c1db6962ebe54}{m\+\_\+t\+Buffer2}
+\item 
+unsigned int \hyperlink{classMultiTexturedCubeRenderable_ac00c241a06009cd3650bc09658209394}{m\+\_\+tex\+Id1}
+\item 
+unsigned int \hyperlink{classMultiTexturedCubeRenderable_a84eb4a8f43e2eed94101b563c61aae0c}{m\+\_\+tex\+Id2}
+\item 
+float \hyperlink{classMultiTexturedCubeRenderable_a91914ee0e86d087d1778d1ecd461256f}{m\+\_\+blending\+Coefficient}
+\item 
+\hyperlink{Material_8hpp_a1d47cd05ca683e287435cf0b363fbfe1}{Material\+Ptr} \hyperlink{classMultiTexturedCubeRenderable_a7fa7b1dce63798c5f3a319e6fb6f2859}{m\+\_\+material}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMultiTexturedCubeRenderable_a8ded5e8d9273ed29dfbd8e07be48e883}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!````~Multi\+Textured\+Cube\+Renderable@{$\sim$\+Multi\+Textured\+Cube\+Renderable}}
+\index{````~Multi\+Textured\+Cube\+Renderable@{$\sim$\+Multi\+Textured\+Cube\+Renderable}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{$\sim$\+Multi\+Textured\+Cube\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Multi\+Textured\+Cube\+Renderable\+::$\sim$\+Multi\+Textured\+Cube\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMultiTexturedCubeRenderable_a8ded5e8d9273ed29dfbd8e07be48e883}
+\hypertarget{classMultiTexturedCubeRenderable_a1abd417c2cbe9e71ad409e2f807bcf02}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{Multi\+Textured\+Cube\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Multi\+Textured\+Cube\+Renderable\+::\+Multi\+Textured\+Cube\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{shader\+Program, }
+\item[{const std\+::string \&}]{filename1, }
+\item[{const std\+::string \&}]{filename2}
+\end{DoxyParamCaption}
+)}}\label{classMultiTexturedCubeRenderable_a1abd417c2cbe9e71ad409e2f807bcf02}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMultiTexturedCubeRenderable_a1db1e5f6c10f62874aef22e346906979}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\+Textured\+Cube\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classMultiTexturedCubeRenderable_a1db1e5f6c10f62874aef22e346906979}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classMultiTexturedCubeRenderable_a3dafc49b8a8b6b5f9ed2928c91c2cd6f}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\+Textured\+Cube\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classMultiTexturedCubeRenderable_a3dafc49b8a8b6b5f9ed2928c91c2cd6f}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+\hypertarget{classMultiTexturedCubeRenderable_a799f37e64905b22f1622d7492ebd3de0}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!set\+Material@{set\+Material}}
+\index{set\+Material@{set\+Material}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{set\+Material}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\+Textured\+Cube\+Renderable\+::set\+Material (
+\begin{DoxyParamCaption}
+\item[{const {\bf Material\+Ptr} \&}]{material}
+\end{DoxyParamCaption}
+)}}\label{classMultiTexturedCubeRenderable_a799f37e64905b22f1622d7492ebd3de0}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMultiTexturedCubeRenderable_a91914ee0e86d087d1778d1ecd461256f}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!m\+\_\+blending\+Coefficient@{m\+\_\+blending\+Coefficient}}
+\index{m\+\_\+blending\+Coefficient@{m\+\_\+blending\+Coefficient}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+blending\+Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}float Multi\+Textured\+Cube\+Renderable\+::m\+\_\+blending\+Coefficient\hspace{0.3cm}{\ttfamily [private]}}}\label{classMultiTexturedCubeRenderable_a91914ee0e86d087d1778d1ecd461256f}
+\hypertarget{classMultiTexturedCubeRenderable_af11d0075bbe8aa521fae8fb437ff98af}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Multi\+Textured\+Cube\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classMultiTexturedCubeRenderable_af11d0075bbe8aa521fae8fb437ff98af}
+\hypertarget{classMultiTexturedCubeRenderable_a6b898288adb8ab29e4faf8557094d81d}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Multi\+Textured\+Cube\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classMultiTexturedCubeRenderable_a6b898288adb8ab29e4faf8557094d81d}
+\hypertarget{classMultiTexturedCubeRenderable_a7fa7b1dce63798c5f3a319e6fb6f2859}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!m\+\_\+material@{m\+\_\+material}}
+\index{m\+\_\+material@{m\+\_\+material}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+material}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Material\+Ptr} Multi\+Textured\+Cube\+Renderable\+::m\+\_\+material\hspace{0.3cm}{\ttfamily [private]}}}\label{classMultiTexturedCubeRenderable_a7fa7b1dce63798c5f3a319e6fb6f2859}
+\hypertarget{classMultiTexturedCubeRenderable_a49898f71f097b8e6ffe3383a019f3d5c}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Multi\+Textured\+Cube\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classMultiTexturedCubeRenderable_a49898f71f097b8e6ffe3383a019f3d5c}
+\hypertarget{classMultiTexturedCubeRenderable_a240496a75e60b0ed5af4dfafad198fa7}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Multi\+Textured\+Cube\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classMultiTexturedCubeRenderable_a240496a75e60b0ed5af4dfafad198fa7}
+\hypertarget{classMultiTexturedCubeRenderable_aa9e62d83d66f405662bf3e92be2564ea}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Multi\+Textured\+Cube\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classMultiTexturedCubeRenderable_aa9e62d83d66f405662bf3e92be2564ea}
+\hypertarget{classMultiTexturedCubeRenderable_a60daa9382a5a20272fe5aff5f06c7fac}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Multi\+Textured\+Cube\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classMultiTexturedCubeRenderable_a60daa9382a5a20272fe5aff5f06c7fac}
+\hypertarget{classMultiTexturedCubeRenderable_a789fa5e3d95bb43f2fe209ddf0a68884}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!m\+\_\+t\+Buffer1@{m\+\_\+t\+Buffer1}}
+\index{m\+\_\+t\+Buffer1@{m\+\_\+t\+Buffer1}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+t\+Buffer1}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Multi\+Textured\+Cube\+Renderable\+::m\+\_\+t\+Buffer1\hspace{0.3cm}{\ttfamily [private]}}}\label{classMultiTexturedCubeRenderable_a789fa5e3d95bb43f2fe209ddf0a68884}
+\hypertarget{classMultiTexturedCubeRenderable_ae541f09397856a5bde7c1db6962ebe54}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!m\+\_\+t\+Buffer2@{m\+\_\+t\+Buffer2}}
+\index{m\+\_\+t\+Buffer2@{m\+\_\+t\+Buffer2}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+t\+Buffer2}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Multi\+Textured\+Cube\+Renderable\+::m\+\_\+t\+Buffer2\hspace{0.3cm}{\ttfamily [private]}}}\label{classMultiTexturedCubeRenderable_ae541f09397856a5bde7c1db6962ebe54}
+\hypertarget{classMultiTexturedCubeRenderable_a527036e4aa13864829e20a897a16f8cf}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!m\+\_\+tex\+Coords1@{m\+\_\+tex\+Coords1}}
+\index{m\+\_\+tex\+Coords1@{m\+\_\+tex\+Coords1}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+tex\+Coords1}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec2$>$ Multi\+Textured\+Cube\+Renderable\+::m\+\_\+tex\+Coords1\hspace{0.3cm}{\ttfamily [private]}}}\label{classMultiTexturedCubeRenderable_a527036e4aa13864829e20a897a16f8cf}
+\hypertarget{classMultiTexturedCubeRenderable_adcab47d5610c8f989658103a3cd2e8c8}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!m\+\_\+tex\+Coords2@{m\+\_\+tex\+Coords2}}
+\index{m\+\_\+tex\+Coords2@{m\+\_\+tex\+Coords2}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+tex\+Coords2}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec2$>$ Multi\+Textured\+Cube\+Renderable\+::m\+\_\+tex\+Coords2\hspace{0.3cm}{\ttfamily [private]}}}\label{classMultiTexturedCubeRenderable_adcab47d5610c8f989658103a3cd2e8c8}
+\hypertarget{classMultiTexturedCubeRenderable_ac00c241a06009cd3650bc09658209394}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!m\+\_\+tex\+Id1@{m\+\_\+tex\+Id1}}
+\index{m\+\_\+tex\+Id1@{m\+\_\+tex\+Id1}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+tex\+Id1}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Multi\+Textured\+Cube\+Renderable\+::m\+\_\+tex\+Id1\hspace{0.3cm}{\ttfamily [private]}}}\label{classMultiTexturedCubeRenderable_ac00c241a06009cd3650bc09658209394}
+\hypertarget{classMultiTexturedCubeRenderable_a84eb4a8f43e2eed94101b563c61aae0c}{\index{Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}!m\+\_\+tex\+Id2@{m\+\_\+tex\+Id2}}
+\index{m\+\_\+tex\+Id2@{m\+\_\+tex\+Id2}!Multi\+Textured\+Cube\+Renderable@{Multi\+Textured\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+tex\+Id2}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Multi\+Textured\+Cube\+Renderable\+::m\+\_\+tex\+Id2\hspace{0.3cm}{\ttfamily [private]}}}\label{classMultiTexturedCubeRenderable_a84eb4a8f43e2eed94101b563c61aae0c}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/texturing/\hyperlink{MultiTexturedCubeRenderable_8hpp}{Multi\+Textured\+Cube\+Renderable.\+hpp}\end{DoxyCompactItemize}

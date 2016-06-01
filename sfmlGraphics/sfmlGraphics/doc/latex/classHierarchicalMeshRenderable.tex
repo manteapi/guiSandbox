@@ -1,0 +1,139 @@
+\hypertarget{classHierarchicalMeshRenderable}{\section{Hierarchical\+Mesh\+Renderable Class Reference}
+\label{classHierarchicalMeshRenderable}\index{Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}}
+}
+
+
+{\ttfamily \#include $<$Hierarchical\+Mesh\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Hierarchical\+Mesh\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classHierarchicalMeshRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Hierarchical\+Mesh\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHierarchicalMeshRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHierarchicalMeshRenderable_a7fdb59d99bca663e6e89c058a58a8ec7}{$\sim$\+Hierarchical\+Mesh\+Renderable} ()
+\item 
+\hyperlink{classHierarchicalMeshRenderable_addc544d58fd450811752f821ca2454cb}{Hierarchical\+Mesh\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program, const std\+::string \&filename)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classHierarchicalMeshRenderable_a044c9f6688ee58184b8b3e4582f6baa1}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classHierarchicalMeshRenderable_a291689e73c0d7d2e733c587cd0062747}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classHierarchicalMeshRenderable_a71289ce6648a162703a37814cb518459}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classHierarchicalMeshRenderable_a0434afe3af71c5afcd7a3bc8318a0e98}{m\+\_\+normals}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classHierarchicalMeshRenderable_abcca72b5ae0157f6e9b23f3647939091}{m\+\_\+colors}
+\item 
+std\+::vector$<$ unsigned int $>$ \hyperlink{classHierarchicalMeshRenderable_a07550075b3137838436b798d2a772092}{m\+\_\+indices}
+\item 
+unsigned int \hyperlink{classHierarchicalMeshRenderable_abe9a8d6e06601db7f9e7ab8a5e306b78}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classHierarchicalMeshRenderable_a25985832ff7ad2ec41d818ba48190722}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classHierarchicalMeshRenderable_ae781c5aa305cc72608e3bd1b56129410}{m\+\_\+n\+Buffer}
+\item 
+unsigned int \hyperlink{classHierarchicalMeshRenderable_aaecf88387b5e1d8fe5c0d16bf5a7f6ab}{m\+\_\+i\+Buffer}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classHierarchicalMeshRenderable_a7fdb59d99bca663e6e89c058a58a8ec7}{\index{Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}!````~Hierarchical\+Mesh\+Renderable@{$\sim$\+Hierarchical\+Mesh\+Renderable}}
+\index{````~Hierarchical\+Mesh\+Renderable@{$\sim$\+Hierarchical\+Mesh\+Renderable}!Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}}
+\subsubsection[{$\sim$\+Hierarchical\+Mesh\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Hierarchical\+Mesh\+Renderable\+::$\sim$\+Hierarchical\+Mesh\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHierarchicalMeshRenderable_a7fdb59d99bca663e6e89c058a58a8ec7}
+\hypertarget{classHierarchicalMeshRenderable_addc544d58fd450811752f821ca2454cb}{\index{Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}!Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}}
+\index{Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}!Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}}
+\subsubsection[{Hierarchical\+Mesh\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Hierarchical\+Mesh\+Renderable\+::\+Hierarchical\+Mesh\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program, }
+\item[{const std\+::string \&}]{filename}
+\end{DoxyParamCaption}
+)}}\label{classHierarchicalMeshRenderable_addc544d58fd450811752f821ca2454cb}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classHierarchicalMeshRenderable_a291689e73c0d7d2e733c587cd0062747}{\index{Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Hierarchical\+Mesh\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classHierarchicalMeshRenderable_a291689e73c0d7d2e733c587cd0062747}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classHierarchicalMeshRenderable_a044c9f6688ee58184b8b3e4582f6baa1}{\index{Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Hierarchical\+Mesh\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classHierarchicalMeshRenderable_a044c9f6688ee58184b8b3e4582f6baa1}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classHierarchicalMeshRenderable_a25985832ff7ad2ec41d818ba48190722}{\index{Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Hierarchical\+Mesh\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalMeshRenderable_a25985832ff7ad2ec41d818ba48190722}
+\hypertarget{classHierarchicalMeshRenderable_abcca72b5ae0157f6e9b23f3647939091}{\index{Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Hierarchical\+Mesh\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalMeshRenderable_abcca72b5ae0157f6e9b23f3647939091}
+\hypertarget{classHierarchicalMeshRenderable_aaecf88387b5e1d8fe5c0d16bf5a7f6ab}{\index{Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}!m\+\_\+i\+Buffer@{m\+\_\+i\+Buffer}}
+\index{m\+\_\+i\+Buffer@{m\+\_\+i\+Buffer}!Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+i\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Hierarchical\+Mesh\+Renderable\+::m\+\_\+i\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalMeshRenderable_aaecf88387b5e1d8fe5c0d16bf5a7f6ab}
+\hypertarget{classHierarchicalMeshRenderable_a07550075b3137838436b798d2a772092}{\index{Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}!m\+\_\+indices@{m\+\_\+indices}}
+\index{m\+\_\+indices@{m\+\_\+indices}!Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+indices}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ unsigned int $>$ Hierarchical\+Mesh\+Renderable\+::m\+\_\+indices\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalMeshRenderable_a07550075b3137838436b798d2a772092}
+\hypertarget{classHierarchicalMeshRenderable_ae781c5aa305cc72608e3bd1b56129410}{\index{Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Hierarchical\+Mesh\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalMeshRenderable_ae781c5aa305cc72608e3bd1b56129410}
+\hypertarget{classHierarchicalMeshRenderable_a0434afe3af71c5afcd7a3bc8318a0e98}{\index{Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Hierarchical\+Mesh\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalMeshRenderable_a0434afe3af71c5afcd7a3bc8318a0e98}
+\hypertarget{classHierarchicalMeshRenderable_abe9a8d6e06601db7f9e7ab8a5e306b78}{\index{Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Hierarchical\+Mesh\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalMeshRenderable_abe9a8d6e06601db7f9e7ab8a5e306b78}
+\hypertarget{classHierarchicalMeshRenderable_a71289ce6648a162703a37814cb518459}{\index{Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Hierarchical\+Mesh\+Renderable@{Hierarchical\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Hierarchical\+Mesh\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalMeshRenderable_a71289ce6648a162703a37814cb518459}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{HierarchicalMeshRenderable_8hpp}{Hierarchical\+Mesh\+Renderable.\+hpp}\end{DoxyCompactItemize}

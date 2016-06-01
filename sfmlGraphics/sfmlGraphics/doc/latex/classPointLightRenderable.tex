@@ -1,0 +1,134 @@
+\hypertarget{classPointLightRenderable}{\section{Point\+Light\+Renderable Class Reference}
+\label{classPointLightRenderable}\index{Point\+Light\+Renderable@{Point\+Light\+Renderable}}
+}
+
+
+{\ttfamily \#include $<$Point\+Light\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Point\+Light\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classPointLightRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Point\+Light\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPointLightRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPointLightRenderable_a7f981bb9210b5b50f982d5929eb1c27c}{$\sim$\+Point\+Light\+Renderable} ()
+\item 
+\hyperlink{classPointLightRenderable_a7eadc444c01d09bff0b612c4707b3c80}{Point\+Light\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program, \hyperlink{Light_8hpp_a28898b9799350669037caef13c5115d2}{Point\+Light\+Ptr} light)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPointLightRenderable_afdb8498c6af494231394d96a3f3f2315}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classPointLightRenderable_a5c4efe61c5061c739d3b68a7702f9df4}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classPointLightRenderable_ae63fb46f04473b2c25c46e61744922aa}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classPointLightRenderable_a6d45d8ebfe800a578f22a6cfa0b7981c}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classPointLightRenderable_a91714162c3bed982468ba2e506430585}{m\+\_\+normals}
+\item 
+unsigned int \hyperlink{classPointLightRenderable_a013e5165f655d3a43144a4a16bcec001}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classPointLightRenderable_ab2f20160f2e541d4822ef4120c70dfc3}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classPointLightRenderable_af8c0b76df5c6f9470ffec65afea21b83}{m\+\_\+n\+Buffer}
+\item 
+\hyperlink{Light_8hpp_a28898b9799350669037caef13c5115d2}{Point\+Light\+Ptr} \hyperlink{classPointLightRenderable_a937b4cab5b786b27414374505769d1ce}{m\+\_\+light}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPointLightRenderable_a7f981bb9210b5b50f982d5929eb1c27c}{\index{Point\+Light\+Renderable@{Point\+Light\+Renderable}!````~Point\+Light\+Renderable@{$\sim$\+Point\+Light\+Renderable}}
+\index{````~Point\+Light\+Renderable@{$\sim$\+Point\+Light\+Renderable}!Point\+Light\+Renderable@{Point\+Light\+Renderable}}
+\subsubsection[{$\sim$\+Point\+Light\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Point\+Light\+Renderable\+::$\sim$\+Point\+Light\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPointLightRenderable_a7f981bb9210b5b50f982d5929eb1c27c}
+\hypertarget{classPointLightRenderable_a7eadc444c01d09bff0b612c4707b3c80}{\index{Point\+Light\+Renderable@{Point\+Light\+Renderable}!Point\+Light\+Renderable@{Point\+Light\+Renderable}}
+\index{Point\+Light\+Renderable@{Point\+Light\+Renderable}!Point\+Light\+Renderable@{Point\+Light\+Renderable}}
+\subsubsection[{Point\+Light\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Point\+Light\+Renderable\+::\+Point\+Light\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program, }
+\item[{{\bf Point\+Light\+Ptr}}]{light}
+\end{DoxyParamCaption}
+)}}\label{classPointLightRenderable_a7eadc444c01d09bff0b612c4707b3c80}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPointLightRenderable_a5c4efe61c5061c739d3b68a7702f9df4}{\index{Point\+Light\+Renderable@{Point\+Light\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Point\+Light\+Renderable@{Point\+Light\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+Light\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classPointLightRenderable_a5c4efe61c5061c739d3b68a7702f9df4}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classPointLightRenderable_afdb8498c6af494231394d96a3f3f2315}{\index{Point\+Light\+Renderable@{Point\+Light\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Point\+Light\+Renderable@{Point\+Light\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+Light\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classPointLightRenderable_afdb8498c6af494231394d96a3f3f2315}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPointLightRenderable_ab2f20160f2e541d4822ef4120c70dfc3}{\index{Point\+Light\+Renderable@{Point\+Light\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Point\+Light\+Renderable@{Point\+Light\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Point\+Light\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointLightRenderable_ab2f20160f2e541d4822ef4120c70dfc3}
+\hypertarget{classPointLightRenderable_a6d45d8ebfe800a578f22a6cfa0b7981c}{\index{Point\+Light\+Renderable@{Point\+Light\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Point\+Light\+Renderable@{Point\+Light\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Point\+Light\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointLightRenderable_a6d45d8ebfe800a578f22a6cfa0b7981c}
+\hypertarget{classPointLightRenderable_a937b4cab5b786b27414374505769d1ce}{\index{Point\+Light\+Renderable@{Point\+Light\+Renderable}!m\+\_\+light@{m\+\_\+light}}
+\index{m\+\_\+light@{m\+\_\+light}!Point\+Light\+Renderable@{Point\+Light\+Renderable}}
+\subsubsection[{m\+\_\+light}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point\+Light\+Ptr} Point\+Light\+Renderable\+::m\+\_\+light\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointLightRenderable_a937b4cab5b786b27414374505769d1ce}
+\hypertarget{classPointLightRenderable_af8c0b76df5c6f9470ffec65afea21b83}{\index{Point\+Light\+Renderable@{Point\+Light\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Point\+Light\+Renderable@{Point\+Light\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Point\+Light\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointLightRenderable_af8c0b76df5c6f9470ffec65afea21b83}
+\hypertarget{classPointLightRenderable_a91714162c3bed982468ba2e506430585}{\index{Point\+Light\+Renderable@{Point\+Light\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Point\+Light\+Renderable@{Point\+Light\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Point\+Light\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointLightRenderable_a91714162c3bed982468ba2e506430585}
+\hypertarget{classPointLightRenderable_a013e5165f655d3a43144a4a16bcec001}{\index{Point\+Light\+Renderable@{Point\+Light\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Point\+Light\+Renderable@{Point\+Light\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Point\+Light\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointLightRenderable_a013e5165f655d3a43144a4a16bcec001}
+\hypertarget{classPointLightRenderable_ae63fb46f04473b2c25c46e61744922aa}{\index{Point\+Light\+Renderable@{Point\+Light\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Point\+Light\+Renderable@{Point\+Light\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Point\+Light\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointLightRenderable_ae63fb46f04473b2c25c46e61744922aa}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/lighting/\hyperlink{PointLightRenderable_8hpp}{Point\+Light\+Renderable.\+hpp}\end{DoxyCompactItemize}

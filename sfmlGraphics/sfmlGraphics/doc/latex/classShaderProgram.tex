@@ -1,0 +1,225 @@
+\hypertarget{classShaderProgram}{\section{Shader\+Program Class Reference}
+\label{classShaderProgram}\index{Shader\+Program@{Shader\+Program}}
+}
+
+
+Assembly of the graphics pipeline programmable steps.  
+
+
+
+
+{\ttfamily \#include $<$Shader\+Program.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classShaderProgram_add585b75cb78f4afa865ea7b27c9651e}{Shader\+Program} ()
+\begin{DoxyCompactList}\small\item\em Construct a null shader program. \end{DoxyCompactList}\item 
+\hyperlink{classShaderProgram_a170d96b836366ed4fac26809f186ce56}{Shader\+Program} (const std\+::string \&vertex\+\_\+file\+\_\+path, const std\+::string \&fragment\+\_\+file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Construct a shader program from specified file names. \end{DoxyCompactList}\item 
+\hyperlink{classShaderProgram_a2d2eadcfc48cc2e2ddb82aba70553a9f}{$\sim$\+Shader\+Program} ()
+\begin{DoxyCompactList}\small\item\em Destruction. \end{DoxyCompactList}\item 
+void \hyperlink{classShaderProgram_afd2ba7e70028a58d2bf74443253374fa}{load} (const std\+::string \&vertex\+\_\+file\+\_\+path, const std\+::string \&fragment\+\_\+file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Load new shaders from source files. \end{DoxyCompactList}\item 
+void \hyperlink{classShaderProgram_a007cebbd8a26ef27ab136452c3774899}{reload} ()
+\begin{DoxyCompactList}\small\item\em Reload the shader sources. \end{DoxyCompactList}\item 
+void \hyperlink{classShaderProgram_ab3c3e75ddf54504b5e9f53bf85c34736}{bind} ()
+\item 
+int \hyperlink{classShaderProgram_a4f58620a6426bf12a65aa374f6265b96}{get\+Uniform\+Location} (const std\+::string \&name) const 
+\begin{DoxyCompactList}\small\item\em Get the location of an uniform thanks to its name. \end{DoxyCompactList}\item 
+int \hyperlink{classShaderProgram_a189bf49ca91ae75861fed4ef8c72753b}{get\+Attribute\+Location} (const std\+::string \&name) const 
+\begin{DoxyCompactList}\small\item\em Get the location of an attribute thanks to its name. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classShaderProgram_a46b6ae259a04719af0eeeb4aac0be217}{program\+Id} ()
+\begin{DoxyCompactList}\small\item\em Get the identifier of this shader program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classShaderProgram_a67fb2d8013068ee96625c7f47d979923}{unbind} ()
+\begin{DoxyCompactList}\small\item\em Unbind any shader program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classShaderProgram_a8e974f0576fc00d5f86ce292ba8921b7}{null\+\_\+location}
+\begin{DoxyCompactList}\small\item\em Special value to represent a null location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classShaderProgram_a45d8be40b24fffbc195f8bb57c5a5195}{resources\+\_\+introspection} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classShaderProgram_a131f977e3396fd633f2c58e9919590a4}{m\+\_\+program\+Id}
+\item 
+std\+::unordered\+\_\+map\\*
+$<$ std\+::string, int $>$ \hyperlink{classShaderProgram_a97e3260f6a74a23c0ce43e2b2f535d69}{m\+\_\+uniforms}
+\item 
+std\+::unordered\+\_\+map\\*
+$<$ std\+::string, int $>$ \hyperlink{classShaderProgram_a0386f31b01d73becea688fb534298336}{m\+\_\+attributes}
+\item 
+std\+::string \hyperlink{classShaderProgram_a2f5d149deaba5b4cd9e925d3860ca078}{m\+\_\+vertex\+Filename}
+\item 
+std\+::string \hyperlink{classShaderProgram_aad0272796704f94875ef0d09db3d4c82}{m\+\_\+fragment\+Filename}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A shader program is the assembly of the graphics pipeline programmable steps. In particular, for our practicals, it will hold the result of the compilation and the linking of the vertex shader step and the fragment shader step.
+
+We decided to keep this class as simple as possible for these practicals. However, we chose to add a nice feature\+: instrospection. Simply put, this class examines the shader program to find the location of vertex attributes and uniforms. This way, we do not have to ask the G\+P\+U what is the location (if found) of a particular variable name (attribute or uniform). Instead, an instance of the shader program will look into its known variables for a match. This results into a faster rendering as we do not have to send our queries at each from to the G\+P\+U to know those locations (remember, the bus between the C\+P\+U and the G\+P\+U is quite slow, better not it efficiently). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classShaderProgram_add585b75cb78f4afa865ea7b27c9651e}{\index{Shader\+Program@{Shader\+Program}!Shader\+Program@{Shader\+Program}}
+\index{Shader\+Program@{Shader\+Program}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{Shader\+Program}]{\setlength{\rightskip}{0pt plus 5cm}Shader\+Program\+::\+Shader\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classShaderProgram_add585b75cb78f4afa865ea7b27c9651e}
+Null shader program constructor. Perfectly valid shader program, but does nothing. \hypertarget{classShaderProgram_a170d96b836366ed4fac26809f186ce56}{\index{Shader\+Program@{Shader\+Program}!Shader\+Program@{Shader\+Program}}
+\index{Shader\+Program@{Shader\+Program}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{Shader\+Program}]{\setlength{\rightskip}{0pt plus 5cm}Shader\+Program\+::\+Shader\+Program (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{vertex\+\_\+file\+\_\+path, }
+\item[{const std\+::string \&}]{fragment\+\_\+file\+\_\+path}
+\end{DoxyParamCaption}
+)}}\label{classShaderProgram_a170d96b836366ed4fac26809f186ce56}
+Shader program constructor from G\+L\+S\+L shader files. In the context of this course, we consider only the vertex shader and the fragment shader. However, there exist other programmable stage in the pipeline (see www.\+opengl.\+org/sdk/docs/man/html/gl\+Create\+Shader.xhtml).
+
+If the shaders are invalid or describe an invalid program, this is initialized to the null shader program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+\_\+file\+\_\+path} & Path to the vertex shader file \\
+\hline
+{\em fragment\+\_\+file\+\_\+path} & Path to the fragment shader file. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classShaderProgram_a2d2eadcfc48cc2e2ddb82aba70553a9f}{\index{Shader\+Program@{Shader\+Program}!````~Shader\+Program@{$\sim$\+Shader\+Program}}
+\index{````~Shader\+Program@{$\sim$\+Shader\+Program}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{$\sim$\+Shader\+Program}]{\setlength{\rightskip}{0pt plus 5cm}Shader\+Program\+::$\sim$\+Shader\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classShaderProgram_a2d2eadcfc48cc2e2ddb82aba70553a9f}
+Instance destruction. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classShaderProgram_ab3c3e75ddf54504b5e9f53bf85c34736}{\index{Shader\+Program@{Shader\+Program}!bind@{bind}}
+\index{bind@{bind}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void Shader\+Program\+::bind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classShaderProgram_ab3c3e75ddf54504b5e9f53bf85c34736}
+Bind this program to the G\+P\+U. This is necessary to render objects or to send uniforms/attributes values. \hypertarget{classShaderProgram_a189bf49ca91ae75861fed4ef8c72753b}{\index{Shader\+Program@{Shader\+Program}!get\+Attribute\+Location@{get\+Attribute\+Location}}
+\index{get\+Attribute\+Location@{get\+Attribute\+Location}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{get\+Attribute\+Location}]{\setlength{\rightskip}{0pt plus 5cm}int Shader\+Program\+::get\+Attribute\+Location (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name}
+\end{DoxyParamCaption}
+) const}}\label{classShaderProgram_a189bf49ca91ae75861fed4ef8c72753b}
+Return the location of an attribute (a program input seen in the vertex shader) thanks to its name. We use the locations obtained by an introspection done after the linking stage. As such, we do not request the G\+P\+U to answer this request\+: we have the answer on the C\+P\+U, which would be faster. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The attribute name as it appear in the vertex shader source \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The attribute location, null\+\_\+location if there is no attribute with such name in this program 
+\end{DoxyReturn}
+\hypertarget{classShaderProgram_a4f58620a6426bf12a65aa374f6265b96}{\index{Shader\+Program@{Shader\+Program}!get\+Uniform\+Location@{get\+Uniform\+Location}}
+\index{get\+Uniform\+Location@{get\+Uniform\+Location}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{get\+Uniform\+Location}]{\setlength{\rightskip}{0pt plus 5cm}int Shader\+Program\+::get\+Uniform\+Location (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name}
+\end{DoxyParamCaption}
+) const}}\label{classShaderProgram_a4f58620a6426bf12a65aa374f6265b96}
+Return the location of a uniform thanks to its name. We use the locations obtained by an introspection done after the linking stage. As such, we do not request the G\+P\+U to answer this request\+: we have the answer on the C\+P\+U, which would be faster. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The uniform name, as it appear in the shader sources (be aware of the naming convention for blocks and arrays, see \href{https://www.opengl.org/wiki/Program_Introspection#Naming}{\tt https\+://www.\+opengl.\+org/wiki/\+Program\+\_\+\+Introspection\#\+Naming}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The uniform location, null\+\_\+location if there is no uniform with such name in this program 
+\end{DoxyReturn}
+\hypertarget{classShaderProgram_afd2ba7e70028a58d2bf74443253374fa}{\index{Shader\+Program@{Shader\+Program}!load@{load}}
+\index{load@{load}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}void Shader\+Program\+::load (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{vertex\+\_\+file\+\_\+path, }
+\item[{const std\+::string \&}]{fragment\+\_\+file\+\_\+path}
+\end{DoxyParamCaption}
+)}}\label{classShaderProgram_afd2ba7e70028a58d2bf74443253374fa}
+Load shaders into this shader program. If the shaders are valid (compilation stage) and they describe a valid program (linking stage), this shader program would be valid. Otherwise, this remains unchanged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+\_\+file\+\_\+path} & Path to the vertex shader file \\
+\hline
+{\em fragment\+\_\+file\+\_\+path} & Path to the fragment shader file. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classShaderProgram_a46b6ae259a04719af0eeeb4aac0be217}{\index{Shader\+Program@{Shader\+Program}!program\+Id@{program\+Id}}
+\index{program\+Id@{program\+Id}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{program\+Id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Shader\+Program\+::program\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classShaderProgram_a46b6ae259a04719af0eeeb4aac0be217}
+Get the identifier of this shader program on the G\+P\+U. \begin{DoxyReturn}{Returns}
+The program I\+D. 
+\end{DoxyReturn}
+\hypertarget{classShaderProgram_a007cebbd8a26ef27ab136452c3774899}{\index{Shader\+Program@{Shader\+Program}!reload@{reload}}
+\index{reload@{reload}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{reload}]{\setlength{\rightskip}{0pt plus 5cm}void Shader\+Program\+::reload (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classShaderProgram_a007cebbd8a26ef27ab136452c3774899}
+Reload existing shader sources into this shader program. This is useful if you decide to modify the shader sources while you execute the binary. This way, you can check, improve, debug shaders and see the results immediately on the screen.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classViewer_a692ef0144fbf7511caccefd9a37b43b1}{Viewer\+::reload\+Shader\+Programs()} 
+\end{DoxySeeAlso}
+\hypertarget{classShaderProgram_a45d8be40b24fffbc195f8bb57c5a5195}{\index{Shader\+Program@{Shader\+Program}!resources\+\_\+introspection@{resources\+\_\+introspection}}
+\index{resources\+\_\+introspection@{resources\+\_\+introspection}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{resources\+\_\+introspection}]{\setlength{\rightskip}{0pt plus 5cm}void Shader\+Program\+::resources\+\_\+introspection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classShaderProgram_a45d8be40b24fffbc195f8bb57c5a5195}
+\hypertarget{classShaderProgram_a67fb2d8013068ee96625c7f47d979923}{\index{Shader\+Program@{Shader\+Program}!unbind@{unbind}}
+\index{unbind@{unbind}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{unbind}]{\setlength{\rightskip}{0pt plus 5cm}static void Shader\+Program\+::unbind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classShaderProgram_a67fb2d8013068ee96625c7f47d979923}
+After this call, the next drawing command will not use any shader program for the rendering, unless another shader program is binded. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classShaderProgram_a0386f31b01d73becea688fb534298336}{\index{Shader\+Program@{Shader\+Program}!m\+\_\+attributes@{m\+\_\+attributes}}
+\index{m\+\_\+attributes@{m\+\_\+attributes}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{m\+\_\+attributes}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unordered\+\_\+map$<$ std\+::string, int $>$ Shader\+Program\+::m\+\_\+attributes\hspace{0.3cm}{\ttfamily [private]}}}\label{classShaderProgram_a0386f31b01d73becea688fb534298336}
+\hypertarget{classShaderProgram_aad0272796704f94875ef0d09db3d4c82}{\index{Shader\+Program@{Shader\+Program}!m\+\_\+fragment\+Filename@{m\+\_\+fragment\+Filename}}
+\index{m\+\_\+fragment\+Filename@{m\+\_\+fragment\+Filename}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{m\+\_\+fragment\+Filename}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Shader\+Program\+::m\+\_\+fragment\+Filename\hspace{0.3cm}{\ttfamily [private]}}}\label{classShaderProgram_aad0272796704f94875ef0d09db3d4c82}
+\hypertarget{classShaderProgram_a131f977e3396fd633f2c58e9919590a4}{\index{Shader\+Program@{Shader\+Program}!m\+\_\+program\+Id@{m\+\_\+program\+Id}}
+\index{m\+\_\+program\+Id@{m\+\_\+program\+Id}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{m\+\_\+program\+Id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Shader\+Program\+::m\+\_\+program\+Id\hspace{0.3cm}{\ttfamily [private]}}}\label{classShaderProgram_a131f977e3396fd633f2c58e9919590a4}
+\hypertarget{classShaderProgram_a97e3260f6a74a23c0ce43e2b2f535d69}{\index{Shader\+Program@{Shader\+Program}!m\+\_\+uniforms@{m\+\_\+uniforms}}
+\index{m\+\_\+uniforms@{m\+\_\+uniforms}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{m\+\_\+uniforms}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unordered\+\_\+map$<$ std\+::string, int $>$ Shader\+Program\+::m\+\_\+uniforms\hspace{0.3cm}{\ttfamily [private]}}}\label{classShaderProgram_a97e3260f6a74a23c0ce43e2b2f535d69}
+\hypertarget{classShaderProgram_a2f5d149deaba5b4cd9e925d3860ca078}{\index{Shader\+Program@{Shader\+Program}!m\+\_\+vertex\+Filename@{m\+\_\+vertex\+Filename}}
+\index{m\+\_\+vertex\+Filename@{m\+\_\+vertex\+Filename}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{m\+\_\+vertex\+Filename}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Shader\+Program\+::m\+\_\+vertex\+Filename\hspace{0.3cm}{\ttfamily [private]}}}\label{classShaderProgram_a2f5d149deaba5b4cd9e925d3860ca078}
+\hypertarget{classShaderProgram_a8e974f0576fc00d5f86ce292ba8921b7}{\index{Shader\+Program@{Shader\+Program}!null\+\_\+location@{null\+\_\+location}}
+\index{null\+\_\+location@{null\+\_\+location}!Shader\+Program@{Shader\+Program}}
+\subsubsection[{null\+\_\+location}]{\setlength{\rightskip}{0pt plus 5cm}int Shader\+Program\+::null\+\_\+location\hspace{0.3cm}{\ttfamily [static]}}}\label{classShaderProgram_a8e974f0576fc00d5f86ce292ba8921b7}
+Sometimes, you can ask for a uniform or an attribute that does not exist in the shader program with \hyperlink{classShaderProgram_a4f58620a6426bf12a65aa374f6265b96}{get\+Uniform\+Location()} and \hyperlink{classShaderProgram_a189bf49ca91ae75861fed4ef8c72753b}{get\+Attribute\+Location()}. As the variable does not exist, the location returned by those function should not point to any existing variable. {\ttfamily null\+\_\+location} is a special location value that is guaranteed to never point to an existing variable.
+
+When a null location is returned, this is not always an error. Indeed, when a uniform or an attribute is not used in the shader sources (the compiler can be pretty smart), it is optimized out. Thus, there is no valid location for this variable. It is up to you to detect if the returned value is a null\+\_\+location and to decide what to do (throw an error or continue happily). 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{ShaderProgram_8hpp}{Shader\+Program.\+hpp}\end{DoxyCompactItemize}

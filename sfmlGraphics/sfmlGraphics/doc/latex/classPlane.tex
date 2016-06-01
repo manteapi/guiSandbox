@@ -1,0 +1,151 @@
+\hypertarget{classPlane}{\section{Plane Class Reference}
+\label{classPlane}\index{Plane@{Plane}}
+}
+
+
+Geometry representation of an infinite plane.  
+
+
+
+
+{\ttfamily \#include $<$Plane.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPlane_ab0a2674b0b2a14afaf71c34392e5d374}{Plane} (const glm\+::vec3 \&\hyperlink{classPlane_afea6480f0bbab2a9ef0c74bd7af5d595}{normal}, const glm\+::vec3 \&point)
+\begin{DoxyCompactList}\small\item\em Build a plane with a normal and a point. \end{DoxyCompactList}\item 
+\hyperlink{classPlane_adccfb4ea49813a45fd883438af858495}{Plane} (const glm\+::vec3 \&a, const glm\+::vec3 \&b, const glm\+::vec3 \&c)
+\begin{DoxyCompactList}\small\item\em Build the plane passing through three points. \end{DoxyCompactList}\item 
+void \hyperlink{classPlane_aa299ec4054d6735e8f2fffde2a38b434}{set\+Distance\+To\+Origin} (const float \&d)
+\begin{DoxyCompactList}\small\item\em Manually set the distance from this plane to the origin. \end{DoxyCompactList}\item 
+const float \& \hyperlink{classPlane_aeec90982ee9dd4a1d47d3570374ffbc0}{distance\+To\+Origin} () const 
+\begin{DoxyCompactList}\small\item\em Access to the distance to the origin. \end{DoxyCompactList}\item 
+void \hyperlink{classPlane_a1cddc7028e96d68a176fb742ab1e349d}{set\+Normal} (const glm\+::vec3 \&n)
+\begin{DoxyCompactList}\small\item\em Set the plane's normal. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classPlane_afea6480f0bbab2a9ef0c74bd7af5d595}{normal} () const 
+\begin{DoxyCompactList}\small\item\em Access the plane's normal. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classPlane_ac8f889e4cfc5c30a379c516b22cda15b}{project\+On\+Plane} (const glm\+::vec3 \&p)
+\begin{DoxyCompactList}\small\item\em Get the projection of a point on this plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \hyperlink{classPlane_a47fca7e21a0e825f754182692fad45b0}{m\+\_\+n}
+\item 
+float \hyperlink{classPlane_a5864bedfa1eb0ff017b89631fc7aff01}{m\+\_\+d}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represent an infinite plane. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPlane_ab0a2674b0b2a14afaf71c34392e5d374}{\index{Plane@{Plane}!Plane@{Plane}}
+\index{Plane@{Plane}!Plane@{Plane}}
+\subsubsection[{Plane}]{\setlength{\rightskip}{0pt plus 5cm}Plane\+::\+Plane (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{normal, }
+\item[{const glm\+::vec3 \&}]{point}
+\end{DoxyParamCaption}
+)}}\label{classPlane_ab0a2674b0b2a14afaf71c34392e5d374}
+Build a plane normal to the specified normal, passing by a particular point. 
+\begin{DoxyParams}{Parameters}
+{\em normal} & The normal of the plane \\
+\hline
+{\em point} & A point belonging to the plane. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPlane_adccfb4ea49813a45fd883438af858495}{\index{Plane@{Plane}!Plane@{Plane}}
+\index{Plane@{Plane}!Plane@{Plane}}
+\subsubsection[{Plane}]{\setlength{\rightskip}{0pt plus 5cm}Plane\+::\+Plane (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{a, }
+\item[{const glm\+::vec3 \&}]{b, }
+\item[{const glm\+::vec3 \&}]{c}
+\end{DoxyParamCaption}
+)}}\label{classPlane_adccfb4ea49813a45fd883438af858495}
+Build a plane containing three points. 
+\begin{DoxyParams}{Parameters}
+{\em a} & The first point belonging to the plane. \\
+\hline
+{\em b} & The second point belonging to the plane. \\
+\hline
+{\em c} & The third point belonging to the plane. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPlane_aeec90982ee9dd4a1d47d3570374ffbc0}{\index{Plane@{Plane}!distance\+To\+Origin@{distance\+To\+Origin}}
+\index{distance\+To\+Origin@{distance\+To\+Origin}!Plane@{Plane}}
+\subsubsection[{distance\+To\+Origin}]{\setlength{\rightskip}{0pt plus 5cm}const float\& Plane\+::distance\+To\+Origin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPlane_aeec90982ee9dd4a1d47d3570374ffbc0}
+Get the distance between this plane and the origin. \begin{DoxyReturn}{Returns}
+The distance to the origin. 
+\end{DoxyReturn}
+\hypertarget{classPlane_afea6480f0bbab2a9ef0c74bd7af5d595}{\index{Plane@{Plane}!normal@{normal}}
+\index{normal@{normal}!Plane@{Plane}}
+\subsubsection[{normal}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Plane\+::normal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPlane_afea6480f0bbab2a9ef0c74bd7af5d595}
+Get the plane's normal. \begin{DoxyReturn}{Returns}
+The plane's normal. 
+\end{DoxyReturn}
+\hypertarget{classPlane_ac8f889e4cfc5c30a379c516b22cda15b}{\index{Plane@{Plane}!project\+On\+Plane@{project\+On\+Plane}}
+\index{project\+On\+Plane@{project\+On\+Plane}!Plane@{Plane}}
+\subsubsection[{project\+On\+Plane}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Plane\+::project\+On\+Plane (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{p}
+\end{DoxyParamCaption}
+)}}\label{classPlane_ac8f889e4cfc5c30a379c516b22cda15b}
+Get the orthogonal projection of a point on this plane. 
+\begin{DoxyParams}{Parameters}
+{\em p} & The point to project. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The orthogonal projection of p. 
+\end{DoxyReturn}
+\hypertarget{classPlane_aa299ec4054d6735e8f2fffde2a38b434}{\index{Plane@{Plane}!set\+Distance\+To\+Origin@{set\+Distance\+To\+Origin}}
+\index{set\+Distance\+To\+Origin@{set\+Distance\+To\+Origin}!Plane@{Plane}}
+\subsubsection[{set\+Distance\+To\+Origin}]{\setlength{\rightskip}{0pt plus 5cm}void Plane\+::set\+Distance\+To\+Origin (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{d}
+\end{DoxyParamCaption}
+)}}\label{classPlane_aa299ec4054d6735e8f2fffde2a38b434}
+Set the distance min\+\_\+(p in this) $\vert$$\vert$ p -\/ vec3(0,0,0) $\vert$$\vert$. 
+\begin{DoxyParams}{Parameters}
+{\em d} & New distance to the origin. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPlane_a1cddc7028e96d68a176fb742ab1e349d}{\index{Plane@{Plane}!set\+Normal@{set\+Normal}}
+\index{set\+Normal@{set\+Normal}!Plane@{Plane}}
+\subsubsection[{set\+Normal}]{\setlength{\rightskip}{0pt plus 5cm}void Plane\+::set\+Normal (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{n}
+\end{DoxyParamCaption}
+)}}\label{classPlane_a1cddc7028e96d68a176fb742ab1e349d}
+Set the plane's normal. 
+\begin{DoxyParams}{Parameters}
+{\em n} & The new plane's normal. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPlane_a5864bedfa1eb0ff017b89631fc7aff01}{\index{Plane@{Plane}!m\+\_\+d@{m\+\_\+d}}
+\index{m\+\_\+d@{m\+\_\+d}!Plane@{Plane}}
+\subsubsection[{m\+\_\+d}]{\setlength{\rightskip}{0pt plus 5cm}float Plane\+::m\+\_\+d\hspace{0.3cm}{\ttfamily [private]}}}\label{classPlane_a5864bedfa1eb0ff017b89631fc7aff01}
+m\+\_\+d = dot(m\+\_\+n,p) for a given point p on the plane \hypertarget{classPlane_a47fca7e21a0e825f754182692fad45b0}{\index{Plane@{Plane}!m\+\_\+n@{m\+\_\+n}}
+\index{m\+\_\+n@{m\+\_\+n}!Plane@{Plane}}
+\subsubsection[{m\+\_\+n}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Plane\+::m\+\_\+n\hspace{0.3cm}{\ttfamily [private]}}}\label{classPlane_a47fca7e21a0e825f754182692fad45b0}
+\hyperlink{classPlane}{Plane} normal. Points x on the plane satisfy dot(m\+\_\+n,x)=m\+\_\+d 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{Plane_8hpp}{Plane.\+hpp}\end{DoxyCompactItemize}

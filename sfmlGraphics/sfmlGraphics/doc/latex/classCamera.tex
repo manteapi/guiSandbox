@@ -1,0 +1,471 @@
+\hypertarget{classCamera}{\section{Camera Class Reference}
+\label{classCamera}\index{Camera@{Camera}}
+}
+
+
+Manage the \hyperlink{classCamera}{Camera}.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classCamera_a39b92a45686a6f858a3405ee34a95cfa}{C\+A\+M\+E\+R\+A\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R} \{ \hyperlink{classCamera_a39b92a45686a6f858a3405ee34a95cfaa8554ee8f8de95ea3a84d77e3e8345d1c}{A\+R\+C\+B\+A\+L\+L\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R}, 
+\hyperlink{classCamera_a39b92a45686a6f858a3405ee34a95cfaa37a95995e7b876b0b9994a131da60717}{S\+P\+A\+C\+E\+S\+H\+I\+P\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R}
+ \}
+\begin{DoxyCompactList}\small\item\em Reaction to mouse displacement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCamera_a01f94c3543f56ede7af49dc778f19331}{Camera} ()
+\begin{DoxyCompactList}\small\item\em Construction. \end{DoxyCompactList}\item 
+\hyperlink{classCamera_ad1897942d0ccf91052386388a497349f}{$\sim$\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Destruction. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_aff5389801d0c6e32c2627db0c63b9c24}{animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate the camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf Camera View Matrix}\par
+{\em Set of methods which interact with the camera view matrix. This matrix which determines the camera frame in the world coordinates, i.\+e. the way the camera is positioned and oriented. }\begin{DoxyCompactItemize}
+\item 
+const glm\+::mat4 \& \hyperlink{classCamera_aba6abae81f71ffdc830a0c45a6910c76}{view\+Matrix} () const 
+\begin{DoxyCompactList}\small\item\em Read access to the view matrix. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_a9b4e9d0087f56802ec4d684ea9665e16}{set\+View\+Matrix} (const glm\+::mat4 \&view)
+\begin{DoxyCompactList}\small\item\em Write to the view matrix. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classCamera_ad741cb975e8ea88698ed1b0216a0bb82}{get\+Position} () const 
+\begin{DoxyCompactList}\small\item\em Read access to the camera world position. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classCamera_af8c18525d561cda9757413550436f5ca}{get\+Right} () const 
+\begin{DoxyCompactList}\small\item\em Read access to the camera right direction. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classCamera_a64b7a4bf8c463fd6ba5165d632d54a8e}{get\+Up} () const 
+\begin{DoxyCompactList}\small\item\em Read access to the camera up direction. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classCamera_aab4704e0cfa1fb4153658f129d806e78}{get\+Forward} () const 
+\begin{DoxyCompactList}\small\item\em Read access to the camera forward direction. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_ab7ebcdd5020d8057f1df3bdb33bac456}{set\+Position} (const glm\+::vec3 \&pos)
+\begin{DoxyCompactList}\small\item\em Set the camera world position. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_a02cf8fe9d3413fcb1f95a14ef02da9a3}{set\+Right} (const glm\+::vec3 \&right)
+\begin{DoxyCompactList}\small\item\em Set the camera right direction. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_acd252404a7ef31e327af15710bd433a4}{set\+Up} (const glm\+::vec3 \&up)
+\begin{DoxyCompactList}\small\item\em Set the camera up direction. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_acb3d907db2b33b09c4861e215e2e21eb}{set\+Forward} (const glm\+::vec3 \&forward)
+\begin{DoxyCompactList}\small\item\em Set the camera up direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Camera Projection Matrix}\par
+{\em Set of methods which interact with the projection matrix. This matrix determine how a scene is projected on a 2\+D image that will be displayed on screen. }\begin{DoxyCompactItemize}
+\item 
+const glm\+::mat4 \& \hyperlink{classCamera_adeda5ac08b751d6122d5f280769617a1}{projection\+Matrix} () const 
+\begin{DoxyCompactList}\small\item\em Read access to the camera projection matrix. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_a25474205988645b3792f1c6cffad95af}{set\+Projection\+Matrix} (const glm\+::mat4 \&projection)
+\begin{DoxyCompactList}\small\item\em Write to the projection matrix of the camera. \end{DoxyCompactList}\item 
+float \hyperlink{classCamera_aa2af35287b83a29333b0ae51ebaa2f4b}{fov} () const 
+\begin{DoxyCompactList}\small\item\em Get the camera field of view. \end{DoxyCompactList}\item 
+float \hyperlink{classCamera_aa7757f7ff602b864472fe6be5c7a23ac}{ratio} () const 
+\begin{DoxyCompactList}\small\item\em Get the camera ratio. \end{DoxyCompactList}\item 
+float \hyperlink{classCamera_ae2231c2ee1a4a356ef8a7e1003f04998}{znear} () const 
+\begin{DoxyCompactList}\small\item\em Get the near clipping plane. \end{DoxyCompactList}\item 
+float \hyperlink{classCamera_a2dba7a46727c9db0ee663751e0d4d2b1}{zfar} () const 
+\begin{DoxyCompactList}\small\item\em Get the far clipping plane. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_a06d62ccd30da0b6c46a837ee67c5a6b8}{set\+Fov} (const float \&v)
+\begin{DoxyCompactList}\small\item\em Define the field of view. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_aa191430dcb1e9f7ab01251d3081913a6}{set\+Ratio} (const float \&v)
+\begin{DoxyCompactList}\small\item\em Define the aspect ratio. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_ad0f1812ed5bf995493591e1c8aff19a3}{set\+Zfar} (const float \&v)
+\begin{DoxyCompactList}\small\item\em Define the far clipping plane. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_a86cc28211d99e582cdbeba609c644208}{set\+Znear} (const float \&v)
+\begin{DoxyCompactList}\small\item\em Define the near clipping plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Mouse Control}\par
+{\em Control the camera with the mouse. }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCamera_a39b92a45686a6f858a3405ee34a95cfa}{C\+A\+M\+E\+R\+A\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R} \hyperlink{classCamera_a35b61591c2a26f707c95e2a17c00ec70}{get\+Mouse\+Behavior} () const 
+\begin{DoxyCompactList}\small\item\em Get the mouse behavior. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_ae2b1471c97d7709358ccd754e68c1ca6}{set\+Mouse\+Behavior} (const \hyperlink{classCamera_a39b92a45686a6f858a3405ee34a95cfa}{C\+A\+M\+E\+R\+A\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R} \&v)
+\begin{DoxyCompactList}\small\item\em Set the mouse behavior. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_a21e660f7345ef5cfb347ac5c78e0c491}{update} (float dx, float dy)
+\begin{DoxyCompactList}\small\item\em Update the camera view in reaction to a mouse displacement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Attributes}
+\begin{Indent}{\bf Private members}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCamera_a39b92a45686a6f858a3405ee34a95cfa}{C\+A\+M\+E\+R\+A\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R} \hyperlink{classCamera_a4aa308842db545da7732c5fe306be934}{m\+\_\+mouse\+Behavior}
+\item 
+float \hyperlink{classCamera_aa404a4e057fa16fb82ce8668d7a661b6}{m\+\_\+fov}
+\item 
+float \hyperlink{classCamera_aac7338a3de62c4f1b78a5553ae642c27}{m\+\_\+ratio}
+\item 
+float \hyperlink{classCamera_a3e01bcfeedeb9ee1950bca467dcd2185}{m\+\_\+znear}
+\item 
+float \hyperlink{classCamera_a2a5760d0aff07b0dd1039ee7ccc2596c}{m\+\_\+zfar}
+\item 
+glm\+::mat4 \hyperlink{classCamera_ad0e8cb00cfe1dd9a2aabd7ed92bde2e4}{m\+\_\+view}
+\item 
+glm\+::mat4 \hyperlink{classCamera_a32746f033de65f9bf0d3e6823b77f339}{m\+\_\+projection}
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+We consider a camera to be defined by two 4x4 matrices\+:
+\begin{DoxyItemize}
+\item the view matrix
+\item the projection matrix.
+\end{DoxyItemize}
+
+The view matrix defines the position and the orientation of the camera in the world coordinates. It is represented as follow\+: \begin{TabularC}{4}
+\hline
+\rowcolor{lightgray}{\bf Column 0 }&{\bf Column 1 }&{\bf Column 2 }&{\bf Column 3  }\\\cline{1-4}
+X0 &X1 &X2 &P0 \\\cline{1-4}
+Y0 &Y1 &Y2 &P1 \\\cline{1-4}
+Z0 &Z1 &Z2 &P2 \\\cline{1-4}
+0 &0 &0 &1 \\\cline{1-4}
+\end{TabularC}
+X=(X0,X1,X2), Y=(Y0,Y1,Y2) and Z=(Z0,Z1,Z2) represent the right, up, and backward direction of the camera in the world coordinates. The point P=(P0,P1,P2) is the position of the world origin in the camera frame (X,Y,Z). Thus, the point (-\/dot(P,X), -\/dot(P,Y), -\/dot(P,Z)) is the position of the camera in the world coordinates.
+
+The projection matrix defines the way the scene viewed by the camera is transformed (projected) to a 2\+D image that will be displayed on screen. To compute this matrix, we need ratio of the 2\+D image, the field of view and the far and near cutting plane distances. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classCamera_a39b92a45686a6f858a3405ee34a95cfa}{\index{Camera@{Camera}!C\+A\+M\+E\+R\+A\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R@{C\+A\+M\+E\+R\+A\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R}}
+\index{C\+A\+M\+E\+R\+A\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R@{C\+A\+M\+E\+R\+A\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R}!Camera@{Camera}}
+\subsubsection[{C\+A\+M\+E\+R\+A\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Camera\+::\+C\+A\+M\+E\+R\+A\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R}}}\label{classCamera_a39b92a45686a6f858a3405ee34a95cfa}
+This enumeration specifies the different kind of reaction to a mouse displacement. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+C\+B\+A\+L\+L\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R@{A\+R\+C\+B\+A\+L\+L\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R}!Camera@{Camera}}\index{Camera@{Camera}!A\+R\+C\+B\+A\+L\+L\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R@{A\+R\+C\+B\+A\+L\+L\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R}}\item[{\em 
+\hypertarget{classCamera_a39b92a45686a6f858a3405ee34a95cfaa8554ee8f8de95ea3a84d77e3e8345d1c}{A\+R\+C\+B\+A\+L\+L\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R}\label{classCamera_a39b92a45686a6f858a3405ee34a95cfaa8554ee8f8de95ea3a84d77e3e8345d1c}
+}]The view matrix is modified to turn the camera around the world origin. \index{S\+P\+A\+C\+E\+S\+H\+I\+P\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R@{S\+P\+A\+C\+E\+S\+H\+I\+P\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R}!Camera@{Camera}}\index{Camera@{Camera}!S\+P\+A\+C\+E\+S\+H\+I\+P\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R@{S\+P\+A\+C\+E\+S\+H\+I\+P\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R}}\item[{\em 
+\hypertarget{classCamera_a39b92a45686a6f858a3405ee34a95cfaa37a95995e7b876b0b9994a131da60717}{S\+P\+A\+C\+E\+S\+H\+I\+P\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R}\label{classCamera_a39b92a45686a6f858a3405ee34a95cfaa37a95995e7b876b0b9994a131da60717}
+}]The view matrix is modified to point its 'nose' in the direction pointed by the mouse. \end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCamera_a01f94c3543f56ede7af49dc778f19331}{\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\subsubsection[{Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a01f94c3543f56ede7af49dc778f19331}
+Create a default camera located at (0,0,-\/5), looking at the position (0,0,0), with an up vector equals to (0,1,0). The default camera behavior is \hyperlink{classCamera_a39b92a45686a6f858a3405ee34a95cfaa8554ee8f8de95ea3a84d77e3e8345d1c}{Camera\+::\+A\+R\+C\+B\+A\+L\+L\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R}. If such default behavior does not suit you, feel free to change it in the implementation file. \hypertarget{classCamera_ad1897942d0ccf91052386388a497349f}{\index{Camera@{Camera}!````~Camera@{$\sim$\+Camera}}
+\index{````~Camera@{$\sim$\+Camera}!Camera@{Camera}}
+\subsubsection[{$\sim$\+Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::$\sim$\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCamera_ad1897942d0ccf91052386388a497349f}
+Instance destruction. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classCamera_aff5389801d0c6e32c2627db0c63b9c24}{\index{Camera@{Camera}!animate@{animate}}
+\index{animate@{animate}!Camera@{Camera}}
+\subsubsection[{animate}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)}}\label{classCamera_aff5389801d0c6e32c2627db0c63b9c24}
+This function is currently empty, but you can define an animation behavior here. This function is automatically called by the \hyperlink{classViewer}{Viewer} 
+\begin{DoxyParams}{Parameters}
+{\em time} & Current simulation time. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_aa2af35287b83a29333b0ae51ebaa2f4b}{\index{Camera@{Camera}!fov@{fov}}
+\index{fov@{fov}!Camera@{Camera}}
+\subsubsection[{fov}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::fov (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCamera_aa2af35287b83a29333b0ae51ebaa2f4b}
+Get the field of view of the camera, also known as the camera angle. \begin{DoxyReturn}{Returns}
+The camera fov. 
+\end{DoxyReturn}
+\hypertarget{classCamera_aab4704e0cfa1fb4153658f129d806e78}{\index{Camera@{Camera}!get\+Forward@{get\+Forward}}
+\index{get\+Forward@{get\+Forward}!Camera@{Camera}}
+\subsubsection[{get\+Forward}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Camera\+::get\+Forward (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCamera_aab4704e0cfa1fb4153658f129d806e78}
+Allow a read-\/only access to the forward direction of the camera in world coordinates. This direction corresponds to the (-\/\+Z) direction of the camera local frame, also known as the 'looking direction'.
+
+\begin{DoxyReturn}{Returns}
+The camera forward direction. 
+\end{DoxyReturn}
+\hypertarget{classCamera_a35b61591c2a26f707c95e2a17c00ec70}{\index{Camera@{Camera}!get\+Mouse\+Behavior@{get\+Mouse\+Behavior}}
+\index{get\+Mouse\+Behavior@{get\+Mouse\+Behavior}!Camera@{Camera}}
+\subsubsection[{get\+Mouse\+Behavior}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+A\+M\+E\+R\+A\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R} Camera\+::get\+Mouse\+Behavior (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCamera_a35b61591c2a26f707c95e2a17c00ec70}
+Access to the mouse behavior currently used by the update( dx, dy ) function. \begin{DoxyReturn}{Returns}
+The mouse behavior. 
+\end{DoxyReturn}
+\hypertarget{classCamera_ad741cb975e8ea88698ed1b0216a0bb82}{\index{Camera@{Camera}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Camera@{Camera}}
+\subsubsection[{get\+Position}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Camera\+::get\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCamera_ad741cb975e8ea88698ed1b0216a0bb82}
+Allow a read-\/only access to the camera position in world coordinates. \begin{DoxyReturn}{Returns}
+The camera position. 
+\end{DoxyReturn}
+\hypertarget{classCamera_af8c18525d561cda9757413550436f5ca}{\index{Camera@{Camera}!get\+Right@{get\+Right}}
+\index{get\+Right@{get\+Right}!Camera@{Camera}}
+\subsubsection[{get\+Right}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Camera\+::get\+Right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCamera_af8c18525d561cda9757413550436f5ca}
+Allow a read-\/only access to the right direction of the camera in world coordinates. This direction corresponds to the (+\+X) direction of the camera local frame.
+
+\begin{DoxyReturn}{Returns}
+The camera right direction 
+\end{DoxyReturn}
+\hypertarget{classCamera_a64b7a4bf8c463fd6ba5165d632d54a8e}{\index{Camera@{Camera}!get\+Up@{get\+Up}}
+\index{get\+Up@{get\+Up}!Camera@{Camera}}
+\subsubsection[{get\+Up}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Camera\+::get\+Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCamera_a64b7a4bf8c463fd6ba5165d632d54a8e}
+Allow a read-\/only access to the up direction of the camera in world coordinates. This direction corresponds to the (+\+Y) direction of the camera local frame.
+
+\begin{DoxyReturn}{Returns}
+The camera up direction. 
+\end{DoxyReturn}
+\hypertarget{classCamera_adeda5ac08b751d6122d5f280769617a1}{\index{Camera@{Camera}!projection\+Matrix@{projection\+Matrix}}
+\index{projection\+Matrix@{projection\+Matrix}!Camera@{Camera}}
+\subsubsection[{projection\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::mat4\& Camera\+::projection\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCamera_adeda5ac08b751d6122d5f280769617a1}
+Allow a read-\/only access to the camera projection matrix. This matrix defines how to go from the pixel coordinates to the screen coordinates.
+
+\begin{DoxyReturn}{Returns}
+The projection matrix. 
+\end{DoxyReturn}
+\hypertarget{classCamera_aa7757f7ff602b864472fe6be5c7a23ac}{\index{Camera@{Camera}!ratio@{ratio}}
+\index{ratio@{ratio}!Camera@{Camera}}
+\subsubsection[{ratio}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::ratio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCamera_aa7757f7ff602b864472fe6be5c7a23ac}
+The camera ratio is the length ratio of the image taken by this camera. This ratio is meant to be equal to the width of the display window divided by its height. This ratio is also know as the aspect ratio.
+
+\begin{DoxyReturn}{Returns}
+The length ratio of the image taken by this camera. 
+\end{DoxyReturn}
+\hypertarget{classCamera_acb3d907db2b33b09c4861e215e2e21eb}{\index{Camera@{Camera}!set\+Forward@{set\+Forward}}
+\index{set\+Forward@{set\+Forward}!Camera@{Camera}}
+\subsubsection[{set\+Forward}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+Forward (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{forward}
+\end{DoxyParamCaption}
+)}}\label{classCamera_acb3d907db2b33b09c4861e215e2e21eb}
+Set the camera forward (-\/\+Z) direction in world coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em forward} & New camera forward direction in world coordinates. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_a06d62ccd30da0b6c46a837ee67c5a6b8}{\index{Camera@{Camera}!set\+Fov@{set\+Fov}}
+\index{set\+Fov@{set\+Fov}!Camera@{Camera}}
+\subsubsection[{set\+Fov}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+Fov (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a06d62ccd30da0b6c46a837ee67c5a6b8}
+Set the camera field of view. We consider 1.\+04 is a good start to find a custom fov. 
+\begin{DoxyParams}{Parameters}
+{\em v} & The new field of view. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_ae2b1471c97d7709358ccd754e68c1ca6}{\index{Camera@{Camera}!set\+Mouse\+Behavior@{set\+Mouse\+Behavior}}
+\index{set\+Mouse\+Behavior@{set\+Mouse\+Behavior}!Camera@{Camera}}
+\subsubsection[{set\+Mouse\+Behavior}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+Mouse\+Behavior (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+A\+M\+E\+R\+A\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classCamera_ae2b1471c97d7709358ccd754e68c1ca6}
+Set the new mouse behavior of the camera, that will be used by the update( dx, dy ) function. 
+\begin{DoxyParams}{Parameters}
+{\em v} & The new behavior. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_ab7ebcdd5020d8057f1df3bdb33bac456}{\index{Camera@{Camera}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Camera@{Camera}}
+\subsubsection[{set\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+Position (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{pos}
+\end{DoxyParamCaption}
+)}}\label{classCamera_ab7ebcdd5020d8057f1df3bdb33bac456}
+Set the camera position in world coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & New camera world position. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_a25474205988645b3792f1c6cffad95af}{\index{Camera@{Camera}!set\+Projection\+Matrix@{set\+Projection\+Matrix}}
+\index{set\+Projection\+Matrix@{set\+Projection\+Matrix}!Camera@{Camera}}
+\subsubsection[{set\+Projection\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+Projection\+Matrix (
+\begin{DoxyParamCaption}
+\item[{const glm\+::mat4 \&}]{projection}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a25474205988645b3792f1c6cffad95af}
+Allow to write to the projection matrix of the camera. 
+\begin{DoxyParams}{Parameters}
+{\em projection} & The new projection matrix used by this camera. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_aa191430dcb1e9f7ab01251d3081913a6}{\index{Camera@{Camera}!set\+Ratio@{set\+Ratio}}
+\index{set\+Ratio@{set\+Ratio}!Camera@{Camera}}
+\subsubsection[{set\+Ratio}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+Ratio (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classCamera_aa191430dcb1e9f7ab01251d3081913a6}
+Set the camera aspect ratio. Generally, this is done at each window resize. The \hyperlink{classViewer}{Viewer} automatically call this method on its camera when its window is resized. 
+\begin{DoxyParams}{Parameters}
+{\em v} & The new aspect ratio (width / height) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_a02cf8fe9d3413fcb1f95a14ef02da9a3}{\index{Camera@{Camera}!set\+Right@{set\+Right}}
+\index{set\+Right@{set\+Right}!Camera@{Camera}}
+\subsubsection[{set\+Right}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+Right (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{right}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a02cf8fe9d3413fcb1f95a14ef02da9a3}
+Set the camera right direction in world coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em right} & New camera right axis in world coordinates. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_acd252404a7ef31e327af15710bd433a4}{\index{Camera@{Camera}!set\+Up@{set\+Up}}
+\index{set\+Up@{set\+Up}!Camera@{Camera}}
+\subsubsection[{set\+Up}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+Up (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{up}
+\end{DoxyParamCaption}
+)}}\label{classCamera_acd252404a7ef31e327af15710bd433a4}
+Set the camera up direction in world coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em up} & New camera up axis in world coordinates. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_a9b4e9d0087f56802ec4d684ea9665e16}{\index{Camera@{Camera}!set\+View\+Matrix@{set\+View\+Matrix}}
+\index{set\+View\+Matrix@{set\+View\+Matrix}!Camera@{Camera}}
+\subsubsection[{set\+View\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+View\+Matrix (
+\begin{DoxyParamCaption}
+\item[{const glm\+::mat4 \&}]{view}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a9b4e9d0087f56802ec4d684ea9665e16}
+Allow to write to the view matrix. This could be useful if the view matrix is handled in another place than in the camera. 
+\begin{DoxyParams}{Parameters}
+{\em view} & The new view matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_ad0f1812ed5bf995493591e1c8aff19a3}{\index{Camera@{Camera}!set\+Zfar@{set\+Zfar}}
+\index{set\+Zfar@{set\+Zfar}!Camera@{Camera}}
+\subsubsection[{set\+Zfar}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+Zfar (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classCamera_ad0f1812ed5bf995493591e1c8aff19a3}
+Set the far clipping plane at the specified distance. 
+\begin{DoxyParams}{Parameters}
+{\em v} & The far clipping plane distance. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_a86cc28211d99e582cdbeba609c644208}{\index{Camera@{Camera}!set\+Znear@{set\+Znear}}
+\index{set\+Znear@{set\+Znear}!Camera@{Camera}}
+\subsubsection[{set\+Znear}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::set\+Znear (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a86cc28211d99e582cdbeba609c644208}
+Set the near clipping plane at the specified distance. 
+\begin{DoxyParams}{Parameters}
+{\em v} & The near clipping plane distance. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_a21e660f7345ef5cfb347ac5c78e0c491}{\index{Camera@{Camera}!update@{update}}
+\index{update@{update}!Camera@{Camera}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::update (
+\begin{DoxyParamCaption}
+\item[{float}]{dx, }
+\item[{float}]{dy}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a21e660f7345ef5cfb347ac5c78e0c491}
+Change the camera view matrix according to the current mouse behavior. 
+\begin{DoxyParams}{Parameters}
+{\em dx} & Mouse x displacement. \\
+\hline
+{\em dy} & Mouse y displacement. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_aba6abae81f71ffdc830a0c45a6910c76}{\index{Camera@{Camera}!view\+Matrix@{view\+Matrix}}
+\index{view\+Matrix@{view\+Matrix}!Camera@{Camera}}
+\subsubsection[{view\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::mat4\& Camera\+::view\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCamera_aba6abae81f71ffdc830a0c45a6910c76}
+Allow a read-\/only access to the view matrix, i.\+e. where the camera looks. \begin{DoxyReturn}{Returns}
+The view matrix 
+\end{DoxyReturn}
+\hypertarget{classCamera_a2dba7a46727c9db0ee663751e0d4d2b1}{\index{Camera@{Camera}!zfar@{zfar}}
+\index{zfar@{zfar}!Camera@{Camera}}
+\subsubsection[{zfar}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::zfar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCamera_a2dba7a46727c9db0ee663751e0d4d2b1}
+Get the far clipping plane\+: anything that is farther from the camera than this plane will be removed from the rendered image.
+
+\begin{DoxyReturn}{Returns}
+The far clipping plane distance. 
+\end{DoxyReturn}
+\hypertarget{classCamera_ae2231c2ee1a4a356ef8a7e1003f04998}{\index{Camera@{Camera}!znear@{znear}}
+\index{znear@{znear}!Camera@{Camera}}
+\subsubsection[{znear}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::znear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCamera_ae2231c2ee1a4a356ef8a7e1003f04998}
+Get the near clipping plane\+: anything that is closer to the camera than this will be removed from the rendered image.
+
+\begin{DoxyReturn}{Returns}
+The near clipping plane distance. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCamera_aa404a4e057fa16fb82ce8668d7a661b6}{\index{Camera@{Camera}!m\+\_\+fov@{m\+\_\+fov}}
+\index{m\+\_\+fov@{m\+\_\+fov}!Camera@{Camera}}
+\subsubsection[{m\+\_\+fov}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::m\+\_\+fov\hspace{0.3cm}{\ttfamily [private]}}}\label{classCamera_aa404a4e057fa16fb82ce8668d7a661b6}
+\hypertarget{classCamera_a4aa308842db545da7732c5fe306be934}{\index{Camera@{Camera}!m\+\_\+mouse\+Behavior@{m\+\_\+mouse\+Behavior}}
+\index{m\+\_\+mouse\+Behavior@{m\+\_\+mouse\+Behavior}!Camera@{Camera}}
+\subsubsection[{m\+\_\+mouse\+Behavior}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+A\+M\+E\+R\+A\+\_\+\+M\+O\+U\+S\+E\+\_\+\+B\+E\+H\+A\+V\+I\+O\+R} Camera\+::m\+\_\+mouse\+Behavior\hspace{0.3cm}{\ttfamily [private]}}}\label{classCamera_a4aa308842db545da7732c5fe306be934}
+\hypertarget{classCamera_a32746f033de65f9bf0d3e6823b77f339}{\index{Camera@{Camera}!m\+\_\+projection@{m\+\_\+projection}}
+\index{m\+\_\+projection@{m\+\_\+projection}!Camera@{Camera}}
+\subsubsection[{m\+\_\+projection}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Camera\+::m\+\_\+projection\hspace{0.3cm}{\ttfamily [private]}}}\label{classCamera_a32746f033de65f9bf0d3e6823b77f339}
+\hypertarget{classCamera_aac7338a3de62c4f1b78a5553ae642c27}{\index{Camera@{Camera}!m\+\_\+ratio@{m\+\_\+ratio}}
+\index{m\+\_\+ratio@{m\+\_\+ratio}!Camera@{Camera}}
+\subsubsection[{m\+\_\+ratio}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::m\+\_\+ratio\hspace{0.3cm}{\ttfamily [private]}}}\label{classCamera_aac7338a3de62c4f1b78a5553ae642c27}
+\hypertarget{classCamera_ad0e8cb00cfe1dd9a2aabd7ed92bde2e4}{\index{Camera@{Camera}!m\+\_\+view@{m\+\_\+view}}
+\index{m\+\_\+view@{m\+\_\+view}!Camera@{Camera}}
+\subsubsection[{m\+\_\+view}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Camera\+::m\+\_\+view\hspace{0.3cm}{\ttfamily [private]}}}\label{classCamera_ad0e8cb00cfe1dd9a2aabd7ed92bde2e4}
+\hypertarget{classCamera_a2a5760d0aff07b0dd1039ee7ccc2596c}{\index{Camera@{Camera}!m\+\_\+zfar@{m\+\_\+zfar}}
+\index{m\+\_\+zfar@{m\+\_\+zfar}!Camera@{Camera}}
+\subsubsection[{m\+\_\+zfar}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::m\+\_\+zfar\hspace{0.3cm}{\ttfamily [private]}}}\label{classCamera_a2a5760d0aff07b0dd1039ee7ccc2596c}
+\hypertarget{classCamera_a3e01bcfeedeb9ee1950bca467dcd2185}{\index{Camera@{Camera}!m\+\_\+znear@{m\+\_\+znear}}
+\index{m\+\_\+znear@{m\+\_\+znear}!Camera@{Camera}}
+\subsubsection[{m\+\_\+znear}]{\setlength{\rightskip}{0pt plus 5cm}float Camera\+::m\+\_\+znear\hspace{0.3cm}{\ttfamily [private]}}}\label{classCamera_a3e01bcfeedeb9ee1950bca467dcd2185}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{Camera_8hpp}{Camera.\+hpp}\end{DoxyCompactItemize}

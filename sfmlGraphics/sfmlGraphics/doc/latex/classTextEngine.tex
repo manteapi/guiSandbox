@@ -1,0 +1,165 @@
+\hypertarget{classTextEngine}{\section{Text\+Engine Class Reference}
+\label{classTextEngine}\index{Text\+Engine@{Text\+Engine}}
+}
+
+
+Print text on the screen.  
+
+
+
+
+{\ttfamily \#include $<$Text\+Engine.\+hpp$>$}
+
+
+
+Collaboration diagram for Text\+Engine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{classTextEngine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTextEngine_aa3e16b1ce28b3d1d2ddd59f0510e5a36}{Text\+Engine} ()
+\begin{DoxyCompactList}\small\item\em Construction. \end{DoxyCompactList}\item 
+\hyperlink{classTextEngine_afbb0bf9af743b9b7f2b858929a4726f6}{$\sim$\+Text\+Engine} ()
+\begin{DoxyCompactList}\small\item\em Instance destruction. \end{DoxyCompactList}\item 
+void \hyperlink{classTextEngine_aaea1fe8ff3ec9bb7d880c5076c84e0fe}{init} ()
+\begin{DoxyCompactList}\small\item\em Initialize the font engine. \end{DoxyCompactList}\item 
+void \hyperlink{classTextEngine_ad4137c6a60ee7e2f1fbd27710697ab80}{set\+Window\+Dimensions} (float width, float height)
+\begin{DoxyCompactList}\small\item\em Notify the engine a change in the window size. \end{DoxyCompactList}\item 
+void \hyperlink{classTextEngine_a916007b7ab8d7c3206d185af91f15968}{render} (const std\+::string \&msg, const glm\+::vec2 \&pixel\+Coordinates, const glm\+::vec3 \&text\+Color, float scale=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Render a text message on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Text\+Atlas $\ast$ \hyperlink{classTextEngine_afd5f444cf365a23d5d811d79a1046e11}{m\+\_\+atlas}
+\item 
+glm\+::mat4 \hyperlink{classTextEngine_af7f6f9d9abc900fa5383999f115e24ae}{m\+\_\+projection}
+\item 
+\hyperlink{classShaderProgram}{Shader\+Program} \hyperlink{classTextEngine_a00abe5f39d00bc436937ab283e585f3f}{m\+\_\+program}
+\item 
+unsigned int \hyperlink{classTextEngine_ab64d559d7eb3fed8228c43c919c0cc42}{m\+\_\+vbo\+Vertices}
+\item 
+int \hyperlink{classTextEngine_a5172679b8715801cf0c3247366238d57}{m\+\_\+vertex\+Location}
+\item 
+int \hyperlink{classTextEngine_ade64d7603bb434bf411aec352e9d8e50}{m\+\_\+projection\+Location}
+\item 
+int \hyperlink{classTextEngine_a318576a75e542849a9a733c55823561e}{m\+\_\+color\+Location}
+\item 
+int \hyperlink{classTextEngine_afa7486707c1a18c2bf83ffaa93564bff}{m\+\_\+sampler\+Location}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+We decided to use a simple texture atlas technique. The visible characters of a font for a particular size are loaded in an open\+G\+L texture. For each character of the message to print, a quad is textured with the subtexture corresponding to the character in the atlas. It is not required to understand the whole process. However, we chose this technique instead of more evolved one since this one can be understood with the content of the course.
+
+We built this class by adapting the two following resources\+: \href{https://en.wikibooks.org/wiki/OpenGL_Programming/Modern_OpenGL_Tutorial_Text_Rendering_01}{\tt https\+://en.\+wikibooks.\+org/wiki/\+Open\+G\+L\+\_\+\+Programming/\+Modern\+\_\+\+Open\+G\+L\+\_\+\+Tutorial\+\_\+\+Text\+\_\+\+Rendering\+\_\+01} \href{http://learnopengl.com/#!In-Practice/Text-Rendering}{\tt http\+://learnopengl.\+com/\#!\+In-\/\+Practice/\+Text-\/\+Rendering}
+
+Limitations\+:
+
+
+\begin{DoxyItemize}
+\item display only U\+S A\+S\+C\+I\+I characters
+\item when the same message is displayed the same way for more than one frame, it is far from efficient\+: the same data is computed and send over and over for the same result. This becomes more noticeable when there are a lot of text displayed on the screen for some seconds. To address this issue, it is possible to render the whole message to a texture and then display it on screen thanks to a quad. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTextEngine_aa3e16b1ce28b3d1d2ddd59f0510e5a36}{\index{Text\+Engine@{Text\+Engine}!Text\+Engine@{Text\+Engine}}
+\index{Text\+Engine@{Text\+Engine}!Text\+Engine@{Text\+Engine}}
+\subsubsection[{Text\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Engine\+::\+Text\+Engine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTextEngine_aa3e16b1ce28b3d1d2ddd59f0510e5a36}
+Build a text engine using an monospace font with a height of 24 pixels. \hypertarget{classTextEngine_afbb0bf9af743b9b7f2b858929a4726f6}{\index{Text\+Engine@{Text\+Engine}!````~Text\+Engine@{$\sim$\+Text\+Engine}}
+\index{````~Text\+Engine@{$\sim$\+Text\+Engine}!Text\+Engine@{Text\+Engine}}
+\subsubsection[{$\sim$\+Text\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Engine\+::$\sim$\+Text\+Engine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTextEngine_afbb0bf9af743b9b7f2b858929a4726f6}
+Destroy the atlas, which in turn, release the font texture from the G\+P\+U. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classTextEngine_aaea1fe8ff3ec9bb7d880c5076c84e0fe}{\index{Text\+Engine@{Text\+Engine}!init@{init}}
+\index{init@{init}!Text\+Engine@{Text\+Engine}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Engine\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTextEngine_aaea1fe8ff3ec9bb7d880c5076c84e0fe}
+The text engine needs a properly set Open\+G\+L context to be fully initialized. The initialization does not take place in the constructor such that we can control when Open\+G\+L commands will be issued, to make them happen after the context creation.
+
+We stored a text engine instance inside the \hyperlink{classViewer}{Viewer} class. The viewer will automatically call this function for you. Thus, except if you really want you own text engine instance, you do not have to worry about this function. \hypertarget{classTextEngine_a916007b7ab8d7c3206d185af91f15968}{\index{Text\+Engine@{Text\+Engine}!render@{render}}
+\index{render@{render}!Text\+Engine@{Text\+Engine}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Engine\+::render (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{msg, }
+\item[{const glm\+::vec2 \&}]{pixel\+Coordinates, }
+\item[{const glm\+::vec3 \&}]{text\+Color, }
+\item[{float}]{scale = {\ttfamily 1.0f}}
+\end{DoxyParamCaption}
+)}}\label{classTextEngine_a916007b7ab8d7c3206d185af91f15968}
+Render a message on the screen with a specified color, position and size. The default size (for a scale of 1.\+0f) is 24 pixels. Thus the size with a scale of 2.\+0 would be 48 pixels.
+
+This functions handle multiple line message, with a separation between lines equals to 25\% of the maximum character height. Also, please note that the line restarts at the vertical position of the first message character, that is pixel\+Coordinates.\+x. 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message to be displayed on the screen \\
+\hline
+{\em pixel\+Coordinates} & Position of the first message character \\
+\hline
+{\em text\+Color} & Color of the message \\
+\hline
+{\em scale} & The size of the message would be 24 $\ast$ scale pixels \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTextEngine_ad4137c6a60ee7e2f1fbd27710697ab80}{\index{Text\+Engine@{Text\+Engine}!set\+Window\+Dimensions@{set\+Window\+Dimensions}}
+\index{set\+Window\+Dimensions@{set\+Window\+Dimensions}!Text\+Engine@{Text\+Engine}}
+\subsubsection[{set\+Window\+Dimensions}]{\setlength{\rightskip}{0pt plus 5cm}void Text\+Engine\+::set\+Window\+Dimensions (
+\begin{DoxyParamCaption}
+\item[{float}]{width, }
+\item[{float}]{height}
+\end{DoxyParamCaption}
+)}}\label{classTextEngine_ad4137c6a60ee7e2f1fbd27710697ab80}
+When the display window changed its size, it should be notified to the text engine. Indeed, those dimensions are necessary to compute the projection matrix, i.\+e. how to pass from the pixel coordinates to the screen coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em width} & Width in pixels of the window we are rendering to \\
+\hline
+{\em height} & Height in pixels of the window we are rendering to \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classTextEngine_afd5f444cf365a23d5d811d79a1046e11}{\index{Text\+Engine@{Text\+Engine}!m\+\_\+atlas@{m\+\_\+atlas}}
+\index{m\+\_\+atlas@{m\+\_\+atlas}!Text\+Engine@{Text\+Engine}}
+\subsubsection[{m\+\_\+atlas}]{\setlength{\rightskip}{0pt plus 5cm}Text\+Atlas$\ast$ Text\+Engine\+::m\+\_\+atlas\hspace{0.3cm}{\ttfamily [private]}}}\label{classTextEngine_afd5f444cf365a23d5d811d79a1046e11}
+Holds a texture that contains all the U\+S-\/\+A\+S\+C\+I\+I visible glyphs of a particular font rendered with a particular character height. There are also all necessary information to compute the vertex and texture coordinates for each character. We store a pointer here as this type is not required to be known in order to use the text engine. \hypertarget{classTextEngine_a318576a75e542849a9a733c55823561e}{\index{Text\+Engine@{Text\+Engine}!m\+\_\+color\+Location@{m\+\_\+color\+Location}}
+\index{m\+\_\+color\+Location@{m\+\_\+color\+Location}!Text\+Engine@{Text\+Engine}}
+\subsubsection[{m\+\_\+color\+Location}]{\setlength{\rightskip}{0pt plus 5cm}int Text\+Engine\+::m\+\_\+color\+Location\hspace{0.3cm}{\ttfamily [private]}}}\label{classTextEngine_a318576a75e542849a9a733c55823561e}
+Where to send the text color on the G\+P\+U to be used by the shader program. \hypertarget{classTextEngine_a00abe5f39d00bc436937ab283e585f3f}{\index{Text\+Engine@{Text\+Engine}!m\+\_\+program@{m\+\_\+program}}
+\index{m\+\_\+program@{m\+\_\+program}!Text\+Engine@{Text\+Engine}}
+\subsubsection[{m\+\_\+program}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shader\+Program} Text\+Engine\+::m\+\_\+program\hspace{0.3cm}{\ttfamily [private]}}}\label{classTextEngine_a00abe5f39d00bc436937ab283e585f3f}
+Process the vertices and a texture to display a text on the screen. \hypertarget{classTextEngine_af7f6f9d9abc900fa5383999f115e24ae}{\index{Text\+Engine@{Text\+Engine}!m\+\_\+projection@{m\+\_\+projection}}
+\index{m\+\_\+projection@{m\+\_\+projection}!Text\+Engine@{Text\+Engine}}
+\subsubsection[{m\+\_\+projection}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Text\+Engine\+::m\+\_\+projection\hspace{0.3cm}{\ttfamily [private]}}}\label{classTextEngine_af7f6f9d9abc900fa5383999f115e24ae}
+How to project pixel coordinates onto the screen. \hypertarget{classTextEngine_ade64d7603bb434bf411aec352e9d8e50}{\index{Text\+Engine@{Text\+Engine}!m\+\_\+projection\+Location@{m\+\_\+projection\+Location}}
+\index{m\+\_\+projection\+Location@{m\+\_\+projection\+Location}!Text\+Engine@{Text\+Engine}}
+\subsubsection[{m\+\_\+projection\+Location}]{\setlength{\rightskip}{0pt plus 5cm}int Text\+Engine\+::m\+\_\+projection\+Location\hspace{0.3cm}{\ttfamily [private]}}}\label{classTextEngine_ade64d7603bb434bf411aec352e9d8e50}
+Where to send the values of the projection matrix on the G\+P\+U to be used by the shader program. \hypertarget{classTextEngine_afa7486707c1a18c2bf83ffaa93564bff}{\index{Text\+Engine@{Text\+Engine}!m\+\_\+sampler\+Location@{m\+\_\+sampler\+Location}}
+\index{m\+\_\+sampler\+Location@{m\+\_\+sampler\+Location}!Text\+Engine@{Text\+Engine}}
+\subsubsection[{m\+\_\+sampler\+Location}]{\setlength{\rightskip}{0pt plus 5cm}int Text\+Engine\+::m\+\_\+sampler\+Location\hspace{0.3cm}{\ttfamily [private]}}}\label{classTextEngine_afa7486707c1a18c2bf83ffaa93564bff}
+Where to send the texture unit number on the G\+P\+U to be used by the shader program. \hypertarget{classTextEngine_ab64d559d7eb3fed8228c43c919c0cc42}{\index{Text\+Engine@{Text\+Engine}!m\+\_\+vbo\+Vertices@{m\+\_\+vbo\+Vertices}}
+\index{m\+\_\+vbo\+Vertices@{m\+\_\+vbo\+Vertices}!Text\+Engine@{Text\+Engine}}
+\subsubsection[{m\+\_\+vbo\+Vertices}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Text\+Engine\+::m\+\_\+vbo\+Vertices\hspace{0.3cm}{\ttfamily [private]}}}\label{classTextEngine_ab64d559d7eb3fed8228c43c919c0cc42}
+Name of the buffer containing the vertex info \hypertarget{classTextEngine_a5172679b8715801cf0c3247366238d57}{\index{Text\+Engine@{Text\+Engine}!m\+\_\+vertex\+Location@{m\+\_\+vertex\+Location}}
+\index{m\+\_\+vertex\+Location@{m\+\_\+vertex\+Location}!Text\+Engine@{Text\+Engine}}
+\subsubsection[{m\+\_\+vertex\+Location}]{\setlength{\rightskip}{0pt plus 5cm}int Text\+Engine\+::m\+\_\+vertex\+Location\hspace{0.3cm}{\ttfamily [private]}}}\label{classTextEngine_a5172679b8715801cf0c3247366238d57}
+Where to bind the vertex info V\+B\+O on the G\+P\+U to be used by the shader program. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{TextEngine_8hpp}{Text\+Engine.\+hpp}\end{DoxyCompactItemize}

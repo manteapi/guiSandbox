@@ -1,0 +1,68 @@
+\hypertarget{gl__helper_8hpp}{\section{/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/gl\+\_\+helper.hpp File Reference}
+\label{gl__helper_8hpp}\index{/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/gl\+\_\+helper.\+hpp@{/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/gl\+\_\+helper.\+hpp}}
+}
+
+
+Helper functions to use Open\+G\+L.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{gl__helper_8hpp_a97e2a22124f88eb48ef309b39938ea53}{glcheck}(call)~call;
+\begin{DoxyCompactList}\small\item\em This macro should be used for A\+L\+L G\+L A\+P\+I calls! \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{gl__helper_8hpp_a926d489e2a199a391dd0e01c4396c506}{check\+\_\+previous\+\_\+gl\+\_\+errors} ()
+\begin{DoxyCompactList}\small\item\em Check if previous G\+L A\+P\+I calls produced errors. \end{DoxyCompactList}\item 
+void \hyperlink{gl__helper_8hpp_afeca71458af3ea3bc1cb949f2530d00b}{check\+\_\+gl\+\_\+error} (const char $\ast$call, const char $\ast$file, const int line)
+\begin{DoxyCompactList}\small\item\em Check if a G\+L A\+P\+I call produce errors and place them in the log. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file groups helper functions to use Open\+G\+L. Apart from the \hyperlink{gl__helper_8hpp_a97e2a22124f88eb48ef309b39938ea53}{glcheck()} macro, you are not supposed to directly call any other function of this file. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{gl__helper_8hpp_a97e2a22124f88eb48ef309b39938ea53}{\index{gl\+\_\+helper.\+hpp@{gl\+\_\+helper.\+hpp}!glcheck@{glcheck}}
+\index{glcheck@{glcheck}!gl\+\_\+helper.\+hpp@{gl\+\_\+helper.\+hpp}}
+\subsubsection[{glcheck}]{\setlength{\rightskip}{0pt plus 5cm}\#define glcheck(
+\begin{DoxyParamCaption}
+\item[{}]{call}
+\end{DoxyParamCaption}
+)~call;}}\label{gl__helper_8hpp_a97e2a22124f88eb48ef309b39938ea53}
+Open\+G\+L command can fail either because the state is not coherent with what you are trying to do or because you sent wrong parameters to a command. In both case, the failure will be silent\+: no exception is thrown, no log entry is created, you would just have unexpected results on screen. In order to ease the debugging process, we provide a macro that should be used for E\+V\+E\+R\+Y open\+G\+L command\+:
+
+
+\begin{DoxyCode}
+\hyperlink{gl__helper_8hpp_a97e2a22124f88eb48ef309b39938ea53}{glcheck}(glBindBuffer(GL\_ARRAY\_BUFFER, m\_pBuffer));
+\hyperlink{gl__helper_8hpp_a97e2a22124f88eb48ef309b39938ea53}{glcheck}(glVertexAttribPointer(positionLocation, 3, GL\_FLOAT, GL\_FALSE, 0, (\textcolor{keywordtype}{void}*)0));
+\hyperlink{gl__helper_8hpp_a97e2a22124f88eb48ef309b39938ea53}{glcheck}(glDrawArrays(GL\_TRIANGLES,0, m\_positions.size()));
+\end{DoxyCode}
+
+
+If an error occurred before the command wrapped in the \hyperlink{gl__helper_8hpp_a97e2a22124f88eb48ef309b39938ea53}{glcheck()} macro, it is reported in the log. In this case, the log entry is not really informative as we do not know after which command any previous error occurred. The macro then executes the command and check for any error. If the command leads to an error, it would be seen in the log, with the command that failed, the error returned, the place in the source code that called this command.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{log_8hpp_aa8cbcaf2958f38d3d632364f8e228837}{L\+O\+G()}
+\end{DoxySeeAlso}
+The use of this macro creates some runtime overhead. This is why it does nothing when the source code is compiled in release mode. Be sure to compile in debug mode (have the variable C\+M\+A\+K\+E\+\_\+\+B\+U\+I\+L\+D\+\_\+\+T\+Y\+P\+E set to Debug in the C\+Make\+Lists.\+txt) if you want to track down a bug. 
+
+\subsection{Function Documentation}
+\hypertarget{gl__helper_8hpp_afeca71458af3ea3bc1cb949f2530d00b}{\index{gl\+\_\+helper.\+hpp@{gl\+\_\+helper.\+hpp}!check\+\_\+gl\+\_\+error@{check\+\_\+gl\+\_\+error}}
+\index{check\+\_\+gl\+\_\+error@{check\+\_\+gl\+\_\+error}!gl\+\_\+helper.\+hpp@{gl\+\_\+helper.\+hpp}}
+\subsubsection[{check\+\_\+gl\+\_\+error}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+gl\+\_\+error (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{call, }
+\item[{const char $\ast$}]{file, }
+\item[{const int}]{line}
+\end{DoxyParamCaption}
+)}}\label{gl__helper_8hpp_afeca71458af3ea3bc1cb949f2530d00b}
+\hypertarget{gl__helper_8hpp_a926d489e2a199a391dd0e01c4396c506}{\index{gl\+\_\+helper.\+hpp@{gl\+\_\+helper.\+hpp}!check\+\_\+previous\+\_\+gl\+\_\+errors@{check\+\_\+previous\+\_\+gl\+\_\+errors}}
+\index{check\+\_\+previous\+\_\+gl\+\_\+errors@{check\+\_\+previous\+\_\+gl\+\_\+errors}!gl\+\_\+helper.\+hpp@{gl\+\_\+helper.\+hpp}}
+\subsubsection[{check\+\_\+previous\+\_\+gl\+\_\+errors}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+previous\+\_\+gl\+\_\+errors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{gl__helper_8hpp_a926d489e2a199a391dd0e01c4396c506}
+Look if there are previous open\+G\+L error on the error stack. If you use the macro \hyperlink{gl__helper_8hpp_a97e2a22124f88eb48ef309b39938ea53}{glcheck()} for all your G\+L A\+P\+I calls, this function would be useless \+:-\/\}. 

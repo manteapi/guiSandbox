@@ -1,0 +1,146 @@
+\hypertarget{classControlledForceFieldStatus}{\section{Controlled\+Force\+Field\+Status Class Reference}
+\label{classControlledForceFieldStatus}\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+}
+
+
+Status of a Controlled\+Force\+Field.  
+
+
+
+
+{\ttfamily \#include $<$Controlled\+Force\+Field\+Renderable.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classControlledForceFieldStatus_a67a89815a34681965fe5504fb48cae3f}{Controlled\+Force\+Field\+Status} ()
+\item 
+\hyperlink{classControlledForceFieldStatus_aa7daabfb1a302e8b7c16ef8021dc5990}{Controlled\+Force\+Field\+Status} (const glm\+::vec3 \&initial\+\_\+direction)
+\item 
+\hyperlink{classControlledForceFieldStatus_a73042e26b762984a429d66c46e76a1a2}{$\sim$\+Controlled\+Force\+Field\+Status} ()
+\item 
+void \hyperlink{classControlledForceFieldStatus_aaf77c94767cdcc4d7a1dffc8e29aae0d}{clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \hyperlink{classControlledForceFieldStatus_a63741169b32d451bd5f762c0e231ddcb}{initial}
+\item 
+glm\+::vec3 \hyperlink{classControlledForceFieldStatus_a961d41a96e1bd8a8bf19faddc7b07c3a}{movement}
+\item 
+float \hyperlink{classControlledForceFieldStatus_a1772468acae1db08a86a150ee4ab48c0}{angle}
+\item 
+float \hyperlink{classControlledForceFieldStatus_a68f621972d3ded5b89e30c8ecc12e7eb}{last\+\_\+time}
+\item 
+float \hyperlink{classControlledForceFieldStatus_a46edb7caa199a4cf2f19a129477ae920}{intensity}
+\item 
+float \hyperlink{classControlledForceFieldStatus_a1298575a12c041b608aaffff739e06ad}{min\+\_\+intensity}
+\item 
+float \hyperlink{classControlledForceFieldStatus_a444473cc468c9c055d54bf8943cae37e}{max\+\_\+intensity}
+\item 
+float \hyperlink{classControlledForceFieldStatus_a0e85c59573f035a73f6bd7ed30084ce9}{acceleration}
+\item 
+float \hyperlink{classControlledForceFieldStatus_a5c336e07e3a2e8e5acb3a887b5c7caa0}{deacceleration}
+\item 
+float \hyperlink{classControlledForceFieldStatus_a77d841f1237d17581c85d735955dfa01}{angular\+Speed}
+\item 
+float \hyperlink{classControlledForceFieldStatus_a782ddea830ffefe6ba0cdb405faa39bb}{damping\+Factor}
+\item 
+bool \hyperlink{classControlledForceFieldStatus_af624f63e549384cd8442991f8f9d090b}{accelerating}
+\item 
+bool \hyperlink{classControlledForceFieldStatus_a694b72d42f0b95525da6ccdedfc19975}{deaccelerating}
+\item 
+bool \hyperlink{classControlledForceFieldStatus_a264806403b30bbd69d4df3da794a43c5}{turning\+\_\+left}
+\item 
+bool \hyperlink{classControlledForceFieldStatus_abc4f6de46a552f7ca74c47a2c6e10c5e}{turning\+\_\+right}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This status holds important variables that are used to control a force field thanks to user inputs. You can (and should) adapt this class and its default value to the kind of behavior you want in your project. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classControlledForceFieldStatus_a67a89815a34681965fe5504fb48cae3f}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{Controlled\+Force\+Field\+Status}]{\setlength{\rightskip}{0pt plus 5cm}Controlled\+Force\+Field\+Status\+::\+Controlled\+Force\+Field\+Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classControlledForceFieldStatus_a67a89815a34681965fe5504fb48cae3f}
+\hypertarget{classControlledForceFieldStatus_aa7daabfb1a302e8b7c16ef8021dc5990}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{Controlled\+Force\+Field\+Status}]{\setlength{\rightskip}{0pt plus 5cm}Controlled\+Force\+Field\+Status\+::\+Controlled\+Force\+Field\+Status (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{initial\+\_\+direction}
+\end{DoxyParamCaption}
+)}}\label{classControlledForceFieldStatus_aa7daabfb1a302e8b7c16ef8021dc5990}
+\hypertarget{classControlledForceFieldStatus_a73042e26b762984a429d66c46e76a1a2}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!````~Controlled\+Force\+Field\+Status@{$\sim$\+Controlled\+Force\+Field\+Status}}
+\index{````~Controlled\+Force\+Field\+Status@{$\sim$\+Controlled\+Force\+Field\+Status}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{$\sim$\+Controlled\+Force\+Field\+Status}]{\setlength{\rightskip}{0pt plus 5cm}Controlled\+Force\+Field\+Status\+::$\sim$\+Controlled\+Force\+Field\+Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classControlledForceFieldStatus_a73042e26b762984a429d66c46e76a1a2}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classControlledForceFieldStatus_aaf77c94767cdcc4d7a1dffc8e29aae0d}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!clear@{clear}}
+\index{clear@{clear}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Controlled\+Force\+Field\+Status\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classControlledForceFieldStatus_aaf77c94767cdcc4d7a1dffc8e29aae0d}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classControlledForceFieldStatus_af624f63e549384cd8442991f8f9d090b}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!accelerating@{accelerating}}
+\index{accelerating@{accelerating}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{accelerating}]{\setlength{\rightskip}{0pt plus 5cm}bool Controlled\+Force\+Field\+Status\+::accelerating}}\label{classControlledForceFieldStatus_af624f63e549384cd8442991f8f9d090b}
+\hypertarget{classControlledForceFieldStatus_a0e85c59573f035a73f6bd7ed30084ce9}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{acceleration}]{\setlength{\rightskip}{0pt plus 5cm}float Controlled\+Force\+Field\+Status\+::acceleration}}\label{classControlledForceFieldStatus_a0e85c59573f035a73f6bd7ed30084ce9}
+\hypertarget{classControlledForceFieldStatus_a1772468acae1db08a86a150ee4ab48c0}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!angle@{angle}}
+\index{angle@{angle}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{angle}]{\setlength{\rightskip}{0pt plus 5cm}float Controlled\+Force\+Field\+Status\+::angle}}\label{classControlledForceFieldStatus_a1772468acae1db08a86a150ee4ab48c0}
+\hypertarget{classControlledForceFieldStatus_a77d841f1237d17581c85d735955dfa01}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!angular\+Speed@{angular\+Speed}}
+\index{angular\+Speed@{angular\+Speed}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{angular\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}float Controlled\+Force\+Field\+Status\+::angular\+Speed}}\label{classControlledForceFieldStatus_a77d841f1237d17581c85d735955dfa01}
+\hypertarget{classControlledForceFieldStatus_a782ddea830ffefe6ba0cdb405faa39bb}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!damping\+Factor@{damping\+Factor}}
+\index{damping\+Factor@{damping\+Factor}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{damping\+Factor}]{\setlength{\rightskip}{0pt plus 5cm}float Controlled\+Force\+Field\+Status\+::damping\+Factor}}\label{classControlledForceFieldStatus_a782ddea830ffefe6ba0cdb405faa39bb}
+\hypertarget{classControlledForceFieldStatus_a694b72d42f0b95525da6ccdedfc19975}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!deaccelerating@{deaccelerating}}
+\index{deaccelerating@{deaccelerating}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{deaccelerating}]{\setlength{\rightskip}{0pt plus 5cm}bool Controlled\+Force\+Field\+Status\+::deaccelerating}}\label{classControlledForceFieldStatus_a694b72d42f0b95525da6ccdedfc19975}
+\hypertarget{classControlledForceFieldStatus_a5c336e07e3a2e8e5acb3a887b5c7caa0}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!deacceleration@{deacceleration}}
+\index{deacceleration@{deacceleration}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{deacceleration}]{\setlength{\rightskip}{0pt plus 5cm}float Controlled\+Force\+Field\+Status\+::deacceleration}}\label{classControlledForceFieldStatus_a5c336e07e3a2e8e5acb3a887b5c7caa0}
+\hypertarget{classControlledForceFieldStatus_a63741169b32d451bd5f762c0e231ddcb}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!initial@{initial}}
+\index{initial@{initial}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{initial}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Controlled\+Force\+Field\+Status\+::initial}}\label{classControlledForceFieldStatus_a63741169b32d451bd5f762c0e231ddcb}
+\hypertarget{classControlledForceFieldStatus_a46edb7caa199a4cf2f19a129477ae920}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!intensity@{intensity}}
+\index{intensity@{intensity}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{intensity}]{\setlength{\rightskip}{0pt plus 5cm}float Controlled\+Force\+Field\+Status\+::intensity}}\label{classControlledForceFieldStatus_a46edb7caa199a4cf2f19a129477ae920}
+\hypertarget{classControlledForceFieldStatus_a68f621972d3ded5b89e30c8ecc12e7eb}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!last\+\_\+time@{last\+\_\+time}}
+\index{last\+\_\+time@{last\+\_\+time}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{last\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}float Controlled\+Force\+Field\+Status\+::last\+\_\+time}}\label{classControlledForceFieldStatus_a68f621972d3ded5b89e30c8ecc12e7eb}
+\hypertarget{classControlledForceFieldStatus_a444473cc468c9c055d54bf8943cae37e}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!max\+\_\+intensity@{max\+\_\+intensity}}
+\index{max\+\_\+intensity@{max\+\_\+intensity}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{max\+\_\+intensity}]{\setlength{\rightskip}{0pt plus 5cm}float Controlled\+Force\+Field\+Status\+::max\+\_\+intensity}}\label{classControlledForceFieldStatus_a444473cc468c9c055d54bf8943cae37e}
+\hypertarget{classControlledForceFieldStatus_a1298575a12c041b608aaffff739e06ad}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!min\+\_\+intensity@{min\+\_\+intensity}}
+\index{min\+\_\+intensity@{min\+\_\+intensity}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{min\+\_\+intensity}]{\setlength{\rightskip}{0pt plus 5cm}float Controlled\+Force\+Field\+Status\+::min\+\_\+intensity}}\label{classControlledForceFieldStatus_a1298575a12c041b608aaffff739e06ad}
+\hypertarget{classControlledForceFieldStatus_a961d41a96e1bd8a8bf19faddc7b07c3a}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!movement@{movement}}
+\index{movement@{movement}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{movement}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Controlled\+Force\+Field\+Status\+::movement}}\label{classControlledForceFieldStatus_a961d41a96e1bd8a8bf19faddc7b07c3a}
+\hypertarget{classControlledForceFieldStatus_a264806403b30bbd69d4df3da794a43c5}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!turning\+\_\+left@{turning\+\_\+left}}
+\index{turning\+\_\+left@{turning\+\_\+left}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{turning\+\_\+left}]{\setlength{\rightskip}{0pt plus 5cm}bool Controlled\+Force\+Field\+Status\+::turning\+\_\+left}}\label{classControlledForceFieldStatus_a264806403b30bbd69d4df3da794a43c5}
+\hypertarget{classControlledForceFieldStatus_abc4f6de46a552f7ca74c47a2c6e10c5e}{\index{Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}!turning\+\_\+right@{turning\+\_\+right}}
+\index{turning\+\_\+right@{turning\+\_\+right}!Controlled\+Force\+Field\+Status@{Controlled\+Force\+Field\+Status}}
+\subsubsection[{turning\+\_\+right}]{\setlength{\rightskip}{0pt plus 5cm}bool Controlled\+Force\+Field\+Status\+::turning\+\_\+right}}\label{classControlledForceFieldStatus_abc4f6de46a552f7ca74c47a2c6e10c5e}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{ControlledForceFieldRenderable_8hpp}{Controlled\+Force\+Field\+Renderable.\+hpp}\end{DoxyCompactItemize}

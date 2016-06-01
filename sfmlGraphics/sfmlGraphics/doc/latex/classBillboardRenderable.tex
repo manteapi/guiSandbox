@@ -1,0 +1,154 @@
+\hypertarget{classBillboardRenderable}{\section{Billboard\+Renderable Class Reference}
+\label{classBillboardRenderable}\index{Billboard\+Renderable@{Billboard\+Renderable}}
+}
+
+
+{\ttfamily \#include $<$Billboard\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Billboard\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classBillboardRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Billboard\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBillboardRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBillboardRenderable_aa72988fabee4a462c6390625c664e79b}{Billboard\+Renderable} (const glm\+::vec3 \&world\+Position, const glm\+::vec2 \&world\+Dimension, \hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} shader\+Program)
+\item 
+\hyperlink{classBillboardRenderable_a8f1ddb55c695fbc5d7a45f564932b328}{$\sim$\+Billboard\+Renderable} ()
+\item 
+void \hyperlink{classBillboardRenderable_a204c04b9ca009d0454a8ab8f6c19fbff}{set\+Position} (const glm\+::vec3 \&world\+Position)
+\item 
+void \hyperlink{classBillboardRenderable_a071366e85212a146bc43f64e9aa1fb5a}{set\+Dimension} (const glm\+::vec2 \&world\+Dimension)
+\item 
+const glm\+::vec3 \& \hyperlink{classBillboardRenderable_a981ea0b8383e18171fc56b3a1fa3c292}{get\+Position} () const 
+\item 
+const glm\+::vec2 \& \hyperlink{classBillboardRenderable_a2f6885a6285d6e5e8224901fa4d14cf8}{get\+Dimension} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classBillboardRenderable_af3c5c220c558b0902acbbb5dd3f81174}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classBillboardRenderable_a99db8d2221571aed576e2f1e56ddc00e}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \hyperlink{classBillboardRenderable_aa0477db068d4c9a67aaa9031871ae8e4}{m\+\_\+position}
+\item 
+glm\+::vec2 \hyperlink{classBillboardRenderable_a69542c4170487272fea0bf0e207ca376}{m\+\_\+dimension}
+\item 
+bool \hyperlink{classBillboardRenderable_a9f034ff978eb852437ffa91cfcdc9b6e}{m\+\_\+with\+\_\+flower}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A billboard can be more easily rendered thanks to a geometry shader. However, the geometry stage is outside the scope of the lessons. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classBillboardRenderable_aa72988fabee4a462c6390625c664e79b}{\index{Billboard\+Renderable@{Billboard\+Renderable}!Billboard\+Renderable@{Billboard\+Renderable}}
+\index{Billboard\+Renderable@{Billboard\+Renderable}!Billboard\+Renderable@{Billboard\+Renderable}}
+\subsubsection[{Billboard\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Billboard\+Renderable\+::\+Billboard\+Renderable (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{world\+Position, }
+\item[{const glm\+::vec2 \&}]{world\+Dimension, }
+\item[{{\bf Shader\+Program\+Ptr}}]{shader\+Program}
+\end{DoxyParamCaption}
+)}}\label{classBillboardRenderable_aa72988fabee4a462c6390625c664e79b}
+\hypertarget{classBillboardRenderable_a8f1ddb55c695fbc5d7a45f564932b328}{\index{Billboard\+Renderable@{Billboard\+Renderable}!````~Billboard\+Renderable@{$\sim$\+Billboard\+Renderable}}
+\index{````~Billboard\+Renderable@{$\sim$\+Billboard\+Renderable}!Billboard\+Renderable@{Billboard\+Renderable}}
+\subsubsection[{$\sim$\+Billboard\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Billboard\+Renderable\+::$\sim$\+Billboard\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBillboardRenderable_a8f1ddb55c695fbc5d7a45f564932b328}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classBillboardRenderable_a99db8d2221571aed576e2f1e56ddc00e}{\index{Billboard\+Renderable@{Billboard\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Billboard\+Renderable@{Billboard\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Billboard\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classBillboardRenderable_a99db8d2221571aed576e2f1e56ddc00e}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classBillboardRenderable_af3c5c220c558b0902acbbb5dd3f81174}{\index{Billboard\+Renderable@{Billboard\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Billboard\+Renderable@{Billboard\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Billboard\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classBillboardRenderable_af3c5c220c558b0902acbbb5dd3f81174}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+\hypertarget{classBillboardRenderable_a2f6885a6285d6e5e8224901fa4d14cf8}{\index{Billboard\+Renderable@{Billboard\+Renderable}!get\+Dimension@{get\+Dimension}}
+\index{get\+Dimension@{get\+Dimension}!Billboard\+Renderable@{Billboard\+Renderable}}
+\subsubsection[{get\+Dimension}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec2\& Billboard\+Renderable\+::get\+Dimension (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classBillboardRenderable_a2f6885a6285d6e5e8224901fa4d14cf8}
+\hypertarget{classBillboardRenderable_a981ea0b8383e18171fc56b3a1fa3c292}{\index{Billboard\+Renderable@{Billboard\+Renderable}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Billboard\+Renderable@{Billboard\+Renderable}}
+\subsubsection[{get\+Position}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Billboard\+Renderable\+::get\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classBillboardRenderable_a981ea0b8383e18171fc56b3a1fa3c292}
+\hypertarget{classBillboardRenderable_a071366e85212a146bc43f64e9aa1fb5a}{\index{Billboard\+Renderable@{Billboard\+Renderable}!set\+Dimension@{set\+Dimension}}
+\index{set\+Dimension@{set\+Dimension}!Billboard\+Renderable@{Billboard\+Renderable}}
+\subsubsection[{set\+Dimension}]{\setlength{\rightskip}{0pt plus 5cm}void Billboard\+Renderable\+::set\+Dimension (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec2 \&}]{world\+Dimension}
+\end{DoxyParamCaption}
+)}}\label{classBillboardRenderable_a071366e85212a146bc43f64e9aa1fb5a}
+\hypertarget{classBillboardRenderable_a204c04b9ca009d0454a8ab8f6c19fbff}{\index{Billboard\+Renderable@{Billboard\+Renderable}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Billboard\+Renderable@{Billboard\+Renderable}}
+\subsubsection[{set\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Billboard\+Renderable\+::set\+Position (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{world\+Position}
+\end{DoxyParamCaption}
+)}}\label{classBillboardRenderable_a204c04b9ca009d0454a8ab8f6c19fbff}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classBillboardRenderable_a69542c4170487272fea0bf0e207ca376}{\index{Billboard\+Renderable@{Billboard\+Renderable}!m\+\_\+dimension@{m\+\_\+dimension}}
+\index{m\+\_\+dimension@{m\+\_\+dimension}!Billboard\+Renderable@{Billboard\+Renderable}}
+\subsubsection[{m\+\_\+dimension}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec2 Billboard\+Renderable\+::m\+\_\+dimension\hspace{0.3cm}{\ttfamily [private]}}}\label{classBillboardRenderable_a69542c4170487272fea0bf0e207ca376}
+\hypertarget{classBillboardRenderable_aa0477db068d4c9a67aaa9031871ae8e4}{\index{Billboard\+Renderable@{Billboard\+Renderable}!m\+\_\+position@{m\+\_\+position}}
+\index{m\+\_\+position@{m\+\_\+position}!Billboard\+Renderable@{Billboard\+Renderable}}
+\subsubsection[{m\+\_\+position}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Billboard\+Renderable\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}}\label{classBillboardRenderable_aa0477db068d4c9a67aaa9031871ae8e4}
+\hypertarget{classBillboardRenderable_a9f034ff978eb852437ffa91cfcdc9b6e}{\index{Billboard\+Renderable@{Billboard\+Renderable}!m\+\_\+with\+\_\+flower@{m\+\_\+with\+\_\+flower}}
+\index{m\+\_\+with\+\_\+flower@{m\+\_\+with\+\_\+flower}!Billboard\+Renderable@{Billboard\+Renderable}}
+\subsubsection[{m\+\_\+with\+\_\+flower}]{\setlength{\rightskip}{0pt plus 5cm}bool Billboard\+Renderable\+::m\+\_\+with\+\_\+flower\hspace{0.3cm}{\ttfamily [private]}}}\label{classBillboardRenderable_a9f034ff978eb852437ffa91cfcdc9b6e}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/texturing/\hyperlink{BillboardRenderable_8hpp}{Billboard\+Renderable.\+hpp}\end{DoxyCompactItemize}

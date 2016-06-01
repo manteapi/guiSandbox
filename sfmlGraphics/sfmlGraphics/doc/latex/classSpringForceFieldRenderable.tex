@@ -1,0 +1,149 @@
+\hypertarget{classSpringForceFieldRenderable}{\section{Spring\+Force\+Field\+Renderable Class Reference}
+\label{classSpringForceFieldRenderable}\index{Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}}
+}
+
+
+Render a spring force field.  
+
+
+
+
+{\ttfamily \#include $<$Spring\+Force\+Field\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Spring\+Force\+Field\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classSpringForceFieldRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Spring\+Force\+Field\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSpringForceFieldRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSpringForceFieldRenderable_a65de920b7c1490ae0368aaab3e41b7eb}{$\sim$\+Spring\+Force\+Field\+Renderable} ()
+\item 
+\hyperlink{classSpringForceFieldRenderable_a5dbba98c6a98ce30ee663bb1569b049c}{Spring\+Force\+Field\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program, \hyperlink{SpringForceField_8hpp_a3f4fbe1af2c46f8804b45f804dacc708}{Spring\+Force\+Field\+Ptr} spring\+Force\+Field)
+\begin{DoxyCompactList}\small\item\em Build a renderable to render a spring. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSpringForceFieldRenderable_ad74386934bac1b650a973abeed2a9a33}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classSpringForceFieldRenderable_a7ddf9b99051f6a3bd0c4d1f215f4c2b6}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{SpringForceField_8hpp_a3f4fbe1af2c46f8804b45f804dacc708}{Spring\+Force\+Field\+Ptr} \hyperlink{classSpringForceFieldRenderable_aa19b3084a552a59ceebf51ed5be92ea6}{m\+\_\+spring\+Force\+Field}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classSpringForceFieldRenderable_a09d7a928050183560e66aec4cad6c616}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classSpringForceFieldRenderable_aabc44da4bf82b70a101dfffdd1ee2713}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classSpringForceFieldRenderable_a82d45ea9543e4308a909b2890ae7d9b0}{m\+\_\+normals}
+\item 
+unsigned int \hyperlink{classSpringForceFieldRenderable_aff6f71fa77becfdbc5a14b6ff2701e8c}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classSpringForceFieldRenderable_ac970d8fbdb56983f09680e3c505999f6}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classSpringForceFieldRenderable_ab52ba645d894920eba38ed71799d52e3}{m\+\_\+n\+Buffer}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Render a spring force field on screen, or, equivalently, a spring between two particles. If you have more than one spring to render, it could be more efficient to use the class \hyperlink{classSpringListRenderable}{Spring\+List\+Renderable}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSpringForceFieldRenderable_a65de920b7c1490ae0368aaab3e41b7eb}{\index{Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}!````~Spring\+Force\+Field\+Renderable@{$\sim$\+Spring\+Force\+Field\+Renderable}}
+\index{````~Spring\+Force\+Field\+Renderable@{$\sim$\+Spring\+Force\+Field\+Renderable}!Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}}
+\subsubsection[{$\sim$\+Spring\+Force\+Field\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Spring\+Force\+Field\+Renderable\+::$\sim$\+Spring\+Force\+Field\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSpringForceFieldRenderable_a65de920b7c1490ae0368aaab3e41b7eb}
+\hypertarget{classSpringForceFieldRenderable_a5dbba98c6a98ce30ee663bb1569b049c}{\index{Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}!Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}}
+\index{Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}!Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}}
+\subsubsection[{Spring\+Force\+Field\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Spring\+Force\+Field\+Renderable\+::\+Spring\+Force\+Field\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program, }
+\item[{{\bf Spring\+Force\+Field\+Ptr}}]{spring\+Force\+Field}
+\end{DoxyParamCaption}
+)}}\label{classSpringForceFieldRenderable_a5dbba98c6a98ce30ee663bb1569b049c}
+Build a new renderable to render a spring between two particles. 
+\begin{DoxyParams}{Parameters}
+{\em program} & The shader program used to render the spring. \\
+\hline
+{\em spring\+Force\+Field} & The force field to model the spring we want to render. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSpringForceFieldRenderable_a7ddf9b99051f6a3bd0c4d1f215f4c2b6}{\index{Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Spring\+Force\+Field\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classSpringForceFieldRenderable_a7ddf9b99051f6a3bd0c4d1f215f4c2b6}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classSpringForceFieldRenderable_ad74386934bac1b650a973abeed2a9a33}{\index{Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Spring\+Force\+Field\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classSpringForceFieldRenderable_ad74386934bac1b650a973abeed2a9a33}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSpringForceFieldRenderable_ac970d8fbdb56983f09680e3c505999f6}{\index{Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Spring\+Force\+Field\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringForceFieldRenderable_ac970d8fbdb56983f09680e3c505999f6}
+\hypertarget{classSpringForceFieldRenderable_aabc44da4bf82b70a101dfffdd1ee2713}{\index{Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Spring\+Force\+Field\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringForceFieldRenderable_aabc44da4bf82b70a101dfffdd1ee2713}
+\hypertarget{classSpringForceFieldRenderable_ab52ba645d894920eba38ed71799d52e3}{\index{Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Spring\+Force\+Field\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringForceFieldRenderable_ab52ba645d894920eba38ed71799d52e3}
+\hypertarget{classSpringForceFieldRenderable_a82d45ea9543e4308a909b2890ae7d9b0}{\index{Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Spring\+Force\+Field\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringForceFieldRenderable_a82d45ea9543e4308a909b2890ae7d9b0}
+\hypertarget{classSpringForceFieldRenderable_aff6f71fa77becfdbc5a14b6ff2701e8c}{\index{Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Spring\+Force\+Field\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringForceFieldRenderable_aff6f71fa77becfdbc5a14b6ff2701e8c}
+\hypertarget{classSpringForceFieldRenderable_a09d7a928050183560e66aec4cad6c616}{\index{Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Spring\+Force\+Field\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringForceFieldRenderable_a09d7a928050183560e66aec4cad6c616}
+\hypertarget{classSpringForceFieldRenderable_aa19b3084a552a59ceebf51ed5be92ea6}{\index{Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}!m\+\_\+spring\+Force\+Field@{m\+\_\+spring\+Force\+Field}}
+\index{m\+\_\+spring\+Force\+Field@{m\+\_\+spring\+Force\+Field}!Spring\+Force\+Field\+Renderable@{Spring\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+spring\+Force\+Field}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Spring\+Force\+Field\+Ptr} Spring\+Force\+Field\+Renderable\+::m\+\_\+spring\+Force\+Field\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringForceFieldRenderable_aa19b3084a552a59ceebf51ed5be92ea6}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{SpringForceFieldRenderable_8hpp}{Spring\+Force\+Field\+Renderable.\+hpp}\end{DoxyCompactItemize}

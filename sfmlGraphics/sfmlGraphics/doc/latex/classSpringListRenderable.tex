@@ -1,0 +1,149 @@
+\hypertarget{classSpringListRenderable}{\section{Spring\+List\+Renderable Class Reference}
+\label{classSpringListRenderable}\index{Spring\+List\+Renderable@{Spring\+List\+Renderable}}
+}
+
+
+Render a collection of springs.  
+
+
+
+
+{\ttfamily \#include $<$Spring\+List\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Spring\+List\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classSpringListRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Spring\+List\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSpringListRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSpringListRenderable_aca69606b94a00da8d8a1dedf9f3fe9f1}{$\sim$\+Spring\+List\+Renderable} ()
+\item 
+\hyperlink{classSpringListRenderable_ae453b5a8d045e491f00abff743a29942}{Spring\+List\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program, std\+::list$<$ \hyperlink{SpringForceField_8hpp_a3f4fbe1af2c46f8804b45f804dacc708}{Spring\+Force\+Field\+Ptr} $>$ \&spring\+Force\+Fields)
+\begin{DoxyCompactList}\small\item\em Build a renderable to render a list of springs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSpringListRenderable_a3188f3904567441c4578ebbbc1d4db92}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classSpringListRenderable_a32460ca63254ddaf716697b8402c8a37}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ \hyperlink{SpringForceField_8hpp_a3f4fbe1af2c46f8804b45f804dacc708}{Spring\+Force\+Field\+Ptr} $>$ \hyperlink{classSpringListRenderable_a82f97da2e2faf5652fcac1e3cd31a60e}{m\+\_\+spring\+Force\+Fields}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classSpringListRenderable_ad6c28805d7de299edb36f01e0b06208c}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classSpringListRenderable_ad040942c462bc6f263ed2fa179fc7567}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classSpringListRenderable_a63491699391194b90b3d2b4863cccf2e}{m\+\_\+normals}
+\item 
+unsigned int \hyperlink{classSpringListRenderable_af7d75796cec2e6642f04cbe419d2b65b}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classSpringListRenderable_a5f7e5d08fc94377d2dec95d0cc78cfe9}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classSpringListRenderable_a4159b0ea8821a34e3be6a0a338d95a3b}{m\+\_\+n\+Buffer}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Render a set of springs on screen. We could do much more here than just rendering a line between the centers of the two spring's particles. However, it is up to you to come with better idea \+:-\/). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSpringListRenderable_aca69606b94a00da8d8a1dedf9f3fe9f1}{\index{Spring\+List\+Renderable@{Spring\+List\+Renderable}!````~Spring\+List\+Renderable@{$\sim$\+Spring\+List\+Renderable}}
+\index{````~Spring\+List\+Renderable@{$\sim$\+Spring\+List\+Renderable}!Spring\+List\+Renderable@{Spring\+List\+Renderable}}
+\subsubsection[{$\sim$\+Spring\+List\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Spring\+List\+Renderable\+::$\sim$\+Spring\+List\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSpringListRenderable_aca69606b94a00da8d8a1dedf9f3fe9f1}
+\hypertarget{classSpringListRenderable_ae453b5a8d045e491f00abff743a29942}{\index{Spring\+List\+Renderable@{Spring\+List\+Renderable}!Spring\+List\+Renderable@{Spring\+List\+Renderable}}
+\index{Spring\+List\+Renderable@{Spring\+List\+Renderable}!Spring\+List\+Renderable@{Spring\+List\+Renderable}}
+\subsubsection[{Spring\+List\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Spring\+List\+Renderable\+::\+Spring\+List\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program, }
+\item[{std\+::list$<$ {\bf Spring\+Force\+Field\+Ptr} $>$ \&}]{spring\+Force\+Fields}
+\end{DoxyParamCaption}
+)}}\label{classSpringListRenderable_ae453b5a8d045e491f00abff743a29942}
+Build a new renderable to render a list of springs. 
+\begin{DoxyParams}{Parameters}
+{\em program} & The shader program used to render the springs. \\
+\hline
+{\em spring\+Force\+Fields} & The set of springs force fields that model the springs we want to render. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSpringListRenderable_a32460ca63254ddaf716697b8402c8a37}{\index{Spring\+List\+Renderable@{Spring\+List\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Spring\+List\+Renderable@{Spring\+List\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Spring\+List\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classSpringListRenderable_a32460ca63254ddaf716697b8402c8a37}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classSpringListRenderable_a3188f3904567441c4578ebbbc1d4db92}{\index{Spring\+List\+Renderable@{Spring\+List\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Spring\+List\+Renderable@{Spring\+List\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Spring\+List\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classSpringListRenderable_a3188f3904567441c4578ebbbc1d4db92}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSpringListRenderable_a5f7e5d08fc94377d2dec95d0cc78cfe9}{\index{Spring\+List\+Renderable@{Spring\+List\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Spring\+List\+Renderable@{Spring\+List\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Spring\+List\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringListRenderable_a5f7e5d08fc94377d2dec95d0cc78cfe9}
+\hypertarget{classSpringListRenderable_ad040942c462bc6f263ed2fa179fc7567}{\index{Spring\+List\+Renderable@{Spring\+List\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Spring\+List\+Renderable@{Spring\+List\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Spring\+List\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringListRenderable_ad040942c462bc6f263ed2fa179fc7567}
+\hypertarget{classSpringListRenderable_a4159b0ea8821a34e3be6a0a338d95a3b}{\index{Spring\+List\+Renderable@{Spring\+List\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Spring\+List\+Renderable@{Spring\+List\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Spring\+List\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringListRenderable_a4159b0ea8821a34e3be6a0a338d95a3b}
+\hypertarget{classSpringListRenderable_a63491699391194b90b3d2b4863cccf2e}{\index{Spring\+List\+Renderable@{Spring\+List\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Spring\+List\+Renderable@{Spring\+List\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Spring\+List\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringListRenderable_a63491699391194b90b3d2b4863cccf2e}
+\hypertarget{classSpringListRenderable_af7d75796cec2e6642f04cbe419d2b65b}{\index{Spring\+List\+Renderable@{Spring\+List\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Spring\+List\+Renderable@{Spring\+List\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Spring\+List\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringListRenderable_af7d75796cec2e6642f04cbe419d2b65b}
+\hypertarget{classSpringListRenderable_ad6c28805d7de299edb36f01e0b06208c}{\index{Spring\+List\+Renderable@{Spring\+List\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Spring\+List\+Renderable@{Spring\+List\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Spring\+List\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringListRenderable_ad6c28805d7de299edb36f01e0b06208c}
+\hypertarget{classSpringListRenderable_a82f97da2e2faf5652fcac1e3cd31a60e}{\index{Spring\+List\+Renderable@{Spring\+List\+Renderable}!m\+\_\+spring\+Force\+Fields@{m\+\_\+spring\+Force\+Fields}}
+\index{m\+\_\+spring\+Force\+Fields@{m\+\_\+spring\+Force\+Fields}!Spring\+List\+Renderable@{Spring\+List\+Renderable}}
+\subsubsection[{m\+\_\+spring\+Force\+Fields}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<${\bf Spring\+Force\+Field\+Ptr}$>$ Spring\+List\+Renderable\+::m\+\_\+spring\+Force\+Fields\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringListRenderable_a82f97da2e2faf5652fcac1e3cd31a60e}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{SpringListRenderable_8hpp}{Spring\+List\+Renderable.\+hpp}\end{DoxyCompactItemize}

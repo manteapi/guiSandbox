@@ -1,0 +1,161 @@
+\hypertarget{classDynamicSystemRenderable}{\section{Dynamic\+System\+Renderable Class Reference}
+\label{classDynamicSystemRenderable}\index{Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}}
+}
+
+
+A little hack to incorporate the dynamic system.  
+
+
+
+
+{\ttfamily \#include $<$Dynamic\+System\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Dynamic\+System\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classDynamicSystemRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dynamic\+System\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDynamicSystemRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDynamicSystemRenderable_a9d6411c143db28c2d623928ac98f6aec}{$\sim$\+Dynamic\+System\+Renderable} ()
+\item 
+\hyperlink{classDynamicSystemRenderable_ab29cba8d5166e9cd636481e0bf284302}{Dynamic\+System\+Renderable} (\hyperlink{DynamicSystem_8hpp_a682a5f32e97dba69e8a4e542ed98b419}{Dynamic\+System\+Ptr} system)
+\begin{DoxyCompactList}\small\item\em Build a dynamic system renderable. \end{DoxyCompactList}\item 
+void \hyperlink{classDynamicSystemRenderable_a700986b9410c1d4a0a6ece669967b7c0}{set\+Dynamic\+System} (const \hyperlink{DynamicSystem_8hpp_a682a5f32e97dba69e8a4e542ed98b419}{Dynamic\+System\+Ptr} \&system)
+\begin{DoxyCompactList}\small\item\em Change the managed dynamic system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDynamicSystemRenderable_a8064176726a5d4b857a5e6a0fc73ff29}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classDynamicSystemRenderable_acd30af04cdca7cdc68ae2d49c179d2dc}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Update the dynamic system. \end{DoxyCompactList}\item 
+void \hyperlink{classDynamicSystemRenderable_ac179f3ba1cc294589327e7cb569c50da}{do\+\_\+key\+Pressed\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle key pressed. \end{DoxyCompactList}\item 
+void \hyperlink{classDynamicSystemRenderable_ac074ccfc934f15607b4db103c2281a64}{do\+\_\+key\+Released\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Transmit a key released event to children. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{DynamicSystem_8hpp_a682a5f32e97dba69e8a4e542ed98b419}{Dynamic\+System\+Ptr} \hyperlink{classDynamicSystemRenderable_a49be4db93a0d7e1122278c9d0dac43f2}{m\+\_\+system}
+\begin{DoxyCompactList}\small\item\em Dynamic system managed by this renderable. \end{DoxyCompactList}\item 
+float \hyperlink{classDynamicSystemRenderable_a4f1e45c9b781ffc21b63dcf211991d10}{m\+\_\+last\+Update\+Time}
+\begin{DoxyCompactList}\small\item\em Last time the dynamic system was updated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class is mostly a hack we use to deal with the dynamic system components inside the framework. We could (should) do that differently, but this hack was considered to be simpler for the students to understand, since it reuse the concept of renderable. Moreover, since it is a hierarchical renderable, it is possible to define a dynamic system in a local frame and then use hierarchical geometric transformation to replace it correctly in the scene. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDynamicSystemRenderable_a9d6411c143db28c2d623928ac98f6aec}{\index{Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}!````~Dynamic\+System\+Renderable@{$\sim$\+Dynamic\+System\+Renderable}}
+\index{````~Dynamic\+System\+Renderable@{$\sim$\+Dynamic\+System\+Renderable}!Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}}
+\subsubsection[{$\sim$\+Dynamic\+System\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Dynamic\+System\+Renderable\+::$\sim$\+Dynamic\+System\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystemRenderable_a9d6411c143db28c2d623928ac98f6aec}
+\hypertarget{classDynamicSystemRenderable_ab29cba8d5166e9cd636481e0bf284302}{\index{Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}!Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}}
+\index{Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}!Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}}
+\subsubsection[{Dynamic\+System\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Dynamic\+System\+Renderable\+::\+Dynamic\+System\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Dynamic\+System\+Ptr}}]{system}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystemRenderable_ab29cba8d5166e9cd636481e0bf284302}
+Build a dynamic system renderable from a dynamic system. The dynamic system will them be updated by this renderable. It allows us also to interact with the dynamic system components thanks to user input events. 
+\begin{DoxyParams}{Parameters}
+{\em system} & The dynamic system to manage by this renderable. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDynamicSystemRenderable_acd30af04cdca7cdc68ae2d49c179d2dc}{\index{Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classDynamicSystemRenderable_acd30af04cdca7cdc68ae2d49c179d2dc}
+This function will update the managed dynamic system, i.\+e. compute the new positions and velocities of the particles. This update will be actually done only if the last time the system was updated was more than m\+\_\+sytem-\/$>$m\+\_\+dt ago. This allows us to update the dynamic system at the specified time interval. 
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classDynamicSystemRenderable_a8064176726a5d4b857a5e6a0fc73ff29}{\index{Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classDynamicSystemRenderable_a8064176726a5d4b857a5e6a0fc73ff29}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+\hypertarget{classDynamicSystemRenderable_ac179f3ba1cc294589327e7cb569c50da}{\index{Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}!do\+\_\+key\+Pressed\+Event@{do\+\_\+key\+Pressed\+Event}}
+\index{do\+\_\+key\+Pressed\+Event@{do\+\_\+key\+Pressed\+Event}!Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}}
+\subsubsection[{do\+\_\+key\+Pressed\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+Renderable\+::do\+\_\+key\+Pressed\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classDynamicSystemRenderable_ac179f3ba1cc294589327e7cb569c50da}
+If the key A is pressed, the collision detected is toggled. If the key T is pressed, particles are titled in random directions. If the key F5 is pressed, the particles are restarted. Other key pressed are transmitted to the children of this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em e} & A key pressed event. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classRenderable_a49e39be950dca7a925b8b79c13241e6b}{Renderable}.
+
+\hypertarget{classDynamicSystemRenderable_ac074ccfc934f15607b4db103c2281a64}{\index{Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}!do\+\_\+key\+Released\+Event@{do\+\_\+key\+Released\+Event}}
+\index{do\+\_\+key\+Released\+Event@{do\+\_\+key\+Released\+Event}!Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}}
+\subsubsection[{do\+\_\+key\+Released\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+Renderable\+::do\+\_\+key\+Released\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classDynamicSystemRenderable_ac074ccfc934f15607b4db103c2281a64}
+Transmit a key released event to the children of this renderable. 
+
+Reimplemented from \hyperlink{classRenderable_a89d4bacd849c3606529f92c44b0a3bc1}{Renderable}.
+
+\hypertarget{classDynamicSystemRenderable_a700986b9410c1d4a0a6ece669967b7c0}{\index{Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}!set\+Dynamic\+System@{set\+Dynamic\+System}}
+\index{set\+Dynamic\+System@{set\+Dynamic\+System}!Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}}
+\subsubsection[{set\+Dynamic\+System}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+Renderable\+::set\+Dynamic\+System (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dynamic\+System\+Ptr} \&}]{system}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystemRenderable_a700986b9410c1d4a0a6ece669967b7c0}
+Change the dynamic system that will be managed by this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em system} & The new dynamic system managed by this. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classDynamicSystemRenderable_a4f1e45c9b781ffc21b63dcf211991d10}{\index{Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}!m\+\_\+last\+Update\+Time@{m\+\_\+last\+Update\+Time}}
+\index{m\+\_\+last\+Update\+Time@{m\+\_\+last\+Update\+Time}!Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}}
+\subsubsection[{m\+\_\+last\+Update\+Time}]{\setlength{\rightskip}{0pt plus 5cm}float Dynamic\+System\+Renderable\+::m\+\_\+last\+Update\+Time\hspace{0.3cm}{\ttfamily [private]}}}\label{classDynamicSystemRenderable_a4f1e45c9b781ffc21b63dcf211991d10}
+Store the last time the dynamic system was updated. This is used to keep updating the dynamic system at the specified time interval. \hypertarget{classDynamicSystemRenderable_a49be4db93a0d7e1122278c9d0dac43f2}{\index{Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}!m\+\_\+system@{m\+\_\+system}}
+\index{m\+\_\+system@{m\+\_\+system}!Dynamic\+System\+Renderable@{Dynamic\+System\+Renderable}}
+\subsubsection[{m\+\_\+system}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dynamic\+System\+Ptr} Dynamic\+System\+Renderable\+::m\+\_\+system\hspace{0.3cm}{\ttfamily [private]}}}\label{classDynamicSystemRenderable_a49be4db93a0d7e1122278c9d0dac43f2}
+The dynamic system that is managed by this renderable, to compute the simulation steps and to handle use input events. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{DynamicSystemRenderable_8hpp}{Dynamic\+System\+Renderable.\+hpp}\end{DoxyCompactItemize}

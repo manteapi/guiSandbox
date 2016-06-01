@@ -1,0 +1,148 @@
+\hypertarget{classDampingForceField}{\section{Damping\+Force\+Field Class Reference}
+\label{classDampingForceField}\index{Damping\+Force\+Field@{Damping\+Force\+Field}}
+}
+
+
+Implement a damping force field.  
+
+
+
+
+{\ttfamily \#include $<$Damping\+Force\+Field.\+hpp$>$}
+
+
+
+Inheritance diagram for Damping\+Force\+Field\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classDampingForceField__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Damping\+Force\+Field\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classDampingForceField__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDampingForceField_ac12609d97690d02099acf10710d2bf3f}{Damping\+Force\+Field} (const std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ particles, const float damping)
+\begin{DoxyCompactList}\small\item\em Build a damping force field. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \hyperlink{classDampingForceField_ace8b8327d3dfd2d6cc58808e301c4542}{get\+Particles} ()
+\begin{DoxyCompactList}\small\item\em Access to the particles influenced by this force field. \end{DoxyCompactList}\item 
+void \hyperlink{classDampingForceField_a98de1771d2113b73112b602159bf7117}{set\+Particles} (const std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \&particles)
+\begin{DoxyCompactList}\small\item\em Define the set of particles influenced by this force field. \end{DoxyCompactList}\item 
+const float \& \hyperlink{classDampingForceField_a02f7ce65355038fa8c29526d4c63d631}{get\+Damping} ()
+\begin{DoxyCompactList}\small\item\em Access to the damping factor. \end{DoxyCompactList}\item 
+void \hyperlink{classDampingForceField_ae4f282bc01a1b517f76fa7782a70ff6c}{set\+Damping} (const float \&damping)
+\begin{DoxyCompactList}\small\item\em Set the damping factor of this force field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDampingForceField_a5677c09b83f6f2d13e70e40c08c4e85f}{do\+\_\+add\+Force} ()
+\begin{DoxyCompactList}\small\item\em Add force implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \hyperlink{classDampingForceField_acb55824075dc3dfca7c6d2a799d714fa}{m\+\_\+particles}
+\item 
+float \hyperlink{classDampingForceField_ad84c70d73d5704e9141be637e4d92498}{m\+\_\+damping}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class implement a force field that models a damping, i.\+e. a kinetic friction. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDampingForceField_ac12609d97690d02099acf10710d2bf3f}{\index{Damping\+Force\+Field@{Damping\+Force\+Field}!Damping\+Force\+Field@{Damping\+Force\+Field}}
+\index{Damping\+Force\+Field@{Damping\+Force\+Field}!Damping\+Force\+Field@{Damping\+Force\+Field}}
+\subsubsection[{Damping\+Force\+Field}]{\setlength{\rightskip}{0pt plus 5cm}Damping\+Force\+Field\+::\+Damping\+Force\+Field (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf Particle\+Ptr} $>$}]{particles, }
+\item[{const float}]{damping}
+\end{DoxyParamCaption}
+)}}\label{classDampingForceField_ac12609d97690d02099acf10710d2bf3f}
+Build a damping force applied to a set of particles. The force added to a particle of velocity v is -\/damping $\ast$ v. 
+\begin{DoxyParams}{Parameters}
+{\em particles} & Set of particles influenced by this damping force. \\
+\hline
+{\em damping} & Damping coefficient. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDampingForceField_a5677c09b83f6f2d13e70e40c08c4e85f}{\index{Damping\+Force\+Field@{Damping\+Force\+Field}!do\+\_\+add\+Force@{do\+\_\+add\+Force}}
+\index{do\+\_\+add\+Force@{do\+\_\+add\+Force}!Damping\+Force\+Field@{Damping\+Force\+Field}}
+\subsubsection[{do\+\_\+add\+Force}]{\setlength{\rightskip}{0pt plus 5cm}void Damping\+Force\+Field\+::do\+\_\+add\+Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classDampingForceField_a5677c09b83f6f2d13e70e40c08c4e85f}
+The actual implementation to add force to the particles. This should be implemented in derived classes. 
+
+Implements \hyperlink{classForceField_a2f44520a00188a3aaeb04e667e8d2673}{Force\+Field}.
+
+\hypertarget{classDampingForceField_a02f7ce65355038fa8c29526d4c63d631}{\index{Damping\+Force\+Field@{Damping\+Force\+Field}!get\+Damping@{get\+Damping}}
+\index{get\+Damping@{get\+Damping}!Damping\+Force\+Field@{Damping\+Force\+Field}}
+\subsubsection[{get\+Damping}]{\setlength{\rightskip}{0pt plus 5cm}const float\& Damping\+Force\+Field\+::get\+Damping (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDampingForceField_a02f7ce65355038fa8c29526d4c63d631}
+Get the damping factor of this force field. \begin{DoxyReturn}{Returns}
+The damping factor of this. 
+\end{DoxyReturn}
+\hypertarget{classDampingForceField_ace8b8327d3dfd2d6cc58808e301c4542}{\index{Damping\+Force\+Field@{Damping\+Force\+Field}!get\+Particles@{get\+Particles}}
+\index{get\+Particles@{get\+Particles}!Damping\+Force\+Field@{Damping\+Force\+Field}}
+\subsubsection[{get\+Particles}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<${\bf Particle\+Ptr}$>$ Damping\+Force\+Field\+::get\+Particles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDampingForceField_ace8b8327d3dfd2d6cc58808e301c4542}
+Get the particles influenced by this damping force field. \begin{DoxyReturn}{Returns}
+The set of particles influenced by this. 
+\end{DoxyReturn}
+\hypertarget{classDampingForceField_ae4f282bc01a1b517f76fa7782a70ff6c}{\index{Damping\+Force\+Field@{Damping\+Force\+Field}!set\+Damping@{set\+Damping}}
+\index{set\+Damping@{set\+Damping}!Damping\+Force\+Field@{Damping\+Force\+Field}}
+\subsubsection[{set\+Damping}]{\setlength{\rightskip}{0pt plus 5cm}void Damping\+Force\+Field\+::set\+Damping (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{damping}
+\end{DoxyParamCaption}
+)}}\label{classDampingForceField_ae4f282bc01a1b517f76fa7782a70ff6c}
+Define the damping factor of this damping force field. 
+\begin{DoxyParams}{Parameters}
+{\em damping} & The new damping factor. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDampingForceField_a98de1771d2113b73112b602159bf7117}{\index{Damping\+Force\+Field@{Damping\+Force\+Field}!set\+Particles@{set\+Particles}}
+\index{set\+Particles@{set\+Particles}!Damping\+Force\+Field@{Damping\+Force\+Field}}
+\subsubsection[{set\+Particles}]{\setlength{\rightskip}{0pt plus 5cm}void Damping\+Force\+Field\+::set\+Particles (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf Particle\+Ptr} $>$ \&}]{particles}
+\end{DoxyParamCaption}
+)}}\label{classDampingForceField_a98de1771d2113b73112b602159bf7117}
+Define the set of particles that will be influenced by this damping force force. 
+\begin{DoxyParams}{Parameters}
+{\em particles} & The new set of influenced particles. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classDampingForceField_ad84c70d73d5704e9141be637e4d92498}{\index{Damping\+Force\+Field@{Damping\+Force\+Field}!m\+\_\+damping@{m\+\_\+damping}}
+\index{m\+\_\+damping@{m\+\_\+damping}!Damping\+Force\+Field@{Damping\+Force\+Field}}
+\subsubsection[{m\+\_\+damping}]{\setlength{\rightskip}{0pt plus 5cm}float Damping\+Force\+Field\+::m\+\_\+damping\hspace{0.3cm}{\ttfamily [private]}}}\label{classDampingForceField_ad84c70d73d5704e9141be637e4d92498}
+\hypertarget{classDampingForceField_acb55824075dc3dfca7c6d2a799d714fa}{\index{Damping\+Force\+Field@{Damping\+Force\+Field}!m\+\_\+particles@{m\+\_\+particles}}
+\index{m\+\_\+particles@{m\+\_\+particles}!Damping\+Force\+Field@{Damping\+Force\+Field}}
+\subsubsection[{m\+\_\+particles}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Particle\+Ptr}$>$ Damping\+Force\+Field\+::m\+\_\+particles\hspace{0.3cm}{\ttfamily [private]}}}\label{classDampingForceField_acb55824075dc3dfca7c6d2a799d714fa}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{DampingForceField_8hpp}{Damping\+Force\+Field.\+hpp}\end{DoxyCompactItemize}

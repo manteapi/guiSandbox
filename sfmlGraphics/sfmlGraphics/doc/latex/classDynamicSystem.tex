@@ -1,0 +1,331 @@
+\hypertarget{classDynamicSystem}{\section{Dynamic\+System Class Reference}
+\label{classDynamicSystem}\index{Dynamic\+System@{Dynamic\+System}}
+}
+
+
+A dynamic system.  
+
+
+
+
+{\ttfamily \#include $<$Dynamic\+System.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDynamicSystem_ace85b160fa56e6f4fa62f6a02ccc9a4a}{$\sim$\+Dynamic\+System} ()
+\item 
+\hyperlink{classDynamicSystem_ac5828bf962f632ca9524d96c81c599bf}{Dynamic\+System} ()
+\item 
+void \hyperlink{classDynamicSystem_a115b000adc1b75600e5c64c147969cbc}{add\+Particle} (\hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} p)
+\begin{DoxyCompactList}\small\item\em Add a particle to the system. \end{DoxyCompactList}\item 
+void \hyperlink{classDynamicSystem_a595af58167519d47bae1c6c323d79d87}{add\+Force\+Field} (\hyperlink{ForceField_8hpp_a42f2dc2cbbb9e0d734b92850c7b40d58}{Force\+Field\+Ptr} force\+Field)
+\begin{DoxyCompactList}\small\item\em Add a force field to the system. \end{DoxyCompactList}\item 
+void \hyperlink{classDynamicSystem_a98c771242b42c7864b2fad6a556efd59}{add\+Plane\+Obstacle} (\hyperlink{Plane_8hpp_a146e10989049e4a48eae6973c2f798f5}{Plane\+Ptr} plane\+Obstacle)
+\begin{DoxyCompactList}\small\item\em Add a plane obstacle to the system. \end{DoxyCompactList}\item 
+\hyperlink{Solver_8hpp_a0913049810bea42e7eeb97b03da7a93d}{Solver\+Ptr} \hyperlink{classDynamicSystem_a73a79c77859825060e2ec1e04d07659b}{get\+Solver} ()
+\begin{DoxyCompactList}\small\item\em Access to the solver used to resolve the dynamic system. \end{DoxyCompactList}\item 
+void \hyperlink{classDynamicSystem_a87567a49ba603ad86ea53e8d4ade3a6b}{set\+Solver} (\hyperlink{Solver_8hpp_a0913049810bea42e7eeb97b03da7a93d}{Solver\+Ptr} solver)
+\begin{DoxyCompactList}\small\item\em Set a new dynamic system solver. \end{DoxyCompactList}\item 
+bool \hyperlink{classDynamicSystem_ad09d6d1870ba51b969238015733c41d4}{get\+Collision\+Detection} ()
+\begin{DoxyCompactList}\small\item\em Check if the collision detection is activated. \end{DoxyCompactList}\item 
+void \hyperlink{classDynamicSystem_a9845f985a6e0a8d3069aa7f85e6abbc4}{set\+Collisions\+Detection} (bool on\+Off)
+\begin{DoxyCompactList}\small\item\em Set the collision detection mode. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \& \hyperlink{classDynamicSystem_a53c25f86bfdb432b52be3917b415b3ed}{get\+Particles} () const 
+\begin{DoxyCompactList}\small\item\em Access to the set of particles of this system. \end{DoxyCompactList}\item 
+void \hyperlink{classDynamicSystem_a6a67f92c605c9d4e28e65bd891f38df9}{set\+Particles} (const std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \&particles)
+\begin{DoxyCompactList}\small\item\em Set the particles of this system. \end{DoxyCompactList}\item 
+const std\+::vector\\*
+$<$ \hyperlink{ForceField_8hpp_a42f2dc2cbbb9e0d734b92850c7b40d58}{Force\+Field\+Ptr} $>$ \& \hyperlink{classDynamicSystem_a03acc80081da8b53d6c15088316e2cc6}{get\+Force\+Fields} () const 
+\begin{DoxyCompactList}\small\item\em Access to the force fields of this system. \end{DoxyCompactList}\item 
+void \hyperlink{classDynamicSystem_a143060ff8db4e74be75f27bbac6aa0ba}{set\+Force\+Fields} (const std\+::vector$<$ \hyperlink{ForceField_8hpp_a42f2dc2cbbb9e0d734b92850c7b40d58}{Force\+Field\+Ptr} $>$ \&force\+Fields)
+\begin{DoxyCompactList}\small\item\em Set the force fields of this system. \end{DoxyCompactList}\item 
+void \hyperlink{classDynamicSystem_a42208a46a324ab70914c3827195e321e}{compute\+Simulation\+Step} ()
+\begin{DoxyCompactList}\small\item\em Compute a simulation step for this system. \end{DoxyCompactList}\item 
+const float \hyperlink{classDynamicSystem_a9b6e65a5069badbe045d96d3b53e6b1e}{get\+Restitution} ()
+\begin{DoxyCompactList}\small\item\em Access to the collision restitution factor. \end{DoxyCompactList}\item 
+void \hyperlink{classDynamicSystem_a2de9e23958d31a30b393c59f1c789d6f}{set\+Restitution} (const float \&restitution)
+\begin{DoxyCompactList}\small\item\em Set the collision restitution factor. \end{DoxyCompactList}\item 
+float \hyperlink{classDynamicSystem_a41466bee21e4bbc68f605fa2e3df6155}{get\+Dt} () const 
+\begin{DoxyCompactList}\small\item\em Access the time integration interval. \end{DoxyCompactList}\item 
+void \hyperlink{classDynamicSystem_a1ab34116e7d28e28bac5f1ed0da7f331}{set\+Dt} (float dt)
+\begin{DoxyCompactList}\small\item\em Set the time integration interval. \end{DoxyCompactList}\item 
+void \hyperlink{classDynamicSystem_abad9463e7a0dd62566bfe91a573c7ef5}{clear} ()
+\begin{DoxyCompactList}\small\item\em Clear the dynamic system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDynamicSystem_a2d49adacd1b23a34be32af0f8e242dee}{detect\+Collisions} ()
+\item 
+void \hyperlink{classDynamicSystem_a66d39ad73d55813efbecd955638cc56f}{solve\+Collisions} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \hyperlink{classDynamicSystem_a5ffb31272437d0d2194fb9a3e2503507}{m\+\_\+particles}
+\begin{DoxyCompactList}\small\item\em The set of particles managed by this system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{ForceField_8hpp_a42f2dc2cbbb9e0d734b92850c7b40d58}{Force\+Field\+Ptr} $>$ \hyperlink{classDynamicSystem_ae84cfd726e249320529381e124c640d9}{m\+\_\+force\+Fields}
+\begin{DoxyCompactList}\small\item\em The set of force fields influencing particles of this system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{Plane_8hpp_a146e10989049e4a48eae6973c2f798f5}{Plane\+Ptr} $>$ \hyperlink{classDynamicSystem_a64b84936db934e46bf4d14d298536f29}{m\+\_\+plane\+Obstacles}
+\begin{DoxyCompactList}\small\item\em The set of fixed plane obstacles. \end{DoxyCompactList}\item 
+\hyperlink{Solver_8hpp_a0913049810bea42e7eeb97b03da7a93d}{Solver\+Ptr} \hyperlink{classDynamicSystem_a5c1688e3ba7e44f1231949a27107f8af}{m\+\_\+solver}
+\begin{DoxyCompactList}\small\item\em The solver of the dynamic system. \end{DoxyCompactList}\item 
+float \hyperlink{classDynamicSystem_a544982347cb2e35838fc33c26f3ba1a9}{m\+\_\+dt}
+\begin{DoxyCompactList}\small\item\em Time interval used for integration. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{Collision_8hpp_a09bec6f7016794231a72a7e325436608}{Collision\+Ptr} $>$ \hyperlink{classDynamicSystem_af59c6816c0517d44241fc85dfcd5098a}{m\+\_\+collisions}
+\begin{DoxyCompactList}\small\item\em The set of collision events detected during a simulation step. \end{DoxyCompactList}\item 
+bool \hyperlink{classDynamicSystem_ac0881dce496ee154df62f6d77623908d}{m\+\_\+handle\+Collisions}
+\begin{DoxyCompactList}\small\item\em A flag to activate/desactivate collision detection. \end{DoxyCompactList}\item 
+float \hyperlink{classDynamicSystem_aac91bdfa64bc41fcf1284547b7201e03}{m\+\_\+restitution}
+\begin{DoxyCompactList}\small\item\em Restitution factor of collisions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a dynamic system made of particles, force fields and fixed planes obstacles and that handle collisions. If you want to, you can replace fixed planes obstacles by triangle obstacles\+: you will be able to model more kind of obstacles. However, this would require a spatial optimization that is out of the scope of these practical lessons. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDynamicSystem_ace85b160fa56e6f4fa62f6a02ccc9a4a}{\index{Dynamic\+System@{Dynamic\+System}!````~Dynamic\+System@{$\sim$\+Dynamic\+System}}
+\index{````~Dynamic\+System@{$\sim$\+Dynamic\+System}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{$\sim$\+Dynamic\+System}]{\setlength{\rightskip}{0pt plus 5cm}Dynamic\+System\+::$\sim$\+Dynamic\+System (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_ace85b160fa56e6f4fa62f6a02ccc9a4a}
+\hypertarget{classDynamicSystem_ac5828bf962f632ca9524d96c81c599bf}{\index{Dynamic\+System@{Dynamic\+System}!Dynamic\+System@{Dynamic\+System}}
+\index{Dynamic\+System@{Dynamic\+System}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{Dynamic\+System}]{\setlength{\rightskip}{0pt plus 5cm}Dynamic\+System\+::\+Dynamic\+System (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_ac5828bf962f632ca9524d96c81c599bf}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDynamicSystem_a595af58167519d47bae1c6c323d79d87}{\index{Dynamic\+System@{Dynamic\+System}!add\+Force\+Field@{add\+Force\+Field}}
+\index{add\+Force\+Field@{add\+Force\+Field}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{add\+Force\+Field}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+::add\+Force\+Field (
+\begin{DoxyParamCaption}
+\item[{{\bf Force\+Field\+Ptr}}]{force\+Field}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_a595af58167519d47bae1c6c323d79d87}
+Add a force field to this dynamic system to influence particles. 
+\begin{DoxyParams}{Parameters}
+{\em force\+Field} & The force field to add to this system. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDynamicSystem_a115b000adc1b75600e5c64c147969cbc}{\index{Dynamic\+System@{Dynamic\+System}!add\+Particle@{add\+Particle}}
+\index{add\+Particle@{add\+Particle}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{add\+Particle}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+::add\+Particle (
+\begin{DoxyParamCaption}
+\item[{{\bf Particle\+Ptr}}]{p}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_a115b000adc1b75600e5c64c147969cbc}
+Add a particle to this dynamic system. 
+\begin{DoxyParams}{Parameters}
+{\em p} & The particle to add to this system. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDynamicSystem_a98c771242b42c7864b2fad6a556efd59}{\index{Dynamic\+System@{Dynamic\+System}!add\+Plane\+Obstacle@{add\+Plane\+Obstacle}}
+\index{add\+Plane\+Obstacle@{add\+Plane\+Obstacle}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{add\+Plane\+Obstacle}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+::add\+Plane\+Obstacle (
+\begin{DoxyParamCaption}
+\item[{{\bf Plane\+Ptr}}]{plane\+Obstacle}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_a98c771242b42c7864b2fad6a556efd59}
+Add an infinite plane obstacle to the dynamic system. If collisions are activated, this plane will repel particles. 
+\begin{DoxyParams}{Parameters}
+{\em plane\+Obstacle} & The plane to add to this system. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDynamicSystem_abad9463e7a0dd62566bfe91a573c7ef5}{\index{Dynamic\+System@{Dynamic\+System}!clear@{clear}}
+\index{clear@{clear}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_abad9463e7a0dd62566bfe91a573c7ef5}
+Clear the system, i.\+e. empty the particles, force fields and plane obstacles. \hypertarget{classDynamicSystem_a42208a46a324ab70914c3827195e321e}{\index{Dynamic\+System@{Dynamic\+System}!compute\+Simulation\+Step@{compute\+Simulation\+Step}}
+\index{compute\+Simulation\+Step@{compute\+Simulation\+Step}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{compute\+Simulation\+Step}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+::compute\+Simulation\+Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_a42208a46a324ab70914c3827195e321e}
+Compute a simulation step for this dynamic system, i.\+e. what happens since the last simulation step and during the time integration interval. \hypertarget{classDynamicSystem_a2d49adacd1b23a34be32af0f8e242dee}{\index{Dynamic\+System@{Dynamic\+System}!detect\+Collisions@{detect\+Collisions}}
+\index{detect\+Collisions@{detect\+Collisions}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{detect\+Collisions}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+::detect\+Collisions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classDynamicSystem_a2d49adacd1b23a34be32af0f8e242dee}
+\hypertarget{classDynamicSystem_ad09d6d1870ba51b969238015733c41d4}{\index{Dynamic\+System@{Dynamic\+System}!get\+Collision\+Detection@{get\+Collision\+Detection}}
+\index{get\+Collision\+Detection@{get\+Collision\+Detection}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{get\+Collision\+Detection}]{\setlength{\rightskip}{0pt plus 5cm}bool Dynamic\+System\+::get\+Collision\+Detection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_ad09d6d1870ba51b969238015733c41d4}
+Check if the collision are currently handled by this dynamic system. \begin{DoxyReturn}{Returns}
+True if the collisions are handled. 
+\end{DoxyReturn}
+\hypertarget{classDynamicSystem_a41466bee21e4bbc68f605fa2e3df6155}{\index{Dynamic\+System@{Dynamic\+System}!get\+Dt@{get\+Dt}}
+\index{get\+Dt@{get\+Dt}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{get\+Dt}]{\setlength{\rightskip}{0pt plus 5cm}float Dynamic\+System\+::get\+Dt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDynamicSystem_a41466bee21e4bbc68f605fa2e3df6155}
+Get the time integration interval used by this dynamic system. \begin{DoxyReturn}{Returns}
+The time integration interval. 
+\end{DoxyReturn}
+\hypertarget{classDynamicSystem_a03acc80081da8b53d6c15088316e2cc6}{\index{Dynamic\+System@{Dynamic\+System}!get\+Force\+Fields@{get\+Force\+Fields}}
+\index{get\+Force\+Fields@{get\+Force\+Fields}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{get\+Force\+Fields}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<${\bf Force\+Field\+Ptr}$>$\& Dynamic\+System\+::get\+Force\+Fields (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDynamicSystem_a03acc80081da8b53d6c15088316e2cc6}
+Get the set of force fields of this system. \begin{DoxyReturn}{Returns}
+The set of force fields of this system. 
+\end{DoxyReturn}
+\hypertarget{classDynamicSystem_a53c25f86bfdb432b52be3917b415b3ed}{\index{Dynamic\+System@{Dynamic\+System}!get\+Particles@{get\+Particles}}
+\index{get\+Particles@{get\+Particles}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{get\+Particles}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<${\bf Particle\+Ptr}$>$\& Dynamic\+System\+::get\+Particles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDynamicSystem_a53c25f86bfdb432b52be3917b415b3ed}
+Get the set of particles of this dynamic system. \begin{DoxyReturn}{Returns}
+The set of particles of this system. 
+\end{DoxyReturn}
+\hypertarget{classDynamicSystem_a9b6e65a5069badbe045d96d3b53e6b1e}{\index{Dynamic\+System@{Dynamic\+System}!get\+Restitution@{get\+Restitution}}
+\index{get\+Restitution@{get\+Restitution}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{get\+Restitution}]{\setlength{\rightskip}{0pt plus 5cm}const float Dynamic\+System\+::get\+Restitution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_a9b6e65a5069badbe045d96d3b53e6b1e}
+Get the current collision restitution factor of this system. \begin{DoxyReturn}{Returns}
+The current collision restitution factor. 
+\end{DoxyReturn}
+\hypertarget{classDynamicSystem_a73a79c77859825060e2ec1e04d07659b}{\index{Dynamic\+System@{Dynamic\+System}!get\+Solver@{get\+Solver}}
+\index{get\+Solver@{get\+Solver}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{get\+Solver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Solver\+Ptr} Dynamic\+System\+::get\+Solver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_a73a79c77859825060e2ec1e04d07659b}
+Get the dynamic system solver used by this system. \begin{DoxyReturn}{Returns}
+The current dynamic system solver. 
+\end{DoxyReturn}
+\hypertarget{classDynamicSystem_a9845f985a6e0a8d3069aa7f85e6abbc4}{\index{Dynamic\+System@{Dynamic\+System}!set\+Collisions\+Detection@{set\+Collisions\+Detection}}
+\index{set\+Collisions\+Detection@{set\+Collisions\+Detection}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{set\+Collisions\+Detection}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+::set\+Collisions\+Detection (
+\begin{DoxyParamCaption}
+\item[{bool}]{on\+Off}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_a9845f985a6e0a8d3069aa7f85e6abbc4}
+Define if the collisions are detected/handled by this dynamic system. 
+\begin{DoxyParams}{Parameters}
+{\em on\+Off} & True if the collision should be detected/handled. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDynamicSystem_a1ab34116e7d28e28bac5f1ed0da7f331}{\index{Dynamic\+System@{Dynamic\+System}!set\+Dt@{set\+Dt}}
+\index{set\+Dt@{set\+Dt}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{set\+Dt}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+::set\+Dt (
+\begin{DoxyParamCaption}
+\item[{float}]{dt}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_a1ab34116e7d28e28bac5f1ed0da7f331}
+Define the new time integration interval used by this dynamic system. 
+\begin{DoxyParams}{Parameters}
+{\em dt} & The new time integration interval. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDynamicSystem_a143060ff8db4e74be75f27bbac6aa0ba}{\index{Dynamic\+System@{Dynamic\+System}!set\+Force\+Fields@{set\+Force\+Fields}}
+\index{set\+Force\+Fields@{set\+Force\+Fields}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{set\+Force\+Fields}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+::set\+Force\+Fields (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf Force\+Field\+Ptr} $>$ \&}]{force\+Fields}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_a143060ff8db4e74be75f27bbac6aa0ba}
+Define a new set of force fields for this dynamic system. 
+\begin{DoxyParams}{Parameters}
+{\em force\+Fields} & The new set of force fields of this dynamic system. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDynamicSystem_a6a67f92c605c9d4e28e65bd891f38df9}{\index{Dynamic\+System@{Dynamic\+System}!set\+Particles@{set\+Particles}}
+\index{set\+Particles@{set\+Particles}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{set\+Particles}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+::set\+Particles (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf Particle\+Ptr} $>$ \&}]{particles}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_a6a67f92c605c9d4e28e65bd891f38df9}
+Define a new set of particles for this dynamic system. 
+\begin{DoxyParams}{Parameters}
+{\em particles} & The new set of particles of this system. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDynamicSystem_a2de9e23958d31a30b393c59f1c789d6f}{\index{Dynamic\+System@{Dynamic\+System}!set\+Restitution@{set\+Restitution}}
+\index{set\+Restitution@{set\+Restitution}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{set\+Restitution}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+::set\+Restitution (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{restitution}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_a2de9e23958d31a30b393c59f1c789d6f}
+Define the new collision restitution factor for this dynamic system. 
+\begin{DoxyParams}{Parameters}
+{\em restitution} & The new collision restitution factor. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDynamicSystem_a87567a49ba603ad86ea53e8d4ade3a6b}{\index{Dynamic\+System@{Dynamic\+System}!set\+Solver@{set\+Solver}}
+\index{set\+Solver@{set\+Solver}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{set\+Solver}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+::set\+Solver (
+\begin{DoxyParamCaption}
+\item[{{\bf Solver\+Ptr}}]{solver}
+\end{DoxyParamCaption}
+)}}\label{classDynamicSystem_a87567a49ba603ad86ea53e8d4ade3a6b}
+Define a new solver to resolve the dynamic system at each simulation step. 
+\begin{DoxyParams}{Parameters}
+{\em solver} & The new solver to use. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDynamicSystem_a66d39ad73d55813efbecd955638cc56f}{\index{Dynamic\+System@{Dynamic\+System}!solve\+Collisions@{solve\+Collisions}}
+\index{solve\+Collisions@{solve\+Collisions}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{solve\+Collisions}]{\setlength{\rightskip}{0pt plus 5cm}void Dynamic\+System\+::solve\+Collisions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classDynamicSystem_a66d39ad73d55813efbecd955638cc56f}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classDynamicSystem_af59c6816c0517d44241fc85dfcd5098a}{\index{Dynamic\+System@{Dynamic\+System}!m\+\_\+collisions@{m\+\_\+collisions}}
+\index{m\+\_\+collisions@{m\+\_\+collisions}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{m\+\_\+collisions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Collision\+Ptr}$>$ Dynamic\+System\+::m\+\_\+collisions\hspace{0.3cm}{\ttfamily [private]}}}\label{classDynamicSystem_af59c6816c0517d44241fc85dfcd5098a}
+Set of collision events between dynamic components during a simulation step. Those events would be resolved by updating velocities and positions of dynamic objects to avoid inter-\/penetration. \hypertarget{classDynamicSystem_a544982347cb2e35838fc33c26f3ba1a9}{\index{Dynamic\+System@{Dynamic\+System}!m\+\_\+dt@{m\+\_\+dt}}
+\index{m\+\_\+dt@{m\+\_\+dt}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{m\+\_\+dt}]{\setlength{\rightskip}{0pt plus 5cm}float Dynamic\+System\+::m\+\_\+dt\hspace{0.3cm}{\ttfamily [private]}}}\label{classDynamicSystem_a544982347cb2e35838fc33c26f3ba1a9}
+This represent the time step at which the dynamic system will be updated. A large time step would leads to less robust behaviors, while smaller time steps require more computation power for the same length of simulation. \hypertarget{classDynamicSystem_ae84cfd726e249320529381e124c640d9}{\index{Dynamic\+System@{Dynamic\+System}!m\+\_\+force\+Fields@{m\+\_\+force\+Fields}}
+\index{m\+\_\+force\+Fields@{m\+\_\+force\+Fields}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{m\+\_\+force\+Fields}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Force\+Field\+Ptr}$>$ Dynamic\+System\+::m\+\_\+force\+Fields\hspace{0.3cm}{\ttfamily [private]}}}\label{classDynamicSystem_ae84cfd726e249320529381e124c640d9}
+The force fields that influence the particles of this system. \hypertarget{classDynamicSystem_ac0881dce496ee154df62f6d77623908d}{\index{Dynamic\+System@{Dynamic\+System}!m\+\_\+handle\+Collisions@{m\+\_\+handle\+Collisions}}
+\index{m\+\_\+handle\+Collisions@{m\+\_\+handle\+Collisions}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{m\+\_\+handle\+Collisions}]{\setlength{\rightskip}{0pt plus 5cm}bool Dynamic\+System\+::m\+\_\+handle\+Collisions\hspace{0.3cm}{\ttfamily [private]}}}\label{classDynamicSystem_ac0881dce496ee154df62f6d77623908d}
+If set to false, collisions are ignored, leading to a faster simulation but less realistic/interesting. When set to true, collisions are detected and resolved. \hypertarget{classDynamicSystem_a5ffb31272437d0d2194fb9a3e2503507}{\index{Dynamic\+System@{Dynamic\+System}!m\+\_\+particles@{m\+\_\+particles}}
+\index{m\+\_\+particles@{m\+\_\+particles}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{m\+\_\+particles}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Particle\+Ptr}$>$ Dynamic\+System\+::m\+\_\+particles\hspace{0.3cm}{\ttfamily [private]}}}\label{classDynamicSystem_a5ffb31272437d0d2194fb9a3e2503507}
+The particles managed by this dynamic system. Their positions and velocities will be updated thanks to the solver, taking into account the force field applied to them. \hypertarget{classDynamicSystem_a64b84936db934e46bf4d14d298536f29}{\index{Dynamic\+System@{Dynamic\+System}!m\+\_\+plane\+Obstacles@{m\+\_\+plane\+Obstacles}}
+\index{m\+\_\+plane\+Obstacles@{m\+\_\+plane\+Obstacles}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{m\+\_\+plane\+Obstacles}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Plane\+Ptr}$>$ Dynamic\+System\+::m\+\_\+plane\+Obstacles\hspace{0.3cm}{\ttfamily [private]}}}\label{classDynamicSystem_a64b84936db934e46bf4d14d298536f29}
+The set of obstacles that would repel the particles after collisions. \hypertarget{classDynamicSystem_aac91bdfa64bc41fcf1284547b7201e03}{\index{Dynamic\+System@{Dynamic\+System}!m\+\_\+restitution@{m\+\_\+restitution}}
+\index{m\+\_\+restitution@{m\+\_\+restitution}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{m\+\_\+restitution}]{\setlength{\rightskip}{0pt plus 5cm}float Dynamic\+System\+::m\+\_\+restitution\hspace{0.3cm}{\ttfamily [private]}}}\label{classDynamicSystem_aac91bdfa64bc41fcf1284547b7201e03}
+The factor of restitution after a collision between objects. \hypertarget{classDynamicSystem_a5c1688e3ba7e44f1231949a27107f8af}{\index{Dynamic\+System@{Dynamic\+System}!m\+\_\+solver@{m\+\_\+solver}}
+\index{m\+\_\+solver@{m\+\_\+solver}!Dynamic\+System@{Dynamic\+System}}
+\subsubsection[{m\+\_\+solver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Solver\+Ptr} Dynamic\+System\+::m\+\_\+solver\hspace{0.3cm}{\ttfamily [private]}}}\label{classDynamicSystem_a5c1688e3ba7e44f1231949a27107f8af}
+\hyperlink{classSolver}{Solver} of the dynamic system\+: update the particles positions and velocities according to the force fields applied. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{DynamicSystem_8hpp}{Dynamic\+System.\+hpp}\end{DoxyCompactItemize}

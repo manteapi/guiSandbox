@@ -1,0 +1,302 @@
+\hypertarget{classParticle}{\section{Particle Class Reference}
+\label{classParticle}\index{Particle@{Particle}}
+}
+
+
+Represent a particle as a moving ball.  
+
+
+
+
+{\ttfamily \#include $<$Particle.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParticle_a8e0174413f7c34f67ca992552e409ced}{Particle} (const glm\+::vec3 \&position, const glm\+::vec3 \&velocity, const float \&mass, const float \&radius)
+\begin{DoxyCompactList}\small\item\em Instantiate a dynamic particle. \end{DoxyCompactList}\item 
+\hyperlink{classParticle_ad030d0fe7b88cf81744b127c99244ff4}{$\sim$\+Particle} ()
+\item 
+const glm\+::vec3 \& \hyperlink{classParticle_a40b65e9c27b1265ac48ce4925e37f619}{get\+Position} () const 
+\begin{DoxyCompactList}\small\item\em Access to this particle's position. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classParticle_af976b4aa95a792454c75d2143e0bf5cf}{get\+Velocity} () const 
+\begin{DoxyCompactList}\small\item\em Access to this particle's velocity. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classParticle_a9bde826461065bc609e7a859cca54b8d}{get\+Force} () const 
+\begin{DoxyCompactList}\small\item\em Access to this particle's applied force. \end{DoxyCompactList}\item 
+float \hyperlink{classParticle_af11c8e6d590e50496d637b3822e4fdaa}{get\+Mass} () const 
+\begin{DoxyCompactList}\small\item\em Access to this particle's mass. \end{DoxyCompactList}\item 
+float \hyperlink{classParticle_a34b87163953d21f8ba23f960a7927e52}{get\+Radius} () const 
+\begin{DoxyCompactList}\small\item\em Access to this particle's radius. \end{DoxyCompactList}\item 
+bool \hyperlink{classParticle_a9d41e6acd3b52ff439b3a4903f630fcd}{is\+Fixed} () const 
+\begin{DoxyCompactList}\small\item\em Check if this particle is fixed. \end{DoxyCompactList}\item 
+void \hyperlink{classParticle_aee41362c732ae8a7cca20d872e5a3fc1}{set\+Position} (const glm\+::vec3 \&pos)
+\begin{DoxyCompactList}\small\item\em Set the particle's position. \end{DoxyCompactList}\item 
+void \hyperlink{classParticle_acbab01a9093288cdd1242b24e5de80a9}{set\+Velocity} (const glm\+::vec3 \&vel)
+\begin{DoxyCompactList}\small\item\em Set the particle's velocity. \end{DoxyCompactList}\item 
+void \hyperlink{classParticle_af07a51b823e3570623e2b6fcd43d01df}{set\+Force} (const glm\+::vec3 \&force)
+\begin{DoxyCompactList}\small\item\em Set the particle's applied force. \end{DoxyCompactList}\item 
+void \hyperlink{classParticle_a03c5c0de979488aa04f2541637945eea}{set\+Radius} (const float \&radius)
+\begin{DoxyCompactList}\small\item\em Set the particle's radius. \end{DoxyCompactList}\item 
+void \hyperlink{classParticle_a81e84b1b27570a749bd92a309dc12f25}{set\+Fixed} (bool \hyperlink{classParticle_a9d41e6acd3b52ff439b3a4903f630fcd}{is\+Fixed})
+\begin{DoxyCompactList}\small\item\em Set the particle's fixed flag. \end{DoxyCompactList}\item 
+void \hyperlink{classParticle_aaa74f8dfdb197454efb785f59393719c}{incr\+Position} (const glm\+::vec3 \&pos)
+\begin{DoxyCompactList}\small\item\em Increment the particle's position. \end{DoxyCompactList}\item 
+void \hyperlink{classParticle_a281ec390b081eedb09324b82bf2051f9}{incr\+Velocity} (const glm\+::vec3 \&vel)
+\begin{DoxyCompactList}\small\item\em Increment the particle's velocity. \end{DoxyCompactList}\item 
+void \hyperlink{classParticle_ac78ce769340d2362374f29f5805cc796}{incr\+Force} (const glm\+::vec3 \&force)
+\begin{DoxyCompactList}\small\item\em Increment the particle's applied force. \end{DoxyCompactList}\item 
+void \hyperlink{classParticle_aa850ffa01940b79df28fb1cd9f68bf45}{restart} ()
+\begin{DoxyCompactList}\small\item\em Restart the particle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const glm\+::vec3 \hyperlink{classParticle_aa6c61c14e6ef274fb54700a5912e78bf}{m\+\_\+initial\+Position}
+\begin{DoxyCompactList}\small\item\em The initial particle's position. \end{DoxyCompactList}\item 
+const glm\+::vec3 \hyperlink{classParticle_af83d2d60768349ca902f83de1a59e355}{m\+\_\+initial\+Velocity}
+\begin{DoxyCompactList}\small\item\em The initial particle's velocity. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classParticle_ad6daec7ed061255747fbe26ee88429c6}{m\+\_\+position}
+\begin{DoxyCompactList}\small\item\em The particle's position. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classParticle_ae8433e1a1968203478096f319a04e111}{m\+\_\+velocity}
+\begin{DoxyCompactList}\small\item\em The particle's velocity. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classParticle_af4db2db523aa91152dab38bc2ed1e460}{m\+\_\+force}
+\begin{DoxyCompactList}\small\item\em The particle's applied force. \end{DoxyCompactList}\item 
+float \hyperlink{classParticle_ab78b76aeb4d163132a0c27ea4c5beb75}{m\+\_\+mass}
+\begin{DoxyCompactList}\small\item\em The particle's mass. \end{DoxyCompactList}\item 
+float \hyperlink{classParticle_af6aee0d324572f74a1bdc28937d04a0b}{m\+\_\+radius}
+\begin{DoxyCompactList}\small\item\em The particle's radius. \end{DoxyCompactList}\item 
+bool \hyperlink{classParticle_a1a986129338efef4273582fd5ce9eaac}{m\+\_\+is\+Fixed}
+\begin{DoxyCompactList}\small\item\em The particle's fixed flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to model particles in a dynamic system. Such a particle is seen as a ball with a mass, a velocity and a position. This ball is affected by forces that will change both its position and its velocity. This ball can be fixed, making its position constant and its velocity null. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classParticle_a8e0174413f7c34f67ca992552e409ced}{\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\subsubsection[{Particle}]{\setlength{\rightskip}{0pt plus 5cm}Particle\+::\+Particle (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{position, }
+\item[{const glm\+::vec3 \&}]{velocity, }
+\item[{const float \&}]{mass, }
+\item[{const float \&}]{radius}
+\end{DoxyParamCaption}
+)}}\label{classParticle_a8e0174413f7c34f67ca992552e409ced}
+Construct a new particle, represented as a moving ball. The initial position and velocity are saved in order to be restored when the simulation restarts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The initial position. \\
+\hline
+{\em velocity} & The initial speed. \\
+\hline
+{\em mass} & The particle mass. \\
+\hline
+{\em radius} & The particle radius. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classParticle_ad030d0fe7b88cf81744b127c99244ff4}{\index{Particle@{Particle}!````~Particle@{$\sim$\+Particle}}
+\index{````~Particle@{$\sim$\+Particle}!Particle@{Particle}}
+\subsubsection[{$\sim$\+Particle}]{\setlength{\rightskip}{0pt plus 5cm}Particle\+::$\sim$\+Particle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classParticle_ad030d0fe7b88cf81744b127c99244ff4}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classParticle_a9bde826461065bc609e7a859cca54b8d}{\index{Particle@{Particle}!get\+Force@{get\+Force}}
+\index{get\+Force@{get\+Force}!Particle@{Particle}}
+\subsubsection[{get\+Force}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Particle\+::get\+Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classParticle_a9bde826461065bc609e7a859cca54b8d}
+Get the force applied to this particle. \begin{DoxyReturn}{Returns}
+The particle's applied force. 
+\end{DoxyReturn}
+\hypertarget{classParticle_af11c8e6d590e50496d637b3822e4fdaa}{\index{Particle@{Particle}!get\+Mass@{get\+Mass}}
+\index{get\+Mass@{get\+Mass}!Particle@{Particle}}
+\subsubsection[{get\+Mass}]{\setlength{\rightskip}{0pt plus 5cm}float Particle\+::get\+Mass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classParticle_af11c8e6d590e50496d637b3822e4fdaa}
+Get the mass of this particle. \begin{DoxyReturn}{Returns}
+The particle's mass. 
+\end{DoxyReturn}
+\hypertarget{classParticle_a40b65e9c27b1265ac48ce4925e37f619}{\index{Particle@{Particle}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Particle@{Particle}}
+\subsubsection[{get\+Position}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Particle\+::get\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classParticle_a40b65e9c27b1265ac48ce4925e37f619}
+Get the position of this particle. \begin{DoxyReturn}{Returns}
+The particle's position. 
+\end{DoxyReturn}
+\hypertarget{classParticle_a34b87163953d21f8ba23f960a7927e52}{\index{Particle@{Particle}!get\+Radius@{get\+Radius}}
+\index{get\+Radius@{get\+Radius}!Particle@{Particle}}
+\subsubsection[{get\+Radius}]{\setlength{\rightskip}{0pt plus 5cm}float Particle\+::get\+Radius (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classParticle_a34b87163953d21f8ba23f960a7927e52}
+Get the radius of this particle. \begin{DoxyReturn}{Returns}
+The particle's radius. 
+\end{DoxyReturn}
+\hypertarget{classParticle_af976b4aa95a792454c75d2143e0bf5cf}{\index{Particle@{Particle}!get\+Velocity@{get\+Velocity}}
+\index{get\+Velocity@{get\+Velocity}!Particle@{Particle}}
+\subsubsection[{get\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Particle\+::get\+Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classParticle_af976b4aa95a792454c75d2143e0bf5cf}
+Get the velocity of this particle. \begin{DoxyReturn}{Returns}
+The particle's velocity. 
+\end{DoxyReturn}
+\hypertarget{classParticle_ac78ce769340d2362374f29f5805cc796}{\index{Particle@{Particle}!incr\+Force@{incr\+Force}}
+\index{incr\+Force@{incr\+Force}!Particle@{Particle}}
+\subsubsection[{incr\+Force}]{\setlength{\rightskip}{0pt plus 5cm}void Particle\+::incr\+Force (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{force}
+\end{DoxyParamCaption}
+)}}\label{classParticle_ac78ce769340d2362374f29f5805cc796}
+Increment the force applied to this particle. 
+\begin{DoxyParams}{Parameters}
+{\em force} & The force to add to this particle's applied force, i.\+e. m\+\_\+force += force. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classParticle_aaa74f8dfdb197454efb785f59393719c}{\index{Particle@{Particle}!incr\+Position@{incr\+Position}}
+\index{incr\+Position@{incr\+Position}!Particle@{Particle}}
+\subsubsection[{incr\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Particle\+::incr\+Position (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{pos}
+\end{DoxyParamCaption}
+)}}\label{classParticle_aaa74f8dfdb197454efb785f59393719c}
+Increment the position of this particle. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position to add to this particle's position, i.\+e. m\+\_\+position += pos. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classParticle_a281ec390b081eedb09324b82bf2051f9}{\index{Particle@{Particle}!incr\+Velocity@{incr\+Velocity}}
+\index{incr\+Velocity@{incr\+Velocity}!Particle@{Particle}}
+\subsubsection[{incr\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Particle\+::incr\+Velocity (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{vel}
+\end{DoxyParamCaption}
+)}}\label{classParticle_a281ec390b081eedb09324b82bf2051f9}
+Increment the velocity of this particle. 
+\begin{DoxyParams}{Parameters}
+{\em vel} & The velocity to add to this particle's velocity, i.\+e. m\+\_\+velocity += vel. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classParticle_a9d41e6acd3b52ff439b3a4903f630fcd}{\index{Particle@{Particle}!is\+Fixed@{is\+Fixed}}
+\index{is\+Fixed@{is\+Fixed}!Particle@{Particle}}
+\subsubsection[{is\+Fixed}]{\setlength{\rightskip}{0pt plus 5cm}bool Particle\+::is\+Fixed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classParticle_a9d41e6acd3b52ff439b3a4903f630fcd}
+Check if this particle is fixed. \begin{DoxyReturn}{Returns}
+True if the particle is fixed. 
+\end{DoxyReturn}
+\hypertarget{classParticle_aa850ffa01940b79df28fb1cd9f68bf45}{\index{Particle@{Particle}!restart@{restart}}
+\index{restart@{restart}!Particle@{Particle}}
+\subsubsection[{restart}]{\setlength{\rightskip}{0pt plus 5cm}void Particle\+::restart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classParticle_aa850ffa01940b79df28fb1cd9f68bf45}
+Set the particle's position and velocity to their initial values. \hypertarget{classParticle_a81e84b1b27570a749bd92a309dc12f25}{\index{Particle@{Particle}!set\+Fixed@{set\+Fixed}}
+\index{set\+Fixed@{set\+Fixed}!Particle@{Particle}}
+\subsubsection[{set\+Fixed}]{\setlength{\rightskip}{0pt plus 5cm}void Particle\+::set\+Fixed (
+\begin{DoxyParamCaption}
+\item[{bool}]{is\+Fixed}
+\end{DoxyParamCaption}
+)}}\label{classParticle_a81e84b1b27570a749bd92a309dc12f25}
+Set the fixed flag of this particle. 
+\begin{DoxyParams}{Parameters}
+{\em is\+Fixed} & The new value of the fixed flag. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classParticle_af07a51b823e3570623e2b6fcd43d01df}{\index{Particle@{Particle}!set\+Force@{set\+Force}}
+\index{set\+Force@{set\+Force}!Particle@{Particle}}
+\subsubsection[{set\+Force}]{\setlength{\rightskip}{0pt plus 5cm}void Particle\+::set\+Force (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{force}
+\end{DoxyParamCaption}
+)}}\label{classParticle_af07a51b823e3570623e2b6fcd43d01df}
+Set the force applied to this particle. 
+\begin{DoxyParams}{Parameters}
+{\em force} & The new force applied to this particle. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classParticle_aee41362c732ae8a7cca20d872e5a3fc1}{\index{Particle@{Particle}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Particle@{Particle}}
+\subsubsection[{set\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Particle\+::set\+Position (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{pos}
+\end{DoxyParamCaption}
+)}}\label{classParticle_aee41362c732ae8a7cca20d872e5a3fc1}
+Set the position of this particle. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & The new position of this particle. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classParticle_a03c5c0de979488aa04f2541637945eea}{\index{Particle@{Particle}!set\+Radius@{set\+Radius}}
+\index{set\+Radius@{set\+Radius}!Particle@{Particle}}
+\subsubsection[{set\+Radius}]{\setlength{\rightskip}{0pt plus 5cm}void Particle\+::set\+Radius (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{radius}
+\end{DoxyParamCaption}
+)}}\label{classParticle_a03c5c0de979488aa04f2541637945eea}
+Set the radius of this particle. 
+\begin{DoxyParams}{Parameters}
+{\em radius} & The new radius of this particle. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classParticle_acbab01a9093288cdd1242b24e5de80a9}{\index{Particle@{Particle}!set\+Velocity@{set\+Velocity}}
+\index{set\+Velocity@{set\+Velocity}!Particle@{Particle}}
+\subsubsection[{set\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Particle\+::set\+Velocity (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{vel}
+\end{DoxyParamCaption}
+)}}\label{classParticle_acbab01a9093288cdd1242b24e5de80a9}
+Set the velocity of this particle. 
+\begin{DoxyParams}{Parameters}
+{\em vel} & The new velocity of this particle. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classParticle_af4db2db523aa91152dab38bc2ed1e460}{\index{Particle@{Particle}!m\+\_\+force@{m\+\_\+force}}
+\index{m\+\_\+force@{m\+\_\+force}!Particle@{Particle}}
+\subsubsection[{m\+\_\+force}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Particle\+::m\+\_\+force\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticle_af4db2db523aa91152dab38bc2ed1e460}
+The force applied to this particle. \hypertarget{classParticle_aa6c61c14e6ef274fb54700a5912e78bf}{\index{Particle@{Particle}!m\+\_\+initial\+Position@{m\+\_\+initial\+Position}}
+\index{m\+\_\+initial\+Position@{m\+\_\+initial\+Position}!Particle@{Particle}}
+\subsubsection[{m\+\_\+initial\+Position}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3 Particle\+::m\+\_\+initial\+Position\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticle_aa6c61c14e6ef274fb54700a5912e78bf}
+The initial position of this particle, stored to be set at restart. \hypertarget{classParticle_af83d2d60768349ca902f83de1a59e355}{\index{Particle@{Particle}!m\+\_\+initial\+Velocity@{m\+\_\+initial\+Velocity}}
+\index{m\+\_\+initial\+Velocity@{m\+\_\+initial\+Velocity}!Particle@{Particle}}
+\subsubsection[{m\+\_\+initial\+Velocity}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3 Particle\+::m\+\_\+initial\+Velocity\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticle_af83d2d60768349ca902f83de1a59e355}
+The initial velocity of this particle, stored to be set at restart. \hypertarget{classParticle_a1a986129338efef4273582fd5ce9eaac}{\index{Particle@{Particle}!m\+\_\+is\+Fixed@{m\+\_\+is\+Fixed}}
+\index{m\+\_\+is\+Fixed@{m\+\_\+is\+Fixed}!Particle@{Particle}}
+\subsubsection[{m\+\_\+is\+Fixed}]{\setlength{\rightskip}{0pt plus 5cm}bool Particle\+::m\+\_\+is\+Fixed\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticle_a1a986129338efef4273582fd5ce9eaac}
+A flag that tells if this particle is fixed. If set to true, the position should be constant and the velocity null in simulation steps. \hypertarget{classParticle_ab78b76aeb4d163132a0c27ea4c5beb75}{\index{Particle@{Particle}!m\+\_\+mass@{m\+\_\+mass}}
+\index{m\+\_\+mass@{m\+\_\+mass}!Particle@{Particle}}
+\subsubsection[{m\+\_\+mass}]{\setlength{\rightskip}{0pt plus 5cm}float Particle\+::m\+\_\+mass\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticle_ab78b76aeb4d163132a0c27ea4c5beb75}
+The mass of this particle. \hypertarget{classParticle_ad6daec7ed061255747fbe26ee88429c6}{\index{Particle@{Particle}!m\+\_\+position@{m\+\_\+position}}
+\index{m\+\_\+position@{m\+\_\+position}!Particle@{Particle}}
+\subsubsection[{m\+\_\+position}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Particle\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticle_ad6daec7ed061255747fbe26ee88429c6}
+The position of this particle. \hypertarget{classParticle_af6aee0d324572f74a1bdc28937d04a0b}{\index{Particle@{Particle}!m\+\_\+radius@{m\+\_\+radius}}
+\index{m\+\_\+radius@{m\+\_\+radius}!Particle@{Particle}}
+\subsubsection[{m\+\_\+radius}]{\setlength{\rightskip}{0pt plus 5cm}float Particle\+::m\+\_\+radius\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticle_af6aee0d324572f74a1bdc28937d04a0b}
+The radius of this particle. \hypertarget{classParticle_ae8433e1a1968203478096f319a04e111}{\index{Particle@{Particle}!m\+\_\+velocity@{m\+\_\+velocity}}
+\index{m\+\_\+velocity@{m\+\_\+velocity}!Particle@{Particle}}
+\subsubsection[{m\+\_\+velocity}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Particle\+::m\+\_\+velocity\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticle_ae8433e1a1968203478096f319a04e111}
+The position of this particle. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{Particle_8hpp}{Particle.\+hpp}\end{DoxyCompactItemize}

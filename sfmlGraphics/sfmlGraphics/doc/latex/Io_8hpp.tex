@@ -1,0 +1,51 @@
+\hypertarget{Io_8hpp}{\section{/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\+Io.hpp File Reference}
+\label{Io_8hpp}\index{/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\+Io.\+hpp@{/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\+Io.\+hpp}}
+}
+
+
+Input/\+Output functions.  
+
+
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$glm/glm.\+hpp$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{Io_8hpp_a9ba26fccde0c54987564bdc5e53c17dc}{read\+\_\+obj} (const std\+::string \&filename, std\+::vector$<$ glm\+::vec3 $>$ \&positions, std\+::vector$<$ unsigned int $>$ \&indices, std\+::vector$<$ glm\+::vec3 $>$ \&normals, std\+::vector$<$ glm\+::vec2 $>$ \&texcoords)
+\begin{DoxyCompactList}\small\item\em Collect mesh data from an O\+B\+J file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Currently, this file only contains I/\+O functions for O\+B\+J meshes. 
+
+\subsection{Function Documentation}
+\hypertarget{Io_8hpp_a9ba26fccde0c54987564bdc5e53c17dc}{\index{Io.\+hpp@{Io.\+hpp}!read\+\_\+obj@{read\+\_\+obj}}
+\index{read\+\_\+obj@{read\+\_\+obj}!Io.\+hpp@{Io.\+hpp}}
+\subsubsection[{read\+\_\+obj}]{\setlength{\rightskip}{0pt plus 5cm}bool read\+\_\+obj (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{filename, }
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{positions, }
+\item[{std\+::vector$<$ unsigned int $>$ \&}]{indices, }
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{normals, }
+\item[{std\+::vector$<$ glm\+::vec2 $>$ \&}]{texcoords}
+\end{DoxyParamCaption}
+)}}\label{Io_8hpp_a9ba26fccde0c54987564bdc5e53c17dc}
+This function opens an O\+B\+J mesh file to collect information such as vertex position, vertex indices of a face, vertex normals and vertex texture coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path to the mesh file. \\
+\hline
+{\em positions} & The vertex positions. \\
+\hline
+{\em indices} & The vertex indices of faces. \\
+\hline
+{\em normals} & The vertex normals. \\
+\hline
+{\em texcoords} & The vertex texture coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if import failed, true otherwise. 
+\end{DoxyReturn}

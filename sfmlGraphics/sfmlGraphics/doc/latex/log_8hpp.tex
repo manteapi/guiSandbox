@@ -1,0 +1,119 @@
+\hypertarget{log_8hpp}{\section{/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/log.hpp File Reference}
+\label{log_8hpp}\index{/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/log.\+hpp@{/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/log.\+hpp}}
+}
+
+
+Log functionalities.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{log_8hpp_a620cc3cdf03a66edf7cedc2306058ab6}{L\+O\+G\+\_\+\+W\+I\+T\+H\+\_\+\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E}(level, message, line, file)
+\item 
+\#define \hyperlink{log_8hpp_aa8cbcaf2958f38d3d632364f8e228837}{L\+O\+G}(level, message)~\hyperlink{log_8hpp_a620cc3cdf03a66edf7cedc2306058ab6}{L\+O\+G\+\_\+\+W\+I\+T\+H\+\_\+\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E}( level, message, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+ )
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{log_8hpp_a44fe714b53f91f01aab7d314d83d723d}{severity\+\_\+level} \{ \\*
+\hyperlink{log_8hpp_a44fe714b53f91f01aab7d314d83d723da36a3b17acbfb35380a47b3d88c9b8942}{trace}, 
+\hyperlink{log_8hpp_a44fe714b53f91f01aab7d314d83d723da5be0fd270d9cbf6a0b7445db855089da}{debug}, 
+\hyperlink{log_8hpp_a44fe714b53f91f01aab7d314d83d723daa4abb266e72efba828327b605b2ab0f4}{info}, 
+\hyperlink{log_8hpp_a44fe714b53f91f01aab7d314d83d723da8de9aef05fc85e519a0cfce33573f492}{warning}, 
+\\*
+\hyperlink{log_8hpp_a44fe714b53f91f01aab7d314d83d723dad606e435413ea0944dd00d49e901e4ed}{error}, 
+\hyperlink{log_8hpp_a44fe714b53f91f01aab7d314d83d723da8ce9ca6f2c2ee2f80260f4ae4158e45f}{fatal}
+ \}
+\begin{DoxyCompactList}\small\item\em Log severity levels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \hyperlink{log_8hpp_aa878cf2573bfe34a90f29d84e50318f4}{severity\+\_\+names} \mbox{[}6\mbox{]}
+\begin{DoxyCompactList}\small\item\em Holds the string version of the severity levels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file groups all the log features of the project. You are only expected to use the \hyperlink{log_8hpp_aa8cbcaf2958f38d3d632364f8e228837}{L\+O\+G()} macro. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{log_8hpp_aa8cbcaf2958f38d3d632364f8e228837}{\index{log.\+hpp@{log.\+hpp}!L\+O\+G@{L\+O\+G}}
+\index{L\+O\+G@{L\+O\+G}!log.\+hpp@{log.\+hpp}}
+\subsubsection[{L\+O\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G(
+\begin{DoxyParamCaption}
+\item[{}]{level, }
+\item[{}]{message}
+\end{DoxyParamCaption}
+)~{\bf L\+O\+G\+\_\+\+W\+I\+T\+H\+\_\+\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E}( level, message, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+ )}}\label{log_8hpp_aa8cbcaf2958f38d3d632364f8e228837}
+Log an entry with a specific \hyperlink{log_8hpp_a44fe714b53f91f01aab7d314d83d723d}{severity\+\_\+level}. For levels above severity\+\_\+level\+::warning, the location (file and line) of the code that request to log that entry is automatically included in the entry. The message can be built by concatening strings and values with the stream operator\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{float} x = 2, y = 5;
+\hyperlink{log_8hpp_aa8cbcaf2958f38d3d632364f8e228837}{LOG}( \hyperlink{log_8hpp_a44fe714b53f91f01aab7d314d83d723da5be0fd270d9cbf6a0b7445db855089da}{debug}, \textcolor{stringliteral}{"the 2D point is at \{"} << x << \textcolor{stringliteral}{", "} << y << \textcolor{stringliteral}{"\}"});
+\end{DoxyCode}
+ \hypertarget{log_8hpp_a620cc3cdf03a66edf7cedc2306058ab6}{\index{log.\+hpp@{log.\+hpp}!L\+O\+G\+\_\+\+W\+I\+T\+H\+\_\+\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E@{L\+O\+G\+\_\+\+W\+I\+T\+H\+\_\+\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E}}
+\index{L\+O\+G\+\_\+\+W\+I\+T\+H\+\_\+\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E@{L\+O\+G\+\_\+\+W\+I\+T\+H\+\_\+\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E}!log.\+hpp@{log.\+hpp}}
+\subsubsection[{L\+O\+G\+\_\+\+W\+I\+T\+H\+\_\+\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+O\+G\+\_\+\+W\+I\+T\+H\+\_\+\+L\+I\+N\+E\+\_\+\+F\+I\+L\+E(
+\begin{DoxyParamCaption}
+\item[{}]{level, }
+\item[{}]{message, }
+\item[{}]{line, }
+\item[{}]{file}
+\end{DoxyParamCaption}
+)}}\label{log_8hpp_a620cc3cdf03a66edf7cedc2306058ab6}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                                                                           \(\backslash\)
+  if( severity\_level::level > \hyperlink{log_8hpp_a44fe714b53f91f01aab7d314d83d723da8de9aef05fc85e519a0cfce33573f492}{severity\_level::warning} )                     \(\backslash\)
+  \{                                                                         \(\backslash\)
+    std::time\_t time = std::time( \textcolor{keyword}{nullptr} );                                \(\backslash\)
+    char mbstr[ 30 ];                                                       \(\backslash\)
+    std::strftime(mbstr, \textcolor{keyword}{sizeof}(mbstr), \textcolor{stringliteral}{"%c"}, std::localtime(&time));       \(\backslash\)
+    std::cout<< \textcolor{charliteral}{'['} << mbstr << \textcolor{charliteral}{']'}                                         \(\backslash\)
+             << \hyperlink{log_8hpp_aa878cf2573bfe34a90f29d84e50318f4}{severity\_names}[severity\_level::level]<< \textcolor{stringliteral}{" "}                 \(\backslash\)
+             << message                                                     \(\backslash\)
+             << \textcolor{stringliteral}{" (in "}<< file <<\textcolor{stringliteral}{":"}<< line <<\textcolor{stringliteral}{")"}                           \(\backslash\)
+             << std::endl;                                                  \(\backslash\)
+  \}                                                                         \(\backslash\)
+  else                                                                      \(\backslash\)
+  \{                                                                         \(\backslash\)
+    std::time\_t time = std::time( \textcolor{keyword}{nullptr} );                                \(\backslash\)
+    char mbstr[ 30 ];                                                       \(\backslash\)
+    std::strftime(mbstr, \textcolor{keyword}{sizeof}(mbstr), \textcolor{stringliteral}{"%c"}, std::localtime(&time));       \(\backslash\)
+    std::cout<< \textcolor{charliteral}{'['} << mbstr << \textcolor{charliteral}{']'}                                         \(\backslash\)
+             << \hyperlink{log_8hpp_aa878cf2573bfe34a90f29d84e50318f4}{severity\_names}[severity\_level::level]<< \textcolor{stringliteral}{" "}                 \(\backslash\)
+             << message << std::endl;                                       \(\backslash\)
+  \}                                                                         \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{log_8hpp_a44fe714b53f91f01aab7d314d83d723d}{\index{log.\+hpp@{log.\+hpp}!severity\+\_\+level@{severity\+\_\+level}}
+\index{severity\+\_\+level@{severity\+\_\+level}!log.\+hpp@{log.\+hpp}}
+\subsubsection[{severity\+\_\+level}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf severity\+\_\+level}}}\label{log_8hpp_a44fe714b53f91f01aab7d314d83d723d}
+A severity level refers to a particular kind of information logged in a log entry by the macro \hyperlink{log_8hpp_aa8cbcaf2958f38d3d632364f8e228837}{L\+O\+G(level,message)}. Its value reflects its importance, from \hyperlink{log_8hpp_a44fe714b53f91f01aab7d314d83d723da36a3b17acbfb35380a47b3d88c9b8942}{trace} which is the less important to \hyperlink{log_8hpp_a44fe714b53f91f01aab7d314d83d723da8ce9ca6f2c2ee2f80260f4ae4158e45f}{fatal} which is critical. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{trace@{trace}!log.\+hpp@{log.\+hpp}}\index{log.\+hpp@{log.\+hpp}!trace@{trace}}\item[{\em 
+\hypertarget{log_8hpp_a44fe714b53f91f01aab7d314d83d723da36a3b17acbfb35380a47b3d88c9b8942}{trace}\label{log_8hpp_a44fe714b53f91f01aab7d314d83d723da36a3b17acbfb35380a47b3d88c9b8942}
+}]the log entry is a trace to understand the program flow \index{debug@{debug}!log.\+hpp@{log.\+hpp}}\index{log.\+hpp@{log.\+hpp}!debug@{debug}}\item[{\em 
+\hypertarget{log_8hpp_a44fe714b53f91f01aab7d314d83d723da5be0fd270d9cbf6a0b7445db855089da}{debug}\label{log_8hpp_a44fe714b53f91f01aab7d314d83d723da5be0fd270d9cbf6a0b7445db855089da}
+}]the log entry is a debug information, that should not appear in production code \index{info@{info}!log.\+hpp@{log.\+hpp}}\index{log.\+hpp@{log.\+hpp}!info@{info}}\item[{\em 
+\hypertarget{log_8hpp_a44fe714b53f91f01aab7d314d83d723daa4abb266e72efba828327b605b2ab0f4}{info}\label{log_8hpp_a44fe714b53f91f01aab7d314d83d723daa4abb266e72efba828327b605b2ab0f4}
+}]the log entry is an information that might interest the user \index{warning@{warning}!log.\+hpp@{log.\+hpp}}\index{log.\+hpp@{log.\+hpp}!warning@{warning}}\item[{\em 
+\hypertarget{log_8hpp_a44fe714b53f91f01aab7d314d83d723da8de9aef05fc85e519a0cfce33573f492}{warning}\label{log_8hpp_a44fe714b53f91f01aab7d314d83d723da8de9aef05fc85e519a0cfce33573f492}
+}]the log entry is a warning about something that is not an error but might not be what the user expected \index{error@{error}!log.\+hpp@{log.\+hpp}}\index{log.\+hpp@{log.\+hpp}!error@{error}}\item[{\em 
+\hypertarget{log_8hpp_a44fe714b53f91f01aab7d314d83d723dad606e435413ea0944dd00d49e901e4ed}{error}\label{log_8hpp_a44fe714b53f91f01aab7d314d83d723dad606e435413ea0944dd00d49e901e4ed}
+}]the log entry is an error, something needs to be fixed \index{fatal@{fatal}!log.\+hpp@{log.\+hpp}}\index{log.\+hpp@{log.\+hpp}!fatal@{fatal}}\item[{\em 
+\hypertarget{log_8hpp_a44fe714b53f91f01aab7d314d83d723da8ce9ca6f2c2ee2f80260f4ae4158e45f}{fatal}\label{log_8hpp_a44fe714b53f91f01aab7d314d83d723da8ce9ca6f2c2ee2f80260f4ae4158e45f}
+}]the log entry is a fatal error, terminating immediately the application \end{description}
+\end{Desc}
+
+
+\subsection{Variable Documentation}
+\hypertarget{log_8hpp_aa878cf2573bfe34a90f29d84e50318f4}{\index{log.\+hpp@{log.\+hpp}!severity\+\_\+names@{severity\+\_\+names}}
+\index{severity\+\_\+names@{severity\+\_\+names}!log.\+hpp@{log.\+hpp}}
+\subsubsection[{severity\+\_\+names}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string severity\+\_\+names\mbox{[}6\mbox{]}}}\label{log_8hpp_aa878cf2573bfe34a90f29d84e50318f4}
+This array is used to print a string representing the severity level in the log entry. 

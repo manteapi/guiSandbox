@@ -1,0 +1,89 @@
+\hypertarget{classEulerExplicitSolver}{\section{Euler\+Explicit\+Solver Class Reference}
+\label{classEulerExplicitSolver}\index{Euler\+Explicit\+Solver@{Euler\+Explicit\+Solver}}
+}
+
+
+Explicit Euler solver.  
+
+
+
+
+{\ttfamily \#include $<$Euler\+Explicit\+Solver.\+hpp$>$}
+
+
+
+Inheritance diagram for Euler\+Explicit\+Solver\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classEulerExplicitSolver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Euler\+Explicit\+Solver\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classEulerExplicitSolver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEulerExplicitSolver_a6484746b2b67ee17597f63a5028df2fa}{Euler\+Explicit\+Solver} ()
+\item 
+\hyperlink{classEulerExplicitSolver_a84711eba5ad543c2a142f64d23de1bf6}{$\sim$\+Euler\+Explicit\+Solver} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classEulerExplicitSolver_aaaa3657876aff1c53a9a8a78c610757e}{do\+\_\+solve} (const float \&dt, std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \&particles)
+\begin{DoxyCompactList}\small\item\em Solve implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Explicit Euler dynamic system solver. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classEulerExplicitSolver_a6484746b2b67ee17597f63a5028df2fa}{\index{Euler\+Explicit\+Solver@{Euler\+Explicit\+Solver}!Euler\+Explicit\+Solver@{Euler\+Explicit\+Solver}}
+\index{Euler\+Explicit\+Solver@{Euler\+Explicit\+Solver}!Euler\+Explicit\+Solver@{Euler\+Explicit\+Solver}}
+\subsubsection[{Euler\+Explicit\+Solver}]{\setlength{\rightskip}{0pt plus 5cm}Euler\+Explicit\+Solver\+::\+Euler\+Explicit\+Solver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEulerExplicitSolver_a6484746b2b67ee17597f63a5028df2fa}
+\hypertarget{classEulerExplicitSolver_a84711eba5ad543c2a142f64d23de1bf6}{\index{Euler\+Explicit\+Solver@{Euler\+Explicit\+Solver}!````~Euler\+Explicit\+Solver@{$\sim$\+Euler\+Explicit\+Solver}}
+\index{````~Euler\+Explicit\+Solver@{$\sim$\+Euler\+Explicit\+Solver}!Euler\+Explicit\+Solver@{Euler\+Explicit\+Solver}}
+\subsubsection[{$\sim$\+Euler\+Explicit\+Solver}]{\setlength{\rightskip}{0pt plus 5cm}Euler\+Explicit\+Solver\+::$\sim$\+Euler\+Explicit\+Solver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEulerExplicitSolver_a84711eba5ad543c2a142f64d23de1bf6}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classEulerExplicitSolver_aaaa3657876aff1c53a9a8a78c610757e}{\index{Euler\+Explicit\+Solver@{Euler\+Explicit\+Solver}!do\+\_\+solve@{do\+\_\+solve}}
+\index{do\+\_\+solve@{do\+\_\+solve}!Euler\+Explicit\+Solver@{Euler\+Explicit\+Solver}}
+\subsubsection[{do\+\_\+solve}]{\setlength{\rightskip}{0pt plus 5cm}void Euler\+Explicit\+Solver\+::do\+\_\+solve (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{dt, }
+\item[{std\+::vector$<$ {\bf Particle\+Ptr} $>$ \&}]{particles}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classEulerExplicitSolver_aaaa3657876aff1c53a9a8a78c610757e}
+The actual implementation to solve the dynamic system. This should be implemented in derived classes. 
+\begin{DoxyParams}{Parameters}
+{\em dt} & The time step for the integration. \\
+\hline
+{\em particles} & The collection of particles. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classSolver_a4559f655c64c879fffd49557de27ab7d}{Solver}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{EulerExplicitSolver_8hpp}{Euler\+Explicit\+Solver.\+hpp}\end{DoxyCompactItemize}

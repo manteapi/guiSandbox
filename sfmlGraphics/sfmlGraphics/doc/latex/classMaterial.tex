@@ -1,0 +1,281 @@
+\hypertarget{classMaterial}{\section{Material Class Reference}
+\label{classMaterial}\index{Material@{Material}}
+}
+
+
+\hyperlink{classMaterial}{Material} properties of an object for the Phong illumination model.  
+
+
+
+
+{\ttfamily \#include $<$Material.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ \hyperlink{classMaterial}{Material} $>$ \hyperlink{classMaterial_afa8bf8c90cac7c65ba73bffc15f617c9}{Material\+Ptr}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMaterial_a2c19452d71f54075df8f5405b03129f4}{$\sim$\+Material} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classMaterial_a137e987401b63eb7c6c27c3e38bc74b5}{Material} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMaterial_ac0731e51ea0d30bf45ddec3fe761062e}{Material} (const \hyperlink{classMaterial}{Material} \&material)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMaterial_abe14a96ffa863f4797311436783c6dc8}{Material} (const glm\+::vec3 \&\hyperlink{classMaterial_a41c97ec67d40e331b1b9c9073a83291a}{ambient}, const glm\+::vec3 \&\hyperlink{classMaterial_a20d17721220c394d517fba384376b28b}{diffuse}, const glm\+::vec3 \&\hyperlink{classMaterial_abf83bcfb75295d0b666766b2b3e0150f}{specular}, const float \&\hyperlink{classMaterial_a115afa4cab211d366e96ad1e01dd5eed}{shininess})
+\begin{DoxyCompactList}\small\item\em Specific constructor. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classMaterial_a41c97ec67d40e331b1b9c9073a83291a}{ambient} () const 
+\begin{DoxyCompactList}\small\item\em Access to the ambient vector of the material. \end{DoxyCompactList}\item 
+void \hyperlink{classMaterial_a225eaed59c1116881b9fcdb82c475641}{set\+Ambient} (const glm\+::vec3 \&\hyperlink{classMaterial_a41c97ec67d40e331b1b9c9073a83291a}{ambient})
+\begin{DoxyCompactList}\small\item\em Set the ambient vector of the material. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classMaterial_a20d17721220c394d517fba384376b28b}{diffuse} () const 
+\begin{DoxyCompactList}\small\item\em Access to the diffuse vector of the material. \end{DoxyCompactList}\item 
+void \hyperlink{classMaterial_abd6fd16afb939e1d69f4008c5491d6ed}{set\+Diffuse} (const glm\+::vec3 \&\hyperlink{classMaterial_a20d17721220c394d517fba384376b28b}{diffuse})
+\begin{DoxyCompactList}\small\item\em Set the diffuse vector of the material. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classMaterial_abf83bcfb75295d0b666766b2b3e0150f}{specular} () const 
+\begin{DoxyCompactList}\small\item\em Access to the specular vector of the material. \end{DoxyCompactList}\item 
+void \hyperlink{classMaterial_a185716fb9befcf05ac127ece0fe35e6c}{set\+Specular} (const glm\+::vec3 \&\hyperlink{classMaterial_abf83bcfb75295d0b666766b2b3e0150f}{specular})
+\begin{DoxyCompactList}\small\item\em Set the specular vector of the material. \end{DoxyCompactList}\item 
+const float \& \hyperlink{classMaterial_a115afa4cab211d366e96ad1e01dd5eed}{shininess} () const 
+\begin{DoxyCompactList}\small\item\em Access to the shininess coefficient of the material. \end{DoxyCompactList}\item 
+void \hyperlink{classMaterial_a329d0ae8403956a71b1d45b3284f7dd7}{set\+Shininess} (float \hyperlink{classMaterial_a115afa4cab211d366e96ad1e01dd5eed}{shininess})
+\begin{DoxyCompactList}\small\item\em Set the shininess coefficient of the material. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classMaterial_a07123357ee8a258001b6f58473662f2b}{send\+To\+G\+P\+U} (const \hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} \&program, const \hyperlink{classMaterial_afa8bf8c90cac7c65ba73bffc15f617c9}{Material\+Ptr} \&material)
+\begin{DoxyCompactList}\small\item\em Get location for the attributes of the material and send the data to the G\+P\+U as uniforms. \end{DoxyCompactList}\item 
+static \hyperlink{classMaterial_afa8bf8c90cac7c65ba73bffc15f617c9}{Material\+Ptr} \hyperlink{classMaterial_a84089a03560a5f7d4c29ec771df5c5af}{Pearl} ()
+\begin{DoxyCompactList}\small\item\em Construct a pearl material from real data according to \href{http://devernay.free.fr/cours/opengl/materials.html}{\tt http\+://devernay.\+free.\+fr/cours/opengl/materials.\+html}. \end{DoxyCompactList}\item 
+static \hyperlink{classMaterial_afa8bf8c90cac7c65ba73bffc15f617c9}{Material\+Ptr} \hyperlink{classMaterial_acd305d40d21d94b4f45581d6e3723fe7}{Emerald} ()
+\begin{DoxyCompactList}\small\item\em Construct a emerald material from real data according to \href{http://devernay.free.fr/cours/opengl/materials.html}{\tt http\+://devernay.\+free.\+fr/cours/opengl/materials.\+html}. \end{DoxyCompactList}\item 
+static \hyperlink{classMaterial_afa8bf8c90cac7c65ba73bffc15f617c9}{Material\+Ptr} \hyperlink{classMaterial_ae904c5c1e6f4ef425b3dac08fbb20918}{Bronze} ()
+\begin{DoxyCompactList}\small\item\em Construct a bronze material from real data according to \href{http://devernay.free.fr/cours/opengl/materials.html}{\tt http\+://devernay.\+free.\+fr/cours/opengl/materials.\+html}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \hyperlink{classMaterial_ab3b04455ca3a29eea275fe5dd6f70b9b}{m\+\_\+ambient}
+\item 
+glm\+::vec3 \hyperlink{classMaterial_a4655998d1721cb070f1e4f92d0dbc239}{m\+\_\+diffuse}
+\item 
+glm\+::vec3 \hyperlink{classMaterial_a472d9632e7e9db1e9d6db0e5a40a4cc3}{m\+\_\+specular}
+\item 
+float \hyperlink{classMaterial_ac6870095f155d023adb9fa1d02f9be4c}{m\+\_\+shininess}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents the material properties of an object for the illumination model of Phong. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classMaterial_afa8bf8c90cac7c65ba73bffc15f617c9}{\index{Material@{Material}!Material\+Ptr@{Material\+Ptr}}
+\index{Material\+Ptr@{Material\+Ptr}!Material@{Material}}
+\subsubsection[{Material\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::shared\+\_\+ptr$<${\bf Material}$>$ {\bf Material\+::\+Material\+Ptr}}}\label{classMaterial_afa8bf8c90cac7c65ba73bffc15f617c9}
+Smart pointer to a material 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMaterial_a2c19452d71f54075df8f5405b03129f4}{\index{Material@{Material}!````~Material@{$\sim$\+Material}}
+\index{````~Material@{$\sim$\+Material}!Material@{Material}}
+\subsubsection[{$\sim$\+Material}]{\setlength{\rightskip}{0pt plus 5cm}Material\+::$\sim$\+Material (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMaterial_a2c19452d71f54075df8f5405b03129f4}
+\hypertarget{classMaterial_a137e987401b63eb7c6c27c3e38bc74b5}{\index{Material@{Material}!Material@{Material}}
+\index{Material@{Material}!Material@{Material}}
+\subsubsection[{Material}]{\setlength{\rightskip}{0pt plus 5cm}Material\+::\+Material (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMaterial_a137e987401b63eb7c6c27c3e38bc74b5}
+\hypertarget{classMaterial_ac0731e51ea0d30bf45ddec3fe761062e}{\index{Material@{Material}!Material@{Material}}
+\index{Material@{Material}!Material@{Material}}
+\subsubsection[{Material}]{\setlength{\rightskip}{0pt plus 5cm}Material\+::\+Material (
+\begin{DoxyParamCaption}
+\item[{const {\bf Material} \&}]{material}
+\end{DoxyParamCaption}
+)}}\label{classMaterial_ac0731e51ea0d30bf45ddec3fe761062e}
+\hypertarget{classMaterial_abe14a96ffa863f4797311436783c6dc8}{\index{Material@{Material}!Material@{Material}}
+\index{Material@{Material}!Material@{Material}}
+\subsubsection[{Material}]{\setlength{\rightskip}{0pt plus 5cm}Material\+::\+Material (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{ambient, }
+\item[{const glm\+::vec3 \&}]{diffuse, }
+\item[{const glm\+::vec3 \&}]{specular, }
+\item[{const float \&}]{shininess}
+\end{DoxyParamCaption}
+)}}\label{classMaterial_abe14a96ffa863f4797311436783c6dc8}
+Construct a material
+
+
+\begin{DoxyParams}{Parameters}
+{\em ambient} & The ambient vector of the material. \\
+\hline
+{\em diffuse} & The diffuse vector of the material. \\
+\hline
+{\em specular} & The specular vector of the material. \\
+\hline
+{\em shininess} & The shininess coefficient of the material. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMaterial_a41c97ec67d40e331b1b9c9073a83291a}{\index{Material@{Material}!ambient@{ambient}}
+\index{ambient@{ambient}!Material@{Material}}
+\subsubsection[{ambient}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Material\+::ambient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMaterial_a41c97ec67d40e331b1b9c9073a83291a}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+ambient. 
+\end{DoxyReturn}
+\hypertarget{classMaterial_ae904c5c1e6f4ef425b3dac08fbb20918}{\index{Material@{Material}!Bronze@{Bronze}}
+\index{Bronze@{Bronze}!Material@{Material}}
+\subsubsection[{Bronze}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Material\+Ptr} Material\+::\+Bronze (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMaterial_ae904c5c1e6f4ef425b3dac08fbb20918}
+\begin{DoxyReturn}{Returns}
+A bronze material. 
+\end{DoxyReturn}
+\hypertarget{classMaterial_a20d17721220c394d517fba384376b28b}{\index{Material@{Material}!diffuse@{diffuse}}
+\index{diffuse@{diffuse}!Material@{Material}}
+\subsubsection[{diffuse}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Material\+::diffuse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMaterial_a20d17721220c394d517fba384376b28b}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+diffuse. 
+\end{DoxyReturn}
+\hypertarget{classMaterial_acd305d40d21d94b4f45581d6e3723fe7}{\index{Material@{Material}!Emerald@{Emerald}}
+\index{Emerald@{Emerald}!Material@{Material}}
+\subsubsection[{Emerald}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Material\+Ptr} Material\+::\+Emerald (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMaterial_acd305d40d21d94b4f45581d6e3723fe7}
+\begin{DoxyReturn}{Returns}
+A emerald material. 
+\end{DoxyReturn}
+\hypertarget{classMaterial_a84089a03560a5f7d4c29ec771df5c5af}{\index{Material@{Material}!Pearl@{Pearl}}
+\index{Pearl@{Pearl}!Material@{Material}}
+\subsubsection[{Pearl}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Material\+Ptr} Material\+::\+Pearl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMaterial_a84089a03560a5f7d4c29ec771df5c5af}
+\begin{DoxyReturn}{Returns}
+A pearl material. 
+\end{DoxyReturn}
+\hypertarget{classMaterial_a07123357ee8a258001b6f58473662f2b}{\index{Material@{Material}!send\+To\+G\+P\+U@{send\+To\+G\+P\+U}}
+\index{send\+To\+G\+P\+U@{send\+To\+G\+P\+U}!Material@{Material}}
+\subsubsection[{send\+To\+G\+P\+U}]{\setlength{\rightskip}{0pt plus 5cm}static bool Material\+::send\+To\+G\+P\+U (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shader\+Program\+Ptr} \&}]{program, }
+\item[{const {\bf Material\+Ptr} \&}]{material}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMaterial_a07123357ee8a258001b6f58473662f2b}
+
+\begin{DoxyParams}{Parameters}
+{\em program} & A pointer to the shader program where to get the locations. \\
+\hline
+{\em material} & A pointer to the material to send to the G\+P\+U. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if everything was fine, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classMaterial_a225eaed59c1116881b9fcdb82c475641}{\index{Material@{Material}!set\+Ambient@{set\+Ambient}}
+\index{set\+Ambient@{set\+Ambient}!Material@{Material}}
+\subsubsection[{set\+Ambient}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::set\+Ambient (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{ambient}
+\end{DoxyParamCaption}
+)}}\label{classMaterial_a225eaed59c1116881b9fcdb82c475641}
+Set the value of m\+\_\+ambient. 
+\begin{DoxyParams}{Parameters}
+{\em ambient} & The new ambient vector of the material. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMaterial_abd6fd16afb939e1d69f4008c5491d6ed}{\index{Material@{Material}!set\+Diffuse@{set\+Diffuse}}
+\index{set\+Diffuse@{set\+Diffuse}!Material@{Material}}
+\subsubsection[{set\+Diffuse}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::set\+Diffuse (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{diffuse}
+\end{DoxyParamCaption}
+)}}\label{classMaterial_abd6fd16afb939e1d69f4008c5491d6ed}
+Set the value of m\+\_\+diffuse. 
+\begin{DoxyParams}{Parameters}
+{\em diffuse} & The new diffuse vector of the material. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMaterial_a329d0ae8403956a71b1d45b3284f7dd7}{\index{Material@{Material}!set\+Shininess@{set\+Shininess}}
+\index{set\+Shininess@{set\+Shininess}!Material@{Material}}
+\subsubsection[{set\+Shininess}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::set\+Shininess (
+\begin{DoxyParamCaption}
+\item[{float}]{shininess}
+\end{DoxyParamCaption}
+)}}\label{classMaterial_a329d0ae8403956a71b1d45b3284f7dd7}
+Set the value of m\+\_\+shininess. 
+\begin{DoxyParams}{Parameters}
+{\em shininess} & The new shininess vector of the material. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMaterial_a185716fb9befcf05ac127ece0fe35e6c}{\index{Material@{Material}!set\+Specular@{set\+Specular}}
+\index{set\+Specular@{set\+Specular}!Material@{Material}}
+\subsubsection[{set\+Specular}]{\setlength{\rightskip}{0pt plus 5cm}void Material\+::set\+Specular (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{specular}
+\end{DoxyParamCaption}
+)}}\label{classMaterial_a185716fb9befcf05ac127ece0fe35e6c}
+Set the value of m\+\_\+specular. 
+\begin{DoxyParams}{Parameters}
+{\em specular} & The new specular vector of the material. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMaterial_a115afa4cab211d366e96ad1e01dd5eed}{\index{Material@{Material}!shininess@{shininess}}
+\index{shininess@{shininess}!Material@{Material}}
+\subsubsection[{shininess}]{\setlength{\rightskip}{0pt plus 5cm}const float\& Material\+::shininess (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMaterial_a115afa4cab211d366e96ad1e01dd5eed}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+shininess. 
+\end{DoxyReturn}
+\hypertarget{classMaterial_abf83bcfb75295d0b666766b2b3e0150f}{\index{Material@{Material}!specular@{specular}}
+\index{specular@{specular}!Material@{Material}}
+\subsubsection[{specular}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Material\+::specular (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMaterial_abf83bcfb75295d0b666766b2b3e0150f}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+specular. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMaterial_ab3b04455ca3a29eea275fe5dd6f70b9b}{\index{Material@{Material}!m\+\_\+ambient@{m\+\_\+ambient}}
+\index{m\+\_\+ambient@{m\+\_\+ambient}!Material@{Material}}
+\subsubsection[{m\+\_\+ambient}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Material\+::m\+\_\+ambient\hspace{0.3cm}{\ttfamily [private]}}}\label{classMaterial_ab3b04455ca3a29eea275fe5dd6f70b9b}
+The ambient material vector defines what color this object reflects under ambient lighting. \hypertarget{classMaterial_a4655998d1721cb070f1e4f92d0dbc239}{\index{Material@{Material}!m\+\_\+diffuse@{m\+\_\+diffuse}}
+\index{m\+\_\+diffuse@{m\+\_\+diffuse}!Material@{Material}}
+\subsubsection[{m\+\_\+diffuse}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Material\+::m\+\_\+diffuse\hspace{0.3cm}{\ttfamily [private]}}}\label{classMaterial_a4655998d1721cb070f1e4f92d0dbc239}
+The diffuse material vector defines the color of the object under diffuse lighting. \hypertarget{classMaterial_ac6870095f155d023adb9fa1d02f9be4c}{\index{Material@{Material}!m\+\_\+shininess@{m\+\_\+shininess}}
+\index{m\+\_\+shininess@{m\+\_\+shininess}!Material@{Material}}
+\subsubsection[{m\+\_\+shininess}]{\setlength{\rightskip}{0pt plus 5cm}float Material\+::m\+\_\+shininess\hspace{0.3cm}{\ttfamily [private]}}}\label{classMaterial_ac6870095f155d023adb9fa1d02f9be4c}
+The shininess impacts the scattering/radius of the specular highlight. \hypertarget{classMaterial_a472d9632e7e9db1e9d6db0e5a40a4cc3}{\index{Material@{Material}!m\+\_\+specular@{m\+\_\+specular}}
+\index{m\+\_\+specular@{m\+\_\+specular}!Material@{Material}}
+\subsubsection[{m\+\_\+specular}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Material\+::m\+\_\+specular\hspace{0.3cm}{\ttfamily [private]}}}\label{classMaterial_a472d9632e7e9db1e9d6db0e5a40a4cc3}
+The specular material vector sets the color impact a specular light has on the object. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/lighting/\hyperlink{Material_8hpp}{Material.\+hpp}\end{DoxyCompactItemize}

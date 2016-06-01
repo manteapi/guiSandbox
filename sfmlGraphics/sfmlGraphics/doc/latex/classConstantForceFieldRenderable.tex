@@ -1,0 +1,149 @@
+\hypertarget{classConstantForceFieldRenderable}{\section{Constant\+Force\+Field\+Renderable Class Reference}
+\label{classConstantForceFieldRenderable}\index{Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}}
+}
+
+
+Render a constant force field.  
+
+
+
+
+{\ttfamily \#include $<$Constant\+Force\+Field\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Constant\+Force\+Field\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classConstantForceFieldRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Constant\+Force\+Field\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConstantForceFieldRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classConstantForceFieldRenderable_a5b3b26ab2ddb497413df242773f941a2}{$\sim$\+Constant\+Force\+Field\+Renderable} ()
+\item 
+\hyperlink{classConstantForceFieldRenderable_a47f65f935336c605e55d94efb84e6842}{Constant\+Force\+Field\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program, \hyperlink{ConstantForceField_8hpp_a7b80b566be4aeb0b5474a8aeb2e0ff49}{Constant\+Force\+Field\+Ptr} force\+Field)
+\begin{DoxyCompactList}\small\item\em Build a renderable for a constant force field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classConstantForceFieldRenderable_af9ee973e392967a5da31b0b9b67d3fdd}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classConstantForceFieldRenderable_aa2c53dcf6411244d5a5e4ed562f9574c}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ConstantForceField_8hpp_a7b80b566be4aeb0b5474a8aeb2e0ff49}{Constant\+Force\+Field\+Ptr} \hyperlink{classConstantForceFieldRenderable_ac9613a4d0ca11522749d2416b51cf1c5}{m\+\_\+force\+Field}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classConstantForceFieldRenderable_adda5c978538c39f9ce237bc4914d0399}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classConstantForceFieldRenderable_a78a6bde3ae426f7367563718573ef9e3}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classConstantForceFieldRenderable_a171dc24ba94fd9337d36758e8791cebb}{m\+\_\+normals}
+\item 
+unsigned int \hyperlink{classConstantForceFieldRenderable_a170f25325d424be2a1533befc64b1648}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classConstantForceFieldRenderable_a6c7501e6c02b7c49b7ee253563000eff}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classConstantForceFieldRenderable_af160da689aab9e5b38558cc159f9f2e4}{m\+\_\+n\+Buffer}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class is used to render a constant force field. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classConstantForceFieldRenderable_a5b3b26ab2ddb497413df242773f941a2}{\index{Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}!````~Constant\+Force\+Field\+Renderable@{$\sim$\+Constant\+Force\+Field\+Renderable}}
+\index{````~Constant\+Force\+Field\+Renderable@{$\sim$\+Constant\+Force\+Field\+Renderable}!Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}}
+\subsubsection[{$\sim$\+Constant\+Force\+Field\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Constant\+Force\+Field\+Renderable\+::$\sim$\+Constant\+Force\+Field\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classConstantForceFieldRenderable_a5b3b26ab2ddb497413df242773f941a2}
+\hypertarget{classConstantForceFieldRenderable_a47f65f935336c605e55d94efb84e6842}{\index{Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}!Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}}
+\index{Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}!Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}}
+\subsubsection[{Constant\+Force\+Field\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Constant\+Force\+Field\+Renderable\+::\+Constant\+Force\+Field\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program, }
+\item[{{\bf Constant\+Force\+Field\+Ptr}}]{force\+Field}
+\end{DoxyParamCaption}
+)}}\label{classConstantForceFieldRenderable_a47f65f935336c605e55d94efb84e6842}
+Create a renderable for a constant force field. 
+\begin{DoxyParams}{Parameters}
+{\em program} & Shader program to use to render the constant force field. \\
+\hline
+{\em force\+Field} & The constant force field to render. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classConstantForceFieldRenderable_aa2c53dcf6411244d5a5e4ed562f9574c}{\index{Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Constant\+Force\+Field\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classConstantForceFieldRenderable_aa2c53dcf6411244d5a5e4ed562f9574c}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classConstantForceFieldRenderable_af9ee973e392967a5da31b0b9b67d3fdd}{\index{Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Constant\+Force\+Field\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classConstantForceFieldRenderable_af9ee973e392967a5da31b0b9b67d3fdd}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classConstantForceFieldRenderable_a6c7501e6c02b7c49b7ee253563000eff}{\index{Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Constant\+Force\+Field\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classConstantForceFieldRenderable_a6c7501e6c02b7c49b7ee253563000eff}
+\hypertarget{classConstantForceFieldRenderable_a78a6bde3ae426f7367563718573ef9e3}{\index{Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Constant\+Force\+Field\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classConstantForceFieldRenderable_a78a6bde3ae426f7367563718573ef9e3}
+\hypertarget{classConstantForceFieldRenderable_ac9613a4d0ca11522749d2416b51cf1c5}{\index{Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}!m\+\_\+force\+Field@{m\+\_\+force\+Field}}
+\index{m\+\_\+force\+Field@{m\+\_\+force\+Field}!Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+force\+Field}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Constant\+Force\+Field\+Ptr} Constant\+Force\+Field\+Renderable\+::m\+\_\+force\+Field\hspace{0.3cm}{\ttfamily [private]}}}\label{classConstantForceFieldRenderable_ac9613a4d0ca11522749d2416b51cf1c5}
+\hypertarget{classConstantForceFieldRenderable_af160da689aab9e5b38558cc159f9f2e4}{\index{Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Constant\+Force\+Field\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classConstantForceFieldRenderable_af160da689aab9e5b38558cc159f9f2e4}
+\hypertarget{classConstantForceFieldRenderable_a171dc24ba94fd9337d36758e8791cebb}{\index{Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Constant\+Force\+Field\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classConstantForceFieldRenderable_a171dc24ba94fd9337d36758e8791cebb}
+\hypertarget{classConstantForceFieldRenderable_a170f25325d424be2a1533befc64b1648}{\index{Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Constant\+Force\+Field\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classConstantForceFieldRenderable_a170f25325d424be2a1533befc64b1648}
+\hypertarget{classConstantForceFieldRenderable_adda5c978538c39f9ce237bc4914d0399}{\index{Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Constant\+Force\+Field\+Renderable@{Constant\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Constant\+Force\+Field\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classConstantForceFieldRenderable_adda5c978538c39f9ce237bc4914d0399}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{ConstantForceFieldRenderable_8hpp}{Constant\+Force\+Field\+Renderable.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,156 @@
+\hypertarget{classQuadRenderable}{\section{Quad\+Renderable Class Reference}
+\label{classQuadRenderable}\index{Quad\+Renderable@{Quad\+Renderable}}
+}
+
+
+Render a quad on the screen.  
+
+
+
+
+{\ttfamily \#include $<$Quad\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Quad\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classQuadRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Quad\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classQuadRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQuadRenderable_a188666a23247f2b8c37642f25856dc7f}{$\sim$\+Quad\+Renderable} ()
+\item 
+\hyperlink{classQuadRenderable_a3c4fc3b8118d06fc7e2457e76f2bc48a}{Quad\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program, const glm\+::vec3 \&p1, const glm\+::vec3 \&p2, const glm\+::vec3 \&p3, const glm\+::vec3 \&p4, const glm\+::vec4 \&color=glm\+::vec4\{1.\+0, 0, 0, 1.\+0\})
+\begin{DoxyCompactList}\small\item\em Build a quad passing by four vertices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classQuadRenderable_a584444dfbbb34ef5a6fac48a72aa51e6}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classQuadRenderable_a19fc1c1704e35cd89c31997e898fb9ba}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classQuadRenderable_a98895c29eb360bfa5399856fd05808a3}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classQuadRenderable_a775824ad790972ac1fb82553ce2d9268}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classQuadRenderable_a6af0484f27f593537f05c7eb8386bd09}{m\+\_\+normals}
+\item 
+unsigned int \hyperlink{classQuadRenderable_a985335081fe25dd9556d86d6d168b5fe}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classQuadRenderable_af276accada410c35db3feb1456e6da15}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classQuadRenderable_aa812c4e6491db1ac7e464f5b3dc8561a}{m\+\_\+n\+Buffer}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class is used to render a quad on the screen. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classQuadRenderable_a188666a23247f2b8c37642f25856dc7f}{\index{Quad\+Renderable@{Quad\+Renderable}!````~Quad\+Renderable@{$\sim$\+Quad\+Renderable}}
+\index{````~Quad\+Renderable@{$\sim$\+Quad\+Renderable}!Quad\+Renderable@{Quad\+Renderable}}
+\subsubsection[{$\sim$\+Quad\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Quad\+Renderable\+::$\sim$\+Quad\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classQuadRenderable_a188666a23247f2b8c37642f25856dc7f}
+\hypertarget{classQuadRenderable_a3c4fc3b8118d06fc7e2457e76f2bc48a}{\index{Quad\+Renderable@{Quad\+Renderable}!Quad\+Renderable@{Quad\+Renderable}}
+\index{Quad\+Renderable@{Quad\+Renderable}!Quad\+Renderable@{Quad\+Renderable}}
+\subsubsection[{Quad\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Quad\+Renderable\+::\+Quad\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program, }
+\item[{const glm\+::vec3 \&}]{p1, }
+\item[{const glm\+::vec3 \&}]{p2, }
+\item[{const glm\+::vec3 \&}]{p3, }
+\item[{const glm\+::vec3 \&}]{p4, }
+\item[{const glm\+::vec4 \&}]{color = {\ttfamily glm\+:\+:vec4\{1.0,~0,~0,~1.0\}}}
+\end{DoxyParamCaption}
+)}}\label{classQuadRenderable_a3c4fc3b8118d06fc7e2457e76f2bc48a}
+Build a quad passing by four vertices. The quad is rendering thanks to two triangles\+: (p1, p2, p3) and (p1, p3, p4). 
+\begin{DoxyParams}{Parameters}
+{\em program} & Shader program used to render this quad. \\
+\hline
+{\em p1} & First quad vertex. \\
+\hline
+{\em p2} & Second quad vertex. \\
+\hline
+{\em p3} & Third quad vertex. \\
+\hline
+{\em p4} & Fourth quad vertex. \\
+\hline
+{\em color} & Color of the quad. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classQuadRenderable_a19fc1c1704e35cd89c31997e898fb9ba}{\index{Quad\+Renderable@{Quad\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Quad\+Renderable@{Quad\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Quad\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classQuadRenderable_a19fc1c1704e35cd89c31997e898fb9ba}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classQuadRenderable_a584444dfbbb34ef5a6fac48a72aa51e6}{\index{Quad\+Renderable@{Quad\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Quad\+Renderable@{Quad\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Quad\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classQuadRenderable_a584444dfbbb34ef5a6fac48a72aa51e6}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classQuadRenderable_af276accada410c35db3feb1456e6da15}{\index{Quad\+Renderable@{Quad\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Quad\+Renderable@{Quad\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Quad\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classQuadRenderable_af276accada410c35db3feb1456e6da15}
+\hypertarget{classQuadRenderable_a775824ad790972ac1fb82553ce2d9268}{\index{Quad\+Renderable@{Quad\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Quad\+Renderable@{Quad\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Quad\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classQuadRenderable_a775824ad790972ac1fb82553ce2d9268}
+\hypertarget{classQuadRenderable_aa812c4e6491db1ac7e464f5b3dc8561a}{\index{Quad\+Renderable@{Quad\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Quad\+Renderable@{Quad\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Quad\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classQuadRenderable_aa812c4e6491db1ac7e464f5b3dc8561a}
+\hypertarget{classQuadRenderable_a6af0484f27f593537f05c7eb8386bd09}{\index{Quad\+Renderable@{Quad\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Quad\+Renderable@{Quad\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Quad\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classQuadRenderable_a6af0484f27f593537f05c7eb8386bd09}
+\hypertarget{classQuadRenderable_a985335081fe25dd9556d86d6d168b5fe}{\index{Quad\+Renderable@{Quad\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Quad\+Renderable@{Quad\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Quad\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classQuadRenderable_a985335081fe25dd9556d86d6d168b5fe}
+\hypertarget{classQuadRenderable_a98895c29eb360bfa5399856fd05808a3}{\index{Quad\+Renderable@{Quad\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Quad\+Renderable@{Quad\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Quad\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classQuadRenderable_a98895c29eb360bfa5399856fd05808a3}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{QuadRenderable_8hpp}{Quad\+Renderable.\+hpp}\end{DoxyCompactItemize}

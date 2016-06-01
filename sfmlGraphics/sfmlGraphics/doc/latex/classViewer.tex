@@ -1,0 +1,554 @@
+\hypertarget{classViewer}{\section{Viewer Class Reference}
+\label{classViewer}\index{Viewer@{Viewer}}
+}
+
+
+Manage the rendering and the interaction in a window.  
+
+
+
+
+{\ttfamily \#include $<$Viewer.\+hpp$>$}
+
+
+
+Collaboration diagram for Viewer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classViewer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structViewer_1_1KeyboardState}{Keyboard\+State}
+\begin{DoxyCompactList}\small\item\em Hold important state of the keyboard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::chrono\+::system\+\_\+clock \hyperlink{classViewer_a3b19fa21a19da8b561cac43e47e50277}{clock}
+\item 
+typedef std\+::chrono\+::duration\\*
+$<$ double $>$ \hyperlink{classViewer_aa36c6a10e0823afb4d570dbd6f0a01a3}{Duration}
+\item 
+typedef \\*
+std\+::chrono\+::time\+\_\+point$<$ \hyperlink{classViewer_a3b19fa21a19da8b561cac43e47e50277}{clock}, \\*
+\hyperlink{classViewer_aa36c6a10e0823afb4d570dbd6f0a01a3}{Duration} $>$ \hyperlink{classViewer_ae3f3e7a7694a354a2d374693649000ec}{Time\+Point}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classViewer_a8d9ba770456d5e710522856057c2e56b}{set\+Directional\+Light} (const \hyperlink{Light_8hpp_ad8ef93288a101a8d8f185fb2a88f496d}{Directional\+Light\+Ptr} \&directional\+Light)
+\item 
+void \hyperlink{classViewer_a34f80351a0f686ddbc327c3b031723a3}{add\+Point\+Light} (const \hyperlink{Light_8hpp_a28898b9799350669037caef13c5115d2}{Point\+Light\+Ptr} \&point\+Light)
+\item 
+void \hyperlink{classViewer_a9f0aefe4012a3d934a8b032e1242d901}{add\+Spot\+Light} (const \hyperlink{Light_8hpp_a1865f598c5eed6e6e1f79d7296852092}{Spot\+Light\+Ptr} \&spot\+Light)
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Construction / Destruction}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classViewer_a324e5a6a1532fe5eac3f3b0e4792b2da}{$\sim$\+Viewer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classViewer_a8569cd861c9a9edb86f64f53f18758dc}{Viewer} (float width, float height)
+\begin{DoxyCompactList}\small\item\em Constructor with window size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Shader Program management}\par
+{\em We can make more evolved and useful shader program management. However, it would be also more complex (to use and to understand) and maybe a little restrictive for what you want to do in your project. Thus we kept the shader program management of the \hyperlink{classViewer}{Viewer} quite simple\+: \begin{DoxyItemize}
+\item add a shader program to manage \item reload all managed shader program \end{DoxyItemize}
+}\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classViewer_ac900d8f3cc756e9b2687cd58c9ddb6d7}{add\+Shader\+Program} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program)
+\begin{DoxyCompactList}\small\item\em Manage a shader program. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_a692ef0144fbf7511caccefd9a37b43b1}{reload\+Shader\+Programs} ()
+\begin{DoxyCompactList}\small\item\em Reload managed shader programs from its sources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Main loop functions}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classViewer_a96ee8c50a356c64393478da709ebac78}{is\+Running} () const 
+\begin{DoxyCompactList}\small\item\em Check if the graphical application is still running. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_a277a934adb86150b09d044b7cee822f8}{display} ()
+\begin{DoxyCompactList}\small\item\em Display the scene on the windows. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_a9ce9d06343c4e089ac76b19f78fe29e4}{draw} ()
+\begin{DoxyCompactList}\small\item\em Draw the renderables. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_a7114e33ca0c224c2206b53dee77fe7fe}{animate} ()
+\begin{DoxyCompactList}\small\item\em Animate the renderables. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_af29c9abea6accf5d93fffb37aeb1a18d}{handle\+Event} ()
+\begin{DoxyCompactList}\small\item\em handle\+Event Manage mouse, keyboards and window events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Utilities}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classViewer_a6dbec13fc3fe0e9b670cd290dd79129f}{change\+Camera\+Mode} ()
+\begin{DoxyCompactList}\small\item\em Change the camera behavior. \end{DoxyCompactList}\item 
+\hyperlink{classCamera}{Camera} \& \hyperlink{classViewer_aaa4a3ba6d053dd80b5ddce9674dc9223}{get\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Get the camera. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classViewer_a6b1049a4ee9dadb17300466d77a10b33}{window\+To\+World} (const glm\+::vec3 \&window\+Coordinate)
+\begin{DoxyCompactList}\small\item\em Get the world coordinate of a window point. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classViewer_a292d761edf0ab1e7a82e980df5d5d78f}{world\+To\+Window} (const glm\+::vec3 \&world\+Coordinate)
+\begin{DoxyCompactList}\small\item\em Get the window coordinate of a world point. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_a20d5c9848fc168114cfa87a0a3644889}{add\+Renderable} (\hyperlink{Renderable_8hpp_af96923590b8eeb9c51882b39815f266b}{Renderable\+Ptr} r)
+\begin{DoxyCompactList}\small\item\em add\+Renderable \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_a035601318af5f11281aaeb9d067a8bd0}{take\+Screenshot} ()
+\begin{DoxyCompactList}\small\item\em Take a screen shot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Animation}\par
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classViewer_aa4065ecafe1008b63ebd3b4a84c65557}{get\+Time} ()
+\begin{DoxyCompactList}\small\item\em Get the current animation time. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_a912259c3206eed1ebc1d24f7425e99cd}{start\+Animation} ()
+\begin{DoxyCompactList}\small\item\em Start the animation. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_abc1c9b7f6d564861aeab9be3b320bb44}{stop\+Animation} ()
+\begin{DoxyCompactList}\small\item\em Stop the animation. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_a268b0edf15bee6137d617743d3330d1e}{reset\+Animation} ()
+\begin{DoxyCompactList}\small\item\em Reset the animation. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_aaf65e6b104d3202c24a5760cb273b144}{set\+Animation\+Loop} (bool animation\+Loop, float loop\+Duration=0.\+0)
+\begin{DoxyCompactList}\small\item\em Set an animation loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classViewer_aaedebacb31cba87de6e7d448ed8d6586}{Viewer} ()
+\begin{DoxyCompactList}\small\item\em Forbidden default constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_a330516bb126f9e2ac8252cb7960931cf}{key\+Pressed\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em key\+Pressed\+Event Manage key pressing events. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_a5708b6929060f2c9cf4b36aaffc2565b}{key\+Released\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em key\+Released\+Event Manage key releasing events. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_a5c3b224f4caef8deddfd1fac8791d64e}{mouse\+Press\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em mouse\+Press\+Event Manage mouse pressing events. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_ac3dea2781388d468f883e637304925f0}{mouse\+Release\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em mouse\+Release\+Event Manage mouse releasing events. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_ad40959a2f2d50bdb4cf3bc379d9c3ac0}{mouse\+Wheel\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em mouse\+Wheel\+Event Manage mouse wheeling event. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_a2a097429d1bc517bdfdcb6cbda323719}{mouse\+Move\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em mouse\+Move\+Event Manage mouse motion event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCamera}{Camera} \hyperlink{classViewer_aca2cfeaed36c2ea6711d694ace109aca}{m\+\_\+camera}
+\item 
+sf\+::\+Render\+Window \hyperlink{classViewer_a02691cb0b474e4afc22bea4e6154a83f}{m\+\_\+window}
+\item 
+std\+::unordered\+\_\+set$<$ \hyperlink{Renderable_8hpp_af96923590b8eeb9c51882b39815f266b}{Renderable\+Ptr} $>$ \hyperlink{classViewer_a73ebb9719c2f2ffb9891642503c793cc}{m\+\_\+renderables}
+\item 
+\hyperlink{Light_8hpp_ad8ef93288a101a8d8f185fb2a88f496d}{Directional\+Light\+Ptr} \hyperlink{classViewer_a0c19f64be563889aa53ce1cdde30e322}{m\+\_\+directional\+Light}
+\item 
+std\+::vector$<$ \hyperlink{Light_8hpp_a28898b9799350669037caef13c5115d2}{Point\+Light\+Ptr} $>$ \hyperlink{classViewer_a0839a4bd3c220aa6e50d9c3d304e68ee}{m\+\_\+point\+Lights}
+\item 
+std\+::vector$<$ \hyperlink{Light_8hpp_a1865f598c5eed6e6e1f79d7296852092}{Spot\+Light\+Ptr} $>$ \hyperlink{classViewer_ad241b9648367de46033672b4a759cfd3}{m\+\_\+spot\+Lights}
+\item 
+std\+::unordered\+\_\+set\\*
+$<$ \hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} $>$ \hyperlink{classViewer_ae46d7bb320590c0fabe27e20299a4eec}{m\+\_\+programs}
+\item 
+\hyperlink{classTextEngine}{Text\+Engine} \hyperlink{classViewer_a502511db306be04271e6469fc2b2d908}{m\+\_\+tengine}
+\item 
+\hyperlink{classViewer_ae3f3e7a7694a354a2d374693649000ec}{Time\+Point} \hyperlink{classViewer_a36cbb2fc59ec195458a2982d335edc9f}{m\+\_\+mode\+Information\+Text\+Disappearance\+Time}
+\item 
+std\+::string \hyperlink{classViewer_addd1668ee49c52296c2d13a15d2a8f6c}{m\+\_\+mode\+Information\+Text}
+\item 
+bool \hyperlink{classViewer_a3172d624cfacccdbc5cc225535429880}{m\+\_\+application\+Running}
+\item 
+bool \hyperlink{classViewer_a8333976239ee77a66bad2975600ec880}{m\+\_\+animation\+Loop}
+\item 
+bool \hyperlink{classViewer_af77f428d66cb515b77774efd36846ce2}{m\+\_\+animation\+Is\+Started}
+\item 
+float \hyperlink{classViewer_a361b307d72d4647b895b0c35d6b3a3a9}{m\+\_\+loop\+Duration}
+\item 
+float \hyperlink{classViewer_a26701da64fd533bbadd7a20bb2bddb4b}{m\+\_\+simulation\+Time}
+\item 
+\hyperlink{classViewer_ae3f3e7a7694a354a2d374693649000ec}{Time\+Point} \hyperlink{classViewer_ac20ec408b4ae6ab2b1e0a42d04be4acf}{m\+\_\+last\+Simulation\+Time\+Point}
+\item 
+glm\+::vec3 \hyperlink{classViewer_a0bdff57aff91916b2fa3e239d474ab53}{m\+\_\+current\+Mouse\+Position}
+\item 
+glm\+::vec3 \hyperlink{classViewer_a345d4a077878ba4b991a90e4147c08c5}{m\+\_\+last\+Mouse\+Position}
+\item 
+unsigned int \hyperlink{classViewer_a54b354f885ad35e9bf2d33e80ae32e8d}{m\+\_\+screenshot\+Counter}
+\item 
+\hyperlink{classFPSCounter}{F\+P\+S\+Counter} \hyperlink{classViewer_a837a1d9dcf94c41c637e931989261554}{m\+\_\+fps\+Counter}
+\item 
+bool \hyperlink{classViewer_acbbda7f59919b475ae7e20b78118aebb}{m\+\_\+help\+Displayed}
+\item 
+\hyperlink{structViewer_1_1KeyboardState}{Keyboard\+State} \hyperlink{classViewer_a0c8e2d656c33435015ce34b06e047e77}{keyboard}
+\item 
+\hyperlink{classViewer_ae3f3e7a7694a354a2d374693649000ec}{Time\+Point} \hyperlink{classViewer_a2f18581a08d0449876631f30c2e9606a}{m\+\_\+last\+Event\+Handle\+Time}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classViewer}{Viewer} class allows to visualize virtual contents and interact with it. It is the key class of the the programs you will build in these practicals. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classViewer_a3b19fa21a19da8b561cac43e47e50277}{\index{Viewer@{Viewer}!clock@{clock}}
+\index{clock@{clock}!Viewer@{Viewer}}
+\subsubsection[{clock}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::chrono\+::system\+\_\+clock {\bf Viewer\+::clock}}}\label{classViewer_a3b19fa21a19da8b561cac43e47e50277}
+We use the system\+\_\+clock of std\+::chrono to compute durations. chrono is a nice addition to the c++ std, go have a look there\+: \href{http://www.cplusplus.com/reference/chrono/}{\tt http\+://www.\+cplusplus.\+com/reference/chrono/} \hypertarget{classViewer_aa36c6a10e0823afb4d570dbd6f0a01a3}{\index{Viewer@{Viewer}!Duration@{Duration}}
+\index{Duration@{Duration}!Viewer@{Viewer}}
+\subsubsection[{Duration}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::chrono\+::duration$<$double$>$ {\bf Viewer\+::\+Duration}}}\label{classViewer_aa36c6a10e0823afb4d570dbd6f0a01a3}
+We use a double precision duration type to have a precise animation. \hypertarget{classViewer_ae3f3e7a7694a354a2d374693649000ec}{\index{Viewer@{Viewer}!Time\+Point@{Time\+Point}}
+\index{Time\+Point@{Time\+Point}!Viewer@{Viewer}}
+\subsubsection[{Time\+Point}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::chrono\+::time\+\_\+point$<$ {\bf clock}, {\bf Duration} $>$ {\bf Viewer\+::\+Time\+Point}}}\label{classViewer_ae3f3e7a7694a354a2d374693649000ec}
+Based on the clock and the duration types, we define a time point type. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classViewer_a324e5a6a1532fe5eac3f3b0e4792b2da}{\index{Viewer@{Viewer}!````~Viewer@{$\sim$\+Viewer}}
+\index{````~Viewer@{$\sim$\+Viewer}!Viewer@{Viewer}}
+\subsubsection[{$\sim$\+Viewer}]{\setlength{\rightskip}{0pt plus 5cm}Viewer\+::$\sim$\+Viewer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a324e5a6a1532fe5eac3f3b0e4792b2da}
+Instance destructor. \hypertarget{classViewer_a8569cd861c9a9edb86f64f53f18758dc}{\index{Viewer@{Viewer}!Viewer@{Viewer}}
+\index{Viewer@{Viewer}!Viewer@{Viewer}}
+\subsubsection[{Viewer}]{\setlength{\rightskip}{0pt plus 5cm}Viewer\+::\+Viewer (
+\begin{DoxyParamCaption}
+\item[{float}]{width, }
+\item[{float}]{height}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a8569cd861c9a9edb86f64f53f18758dc}
+Construct a new viewer that will display the scene in a window of specified size. 
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the window in pixel. \\
+\hline
+{\em height} & Height of the window in pixel. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classViewer_aaedebacb31cba87de6e7d448ed8d6586}{\index{Viewer@{Viewer}!Viewer@{Viewer}}
+\index{Viewer@{Viewer}!Viewer@{Viewer}}
+\subsubsection[{Viewer}]{\setlength{\rightskip}{0pt plus 5cm}Viewer\+::\+Viewer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_aaedebacb31cba87de6e7d448ed8d6586}
+By making it private, this constructor cannot be called. This is justified as we need to know the initial display window size at construction. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classViewer_a34f80351a0f686ddbc327c3b031723a3}{\index{Viewer@{Viewer}!add\+Point\+Light@{add\+Point\+Light}}
+\index{add\+Point\+Light@{add\+Point\+Light}!Viewer@{Viewer}}
+\subsubsection[{add\+Point\+Light}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::add\+Point\+Light (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point\+Light\+Ptr} \&}]{point\+Light}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a34f80351a0f686ddbc327c3b031723a3}
+\hypertarget{classViewer_a20d5c9848fc168114cfa87a0a3644889}{\index{Viewer@{Viewer}!add\+Renderable@{add\+Renderable}}
+\index{add\+Renderable@{add\+Renderable}!Viewer@{Viewer}}
+\subsubsection[{add\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::add\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Renderable\+Ptr}}]{r}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a20d5c9848fc168114cfa87a0a3644889}
+Add a renderable to the set of renderabbles \hyperlink{classViewer_a73ebb9719c2f2ffb9891642503c793cc}{m\+\_\+renderables} of the viewer. 
+\begin{DoxyParams}{Parameters}
+{\em r} & A renderable to add to \hyperlink{classViewer_a73ebb9719c2f2ffb9891642503c793cc}{m\+\_\+renderables}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classViewer_ac900d8f3cc756e9b2687cd58c9ddb6d7}{\index{Viewer@{Viewer}!add\+Shader\+Program@{add\+Shader\+Program}}
+\index{add\+Shader\+Program@{add\+Shader\+Program}!Viewer@{Viewer}}
+\subsubsection[{add\+Shader\+Program}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::add\+Shader\+Program (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program}
+\end{DoxyParamCaption}
+)}}\label{classViewer_ac900d8f3cc756e9b2687cd58c9ddb6d7}
+Add a shader program to the list of managed programs. 
+\begin{DoxyParams}{Parameters}
+{\em program} & The shader program to manage. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classViewer_a9f0aefe4012a3d934a8b032e1242d901}{\index{Viewer@{Viewer}!add\+Spot\+Light@{add\+Spot\+Light}}
+\index{add\+Spot\+Light@{add\+Spot\+Light}!Viewer@{Viewer}}
+\subsubsection[{add\+Spot\+Light}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::add\+Spot\+Light (
+\begin{DoxyParamCaption}
+\item[{const {\bf Spot\+Light\+Ptr} \&}]{spot\+Light}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a9f0aefe4012a3d934a8b032e1242d901}
+\hypertarget{classViewer_a7114e33ca0c224c2206b53dee77fe7fe}{\index{Viewer@{Viewer}!animate@{animate}}
+\index{animate@{animate}!Viewer@{Viewer}}
+\subsubsection[{animate}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::animate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a7114e33ca0c224c2206b53dee77fe7fe}
+Iterate over all the renderable of m\+\_\+renderables and call their function animate. \hypertarget{classViewer_a6dbec13fc3fe0e9b670cd290dd79129f}{\index{Viewer@{Viewer}!change\+Camera\+Mode@{change\+Camera\+Mode}}
+\index{change\+Camera\+Mode@{change\+Camera\+Mode}!Viewer@{Viewer}}
+\subsubsection[{change\+Camera\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::change\+Camera\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a6dbec13fc3fe0e9b670cd290dd79129f}
+Switch the camera behavior from the Arcball mode to the Spaceship mode and vice-\/versa. \hypertarget{classViewer_a277a934adb86150b09d044b7cee822f8}{\index{Viewer@{Viewer}!display@{display}}
+\index{display@{display}!Viewer@{Viewer}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::display (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a277a934adb86150b09d044b7cee822f8}
+Display the scene stored in the framebuffer onto the window. \hypertarget{classViewer_a9ce9d06343c4e089ac76b19f78fe29e4}{\index{Viewer@{Viewer}!draw@{draw}}
+\index{draw@{draw}!Viewer@{Viewer}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a9ce9d06343c4e089ac76b19f78fe29e4}
+Iterate over all the renderables of \hyperlink{classViewer_a73ebb9719c2f2ffb9891642503c793cc}{m\+\_\+renderables} and call their \hyperlink{classRenderable_a0d371901a19b8cfe50b76b842adba70a}{Renderable\+::draw()} function. For each renderable, the viewer will first bind its shader, send camera information to the G\+P\+U, draw the renderable and unbind its shader. \hypertarget{classViewer_aaa4a3ba6d053dd80b5ddce9674dc9223}{\index{Viewer@{Viewer}!get\+Camera@{get\+Camera}}
+\index{get\+Camera@{get\+Camera}!Viewer@{Viewer}}
+\subsubsection[{get\+Camera}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Camera}\& Viewer\+::get\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classViewer_aaa4a3ba6d053dd80b5ddce9674dc9223}
+Access to the camera used to render the scene in the viewer. \begin{DoxyReturn}{Returns}
+A reference to the viewer's camera. 
+\end{DoxyReturn}
+\hypertarget{classViewer_aa4065ecafe1008b63ebd3b4a84c65557}{\index{Viewer@{Viewer}!get\+Time@{get\+Time}}
+\index{get\+Time@{get\+Time}!Viewer@{Viewer}}
+\subsubsection[{get\+Time}]{\setlength{\rightskip}{0pt plus 5cm}float Viewer\+::get\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classViewer_aa4065ecafe1008b63ebd3b4a84c65557}
+Get the current animation time, since the beginning of the animation loop. \begin{DoxyReturn}{Returns}
+The current animation time. 
+\end{DoxyReturn}
+\hypertarget{classViewer_af29c9abea6accf5d93fffb37aeb1a18d}{\index{Viewer@{Viewer}!handle\+Event@{handle\+Event}}
+\index{handle\+Event@{handle\+Event}!Viewer@{Viewer}}
+\subsubsection[{handle\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::handle\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classViewer_af29c9abea6accf5d93fffb37aeb1a18d}
+\hypertarget{classViewer_a96ee8c50a356c64393478da709ebac78}{\index{Viewer@{Viewer}!is\+Running@{is\+Running}}
+\index{is\+Running@{is\+Running}!Viewer@{Viewer}}
+\subsubsection[{is\+Running}]{\setlength{\rightskip}{0pt plus 5cm}bool Viewer\+::is\+Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classViewer_a96ee8c50a356c64393478da709ebac78}
+Tells if the graphical application is still running. \begin{DoxyReturn}{Returns}
+True if it is still running. 
+\end{DoxyReturn}
+\hypertarget{classViewer_a330516bb126f9e2ac8252cb7960931cf}{\index{Viewer@{Viewer}!key\+Pressed\+Event@{key\+Pressed\+Event}}
+\index{key\+Pressed\+Event@{key\+Pressed\+Event}!Viewer@{Viewer}}
+\subsubsection[{key\+Pressed\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::key\+Pressed\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a330516bb126f9e2ac8252cb7960931cf}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & a S\+F\+M\+L event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classViewer_a5708b6929060f2c9cf4b36aaffc2565b}{\index{Viewer@{Viewer}!key\+Released\+Event@{key\+Released\+Event}}
+\index{key\+Released\+Event@{key\+Released\+Event}!Viewer@{Viewer}}
+\subsubsection[{key\+Released\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::key\+Released\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a5708b6929060f2c9cf4b36aaffc2565b}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & a S\+F\+M\+L event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classViewer_a2a097429d1bc517bdfdcb6cbda323719}{\index{Viewer@{Viewer}!mouse\+Move\+Event@{mouse\+Move\+Event}}
+\index{mouse\+Move\+Event@{mouse\+Move\+Event}!Viewer@{Viewer}}
+\subsubsection[{mouse\+Move\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::mouse\+Move\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a2a097429d1bc517bdfdcb6cbda323719}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & a S\+F\+M\+L event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classViewer_a5c3b224f4caef8deddfd1fac8791d64e}{\index{Viewer@{Viewer}!mouse\+Press\+Event@{mouse\+Press\+Event}}
+\index{mouse\+Press\+Event@{mouse\+Press\+Event}!Viewer@{Viewer}}
+\subsubsection[{mouse\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::mouse\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a5c3b224f4caef8deddfd1fac8791d64e}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & a S\+F\+M\+L event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classViewer_ac3dea2781388d468f883e637304925f0}{\index{Viewer@{Viewer}!mouse\+Release\+Event@{mouse\+Release\+Event}}
+\index{mouse\+Release\+Event@{mouse\+Release\+Event}!Viewer@{Viewer}}
+\subsubsection[{mouse\+Release\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::mouse\+Release\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_ac3dea2781388d468f883e637304925f0}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & a S\+F\+M\+L event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classViewer_ad40959a2f2d50bdb4cf3bc379d9c3ac0}{\index{Viewer@{Viewer}!mouse\+Wheel\+Event@{mouse\+Wheel\+Event}}
+\index{mouse\+Wheel\+Event@{mouse\+Wheel\+Event}!Viewer@{Viewer}}
+\subsubsection[{mouse\+Wheel\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::mouse\+Wheel\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_ad40959a2f2d50bdb4cf3bc379d9c3ac0}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & a S\+F\+M\+L event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classViewer_a692ef0144fbf7511caccefd9a37b43b1}{\index{Viewer@{Viewer}!reload\+Shader\+Programs@{reload\+Shader\+Programs}}
+\index{reload\+Shader\+Programs@{reload\+Shader\+Programs}!Viewer@{Viewer}}
+\subsubsection[{reload\+Shader\+Programs}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::reload\+Shader\+Programs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a692ef0144fbf7511caccefd9a37b43b1}
+Reload each managed shader program, to use possibly newer shader sources. This is useful if you want to see the effects immediately of a modification in the shader sources on the scene.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classShaderProgram_a007cebbd8a26ef27ab136452c3774899}{Shader\+Program\+::reload()} 
+\end{DoxySeeAlso}
+\hypertarget{classViewer_a268b0edf15bee6137d617743d3330d1e}{\index{Viewer@{Viewer}!reset\+Animation@{reset\+Animation}}
+\index{reset\+Animation@{reset\+Animation}!Viewer@{Viewer}}
+\subsubsection[{reset\+Animation}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::reset\+Animation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a268b0edf15bee6137d617743d3330d1e}
+Reset the animation time to the beginning. \hypertarget{classViewer_aaf65e6b104d3202c24a5760cb273b144}{\index{Viewer@{Viewer}!set\+Animation\+Loop@{set\+Animation\+Loop}}
+\index{set\+Animation\+Loop@{set\+Animation\+Loop}!Viewer@{Viewer}}
+\subsubsection[{set\+Animation\+Loop}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::set\+Animation\+Loop (
+\begin{DoxyParamCaption}
+\item[{bool}]{animation\+Loop, }
+\item[{float}]{loop\+Duration = {\ttfamily 0.0}}
+\end{DoxyParamCaption}
+)}}\label{classViewer_aaf65e6b104d3202c24a5760cb273b144}
+Activate or deactivate the loop on the animation. If animation\+Loop is set to true, a {\itshape loop\+Duration} should be given. 
+\begin{DoxyParams}{Parameters}
+{\em animation\+Loop} & True if the animation should loop after \hyperlink{classViewer_a361b307d72d4647b895b0c35d6b3a3a9}{m\+\_\+loop\+Duration}. \\
+\hline
+{\em loop\+Duration} & Set \hyperlink{classViewer_a361b307d72d4647b895b0c35d6b3a3a9}{m\+\_\+loop\+Duration} value. 0.\+0 is the default value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classViewer_a8d9ba770456d5e710522856057c2e56b}{\index{Viewer@{Viewer}!set\+Directional\+Light@{set\+Directional\+Light}}
+\index{set\+Directional\+Light@{set\+Directional\+Light}!Viewer@{Viewer}}
+\subsubsection[{set\+Directional\+Light}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::set\+Directional\+Light (
+\begin{DoxyParamCaption}
+\item[{const {\bf Directional\+Light\+Ptr} \&}]{directional\+Light}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a8d9ba770456d5e710522856057c2e56b}
+\hypertarget{classViewer_a912259c3206eed1ebc1d24f7425e99cd}{\index{Viewer@{Viewer}!start\+Animation@{start\+Animation}}
+\index{start\+Animation@{start\+Animation}!Viewer@{Viewer}}
+\subsubsection[{start\+Animation}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::start\+Animation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a912259c3206eed1ebc1d24f7425e99cd}
+Start the animation loop by setting \hyperlink{classViewer_af77f428d66cb515b77774efd36846ce2}{m\+\_\+animation\+Is\+Started} to true. \hypertarget{classViewer_abc1c9b7f6d564861aeab9be3b320bb44}{\index{Viewer@{Viewer}!stop\+Animation@{stop\+Animation}}
+\index{stop\+Animation@{stop\+Animation}!Viewer@{Viewer}}
+\subsubsection[{stop\+Animation}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::stop\+Animation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classViewer_abc1c9b7f6d564861aeab9be3b320bb44}
+Stop the animation loop by setting \hyperlink{classViewer_af77f428d66cb515b77774efd36846ce2}{m\+\_\+animation\+Is\+Started} to false. \hypertarget{classViewer_a035601318af5f11281aaeb9d067a8bd0}{\index{Viewer@{Viewer}!take\+Screenshot@{take\+Screenshot}}
+\index{take\+Screenshot@{take\+Screenshot}!Viewer@{Viewer}}
+\subsubsection[{take\+Screenshot}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::take\+Screenshot (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a035601318af5f11281aaeb9d067a8bd0}
+Save a screenshot of the window in a P\+N\+G file in the directory containing the executable. \hypertarget{classViewer_a6b1049a4ee9dadb17300466d77a10b33}{\index{Viewer@{Viewer}!window\+To\+World@{window\+To\+World}}
+\index{window\+To\+World@{window\+To\+World}!Viewer@{Viewer}}
+\subsubsection[{window\+To\+World}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Viewer\+::window\+To\+World (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{window\+Coordinate}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a6b1049a4ee9dadb17300466d77a10b33}
+This function returns the world coordinate of a point given in the window coordinate system. This is handy to find where the mouse is in the scene. \hypertarget{classViewer_a292d761edf0ab1e7a82e980df5d5d78f}{\index{Viewer@{Viewer}!world\+To\+Window@{world\+To\+Window}}
+\index{world\+To\+Window@{world\+To\+Window}!Viewer@{Viewer}}
+\subsubsection[{world\+To\+Window}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Viewer\+::world\+To\+Window (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{world\+Coordinate}
+\end{DoxyParamCaption}
+)}}\label{classViewer_a292d761edf0ab1e7a82e980df5d5d78f}
+This function returns the window coordinate of a point given in the world coordinate system. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classViewer_a0c8e2d656c33435015ce34b06e047e77}{\index{Viewer@{Viewer}!keyboard@{keyboard}}
+\index{keyboard@{keyboard}!Viewer@{Viewer}}
+\subsubsection[{keyboard}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Keyboard\+State} Viewer\+::keyboard\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a0c8e2d656c33435015ce34b06e047e77}
+Help us to smoothly control the camera with the keyboard. \hypertarget{classViewer_af77f428d66cb515b77774efd36846ce2}{\index{Viewer@{Viewer}!m\+\_\+animation\+Is\+Started@{m\+\_\+animation\+Is\+Started}}
+\index{m\+\_\+animation\+Is\+Started@{m\+\_\+animation\+Is\+Started}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+animation\+Is\+Started}]{\setlength{\rightskip}{0pt plus 5cm}bool Viewer\+::m\+\_\+animation\+Is\+Started\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_af77f428d66cb515b77774efd36846ce2}
+True if the animation is running. False otherwise. \hypertarget{classViewer_a8333976239ee77a66bad2975600ec880}{\index{Viewer@{Viewer}!m\+\_\+animation\+Loop@{m\+\_\+animation\+Loop}}
+\index{m\+\_\+animation\+Loop@{m\+\_\+animation\+Loop}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+animation\+Loop}]{\setlength{\rightskip}{0pt plus 5cm}bool Viewer\+::m\+\_\+animation\+Loop\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a8333976239ee77a66bad2975600ec880}
+True if the animation loops after a given duration, \hyperlink{classViewer_a361b307d72d4647b895b0c35d6b3a3a9}{m\+\_\+loop\+Duration}. \hypertarget{classViewer_a3172d624cfacccdbc5cc225535429880}{\index{Viewer@{Viewer}!m\+\_\+application\+Running@{m\+\_\+application\+Running}}
+\index{m\+\_\+application\+Running@{m\+\_\+application\+Running}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+application\+Running}]{\setlength{\rightskip}{0pt plus 5cm}bool Viewer\+::m\+\_\+application\+Running\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a3172d624cfacccdbc5cc225535429880}
+Boolean that runs the main animation loop. Always true except when closing the application. \hypertarget{classViewer_aca2cfeaed36c2ea6711d694ace109aca}{\index{Viewer@{Viewer}!m\+\_\+camera@{m\+\_\+camera}}
+\index{m\+\_\+camera@{m\+\_\+camera}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+camera}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Camera} Viewer\+::m\+\_\+camera\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_aca2cfeaed36c2ea6711d694ace109aca}
+\hyperlink{classCamera}{Camera} used to render the scene in the \hyperlink{classViewer}{Viewer}. \hypertarget{classViewer_a0bdff57aff91916b2fa3e239d474ab53}{\index{Viewer@{Viewer}!m\+\_\+current\+Mouse\+Position@{m\+\_\+current\+Mouse\+Position}}
+\index{m\+\_\+current\+Mouse\+Position@{m\+\_\+current\+Mouse\+Position}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+current\+Mouse\+Position}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Viewer\+::m\+\_\+current\+Mouse\+Position\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a0bdff57aff91916b2fa3e239d474ab53}
+Current mouse cursor coordinates normalized between \mbox{[}-\/1,1\mbox{]}. The z-\/value is set to 1. \hypertarget{classViewer_a0c19f64be563889aa53ce1cdde30e322}{\index{Viewer@{Viewer}!m\+\_\+directional\+Light@{m\+\_\+directional\+Light}}
+\index{m\+\_\+directional\+Light@{m\+\_\+directional\+Light}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+directional\+Light}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Directional\+Light\+Ptr} Viewer\+::m\+\_\+directional\+Light\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a0c19f64be563889aa53ce1cdde30e322}
+Pointer to a directional light. \hypertarget{classViewer_a837a1d9dcf94c41c637e931989261554}{\index{Viewer@{Viewer}!m\+\_\+fps\+Counter@{m\+\_\+fps\+Counter}}
+\index{m\+\_\+fps\+Counter@{m\+\_\+fps\+Counter}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+fps\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\+P\+S\+Counter} Viewer\+::m\+\_\+fps\+Counter\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a837a1d9dcf94c41c637e931989261554}
+A framerate counter \hypertarget{classViewer_acbbda7f59919b475ae7e20b78118aebb}{\index{Viewer@{Viewer}!m\+\_\+help\+Displayed@{m\+\_\+help\+Displayed}}
+\index{m\+\_\+help\+Displayed@{m\+\_\+help\+Displayed}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+help\+Displayed}]{\setlength{\rightskip}{0pt plus 5cm}bool Viewer\+::m\+\_\+help\+Displayed\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_acbbda7f59919b475ae7e20b78118aebb}
+\hypertarget{classViewer_a2f18581a08d0449876631f30c2e9606a}{\index{Viewer@{Viewer}!m\+\_\+last\+Event\+Handle\+Time@{m\+\_\+last\+Event\+Handle\+Time}}
+\index{m\+\_\+last\+Event\+Handle\+Time@{m\+\_\+last\+Event\+Handle\+Time}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+last\+Event\+Handle\+Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\+Point} Viewer\+::m\+\_\+last\+Event\+Handle\+Time\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a2f18581a08d0449876631f30c2e9606a}
+Last time all input events were handled. \hypertarget{classViewer_a345d4a077878ba4b991a90e4147c08c5}{\index{Viewer@{Viewer}!m\+\_\+last\+Mouse\+Position@{m\+\_\+last\+Mouse\+Position}}
+\index{m\+\_\+last\+Mouse\+Position@{m\+\_\+last\+Mouse\+Position}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+last\+Mouse\+Position}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Viewer\+::m\+\_\+last\+Mouse\+Position\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a345d4a077878ba4b991a90e4147c08c5}
+Previous mouse cursor coordinates normalized between \mbox{[}-\/1,1\mbox{]}. The z-\/value is set to 1. \hypertarget{classViewer_ac20ec408b4ae6ab2b1e0a42d04be4acf}{\index{Viewer@{Viewer}!m\+\_\+last\+Simulation\+Time\+Point@{m\+\_\+last\+Simulation\+Time\+Point}}
+\index{m\+\_\+last\+Simulation\+Time\+Point@{m\+\_\+last\+Simulation\+Time\+Point}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+last\+Simulation\+Time\+Point}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\+Point} Viewer\+::m\+\_\+last\+Simulation\+Time\+Point\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_ac20ec408b4ae6ab2b1e0a42d04be4acf}
+Date of the last simulation. \hypertarget{classViewer_a361b307d72d4647b895b0c35d6b3a3a9}{\index{Viewer@{Viewer}!m\+\_\+loop\+Duration@{m\+\_\+loop\+Duration}}
+\index{m\+\_\+loop\+Duration@{m\+\_\+loop\+Duration}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+loop\+Duration}]{\setlength{\rightskip}{0pt plus 5cm}float Viewer\+::m\+\_\+loop\+Duration\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a361b307d72d4647b895b0c35d6b3a3a9}
+Duration of the animation loop in seconds. \hypertarget{classViewer_addd1668ee49c52296c2d13a15d2a8f6c}{\index{Viewer@{Viewer}!m\+\_\+mode\+Information\+Text@{m\+\_\+mode\+Information\+Text}}
+\index{m\+\_\+mode\+Information\+Text@{m\+\_\+mode\+Information\+Text}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+mode\+Information\+Text}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Viewer\+::m\+\_\+mode\+Information\+Text\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_addd1668ee49c52296c2d13a15d2a8f6c}
+Textual information that will be displayed. \hypertarget{classViewer_a36cbb2fc59ec195458a2982d335edc9f}{\index{Viewer@{Viewer}!m\+\_\+mode\+Information\+Text\+Disappearance\+Time@{m\+\_\+mode\+Information\+Text\+Disappearance\+Time}}
+\index{m\+\_\+mode\+Information\+Text\+Disappearance\+Time@{m\+\_\+mode\+Information\+Text\+Disappearance\+Time}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+mode\+Information\+Text\+Disappearance\+Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\+Point} Viewer\+::m\+\_\+mode\+Information\+Text\+Disappearance\+Time\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a36cbb2fc59ec195458a2982d335edc9f}
+Duration of appearance for textual information in seconds. \hypertarget{classViewer_a0839a4bd3c220aa6e50d9c3d304e68ee}{\index{Viewer@{Viewer}!m\+\_\+point\+Lights@{m\+\_\+point\+Lights}}
+\index{m\+\_\+point\+Lights@{m\+\_\+point\+Lights}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+point\+Lights}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Point\+Light\+Ptr}$>$ Viewer\+::m\+\_\+point\+Lights\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a0839a4bd3c220aa6e50d9c3d304e68ee}
+Vector of pointer to the point lights. \hypertarget{classViewer_ae46d7bb320590c0fabe27e20299a4eec}{\index{Viewer@{Viewer}!m\+\_\+programs@{m\+\_\+programs}}
+\index{m\+\_\+programs@{m\+\_\+programs}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+programs}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unordered\+\_\+set$<$ {\bf Shader\+Program\+Ptr} $>$ Viewer\+::m\+\_\+programs\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_ae46d7bb320590c0fabe27e20299a4eec}
+\hypertarget{classViewer_a73ebb9719c2f2ffb9891642503c793cc}{\index{Viewer@{Viewer}!m\+\_\+renderables@{m\+\_\+renderables}}
+\index{m\+\_\+renderables@{m\+\_\+renderables}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+renderables}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unordered\+\_\+set$<$ {\bf Renderable\+Ptr} $>$ Viewer\+::m\+\_\+renderables\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a73ebb9719c2f2ffb9891642503c793cc}
+Set of renderables that the viewer displays. \hypertarget{classViewer_a54b354f885ad35e9bf2d33e80ae32e8d}{\index{Viewer@{Viewer}!m\+\_\+screenshot\+Counter@{m\+\_\+screenshot\+Counter}}
+\index{m\+\_\+screenshot\+Counter@{m\+\_\+screenshot\+Counter}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+screenshot\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Viewer\+::m\+\_\+screenshot\+Counter\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a54b354f885ad35e9bf2d33e80ae32e8d}
+Number of screenshots since the beginning of the application. \hypertarget{classViewer_a26701da64fd533bbadd7a20bb2bddb4b}{\index{Viewer@{Viewer}!m\+\_\+simulation\+Time@{m\+\_\+simulation\+Time}}
+\index{m\+\_\+simulation\+Time@{m\+\_\+simulation\+Time}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+simulation\+Time}]{\setlength{\rightskip}{0pt plus 5cm}float Viewer\+::m\+\_\+simulation\+Time\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a26701da64fd533bbadd7a20bb2bddb4b}
+Current simulation time in the animation loop. \hypertarget{classViewer_ad241b9648367de46033672b4a759cfd3}{\index{Viewer@{Viewer}!m\+\_\+spot\+Lights@{m\+\_\+spot\+Lights}}
+\index{m\+\_\+spot\+Lights@{m\+\_\+spot\+Lights}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+spot\+Lights}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Spot\+Light\+Ptr}$>$ Viewer\+::m\+\_\+spot\+Lights\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_ad241b9648367de46033672b4a759cfd3}
+Vector of pointer to the spot lights. \hypertarget{classViewer_a502511db306be04271e6469fc2b2d908}{\index{Viewer@{Viewer}!m\+\_\+tengine@{m\+\_\+tengine}}
+\index{m\+\_\+tengine@{m\+\_\+tengine}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+tengine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Text\+Engine} Viewer\+::m\+\_\+tengine\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a502511db306be04271e6469fc2b2d908}
+Engine to display textual information. \hypertarget{classViewer_a02691cb0b474e4afc22bea4e6154a83f}{\index{Viewer@{Viewer}!m\+\_\+window@{m\+\_\+window}}
+\index{m\+\_\+window@{m\+\_\+window}!Viewer@{Viewer}}
+\subsubsection[{m\+\_\+window}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Render\+Window Viewer\+::m\+\_\+window\hspace{0.3cm}{\ttfamily [private]}}}\label{classViewer_a02691cb0b474e4afc22bea4e6154a83f}
+Pointer to the render window. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{Viewer_8hpp}{Viewer.\+hpp}\end{DoxyCompactItemize}

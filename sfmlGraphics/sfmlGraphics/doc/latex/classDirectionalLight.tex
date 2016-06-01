@@ -1,0 +1,309 @@
+\hypertarget{classDirectionalLight}{\section{Directional\+Light Class Reference}
+\label{classDirectionalLight}\index{Directional\+Light@{Directional\+Light}}
+}
+
+
+A directional light.  
+
+
+
+
+{\ttfamily \#include $<$Light.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::shared\+\_\+ptr\\*
+$<$ \hyperlink{classDirectionalLight}{Directional\+Light} $>$ \hyperlink{classDirectionalLight_abb43c478c01d5e7c158699e9f3661bce}{Directional\+Light\+Ptr}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDirectionalLight_ac4aca6c806e752c65ffea9b2f237b245}{$\sim$\+Directional\+Light} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classDirectionalLight_a949b877ae041b9818f47eb812d80fa1b}{Directional\+Light} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDirectionalLight_aa2f0352247094325d9496a7883fc7ba4}{Directional\+Light} (const \hyperlink{classDirectionalLight}{Directional\+Light} \&directional\+Light)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDirectionalLight_a27bae6211ab086bd175291e8de5c6c2b}{Directional\+Light} (const glm\+::vec3 \&\hyperlink{classDirectionalLight_a62bcb380d9e81abc20185b990ef35ec8}{direction}, const glm\+::vec3 \&\hyperlink{classDirectionalLight_a348fa5150e5959b26411715b6ba1bff2}{ambient}, const glm\+::vec3 \&\hyperlink{classDirectionalLight_ab0314fdc6fb9722f4bf17c198df348f9}{diffuse}, const glm\+::vec3 \&\hyperlink{classDirectionalLight_a46773cdc52f5a93e05c25a1742257312}{specular})
+\begin{DoxyCompactList}\small\item\em Specific constructor. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classDirectionalLight_a62bcb380d9e81abc20185b990ef35ec8}{direction} () const 
+\begin{DoxyCompactList}\small\item\em Access to the direction of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classDirectionalLight_a48a2fca768a442accf005ffa8e2917d8}{set\+Direction} (const glm\+::vec3 \&\hyperlink{classDirectionalLight_a62bcb380d9e81abc20185b990ef35ec8}{direction})
+\begin{DoxyCompactList}\small\item\em Set the direction of the light. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classDirectionalLight_a348fa5150e5959b26411715b6ba1bff2}{ambient} () const 
+\begin{DoxyCompactList}\small\item\em Access to the ambient intensity of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classDirectionalLight_ad2317a4398d25c19c0c7ecda894a9e03}{set\+Ambient} (const glm\+::vec3 \&\hyperlink{classDirectionalLight_a348fa5150e5959b26411715b6ba1bff2}{ambient})
+\begin{DoxyCompactList}\small\item\em Set the ambient intensity of the light. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classDirectionalLight_ab0314fdc6fb9722f4bf17c198df348f9}{diffuse} () const 
+\begin{DoxyCompactList}\small\item\em Access to the diffuse intensity of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classDirectionalLight_ab646ca1453dd80a76fa333ae74576bf4}{set\+Diffuse} (const glm\+::vec3 \&\hyperlink{classDirectionalLight_ab0314fdc6fb9722f4bf17c198df348f9}{diffuse})
+\begin{DoxyCompactList}\small\item\em Set the diffuse intensity of the light. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classDirectionalLight_a46773cdc52f5a93e05c25a1742257312}{specular} () const 
+\begin{DoxyCompactList}\small\item\em Access to the specular intensity of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classDirectionalLight_aaf7612501976569deb935ee0dc70eda5}{set\+Specular} (const glm\+::vec3 \&\hyperlink{classDirectionalLight_a46773cdc52f5a93e05c25a1742257312}{specular})
+\begin{DoxyCompactList}\small\item\em Set the specular intensity of the light. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classDirectionalLight_a0dbd9593486ae29871f6cce9f62a9b2b}{send\+To\+G\+P\+U} (const \hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} \&program, const \hyperlink{classDirectionalLight_abb43c478c01d5e7c158699e9f3661bce}{Directional\+Light\+Ptr} \&light)
+\begin{DoxyCompactList}\small\item\em Get location for the attributes of the light and send the data to the G\+P\+U as uniforms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classDirectionalLight_ac3320ddae5142ae1e96db3b4e6874ff4}{light\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classDirectionalLight_a7f77772f2c797d04935d7c041bb7c717}{direction\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the direction of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classDirectionalLight_a028a58bf7d60840548f85339086d2607}{ambient\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the ambient intensity of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classDirectionalLight_a8226d712ae3399d6e90ce2ffa55b7f2d}{diffuse\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the diffuse intensity of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classDirectionalLight_ac08e88f445126ad6f26be6459aead7ba}{specular\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the specular intensity of the light. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \hyperlink{classDirectionalLight_a4432e8ebaa81b9fe4d033056eb19ca4c}{m\+\_\+direction}
+\item 
+glm\+::vec3 \hyperlink{classDirectionalLight_afaf3088136b72d8af8188526e410b53a}{m\+\_\+ambient}
+\item 
+glm\+::vec3 \hyperlink{classDirectionalLight_aa9391a104441f2cb5cc56e976bcde89a}{m\+\_\+diffuse}
+\item 
+glm\+::vec3 \hyperlink{classDirectionalLight_a56e4161550e3eaa31d17c54cf108a028}{m\+\_\+specular}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a directional light which means a light whose source is so far away from the camera that the light rays can be considered close to parallel from each other regardless of the position of the objects or the camera. A good example is the sun. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classDirectionalLight_abb43c478c01d5e7c158699e9f3661bce}{\index{Directional\+Light@{Directional\+Light}!Directional\+Light\+Ptr@{Directional\+Light\+Ptr}}
+\index{Directional\+Light\+Ptr@{Directional\+Light\+Ptr}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{Directional\+Light\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::shared\+\_\+ptr$<${\bf Directional\+Light}$>$ {\bf Directional\+Light\+::\+Directional\+Light\+Ptr}}}\label{classDirectionalLight_abb43c478c01d5e7c158699e9f3661bce}
+Smart pointer to a directional light 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDirectionalLight_ac4aca6c806e752c65ffea9b2f237b245}{\index{Directional\+Light@{Directional\+Light}!````~Directional\+Light@{$\sim$\+Directional\+Light}}
+\index{````~Directional\+Light@{$\sim$\+Directional\+Light}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{$\sim$\+Directional\+Light}]{\setlength{\rightskip}{0pt plus 5cm}Directional\+Light\+::$\sim$\+Directional\+Light (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDirectionalLight_ac4aca6c806e752c65ffea9b2f237b245}
+\hypertarget{classDirectionalLight_a949b877ae041b9818f47eb812d80fa1b}{\index{Directional\+Light@{Directional\+Light}!Directional\+Light@{Directional\+Light}}
+\index{Directional\+Light@{Directional\+Light}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{Directional\+Light}]{\setlength{\rightskip}{0pt plus 5cm}Directional\+Light\+::\+Directional\+Light (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDirectionalLight_a949b877ae041b9818f47eb812d80fa1b}
+\hypertarget{classDirectionalLight_aa2f0352247094325d9496a7883fc7ba4}{\index{Directional\+Light@{Directional\+Light}!Directional\+Light@{Directional\+Light}}
+\index{Directional\+Light@{Directional\+Light}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{Directional\+Light}]{\setlength{\rightskip}{0pt plus 5cm}Directional\+Light\+::\+Directional\+Light (
+\begin{DoxyParamCaption}
+\item[{const {\bf Directional\+Light} \&}]{directional\+Light}
+\end{DoxyParamCaption}
+)}}\label{classDirectionalLight_aa2f0352247094325d9496a7883fc7ba4}
+\hypertarget{classDirectionalLight_a27bae6211ab086bd175291e8de5c6c2b}{\index{Directional\+Light@{Directional\+Light}!Directional\+Light@{Directional\+Light}}
+\index{Directional\+Light@{Directional\+Light}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{Directional\+Light}]{\setlength{\rightskip}{0pt plus 5cm}Directional\+Light\+::\+Directional\+Light (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{direction, }
+\item[{const glm\+::vec3 \&}]{ambient, }
+\item[{const glm\+::vec3 \&}]{diffuse, }
+\item[{const glm\+::vec3 \&}]{specular}
+\end{DoxyParamCaption}
+)}}\label{classDirectionalLight_a27bae6211ab086bd175291e8de5c6c2b}
+Construct a directional light.
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & The direction of the light. \\
+\hline
+{\em ambient} & The ambient intensity of the light. \\
+\hline
+{\em diffuse} & The diffuse intensity of the light. \\
+\hline
+{\em specular} & The specular intensity of the light. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDirectionalLight_a348fa5150e5959b26411715b6ba1bff2}{\index{Directional\+Light@{Directional\+Light}!ambient@{ambient}}
+\index{ambient@{ambient}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{ambient}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Directional\+Light\+::ambient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDirectionalLight_a348fa5150e5959b26411715b6ba1bff2}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+ambient. 
+\end{DoxyReturn}
+\hypertarget{classDirectionalLight_a028a58bf7d60840548f85339086d2607}{\index{Directional\+Light@{Directional\+Light}!ambient\+Name@{ambient\+Name}}
+\index{ambient\+Name@{ambient\+Name}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{ambient\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Directional\+Light\+::ambient\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classDirectionalLight_a028a58bf7d60840548f85339086d2607}
+\begin{DoxyReturn}{Returns}
+The name of the ambient intensity of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classDirectionalLight_ab0314fdc6fb9722f4bf17c198df348f9}{\index{Directional\+Light@{Directional\+Light}!diffuse@{diffuse}}
+\index{diffuse@{diffuse}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{diffuse}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Directional\+Light\+::diffuse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDirectionalLight_ab0314fdc6fb9722f4bf17c198df348f9}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+diffuse. 
+\end{DoxyReturn}
+\hypertarget{classDirectionalLight_a8226d712ae3399d6e90ce2ffa55b7f2d}{\index{Directional\+Light@{Directional\+Light}!diffuse\+Name@{diffuse\+Name}}
+\index{diffuse\+Name@{diffuse\+Name}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{diffuse\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Directional\+Light\+::diffuse\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classDirectionalLight_a8226d712ae3399d6e90ce2ffa55b7f2d}
+\begin{DoxyReturn}{Returns}
+The name of the diffuse intensity of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classDirectionalLight_a62bcb380d9e81abc20185b990ef35ec8}{\index{Directional\+Light@{Directional\+Light}!direction@{direction}}
+\index{direction@{direction}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{direction}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Directional\+Light\+::direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDirectionalLight_a62bcb380d9e81abc20185b990ef35ec8}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+direction. 
+\end{DoxyReturn}
+\hypertarget{classDirectionalLight_a7f77772f2c797d04935d7c041bb7c717}{\index{Directional\+Light@{Directional\+Light}!direction\+Name@{direction\+Name}}
+\index{direction\+Name@{direction\+Name}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{direction\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Directional\+Light\+::direction\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classDirectionalLight_a7f77772f2c797d04935d7c041bb7c717}
+\begin{DoxyReturn}{Returns}
+The name of the direction of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classDirectionalLight_ac3320ddae5142ae1e96db3b4e6874ff4}{\index{Directional\+Light@{Directional\+Light}!light\+Name@{light\+Name}}
+\index{light\+Name@{light\+Name}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{light\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Directional\+Light\+::light\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classDirectionalLight_ac3320ddae5142ae1e96db3b4e6874ff4}
+\begin{DoxyReturn}{Returns}
+The name of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classDirectionalLight_a0dbd9593486ae29871f6cce9f62a9b2b}{\index{Directional\+Light@{Directional\+Light}!send\+To\+G\+P\+U@{send\+To\+G\+P\+U}}
+\index{send\+To\+G\+P\+U@{send\+To\+G\+P\+U}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{send\+To\+G\+P\+U}]{\setlength{\rightskip}{0pt plus 5cm}static bool Directional\+Light\+::send\+To\+G\+P\+U (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shader\+Program\+Ptr} \&}]{program, }
+\item[{const {\bf Directional\+Light\+Ptr} \&}]{light}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classDirectionalLight_a0dbd9593486ae29871f6cce9f62a9b2b}
+
+\begin{DoxyParams}{Parameters}
+{\em program} & A pointer to the shader program where to get the locations. \\
+\hline
+{\em light} & A pointer to the light to send to the G\+P\+U. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if everything was fine, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classDirectionalLight_ad2317a4398d25c19c0c7ecda894a9e03}{\index{Directional\+Light@{Directional\+Light}!set\+Ambient@{set\+Ambient}}
+\index{set\+Ambient@{set\+Ambient}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{set\+Ambient}]{\setlength{\rightskip}{0pt plus 5cm}void Directional\+Light\+::set\+Ambient (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{ambient}
+\end{DoxyParamCaption}
+)}}\label{classDirectionalLight_ad2317a4398d25c19c0c7ecda894a9e03}
+Set the value of m\+\_\+ambient. 
+\begin{DoxyParams}{Parameters}
+{\em ambient} & The new ambient intensity of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDirectionalLight_ab646ca1453dd80a76fa333ae74576bf4}{\index{Directional\+Light@{Directional\+Light}!set\+Diffuse@{set\+Diffuse}}
+\index{set\+Diffuse@{set\+Diffuse}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{set\+Diffuse}]{\setlength{\rightskip}{0pt plus 5cm}void Directional\+Light\+::set\+Diffuse (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{diffuse}
+\end{DoxyParamCaption}
+)}}\label{classDirectionalLight_ab646ca1453dd80a76fa333ae74576bf4}
+Set the value of m\+\_\+diffuse. 
+\begin{DoxyParams}{Parameters}
+{\em diffuse} & The new diffuse intensity of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDirectionalLight_a48a2fca768a442accf005ffa8e2917d8}{\index{Directional\+Light@{Directional\+Light}!set\+Direction@{set\+Direction}}
+\index{set\+Direction@{set\+Direction}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{set\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}void Directional\+Light\+::set\+Direction (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{direction}
+\end{DoxyParamCaption}
+)}}\label{classDirectionalLight_a48a2fca768a442accf005ffa8e2917d8}
+Set the value of m\+\_\+direction. 
+\begin{DoxyParams}{Parameters}
+{\em direction} & The new direction of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDirectionalLight_aaf7612501976569deb935ee0dc70eda5}{\index{Directional\+Light@{Directional\+Light}!set\+Specular@{set\+Specular}}
+\index{set\+Specular@{set\+Specular}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{set\+Specular}]{\setlength{\rightskip}{0pt plus 5cm}void Directional\+Light\+::set\+Specular (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{specular}
+\end{DoxyParamCaption}
+)}}\label{classDirectionalLight_aaf7612501976569deb935ee0dc70eda5}
+Set the value of m\+\_\+specular. 
+\begin{DoxyParams}{Parameters}
+{\em specular} & The new specular intensity of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDirectionalLight_a46773cdc52f5a93e05c25a1742257312}{\index{Directional\+Light@{Directional\+Light}!specular@{specular}}
+\index{specular@{specular}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{specular}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Directional\+Light\+::specular (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDirectionalLight_a46773cdc52f5a93e05c25a1742257312}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+specular. 
+\end{DoxyReturn}
+\hypertarget{classDirectionalLight_ac08e88f445126ad6f26be6459aead7ba}{\index{Directional\+Light@{Directional\+Light}!specular\+Name@{specular\+Name}}
+\index{specular\+Name@{specular\+Name}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{specular\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Directional\+Light\+::specular\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classDirectionalLight_ac08e88f445126ad6f26be6459aead7ba}
+\begin{DoxyReturn}{Returns}
+The name of the specular intensity of the light in the shader. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classDirectionalLight_afaf3088136b72d8af8188526e410b53a}{\index{Directional\+Light@{Directional\+Light}!m\+\_\+ambient@{m\+\_\+ambient}}
+\index{m\+\_\+ambient@{m\+\_\+ambient}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{m\+\_\+ambient}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Directional\+Light\+::m\+\_\+ambient\hspace{0.3cm}{\ttfamily [private]}}}\label{classDirectionalLight_afaf3088136b72d8af8188526e410b53a}
+Intensity of the light with respect to the object ambient components. \hypertarget{classDirectionalLight_aa9391a104441f2cb5cc56e976bcde89a}{\index{Directional\+Light@{Directional\+Light}!m\+\_\+diffuse@{m\+\_\+diffuse}}
+\index{m\+\_\+diffuse@{m\+\_\+diffuse}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{m\+\_\+diffuse}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Directional\+Light\+::m\+\_\+diffuse\hspace{0.3cm}{\ttfamily [private]}}}\label{classDirectionalLight_aa9391a104441f2cb5cc56e976bcde89a}
+Intensity of the light with respect to the object diffuse components. \hypertarget{classDirectionalLight_a4432e8ebaa81b9fe4d033056eb19ca4c}{\index{Directional\+Light@{Directional\+Light}!m\+\_\+direction@{m\+\_\+direction}}
+\index{m\+\_\+direction@{m\+\_\+direction}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{m\+\_\+direction}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Directional\+Light\+::m\+\_\+direction\hspace{0.3cm}{\ttfamily [private]}}}\label{classDirectionalLight_a4432e8ebaa81b9fe4d033056eb19ca4c}
+The direction of the light. \hypertarget{classDirectionalLight_a56e4161550e3eaa31d17c54cf108a028}{\index{Directional\+Light@{Directional\+Light}!m\+\_\+specular@{m\+\_\+specular}}
+\index{m\+\_\+specular@{m\+\_\+specular}!Directional\+Light@{Directional\+Light}}
+\subsubsection[{m\+\_\+specular}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Directional\+Light\+::m\+\_\+specular\hspace{0.3cm}{\ttfamily [private]}}}\label{classDirectionalLight_a56e4161550e3eaa31d17c54cf108a028}
+Intensity of the light with respect to the object specular components. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/lighting/\hyperlink{Light_8hpp}{Light.\+hpp}\end{DoxyCompactItemize}

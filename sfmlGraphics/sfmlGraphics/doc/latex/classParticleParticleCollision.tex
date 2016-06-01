@@ -1,0 +1,109 @@
+\hypertarget{classParticleParticleCollision}{\section{Particle\+Particle\+Collision Class Reference}
+\label{classParticleParticleCollision}\index{Particle\+Particle\+Collision@{Particle\+Particle\+Collision}}
+}
+
+
+Implement the resolution of a collision event between two particles.  
+
+
+
+
+{\ttfamily \#include $<$Particle\+Particle\+Collision.\+hpp$>$}
+
+
+
+Inheritance diagram for Particle\+Particle\+Collision\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classParticleParticleCollision__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Particle\+Particle\+Collision\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classParticleParticleCollision__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParticleParticleCollision_acec460f38329b2347f044ac295f5c47c}{$\sim$\+Particle\+Particle\+Collision} ()
+\item 
+\hyperlink{classParticleParticleCollision_aef8e68092353ac4843c7cd4626dd60fc}{Particle\+Particle\+Collision} (\hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} particle1, \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} particle2, float restitution)
+\begin{DoxyCompactList}\small\item\em Build a new collision event between two particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classParticleParticleCollision_a9f18947965d8615faf1d957c259a65e2}{do\+\_\+solve\+Collision} ()
+\begin{DoxyCompactList}\small\item\em Implementation of the collision solving. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} \hyperlink{classParticleParticleCollision_a6ed4f0ca756feef481b59ba27c6f260c}{m\+\_\+p1}
+\item 
+\hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} \hyperlink{classParticleParticleCollision_a31615486eff94310643ce85e3e40d539}{m\+\_\+p2}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implementation of the resolution of a collision between two particles. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classParticleParticleCollision_acec460f38329b2347f044ac295f5c47c}{\index{Particle\+Particle\+Collision@{Particle\+Particle\+Collision}!````~Particle\+Particle\+Collision@{$\sim$\+Particle\+Particle\+Collision}}
+\index{````~Particle\+Particle\+Collision@{$\sim$\+Particle\+Particle\+Collision}!Particle\+Particle\+Collision@{Particle\+Particle\+Collision}}
+\subsubsection[{$\sim$\+Particle\+Particle\+Collision}]{\setlength{\rightskip}{0pt plus 5cm}Particle\+Particle\+Collision\+::$\sim$\+Particle\+Particle\+Collision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classParticleParticleCollision_acec460f38329b2347f044ac295f5c47c}
+\hypertarget{classParticleParticleCollision_aef8e68092353ac4843c7cd4626dd60fc}{\index{Particle\+Particle\+Collision@{Particle\+Particle\+Collision}!Particle\+Particle\+Collision@{Particle\+Particle\+Collision}}
+\index{Particle\+Particle\+Collision@{Particle\+Particle\+Collision}!Particle\+Particle\+Collision@{Particle\+Particle\+Collision}}
+\subsubsection[{Particle\+Particle\+Collision}]{\setlength{\rightskip}{0pt plus 5cm}Particle\+Particle\+Collision\+::\+Particle\+Particle\+Collision (
+\begin{DoxyParamCaption}
+\item[{{\bf Particle\+Ptr}}]{particle1, }
+\item[{{\bf Particle\+Ptr}}]{particle2, }
+\item[{float}]{restitution}
+\end{DoxyParamCaption}
+)}}\label{classParticleParticleCollision_aef8e68092353ac4843c7cd4626dd60fc}
+Build a collision event between two particles. 
+\begin{DoxyParams}{Parameters}
+{\em particle1} & The first colliding particle. \\
+\hline
+{\em particle2} & The second colliding particle. \\
+\hline
+{\em restitution} & The restitution factor of the collision. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classParticleParticleCollision_a9f18947965d8615faf1d957c259a65e2}{\index{Particle\+Particle\+Collision@{Particle\+Particle\+Collision}!do\+\_\+solve\+Collision@{do\+\_\+solve\+Collision}}
+\index{do\+\_\+solve\+Collision@{do\+\_\+solve\+Collision}!Particle\+Particle\+Collision@{Particle\+Particle\+Collision}}
+\subsubsection[{do\+\_\+solve\+Collision}]{\setlength{\rightskip}{0pt plus 5cm}void Particle\+Particle\+Collision\+::do\+\_\+solve\+Collision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classParticleParticleCollision_a9f18947965d8615faf1d957c259a65e2}
+Actual implementation of the collision solving, that should be done in derived classes. 
+
+Implements \hyperlink{classCollision_a5fa2b29df51abd8723660cd07050e616}{Collision}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classParticleParticleCollision_a6ed4f0ca756feef481b59ba27c6f260c}{\index{Particle\+Particle\+Collision@{Particle\+Particle\+Collision}!m\+\_\+p1@{m\+\_\+p1}}
+\index{m\+\_\+p1@{m\+\_\+p1}!Particle\+Particle\+Collision@{Particle\+Particle\+Collision}}
+\subsubsection[{m\+\_\+p1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Particle\+Ptr} Particle\+Particle\+Collision\+::m\+\_\+p1\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticleParticleCollision_a6ed4f0ca756feef481b59ba27c6f260c}
+\hypertarget{classParticleParticleCollision_a31615486eff94310643ce85e3e40d539}{\index{Particle\+Particle\+Collision@{Particle\+Particle\+Collision}!m\+\_\+p2@{m\+\_\+p2}}
+\index{m\+\_\+p2@{m\+\_\+p2}!Particle\+Particle\+Collision@{Particle\+Particle\+Collision}}
+\subsubsection[{m\+\_\+p2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Particle\+Ptr} Particle\+Particle\+Collision\+::m\+\_\+p2\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticleParticleCollision_a31615486eff94310643ce85e3e40d539}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{ParticleParticleCollision_8hpp}{Particle\+Particle\+Collision.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="Collision" name="Collision">
+<area shape="rect" id="node2" href="$classParticleParticleCollision.html" title="Implement the resolution of a collision event between two particles. " alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node3" href="$classParticlePlaneCollision.html" title="Implement the resolution of a collision event between a plane and a particle. " alt="" coords="189,80,337,107"/>
+</map>

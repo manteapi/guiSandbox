@@ -1,0 +1,139 @@
+\hypertarget{classFPSCounter}{\section{F\+P\+S\+Counter Class Reference}
+\label{classFPSCounter}\index{F\+P\+S\+Counter@{F\+P\+S\+Counter}}
+}
+
+
+Compute an averaged F\+P\+S.  
+
+
+
+
+{\ttfamily \#include $<$F\+P\+S\+Counter.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFPSCounter_a5302dd56ff08c75f086680163d410f57}{F\+P\+S\+Counter} (double refresh\+Interval=2.\+0)
+\begin{DoxyCompactList}\small\item\em Build a F\+P\+S counter with a specific refresh interval. \end{DoxyCompactList}\item 
+\hyperlink{classFPSCounter_acaa2539d1af5e6da509f5ce32b13972d}{$\sim$\+F\+P\+S\+Counter} ()
+\begin{DoxyCompactList}\small\item\em Instance destructor. \end{DoxyCompactList}\item 
+float \hyperlink{classFPSCounter_a2b7e118b610867e4f62b359eb589e65f}{get\+F\+P\+S} ()
+\begin{DoxyCompactList}\small\item\em Get the averaged F\+P\+S count. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::chrono\+::system\+\_\+clock \hyperlink{classFPSCounter_aff42afc3b6d4fd2b4fcdb7579fa48031}{clock}
+\item 
+typedef std\+::chrono\+::duration\\*
+$<$ double $>$ \hyperlink{classFPSCounter_a2cb0edfdff687339a681ce0349febe4b}{Duration}
+\item 
+typedef \\*
+std\+::chrono\+::time\+\_\+point$<$ \hyperlink{classFPSCounter_aff42afc3b6d4fd2b4fcdb7579fa48031}{clock}, \\*
+\hyperlink{classFPSCounter_a2cb0edfdff687339a681ce0349febe4b}{Duration} $>$ \hyperlink{classFPSCounter_abdab5df998311505d5b39210eb4e4940}{Time\+Point}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFPSCounter_a2cb0edfdff687339a681ce0349febe4b}{Duration} \hyperlink{classFPSCounter_a419142db73c011e326309be159419796}{m\+\_\+refresh\+Interval}
+\item 
+\hyperlink{classFPSCounter_abdab5df998311505d5b39210eb4e4940}{Time\+Point} \hyperlink{classFPSCounter_a1e88f7c01b50ddb5b113ed6cc95335bb}{m\+\_\+last\+Refresh\+Time}
+\item 
+\hyperlink{classFPSCounter_abdab5df998311505d5b39210eb4e4940}{Time\+Point} \hyperlink{classFPSCounter_a2571dd4fcfa2e6adeeca59088a3481cf}{m\+\_\+last\+Call\+Time}
+\item 
+double \hyperlink{classFPSCounter_a73c8cd4484bc8d851854f438aca5a2d4}{m\+\_\+accumulated\+F\+P\+S}
+\item 
+float \hyperlink{classFPSCounter_a29bfe52f7ae0f66958aab30e268e95ed}{m\+\_\+fps}
+\item 
+unsigned int \hyperlink{classFPSCounter_af985f96020619ec9c94dc1d059f4512d}{m\+\_\+number\+Of\+Samples}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This helper class provides an automatically updated and averaged F\+P\+S count. The value is averaged at each interval specified in the constructor. A typical use of this class\+: 
+\begin{DoxyCode}
+\hyperlink{classFPSCounter}{FPSCounter} counter( 1.5 ); \textcolor{comment}{// value refreshed every 1.5 second}
+\textcolor{keywordflow}{while}( running ) \textcolor{comment}{// main rendering loop}
+\{
+  \textcolor{keywordtype}{float} averageFPS = counter.getFPS();
+  \textcolor{comment}{// averageFPS is guaranteed to remain the same for each interval}
+  \textcolor{comment}{// of 1.5 second. We can then display this value on screen: it will}
+  \textcolor{comment}{// slowly change such that we can still read it correctly.}
+\}
+\end{DoxyCode}
+ 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classFPSCounter_aff42afc3b6d4fd2b4fcdb7579fa48031}{\index{F\+P\+S\+Counter@{F\+P\+S\+Counter}!clock@{clock}}
+\index{clock@{clock}!F\+P\+S\+Counter@{F\+P\+S\+Counter}}
+\subsubsection[{clock}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::chrono\+::system\+\_\+clock {\bf F\+P\+S\+Counter\+::clock}\hspace{0.3cm}{\ttfamily [private]}}}\label{classFPSCounter_aff42afc3b6d4fd2b4fcdb7579fa48031}
+We use the system\+\_\+clock of std\+::chrono to compute durations. chrono is a nice addition to the c++ std, go have a look there\+: \href{http://www.cplusplus.com/reference/chrono/}{\tt http\+://www.\+cplusplus.\+com/reference/chrono/} \hypertarget{classFPSCounter_a2cb0edfdff687339a681ce0349febe4b}{\index{F\+P\+S\+Counter@{F\+P\+S\+Counter}!Duration@{Duration}}
+\index{Duration@{Duration}!F\+P\+S\+Counter@{F\+P\+S\+Counter}}
+\subsubsection[{Duration}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::chrono\+::duration$<$double$>$ {\bf F\+P\+S\+Counter\+::\+Duration}\hspace{0.3cm}{\ttfamily [private]}}}\label{classFPSCounter_a2cb0edfdff687339a681ce0349febe4b}
+We use a double precision duration type to have a precise F\+P\+S estimation. \hypertarget{classFPSCounter_abdab5df998311505d5b39210eb4e4940}{\index{F\+P\+S\+Counter@{F\+P\+S\+Counter}!Time\+Point@{Time\+Point}}
+\index{Time\+Point@{Time\+Point}!F\+P\+S\+Counter@{F\+P\+S\+Counter}}
+\subsubsection[{Time\+Point}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::chrono\+::time\+\_\+point$<$ {\bf clock}, {\bf Duration} $>$ {\bf F\+P\+S\+Counter\+::\+Time\+Point}\hspace{0.3cm}{\ttfamily [private]}}}\label{classFPSCounter_abdab5df998311505d5b39210eb4e4940}
+Based on the clock and the duration types, we define a time point type to store last events date. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFPSCounter_a5302dd56ff08c75f086680163d410f57}{\index{F\+P\+S\+Counter@{F\+P\+S\+Counter}!F\+P\+S\+Counter@{F\+P\+S\+Counter}}
+\index{F\+P\+S\+Counter@{F\+P\+S\+Counter}!F\+P\+S\+Counter@{F\+P\+S\+Counter}}
+\subsubsection[{F\+P\+S\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}F\+P\+S\+Counter\+::\+F\+P\+S\+Counter (
+\begin{DoxyParamCaption}
+\item[{double}]{refresh\+Interval = {\ttfamily 2.0}}
+\end{DoxyParamCaption}
+)}}\label{classFPSCounter_a5302dd56ff08c75f086680163d410f57}
+Create a F\+P\+S counter that will be refreshed every display\+Interval second(s).
+
+
+\begin{DoxyParams}{Parameters}
+{\em refresh\+Interval} & refresh interval, i.\+e. minimum duration for which the value returned by this won't change. At the end of the interval, a new F\+P\+S value is computed and stored to be returned. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFPSCounter_acaa2539d1af5e6da509f5ce32b13972d}{\index{F\+P\+S\+Counter@{F\+P\+S\+Counter}!````~F\+P\+S\+Counter@{$\sim$\+F\+P\+S\+Counter}}
+\index{````~F\+P\+S\+Counter@{$\sim$\+F\+P\+S\+Counter}!F\+P\+S\+Counter@{F\+P\+S\+Counter}}
+\subsubsection[{$\sim$\+F\+P\+S\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}F\+P\+S\+Counter\+::$\sim$\+F\+P\+S\+Counter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFPSCounter_acaa2539d1af5e6da509f5ce32b13972d}
+Instance destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classFPSCounter_a2b7e118b610867e4f62b359eb589e65f}{\index{F\+P\+S\+Counter@{F\+P\+S\+Counter}!get\+F\+P\+S@{get\+F\+P\+S}}
+\index{get\+F\+P\+S@{get\+F\+P\+S}!F\+P\+S\+Counter@{F\+P\+S\+Counter}}
+\subsubsection[{get\+F\+P\+S}]{\setlength{\rightskip}{0pt plus 5cm}float F\+P\+S\+Counter\+::get\+F\+P\+S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFPSCounter_a2b7e118b610867e4f62b359eb589e65f}
+This function updates the internal members of the instance, taking into account the last time it was called. If the last refresh was enough time ago, a new averaged fps count is computed. This is this averaged fps count that is returned in all cases.
+
+\begin{DoxyReturn}{Returns}
+The averaged F\+P\+S count. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classFPSCounter_a73c8cd4484bc8d851854f438aca5a2d4}{\index{F\+P\+S\+Counter@{F\+P\+S\+Counter}!m\+\_\+accumulated\+F\+P\+S@{m\+\_\+accumulated\+F\+P\+S}}
+\index{m\+\_\+accumulated\+F\+P\+S@{m\+\_\+accumulated\+F\+P\+S}!F\+P\+S\+Counter@{F\+P\+S\+Counter}}
+\subsubsection[{m\+\_\+accumulated\+F\+P\+S}]{\setlength{\rightskip}{0pt plus 5cm}double F\+P\+S\+Counter\+::m\+\_\+accumulated\+F\+P\+S\hspace{0.3cm}{\ttfamily [private]}}}\label{classFPSCounter_a73c8cd4484bc8d851854f438aca5a2d4}
+The sum of the F\+P\+S computed at each call to \hyperlink{classFPSCounter_a2b7e118b610867e4f62b359eb589e65f}{get\+F\+P\+S()} since last refresh. \hypertarget{classFPSCounter_a29bfe52f7ae0f66958aab30e268e95ed}{\index{F\+P\+S\+Counter@{F\+P\+S\+Counter}!m\+\_\+fps@{m\+\_\+fps}}
+\index{m\+\_\+fps@{m\+\_\+fps}!F\+P\+S\+Counter@{F\+P\+S\+Counter}}
+\subsubsection[{m\+\_\+fps}]{\setlength{\rightskip}{0pt plus 5cm}float F\+P\+S\+Counter\+::m\+\_\+fps\hspace{0.3cm}{\ttfamily [private]}}}\label{classFPSCounter_a29bfe52f7ae0f66958aab30e268e95ed}
+Averaged F\+P\+S count stored such that \hyperlink{classFPSCounter_a2b7e118b610867e4f62b359eb589e65f}{get\+F\+P\+S()} returns the same value between two refreshes. When a refresh occurs, this value receives \hyperlink{classFPSCounter_a73c8cd4484bc8d851854f438aca5a2d4}{F\+P\+S\+Counter\+::m\+\_\+accumulated\+F\+P\+S} / \hyperlink{classFPSCounter_af985f96020619ec9c94dc1d059f4512d}{F\+P\+S\+Counter\+::m\+\_\+number\+Of\+Samples}. \hypertarget{classFPSCounter_a2571dd4fcfa2e6adeeca59088a3481cf}{\index{F\+P\+S\+Counter@{F\+P\+S\+Counter}!m\+\_\+last\+Call\+Time@{m\+\_\+last\+Call\+Time}}
+\index{m\+\_\+last\+Call\+Time@{m\+\_\+last\+Call\+Time}!F\+P\+S\+Counter@{F\+P\+S\+Counter}}
+\subsubsection[{m\+\_\+last\+Call\+Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\+Point} F\+P\+S\+Counter\+::m\+\_\+last\+Call\+Time\hspace{0.3cm}{\ttfamily [private]}}}\label{classFPSCounter_a2571dd4fcfa2e6adeeca59088a3481cf}
+Last time \hyperlink{classFPSCounter_a2b7e118b610867e4f62b359eb589e65f}{get\+F\+P\+S()} was called. \hypertarget{classFPSCounter_a1e88f7c01b50ddb5b113ed6cc95335bb}{\index{F\+P\+S\+Counter@{F\+P\+S\+Counter}!m\+\_\+last\+Refresh\+Time@{m\+\_\+last\+Refresh\+Time}}
+\index{m\+\_\+last\+Refresh\+Time@{m\+\_\+last\+Refresh\+Time}!F\+P\+S\+Counter@{F\+P\+S\+Counter}}
+\subsubsection[{m\+\_\+last\+Refresh\+Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\+Point} F\+P\+S\+Counter\+::m\+\_\+last\+Refresh\+Time\hspace{0.3cm}{\ttfamily [private]}}}\label{classFPSCounter_a1e88f7c01b50ddb5b113ed6cc95335bb}
+Last time the \hyperlink{classFPSCounter_a29bfe52f7ae0f66958aab30e268e95ed}{F\+P\+S\+Counter\+::m\+\_\+fps} was refreshed. \hypertarget{classFPSCounter_af985f96020619ec9c94dc1d059f4512d}{\index{F\+P\+S\+Counter@{F\+P\+S\+Counter}!m\+\_\+number\+Of\+Samples@{m\+\_\+number\+Of\+Samples}}
+\index{m\+\_\+number\+Of\+Samples@{m\+\_\+number\+Of\+Samples}!F\+P\+S\+Counter@{F\+P\+S\+Counter}}
+\subsubsection[{m\+\_\+number\+Of\+Samples}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int F\+P\+S\+Counter\+::m\+\_\+number\+Of\+Samples\hspace{0.3cm}{\ttfamily [private]}}}\label{classFPSCounter_af985f96020619ec9c94dc1d059f4512d}
+The number of F\+P\+S computed by each call to \hyperlink{classFPSCounter_a2b7e118b610867e4f62b359eb589e65f}{get\+F\+P\+S()} since last refresh. \hypertarget{classFPSCounter_a419142db73c011e326309be159419796}{\index{F\+P\+S\+Counter@{F\+P\+S\+Counter}!m\+\_\+refresh\+Interval@{m\+\_\+refresh\+Interval}}
+\index{m\+\_\+refresh\+Interval@{m\+\_\+refresh\+Interval}!F\+P\+S\+Counter@{F\+P\+S\+Counter}}
+\subsubsection[{m\+\_\+refresh\+Interval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Duration} F\+P\+S\+Counter\+::m\+\_\+refresh\+Interval\hspace{0.3cm}{\ttfamily [private]}}}\label{classFPSCounter_a419142db73c011e326309be159419796}
+Duration between two refresh of \hyperlink{classFPSCounter_a29bfe52f7ae0f66958aab30e268e95ed}{F\+P\+S\+Counter\+::m\+\_\+fps}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{FPSCounter_8hpp}{F\+P\+S\+Counter.\+hpp}\end{DoxyCompactItemize}

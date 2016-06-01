@@ -1,0 +1,144 @@
+\hypertarget{classSpringForceField}{\section{Spring\+Force\+Field Class Reference}
+\label{classSpringForceField}\index{Spring\+Force\+Field@{Spring\+Force\+Field}}
+}
+
+
+Implement a spring force field.  
+
+
+
+
+{\ttfamily \#include $<$Spring\+Force\+Field.\+hpp$>$}
+
+
+
+Inheritance diagram for Spring\+Force\+Field\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classSpringForceField__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Spring\+Force\+Field\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classSpringForceField__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSpringForceField_a1b38a20f9878bd9ed51fd9bb996a7870}{Spring\+Force\+Field} (const \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} p1, const \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} p2, float stiffness, float equilibrium\+Length, float damping)
+\begin{DoxyCompactList}\small\item\em Build a new spring force field. \end{DoxyCompactList}\item 
+\hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} \hyperlink{classSpringForceField_a0c216bb074d82868a63578feae959836}{get\+Particle1} () const 
+\begin{DoxyCompactList}\small\item\em Access to the first particle connected to this spring. \end{DoxyCompactList}\item 
+\hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} \hyperlink{classSpringForceField_a80a9c5c14be0d14d15651d76098a4bf2}{get\+Particle2} () const 
+\begin{DoxyCompactList}\small\item\em Access to the second particle connected to this spring. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSpringForceField_a09e9e100a1947a43fdc1c9487d72a08e}{do\+\_\+add\+Force} ()
+\begin{DoxyCompactList}\small\item\em Add the force of this spring to the two particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} \hyperlink{classSpringForceField_af560f73fe0aa07349798ea07f63b93a0}{m\+\_\+p1}
+\item 
+const \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} \hyperlink{classSpringForceField_aed1df7a9b0e889d23ba2a70c8ffcf2d6}{m\+\_\+p2}
+\item 
+float \hyperlink{classSpringForceField_a19fa7376f0067977dfbda789172c730b}{m\+\_\+stiffness}
+\item 
+float \hyperlink{classSpringForceField_a26b41db047cd562842de4bc3e1a53e68}{m\+\_\+equilibrium\+Length}
+\item 
+float \hyperlink{classSpringForceField_a29ae6e468663723051140fb0e856a27b}{m\+\_\+damping}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class implements a force field to model a spring force between two particles. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSpringForceField_a1b38a20f9878bd9ed51fd9bb996a7870}{\index{Spring\+Force\+Field@{Spring\+Force\+Field}!Spring\+Force\+Field@{Spring\+Force\+Field}}
+\index{Spring\+Force\+Field@{Spring\+Force\+Field}!Spring\+Force\+Field@{Spring\+Force\+Field}}
+\subsubsection[{Spring\+Force\+Field}]{\setlength{\rightskip}{0pt plus 5cm}Spring\+Force\+Field\+::\+Spring\+Force\+Field (
+\begin{DoxyParamCaption}
+\item[{const {\bf Particle\+Ptr}}]{p1, }
+\item[{const {\bf Particle\+Ptr}}]{p2, }
+\item[{float}]{stiffness, }
+\item[{float}]{equilibrium\+Length, }
+\item[{float}]{damping}
+\end{DoxyParamCaption}
+)}}\label{classSpringForceField_a1b38a20f9878bd9ed51fd9bb996a7870}
+Build a new spring force field between two particles. 
+\begin{DoxyParams}{Parameters}
+{\em p1} & the first particle of this spring \\
+\hline
+{\em p2} & the second particle of this spring \\
+\hline
+{\em stiffness} & spring stiffness \\
+\hline
+{\em equilibrium\+Length} & equilibrium length \\
+\hline
+{\em damping} & damping factor \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSpringForceField_a09e9e100a1947a43fdc1c9487d72a08e}{\index{Spring\+Force\+Field@{Spring\+Force\+Field}!do\+\_\+add\+Force@{do\+\_\+add\+Force}}
+\index{do\+\_\+add\+Force@{do\+\_\+add\+Force}!Spring\+Force\+Field@{Spring\+Force\+Field}}
+\subsubsection[{do\+\_\+add\+Force}]{\setlength{\rightskip}{0pt plus 5cm}void Spring\+Force\+Field\+::do\+\_\+add\+Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classSpringForceField_a09e9e100a1947a43fdc1c9487d72a08e}
+Compute the forces applied by this spring to each particles and add them to the particles. 
+
+Implements \hyperlink{classForceField_a2f44520a00188a3aaeb04e667e8d2673}{Force\+Field}.
+
+\hypertarget{classSpringForceField_a0c216bb074d82868a63578feae959836}{\index{Spring\+Force\+Field@{Spring\+Force\+Field}!get\+Particle1@{get\+Particle1}}
+\index{get\+Particle1@{get\+Particle1}!Spring\+Force\+Field@{Spring\+Force\+Field}}
+\subsubsection[{get\+Particle1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Particle\+Ptr} Spring\+Force\+Field\+::get\+Particle1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSpringForceField_a0c216bb074d82868a63578feae959836}
+Get the first particle connected to this spring. \begin{DoxyReturn}{Returns}
+The first particle connected to this spring. 
+\end{DoxyReturn}
+\hypertarget{classSpringForceField_a80a9c5c14be0d14d15651d76098a4bf2}{\index{Spring\+Force\+Field@{Spring\+Force\+Field}!get\+Particle2@{get\+Particle2}}
+\index{get\+Particle2@{get\+Particle2}!Spring\+Force\+Field@{Spring\+Force\+Field}}
+\subsubsection[{get\+Particle2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Particle\+Ptr} Spring\+Force\+Field\+::get\+Particle2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSpringForceField_a80a9c5c14be0d14d15651d76098a4bf2}
+Get the second particle connected to this spring. \begin{DoxyReturn}{Returns}
+The second particle connected to this spring. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSpringForceField_a29ae6e468663723051140fb0e856a27b}{\index{Spring\+Force\+Field@{Spring\+Force\+Field}!m\+\_\+damping@{m\+\_\+damping}}
+\index{m\+\_\+damping@{m\+\_\+damping}!Spring\+Force\+Field@{Spring\+Force\+Field}}
+\subsubsection[{m\+\_\+damping}]{\setlength{\rightskip}{0pt plus 5cm}float Spring\+Force\+Field\+::m\+\_\+damping\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringForceField_a29ae6e468663723051140fb0e856a27b}
+\hypertarget{classSpringForceField_a26b41db047cd562842de4bc3e1a53e68}{\index{Spring\+Force\+Field@{Spring\+Force\+Field}!m\+\_\+equilibrium\+Length@{m\+\_\+equilibrium\+Length}}
+\index{m\+\_\+equilibrium\+Length@{m\+\_\+equilibrium\+Length}!Spring\+Force\+Field@{Spring\+Force\+Field}}
+\subsubsection[{m\+\_\+equilibrium\+Length}]{\setlength{\rightskip}{0pt plus 5cm}float Spring\+Force\+Field\+::m\+\_\+equilibrium\+Length\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringForceField_a26b41db047cd562842de4bc3e1a53e68}
+\hypertarget{classSpringForceField_af560f73fe0aa07349798ea07f63b93a0}{\index{Spring\+Force\+Field@{Spring\+Force\+Field}!m\+\_\+p1@{m\+\_\+p1}}
+\index{m\+\_\+p1@{m\+\_\+p1}!Spring\+Force\+Field@{Spring\+Force\+Field}}
+\subsubsection[{m\+\_\+p1}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Particle\+Ptr} Spring\+Force\+Field\+::m\+\_\+p1\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringForceField_af560f73fe0aa07349798ea07f63b93a0}
+\hypertarget{classSpringForceField_aed1df7a9b0e889d23ba2a70c8ffcf2d6}{\index{Spring\+Force\+Field@{Spring\+Force\+Field}!m\+\_\+p2@{m\+\_\+p2}}
+\index{m\+\_\+p2@{m\+\_\+p2}!Spring\+Force\+Field@{Spring\+Force\+Field}}
+\subsubsection[{m\+\_\+p2}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Particle\+Ptr} Spring\+Force\+Field\+::m\+\_\+p2\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringForceField_aed1df7a9b0e889d23ba2a70c8ffcf2d6}
+\hypertarget{classSpringForceField_a19fa7376f0067977dfbda789172c730b}{\index{Spring\+Force\+Field@{Spring\+Force\+Field}!m\+\_\+stiffness@{m\+\_\+stiffness}}
+\index{m\+\_\+stiffness@{m\+\_\+stiffness}!Spring\+Force\+Field@{Spring\+Force\+Field}}
+\subsubsection[{m\+\_\+stiffness}]{\setlength{\rightskip}{0pt plus 5cm}float Spring\+Force\+Field\+::m\+\_\+stiffness\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpringForceField_a19fa7376f0067977dfbda789172c730b}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{SpringForceField_8hpp}{Spring\+Force\+Field.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,97 @@
+\hypertarget{classCollision}{\section{Collision Class Reference}
+\label{classCollision}\index{Collision@{Collision}}
+}
+
+
+Interface of a collision between dynamic objects.  
+
+
+
+
+{\ttfamily \#include $<$Collision.\+hpp$>$}
+
+
+
+Inheritance diagram for Collision\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classCollision__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classCollision_a81d1b669d7a8b03b178e794168ba7cec}{$\sim$\+Collision} ()
+\item 
+\hyperlink{classCollision_a62947cd726f639f2a30ad5deaa49ab71}{Collision} (float restitution)
+\begin{DoxyCompactList}\small\item\em Build a collision event. \end{DoxyCompactList}\item 
+void \hyperlink{classCollision_ad98c7014fd4237d0f0dcd159fdd24d1f}{solve\+Collision} ()
+\begin{DoxyCompactList}\small\item\em Solve this collision. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classCollision_a1158537ee89f6a5e1aab79f4ecd6a7d4}{m\+\_\+restitution}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classCollision_a5fa2b29df51abd8723660cd07050e616}{do\+\_\+solve\+Collision} ()=0
+\begin{DoxyCompactList}\small\item\em Implementation of the collision solving. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class store a collision event between two objects that should be resolved to avoid object inter-\/penetration. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCollision_a81d1b669d7a8b03b178e794168ba7cec}{\index{Collision@{Collision}!````~Collision@{$\sim$\+Collision}}
+\index{````~Collision@{$\sim$\+Collision}!Collision@{Collision}}
+\subsubsection[{$\sim$\+Collision}]{\setlength{\rightskip}{0pt plus 5cm}virtual Collision\+::$\sim$\+Collision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCollision_a81d1b669d7a8b03b178e794168ba7cec}
+\hypertarget{classCollision_a62947cd726f639f2a30ad5deaa49ab71}{\index{Collision@{Collision}!Collision@{Collision}}
+\index{Collision@{Collision}!Collision@{Collision}}
+\subsubsection[{Collision}]{\setlength{\rightskip}{0pt plus 5cm}Collision\+::\+Collision (
+\begin{DoxyParamCaption}
+\item[{float}]{restitution}
+\end{DoxyParamCaption}
+)}}\label{classCollision_a62947cd726f639f2a30ad5deaa49ab71}
+Build a collision event. 
+\begin{DoxyParams}{Parameters}
+{\em restitution} & Restitution factor of this collision. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCollision_a5fa2b29df51abd8723660cd07050e616}{\index{Collision@{Collision}!do\+\_\+solve\+Collision@{do\+\_\+solve\+Collision}}
+\index{do\+\_\+solve\+Collision@{do\+\_\+solve\+Collision}!Collision@{Collision}}
+\subsubsection[{do\+\_\+solve\+Collision}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Collision\+::do\+\_\+solve\+Collision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [pure virtual]}}}\label{classCollision_a5fa2b29df51abd8723660cd07050e616}
+Actual implementation of the collision solving, that should be done in derived classes. 
+
+Implemented in \hyperlink{classParticlePlaneCollision_a1516ee9898275c1ad9bfbc8bad675b1b}{Particle\+Plane\+Collision}, and \hyperlink{classParticleParticleCollision_a9f18947965d8615faf1d957c259a65e2}{Particle\+Particle\+Collision}.
+
+\hypertarget{classCollision_ad98c7014fd4237d0f0dcd159fdd24d1f}{\index{Collision@{Collision}!solve\+Collision@{solve\+Collision}}
+\index{solve\+Collision@{solve\+Collision}!Collision@{Collision}}
+\subsubsection[{solve\+Collision}]{\setlength{\rightskip}{0pt plus 5cm}void Collision\+::solve\+Collision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCollision_ad98c7014fd4237d0f0dcd159fdd24d1f}
+Solve this collision to update the positions and velocities of objects that collided. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classCollision_a1158537ee89f6a5e1aab79f4ecd6a7d4}{\index{Collision@{Collision}!m\+\_\+restitution@{m\+\_\+restitution}}
+\index{m\+\_\+restitution@{m\+\_\+restitution}!Collision@{Collision}}
+\subsubsection[{m\+\_\+restitution}]{\setlength{\rightskip}{0pt plus 5cm}float Collision\+::m\+\_\+restitution\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCollision_a1158537ee89f6a5e1aab79f4ecd6a7d4}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{Collision_8hpp}{Collision.\+hpp}\end{DoxyCompactItemize}

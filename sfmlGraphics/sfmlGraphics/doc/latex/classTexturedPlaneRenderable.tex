@@ -1,0 +1,242 @@
+\hypertarget{classTexturedPlaneRenderable}{\section{Textured\+Plane\+Renderable Class Reference}
+\label{classTexturedPlaneRenderable}\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+}
+
+
+{\ttfamily \#include $<$Textured\+Plane\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Textured\+Plane\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classTexturedPlaneRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Textured\+Plane\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTexturedPlaneRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTexturedPlaneRenderable_a4d206c564a7671d03d1fc7bb9f59bc65}{$\sim$\+Textured\+Plane\+Renderable} ()
+\item 
+\hyperlink{classTexturedPlaneRenderable_aa93a87c5a8aef123b75d587b457e3d58}{Textured\+Plane\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} shader\+Program, const std\+::string \&filename)
+\item 
+void \hyperlink{classTexturedPlaneRenderable_af593daf438851f1de2cea6a4876b2b95}{set\+Material} (const \hyperlink{Material_8hpp_a1d47cd05ca683e287435cf0b363fbfe1}{Material\+Ptr} \&material)
+\item 
+void \hyperlink{classTexturedPlaneRenderable_ab1124a00c9b078a9c1baee89aded2dab}{set\+Directional\+Light} (const \hyperlink{Light_8hpp_ad8ef93288a101a8d8f185fb2a88f496d}{Directional\+Light\+Ptr} \&directional\+Light)
+\item 
+void \hyperlink{classTexturedPlaneRenderable_a8a9d2b91a18bbf73f3ebc50ddfe4a2cd}{add\+Point\+Light} (const \hyperlink{Light_8hpp_a28898b9799350669037caef13c5115d2}{Point\+Light\+Ptr} \&point\+Light)
+\item 
+void \hyperlink{classTexturedPlaneRenderable_ab5efc1a27904680b88ee3822946a3e52}{add\+Spot\+Light} (const \hyperlink{Light_8hpp_a1865f598c5eed6e6e1f79d7296852092}{Spot\+Light\+Ptr} \&spot\+Light)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classTexturedPlaneRenderable_ab81503b6d91dc3b3a16f774197a14438}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classTexturedPlaneRenderable_a945edb4f74583f73813821bfcecbda0f}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classTexturedPlaneRenderable_adc51b7b2ad32fb1ca8ccdbc59d9a9a4f}{do\+\_\+key\+Pressed\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a key pressed event. \end{DoxyCompactList}\item 
+void \hyperlink{classTexturedPlaneRenderable_a8a48569cb0dcebe2b2840ff9807cdaad}{update\+Texture\+Option} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classTexturedPlaneRenderable_ac430deef6c1dca1d5b2833ca70550ad0}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classTexturedPlaneRenderable_a142bff7d6aa370cfd227823433c87f2b}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classTexturedPlaneRenderable_a3a73b60c00a58775e7ca5ebfc127ab49}{m\+\_\+normals}
+\item 
+std\+::vector$<$ glm\+::vec2 $>$ \hyperlink{classTexturedPlaneRenderable_adcb8aeecb13c5476b2a3397b9c3526a0}{m\+\_\+tex\+Coords}
+\item 
+std\+::vector$<$ glm\+::vec2 $>$ \hyperlink{classTexturedPlaneRenderable_afca722b8eb986dc3fdf7ec22d34c3b0e}{m\+\_\+orig\+Tex\+Coords}
+\item 
+unsigned int \hyperlink{classTexturedPlaneRenderable_a85ab7e27c7cb5f3d3adc77bc30396079}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classTexturedPlaneRenderable_adaacaeab232fe85b6c8471f2072fcb97}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classTexturedPlaneRenderable_a89a488243e2ed9ef1921c6312324f997}{m\+\_\+n\+Buffer}
+\item 
+unsigned int \hyperlink{classTexturedPlaneRenderable_a1fd262eba65ec9a2ef8fffb3fdf12df9}{m\+\_\+t\+Buffer}
+\item 
+unsigned int \hyperlink{classTexturedPlaneRenderable_af6121c56a3d712bfc2b1c39b5365c6b0}{m\+\_\+tex\+Id}
+\item 
+unsigned int \hyperlink{classTexturedPlaneRenderable_a13d8d7a33df910210f1eb31d91d5785d}{m\+\_\+wrap\+Option}
+\item 
+unsigned int \hyperlink{classTexturedPlaneRenderable_ac13cc677745b31dc2046fc31c9ef61f1}{m\+\_\+filter\+Option}
+\item 
+\hyperlink{Material_8hpp_a1d47cd05ca683e287435cf0b363fbfe1}{Material\+Ptr} \hyperlink{classTexturedPlaneRenderable_a85a94f1ce193e81aca7a01fd87f63069}{m\+\_\+material}
+\item 
+\hyperlink{Light_8hpp_ad8ef93288a101a8d8f185fb2a88f496d}{Directional\+Light\+Ptr} \hyperlink{classTexturedPlaneRenderable_a3a78ad4ace1c94c1d12969a19fabbe5d}{m\+\_\+directional\+Light}
+\item 
+std\+::vector$<$ \hyperlink{Light_8hpp_a28898b9799350669037caef13c5115d2}{Point\+Light\+Ptr} $>$ \hyperlink{classTexturedPlaneRenderable_a71ac9074c2e6cf30f732e56644c79354}{m\+\_\+point\+Light}
+\item 
+std\+::vector$<$ \hyperlink{Light_8hpp_a1865f598c5eed6e6e1f79d7296852092}{Spot\+Light\+Ptr} $>$ \hyperlink{classTexturedPlaneRenderable_a38bc9b9ecb9d086076bade1753e36295}{m\+\_\+spot\+Light}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTexturedPlaneRenderable_a4d206c564a7671d03d1fc7bb9f59bc65}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!````~Textured\+Plane\+Renderable@{$\sim$\+Textured\+Plane\+Renderable}}
+\index{````~Textured\+Plane\+Renderable@{$\sim$\+Textured\+Plane\+Renderable}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{$\sim$\+Textured\+Plane\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Textured\+Plane\+Renderable\+::$\sim$\+Textured\+Plane\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTexturedPlaneRenderable_a4d206c564a7671d03d1fc7bb9f59bc65}
+\hypertarget{classTexturedPlaneRenderable_aa93a87c5a8aef123b75d587b457e3d58}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{Textured\+Plane\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Textured\+Plane\+Renderable\+::\+Textured\+Plane\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{shader\+Program, }
+\item[{const std\+::string \&}]{filename}
+\end{DoxyParamCaption}
+)}}\label{classTexturedPlaneRenderable_aa93a87c5a8aef123b75d587b457e3d58}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTexturedPlaneRenderable_a8a9d2b91a18bbf73f3ebc50ddfe4a2cd}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!add\+Point\+Light@{add\+Point\+Light}}
+\index{add\+Point\+Light@{add\+Point\+Light}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{add\+Point\+Light}]{\setlength{\rightskip}{0pt plus 5cm}void Textured\+Plane\+Renderable\+::add\+Point\+Light (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point\+Light\+Ptr} \&}]{point\+Light}
+\end{DoxyParamCaption}
+)}}\label{classTexturedPlaneRenderable_a8a9d2b91a18bbf73f3ebc50ddfe4a2cd}
+\hypertarget{classTexturedPlaneRenderable_ab5efc1a27904680b88ee3822946a3e52}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!add\+Spot\+Light@{add\+Spot\+Light}}
+\index{add\+Spot\+Light@{add\+Spot\+Light}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{add\+Spot\+Light}]{\setlength{\rightskip}{0pt plus 5cm}void Textured\+Plane\+Renderable\+::add\+Spot\+Light (
+\begin{DoxyParamCaption}
+\item[{const {\bf Spot\+Light\+Ptr} \&}]{spot\+Light}
+\end{DoxyParamCaption}
+)}}\label{classTexturedPlaneRenderable_ab5efc1a27904680b88ee3822946a3e52}
+\hypertarget{classTexturedPlaneRenderable_a945edb4f74583f73813821bfcecbda0f}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Textured\+Plane\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classTexturedPlaneRenderable_a945edb4f74583f73813821bfcecbda0f}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classTexturedPlaneRenderable_ab81503b6d91dc3b3a16f774197a14438}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Textured\+Plane\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classTexturedPlaneRenderable_ab81503b6d91dc3b3a16f774197a14438}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+\hypertarget{classTexturedPlaneRenderable_adc51b7b2ad32fb1ca8ccdbc59d9a9a4f}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!do\+\_\+key\+Pressed\+Event@{do\+\_\+key\+Pressed\+Event}}
+\index{do\+\_\+key\+Pressed\+Event@{do\+\_\+key\+Pressed\+Event}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{do\+\_\+key\+Pressed\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Textured\+Plane\+Renderable\+::do\+\_\+key\+Pressed\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classTexturedPlaneRenderable_adc51b7b2ad32fb1ca8ccdbc59d9a9a4f}
+Implementation to react to a key pressed. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The key pressed event. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classRenderable_a49e39be950dca7a925b8b79c13241e6b}{Renderable}.
+
+\hypertarget{classTexturedPlaneRenderable_ab1124a00c9b078a9c1baee89aded2dab}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!set\+Directional\+Light@{set\+Directional\+Light}}
+\index{set\+Directional\+Light@{set\+Directional\+Light}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{set\+Directional\+Light}]{\setlength{\rightskip}{0pt plus 5cm}void Textured\+Plane\+Renderable\+::set\+Directional\+Light (
+\begin{DoxyParamCaption}
+\item[{const {\bf Directional\+Light\+Ptr} \&}]{directional\+Light}
+\end{DoxyParamCaption}
+)}}\label{classTexturedPlaneRenderable_ab1124a00c9b078a9c1baee89aded2dab}
+\hypertarget{classTexturedPlaneRenderable_af593daf438851f1de2cea6a4876b2b95}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!set\+Material@{set\+Material}}
+\index{set\+Material@{set\+Material}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{set\+Material}]{\setlength{\rightskip}{0pt plus 5cm}void Textured\+Plane\+Renderable\+::set\+Material (
+\begin{DoxyParamCaption}
+\item[{const {\bf Material\+Ptr} \&}]{material}
+\end{DoxyParamCaption}
+)}}\label{classTexturedPlaneRenderable_af593daf438851f1de2cea6a4876b2b95}
+\hypertarget{classTexturedPlaneRenderable_a8a48569cb0dcebe2b2840ff9807cdaad}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!update\+Texture\+Option@{update\+Texture\+Option}}
+\index{update\+Texture\+Option@{update\+Texture\+Option}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{update\+Texture\+Option}]{\setlength{\rightskip}{0pt plus 5cm}void Textured\+Plane\+Renderable\+::update\+Texture\+Option (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_a8a48569cb0dcebe2b2840ff9807cdaad}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classTexturedPlaneRenderable_adaacaeab232fe85b6c8471f2072fcb97}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Textured\+Plane\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_adaacaeab232fe85b6c8471f2072fcb97}
+\hypertarget{classTexturedPlaneRenderable_a142bff7d6aa370cfd227823433c87f2b}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Textured\+Plane\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_a142bff7d6aa370cfd227823433c87f2b}
+\hypertarget{classTexturedPlaneRenderable_a3a78ad4ace1c94c1d12969a19fabbe5d}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+directional\+Light@{m\+\_\+directional\+Light}}
+\index{m\+\_\+directional\+Light@{m\+\_\+directional\+Light}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+directional\+Light}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Directional\+Light\+Ptr} Textured\+Plane\+Renderable\+::m\+\_\+directional\+Light\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_a3a78ad4ace1c94c1d12969a19fabbe5d}
+\hypertarget{classTexturedPlaneRenderable_ac13cc677745b31dc2046fc31c9ef61f1}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+filter\+Option@{m\+\_\+filter\+Option}}
+\index{m\+\_\+filter\+Option@{m\+\_\+filter\+Option}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+filter\+Option}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Textured\+Plane\+Renderable\+::m\+\_\+filter\+Option\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_ac13cc677745b31dc2046fc31c9ef61f1}
+\hypertarget{classTexturedPlaneRenderable_a85a94f1ce193e81aca7a01fd87f63069}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+material@{m\+\_\+material}}
+\index{m\+\_\+material@{m\+\_\+material}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+material}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Material\+Ptr} Textured\+Plane\+Renderable\+::m\+\_\+material\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_a85a94f1ce193e81aca7a01fd87f63069}
+\hypertarget{classTexturedPlaneRenderable_a89a488243e2ed9ef1921c6312324f997}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Textured\+Plane\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_a89a488243e2ed9ef1921c6312324f997}
+\hypertarget{classTexturedPlaneRenderable_a3a73b60c00a58775e7ca5ebfc127ab49}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Textured\+Plane\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_a3a73b60c00a58775e7ca5ebfc127ab49}
+\hypertarget{classTexturedPlaneRenderable_afca722b8eb986dc3fdf7ec22d34c3b0e}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+orig\+Tex\+Coords@{m\+\_\+orig\+Tex\+Coords}}
+\index{m\+\_\+orig\+Tex\+Coords@{m\+\_\+orig\+Tex\+Coords}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+orig\+Tex\+Coords}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec2 $>$ Textured\+Plane\+Renderable\+::m\+\_\+orig\+Tex\+Coords\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_afca722b8eb986dc3fdf7ec22d34c3b0e}
+\hypertarget{classTexturedPlaneRenderable_a85ab7e27c7cb5f3d3adc77bc30396079}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Textured\+Plane\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_a85ab7e27c7cb5f3d3adc77bc30396079}
+\hypertarget{classTexturedPlaneRenderable_a71ac9074c2e6cf30f732e56644c79354}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+point\+Light@{m\+\_\+point\+Light}}
+\index{m\+\_\+point\+Light@{m\+\_\+point\+Light}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+point\+Light}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Point\+Light\+Ptr}$>$ Textured\+Plane\+Renderable\+::m\+\_\+point\+Light\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_a71ac9074c2e6cf30f732e56644c79354}
+\hypertarget{classTexturedPlaneRenderable_ac430deef6c1dca1d5b2833ca70550ad0}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Textured\+Plane\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_ac430deef6c1dca1d5b2833ca70550ad0}
+\hypertarget{classTexturedPlaneRenderable_a38bc9b9ecb9d086076bade1753e36295}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+spot\+Light@{m\+\_\+spot\+Light}}
+\index{m\+\_\+spot\+Light@{m\+\_\+spot\+Light}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+spot\+Light}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Spot\+Light\+Ptr}$>$ Textured\+Plane\+Renderable\+::m\+\_\+spot\+Light\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_a38bc9b9ecb9d086076bade1753e36295}
+\hypertarget{classTexturedPlaneRenderable_a1fd262eba65ec9a2ef8fffb3fdf12df9}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+t\+Buffer@{m\+\_\+t\+Buffer}}
+\index{m\+\_\+t\+Buffer@{m\+\_\+t\+Buffer}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+t\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Textured\+Plane\+Renderable\+::m\+\_\+t\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_a1fd262eba65ec9a2ef8fffb3fdf12df9}
+\hypertarget{classTexturedPlaneRenderable_adcb8aeecb13c5476b2a3397b9c3526a0}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+tex\+Coords@{m\+\_\+tex\+Coords}}
+\index{m\+\_\+tex\+Coords@{m\+\_\+tex\+Coords}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+tex\+Coords}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec2 $>$ Textured\+Plane\+Renderable\+::m\+\_\+tex\+Coords\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_adcb8aeecb13c5476b2a3397b9c3526a0}
+\hypertarget{classTexturedPlaneRenderable_af6121c56a3d712bfc2b1c39b5365c6b0}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+tex\+Id@{m\+\_\+tex\+Id}}
+\index{m\+\_\+tex\+Id@{m\+\_\+tex\+Id}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+tex\+Id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Textured\+Plane\+Renderable\+::m\+\_\+tex\+Id\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_af6121c56a3d712bfc2b1c39b5365c6b0}
+\hypertarget{classTexturedPlaneRenderable_a13d8d7a33df910210f1eb31d91d5785d}{\index{Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}!m\+\_\+wrap\+Option@{m\+\_\+wrap\+Option}}
+\index{m\+\_\+wrap\+Option@{m\+\_\+wrap\+Option}!Textured\+Plane\+Renderable@{Textured\+Plane\+Renderable}}
+\subsubsection[{m\+\_\+wrap\+Option}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Textured\+Plane\+Renderable\+::m\+\_\+wrap\+Option\hspace{0.3cm}{\ttfamily [private]}}}\label{classTexturedPlaneRenderable_a13d8d7a33df910210f1eb31d91d5785d}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/texturing/\hyperlink{TexturedPlaneRenderable_8hpp}{Textured\+Plane\+Renderable.\+hpp}\end{DoxyCompactItemize}

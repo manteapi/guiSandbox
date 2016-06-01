@@ -1,0 +1,128 @@
+\hypertarget{classHierarchicalCylinderRenderable}{\section{Hierarchical\+Cylinder\+Renderable Class Reference}
+\label{classHierarchicalCylinderRenderable}\index{Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}}
+}
+
+
+{\ttfamily \#include $<$Hierarchical\+Cylinder\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Hierarchical\+Cylinder\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classHierarchicalCylinderRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Hierarchical\+Cylinder\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHierarchicalCylinderRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHierarchicalCylinderRenderable_a35f2ede6a6f39ff9b770a06ee6dcb73c}{$\sim$\+Hierarchical\+Cylinder\+Renderable} ()
+\item 
+\hyperlink{classHierarchicalCylinderRenderable_a7c71cab100ac3d2a0d3e25591cc062f0}{Hierarchical\+Cylinder\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classHierarchicalCylinderRenderable_a4c2f4ead07f0c700e3b94f961a7be412}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classHierarchicalCylinderRenderable_a151ed55445a3bbbabdc9d19231a64a52}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classHierarchicalCylinderRenderable_aa25417073ea90df6ea59d7d87050df49}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classHierarchicalCylinderRenderable_aba8133be058d160bf53a66f205188e0a}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classHierarchicalCylinderRenderable_af38a98b2fe2ca4b179d93b02dbf759fd}{m\+\_\+normals}
+\item 
+unsigned int \hyperlink{classHierarchicalCylinderRenderable_a7a69b3845a3dd2259b3c23a7c339232b}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classHierarchicalCylinderRenderable_a235710905d690d2ac3ee338ff486cf00}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classHierarchicalCylinderRenderable_aeede6a6e7c005db3949e90036855b0c5}{m\+\_\+n\+Buffer}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classHierarchicalCylinderRenderable_a35f2ede6a6f39ff9b770a06ee6dcb73c}{\index{Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}!````~Hierarchical\+Cylinder\+Renderable@{$\sim$\+Hierarchical\+Cylinder\+Renderable}}
+\index{````~Hierarchical\+Cylinder\+Renderable@{$\sim$\+Hierarchical\+Cylinder\+Renderable}!Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}}
+\subsubsection[{$\sim$\+Hierarchical\+Cylinder\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Hierarchical\+Cylinder\+Renderable\+::$\sim$\+Hierarchical\+Cylinder\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHierarchicalCylinderRenderable_a35f2ede6a6f39ff9b770a06ee6dcb73c}
+\hypertarget{classHierarchicalCylinderRenderable_a7c71cab100ac3d2a0d3e25591cc062f0}{\index{Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}!Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}}
+\index{Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}!Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}}
+\subsubsection[{Hierarchical\+Cylinder\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Hierarchical\+Cylinder\+Renderable\+::\+Hierarchical\+Cylinder\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program}
+\end{DoxyParamCaption}
+)}}\label{classHierarchicalCylinderRenderable_a7c71cab100ac3d2a0d3e25591cc062f0}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classHierarchicalCylinderRenderable_a151ed55445a3bbbabdc9d19231a64a52}{\index{Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Hierarchical\+Cylinder\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classHierarchicalCylinderRenderable_a151ed55445a3bbbabdc9d19231a64a52}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classHierarchicalCylinderRenderable_a4c2f4ead07f0c700e3b94f961a7be412}{\index{Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Hierarchical\+Cylinder\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classHierarchicalCylinderRenderable_a4c2f4ead07f0c700e3b94f961a7be412}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classHierarchicalCylinderRenderable_a235710905d690d2ac3ee338ff486cf00}{\index{Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Hierarchical\+Cylinder\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalCylinderRenderable_a235710905d690d2ac3ee338ff486cf00}
+\hypertarget{classHierarchicalCylinderRenderable_aba8133be058d160bf53a66f205188e0a}{\index{Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Hierarchical\+Cylinder\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalCylinderRenderable_aba8133be058d160bf53a66f205188e0a}
+\hypertarget{classHierarchicalCylinderRenderable_aeede6a6e7c005db3949e90036855b0c5}{\index{Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Hierarchical\+Cylinder\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalCylinderRenderable_aeede6a6e7c005db3949e90036855b0c5}
+\hypertarget{classHierarchicalCylinderRenderable_af38a98b2fe2ca4b179d93b02dbf759fd}{\index{Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Hierarchical\+Cylinder\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalCylinderRenderable_af38a98b2fe2ca4b179d93b02dbf759fd}
+\hypertarget{classHierarchicalCylinderRenderable_a7a69b3845a3dd2259b3c23a7c339232b}{\index{Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Hierarchical\+Cylinder\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalCylinderRenderable_a7a69b3845a3dd2259b3c23a7c339232b}
+\hypertarget{classHierarchicalCylinderRenderable_aa25417073ea90df6ea59d7d87050df49}{\index{Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Hierarchical\+Cylinder\+Renderable@{Hierarchical\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Hierarchical\+Cylinder\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalCylinderRenderable_aa25417073ea90df6ea59d7d87050df49}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{HierarchicalCylinderRenderable_8hpp}{Hierarchical\+Cylinder\+Renderable.\+hpp}\end{DoxyCompactItemize}

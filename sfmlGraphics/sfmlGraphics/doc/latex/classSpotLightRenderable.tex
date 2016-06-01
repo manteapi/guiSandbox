@@ -1,0 +1,134 @@
+\hypertarget{classSpotLightRenderable}{\section{Spot\+Light\+Renderable Class Reference}
+\label{classSpotLightRenderable}\index{Spot\+Light\+Renderable@{Spot\+Light\+Renderable}}
+}
+
+
+{\ttfamily \#include $<$Spot\+Light\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Spot\+Light\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classSpotLightRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Spot\+Light\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSpotLightRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSpotLightRenderable_a30316bc578e59e0b37dbeda6603edcd5}{$\sim$\+Spot\+Light\+Renderable} ()
+\item 
+\hyperlink{classSpotLightRenderable_aa65580e442e0467e7fd2b0e7cfba6c53}{Spot\+Light\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program, \hyperlink{Light_8hpp_a1865f598c5eed6e6e1f79d7296852092}{Spot\+Light\+Ptr} light)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSpotLightRenderable_a21d59c1b51e65288de7ff1d8bb861471}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classSpotLightRenderable_a628c20078ed7f102927e5d36fe25bb57}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classSpotLightRenderable_a295c67f086347225b7e3f9ded409a447}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classSpotLightRenderable_ab15200db61464b5426cae2629c51d47a}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classSpotLightRenderable_a43ece8056bee96e36a7e7f51b9b105e2}{m\+\_\+normals}
+\item 
+unsigned int \hyperlink{classSpotLightRenderable_a3701141e0cadd3c4d6892ada7397ddf1}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classSpotLightRenderable_ab8dafa5c0184b6faa93d659d8a7e1d3b}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classSpotLightRenderable_a051d65c46c79b4f43c4098bd443e24a3}{m\+\_\+n\+Buffer}
+\item 
+\hyperlink{Light_8hpp_a1865f598c5eed6e6e1f79d7296852092}{Spot\+Light\+Ptr} \hyperlink{classSpotLightRenderable_a0aab1ea4d5ece2308a9b66280621d8ff}{m\+\_\+light}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSpotLightRenderable_a30316bc578e59e0b37dbeda6603edcd5}{\index{Spot\+Light\+Renderable@{Spot\+Light\+Renderable}!````~Spot\+Light\+Renderable@{$\sim$\+Spot\+Light\+Renderable}}
+\index{````~Spot\+Light\+Renderable@{$\sim$\+Spot\+Light\+Renderable}!Spot\+Light\+Renderable@{Spot\+Light\+Renderable}}
+\subsubsection[{$\sim$\+Spot\+Light\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Spot\+Light\+Renderable\+::$\sim$\+Spot\+Light\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSpotLightRenderable_a30316bc578e59e0b37dbeda6603edcd5}
+\hypertarget{classSpotLightRenderable_aa65580e442e0467e7fd2b0e7cfba6c53}{\index{Spot\+Light\+Renderable@{Spot\+Light\+Renderable}!Spot\+Light\+Renderable@{Spot\+Light\+Renderable}}
+\index{Spot\+Light\+Renderable@{Spot\+Light\+Renderable}!Spot\+Light\+Renderable@{Spot\+Light\+Renderable}}
+\subsubsection[{Spot\+Light\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Spot\+Light\+Renderable\+::\+Spot\+Light\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program, }
+\item[{{\bf Spot\+Light\+Ptr}}]{light}
+\end{DoxyParamCaption}
+)}}\label{classSpotLightRenderable_aa65580e442e0467e7fd2b0e7cfba6c53}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSpotLightRenderable_a628c20078ed7f102927e5d36fe25bb57}{\index{Spot\+Light\+Renderable@{Spot\+Light\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Spot\+Light\+Renderable@{Spot\+Light\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Spot\+Light\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classSpotLightRenderable_a628c20078ed7f102927e5d36fe25bb57}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classSpotLightRenderable_a21d59c1b51e65288de7ff1d8bb861471}{\index{Spot\+Light\+Renderable@{Spot\+Light\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Spot\+Light\+Renderable@{Spot\+Light\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Spot\+Light\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classSpotLightRenderable_a21d59c1b51e65288de7ff1d8bb861471}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSpotLightRenderable_ab8dafa5c0184b6faa93d659d8a7e1d3b}{\index{Spot\+Light\+Renderable@{Spot\+Light\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Spot\+Light\+Renderable@{Spot\+Light\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Spot\+Light\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLightRenderable_ab8dafa5c0184b6faa93d659d8a7e1d3b}
+\hypertarget{classSpotLightRenderable_ab15200db61464b5426cae2629c51d47a}{\index{Spot\+Light\+Renderable@{Spot\+Light\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Spot\+Light\+Renderable@{Spot\+Light\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Spot\+Light\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLightRenderable_ab15200db61464b5426cae2629c51d47a}
+\hypertarget{classSpotLightRenderable_a0aab1ea4d5ece2308a9b66280621d8ff}{\index{Spot\+Light\+Renderable@{Spot\+Light\+Renderable}!m\+\_\+light@{m\+\_\+light}}
+\index{m\+\_\+light@{m\+\_\+light}!Spot\+Light\+Renderable@{Spot\+Light\+Renderable}}
+\subsubsection[{m\+\_\+light}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Spot\+Light\+Ptr} Spot\+Light\+Renderable\+::m\+\_\+light\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLightRenderable_a0aab1ea4d5ece2308a9b66280621d8ff}
+\hypertarget{classSpotLightRenderable_a051d65c46c79b4f43c4098bd443e24a3}{\index{Spot\+Light\+Renderable@{Spot\+Light\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Spot\+Light\+Renderable@{Spot\+Light\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Spot\+Light\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLightRenderable_a051d65c46c79b4f43c4098bd443e24a3}
+\hypertarget{classSpotLightRenderable_a43ece8056bee96e36a7e7f51b9b105e2}{\index{Spot\+Light\+Renderable@{Spot\+Light\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Spot\+Light\+Renderable@{Spot\+Light\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Spot\+Light\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLightRenderable_a43ece8056bee96e36a7e7f51b9b105e2}
+\hypertarget{classSpotLightRenderable_a3701141e0cadd3c4d6892ada7397ddf1}{\index{Spot\+Light\+Renderable@{Spot\+Light\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Spot\+Light\+Renderable@{Spot\+Light\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Spot\+Light\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLightRenderable_a3701141e0cadd3c4d6892ada7397ddf1}
+\hypertarget{classSpotLightRenderable_a295c67f086347225b7e3f9ded409a447}{\index{Spot\+Light\+Renderable@{Spot\+Light\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Spot\+Light\+Renderable@{Spot\+Light\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Spot\+Light\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLightRenderable_a295c67f086347225b7e3f9ded409a447}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/lighting/\hyperlink{SpotLightRenderable_8hpp}{Spot\+Light\+Renderable.\+hpp}\end{DoxyCompactItemize}

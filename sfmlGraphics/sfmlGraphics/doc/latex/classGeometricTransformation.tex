@@ -1,0 +1,210 @@
+\hypertarget{classGeometricTransformation}{\section{Geometric\+Transformation Class Reference}
+\label{classGeometricTransformation}\index{Geometric\+Transformation@{Geometric\+Transformation}}
+}
+
+
+Describe a geometric transformation.  
+
+
+
+
+{\ttfamily \#include $<$Geometric\+Transformation.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGeometricTransformation_ae66614c75d8a6a020ed866e7937f0fcc}{Geometric\+Transformation} (const glm\+::vec3 \&translation=glm\+::vec3\{0, 0, 0\}, const glm\+::quat \&orientation=glm\+::quat\{1, 0, 0, 0\}, const glm\+::vec3 \&scale=glm\+::vec3\{1, 1, 1\})
+\begin{DoxyCompactList}\small\item\em Instance construction. \end{DoxyCompactList}\item 
+glm\+::mat4 \hyperlink{classGeometricTransformation_ad9310cef53615529c518c267f4dde543}{to\+Matrix} () const 
+\begin{DoxyCompactList}\small\item\em Convert to a transformation matrix. \end{DoxyCompactList}\item 
+void \hyperlink{classGeometricTransformation_a4b70167396922e3e440c08040dd242fd}{set\+Orientation} (const glm\+::quat \&orientation)
+\begin{DoxyCompactList}\small\item\em Set the orientation component. \end{DoxyCompactList}\item 
+const glm\+::quat \& \hyperlink{classGeometricTransformation_a50a4e837d857232db8e1e2cebe1590ee}{get\+Orientation} () const 
+\begin{DoxyCompactList}\small\item\em Get the orientation component. \end{DoxyCompactList}\item 
+void \hyperlink{classGeometricTransformation_a4ebe685c978e1b813a38557533e92156}{set\+Translation} (const glm\+::vec3 \&translation)
+\begin{DoxyCompactList}\small\item\em Set the translation component. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classGeometricTransformation_a4de17e179cb51a3b03e89b299f453b78}{get\+Translation} () const 
+\begin{DoxyCompactList}\small\item\em Get the translation component. \end{DoxyCompactList}\item 
+void \hyperlink{classGeometricTransformation_a9b3ac4cc16a1d0d52701dfc504bcea57}{set\+Scale} (const glm\+::vec3 \&scale)
+\begin{DoxyCompactList}\small\item\em Set the scale component. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classGeometricTransformation_a9c6bdf05c928f78799d80548ca71db14}{get\+Scale} () const 
+\begin{DoxyCompactList}\small\item\em Get the scale component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classGeometricTransformation}{Geometric\+Transformation} \hyperlink{classGeometricTransformation_a6eaf3dff22eb212019b1560c33939070}{make\+Translation} (const glm\+::vec3 \&translation)
+\begin{DoxyCompactList}\small\item\em Create a translation transformation. \end{DoxyCompactList}\item 
+static \hyperlink{classGeometricTransformation}{Geometric\+Transformation} \hyperlink{classGeometricTransformation_a7e93f08aeafdd0291f0a2e4e900678c8}{make\+Rotation} (const glm\+::quat \&orientation)
+\begin{DoxyCompactList}\small\item\em Create a rotation transformation. \end{DoxyCompactList}\item 
+static \hyperlink{classGeometricTransformation}{Geometric\+Transformation} \hyperlink{classGeometricTransformation_a66b7cde0093d04aae52ba65a264ef68f}{make\+Scale} (const glm\+::vec3 \&scale)
+\begin{DoxyCompactList}\small\item\em Create a translation transformation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \hyperlink{classGeometricTransformation_a8642aa96a78adfdd279b5c4e1d7ee8db}{m\+\_\+translation}
+\item 
+glm\+::quat \hyperlink{classGeometricTransformation_a9ca739f24f14669c8345c08e15f12488}{m\+\_\+orientation}
+\item 
+glm\+::vec3 \hyperlink{classGeometricTransformation_ae5cd66123221556e3cfecab07b84339f}{m\+\_\+scale}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to define a geometric transformation that will be interpolated between key frames during practical 04. The orientation, translation and scale components are stored separately in order to be interpolated independently.
+
+Keep in mind that the interpolation between two orientations is on the shortest great circle arc of the 4-\/dimensional sphere of rotations. If you are not familiar with such concept\+:
+\begin{DoxyItemize}
+\item have a look on the internet
+\item avoid to have key orientations that are really different. Prefer to have a sequence of rotations with smaller differences. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGeometricTransformation_ae66614c75d8a6a020ed866e7937f0fcc}{\index{Geometric\+Transformation@{Geometric\+Transformation}!Geometric\+Transformation@{Geometric\+Transformation}}
+\index{Geometric\+Transformation@{Geometric\+Transformation}!Geometric\+Transformation@{Geometric\+Transformation}}
+\subsubsection[{Geometric\+Transformation}]{\setlength{\rightskip}{0pt plus 5cm}Geometric\+Transformation\+::\+Geometric\+Transformation (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{translation = {\ttfamily glm\+:\+:vec3\{0,~0,~0\}}, }
+\item[{const glm\+::quat \&}]{orientation = {\ttfamily glm\+:\+:quat\{1,~0,~0,~0\}}, }
+\item[{const glm\+::vec3 \&}]{scale = {\ttfamily glm\+:\+:vec3\{1,~1,~1\}}}
+\end{DoxyParamCaption}
+)}}\label{classGeometricTransformation_ae66614c75d8a6a020ed866e7937f0fcc}
+Construct a geometric transformation from a translation, a rotation and a scale. The result is similar to a transformation matrix given by the matricial product\+: translation $\ast$ rotation $\ast$ scale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em orientation} & Orientation of the transformation, stored as a quaternion. You can specify the quaternion by passing a {\itshape glm\+::vec3} to it that represents Euler angles. \\
+\hline
+{\em translation} & Translation of the transformation. \\
+\hline
+{\em scale} & Scale of the transformation. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGeometricTransformation_a50a4e837d857232db8e1e2cebe1590ee}{\index{Geometric\+Transformation@{Geometric\+Transformation}!get\+Orientation@{get\+Orientation}}
+\index{get\+Orientation@{get\+Orientation}!Geometric\+Transformation@{Geometric\+Transformation}}
+\subsubsection[{get\+Orientation}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::quat\& Geometric\+Transformation\+::get\+Orientation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGeometricTransformation_a50a4e837d857232db8e1e2cebe1590ee}
+Get the orientation component of this transformation. \begin{DoxyReturn}{Returns}
+The orientation. 
+\end{DoxyReturn}
+\hypertarget{classGeometricTransformation_a9c6bdf05c928f78799d80548ca71db14}{\index{Geometric\+Transformation@{Geometric\+Transformation}!get\+Scale@{get\+Scale}}
+\index{get\+Scale@{get\+Scale}!Geometric\+Transformation@{Geometric\+Transformation}}
+\subsubsection[{get\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Geometric\+Transformation\+::get\+Scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGeometricTransformation_a9c6bdf05c928f78799d80548ca71db14}
+Get the scale component of this transformation. \begin{DoxyReturn}{Returns}
+The scale. 
+\end{DoxyReturn}
+\hypertarget{classGeometricTransformation_a4de17e179cb51a3b03e89b299f453b78}{\index{Geometric\+Transformation@{Geometric\+Transformation}!get\+Translation@{get\+Translation}}
+\index{get\+Translation@{get\+Translation}!Geometric\+Transformation@{Geometric\+Transformation}}
+\subsubsection[{get\+Translation}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Geometric\+Transformation\+::get\+Translation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGeometricTransformation_a4de17e179cb51a3b03e89b299f453b78}
+Get the translation component of this transformation. \begin{DoxyReturn}{Returns}
+The translation. 
+\end{DoxyReturn}
+\hypertarget{classGeometricTransformation_a7e93f08aeafdd0291f0a2e4e900678c8}{\index{Geometric\+Transformation@{Geometric\+Transformation}!make\+Rotation@{make\+Rotation}}
+\index{make\+Rotation@{make\+Rotation}!Geometric\+Transformation@{Geometric\+Transformation}}
+\subsubsection[{make\+Rotation}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Geometric\+Transformation} Geometric\+Transformation\+::make\+Rotation (
+\begin{DoxyParamCaption}
+\item[{const glm\+::quat \&}]{orientation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classGeometricTransformation_a7e93f08aeafdd0291f0a2e4e900678c8}
+Factory to build a geometric transformation that represents only a rotation. 
+\begin{DoxyParams}{Parameters}
+{\em orientation} & The rotation to represent. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGeometricTransformation_a66b7cde0093d04aae52ba65a264ef68f}{\index{Geometric\+Transformation@{Geometric\+Transformation}!make\+Scale@{make\+Scale}}
+\index{make\+Scale@{make\+Scale}!Geometric\+Transformation@{Geometric\+Transformation}}
+\subsubsection[{make\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Geometric\+Transformation} Geometric\+Transformation\+::make\+Scale (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classGeometricTransformation_a66b7cde0093d04aae52ba65a264ef68f}
+Factory to build a geometric transformation that represents only a scale. 
+\begin{DoxyParams}{Parameters}
+{\em scale} & The scale to represent. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGeometricTransformation_a6eaf3dff22eb212019b1560c33939070}{\index{Geometric\+Transformation@{Geometric\+Transformation}!make\+Translation@{make\+Translation}}
+\index{make\+Translation@{make\+Translation}!Geometric\+Transformation@{Geometric\+Transformation}}
+\subsubsection[{make\+Translation}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Geometric\+Transformation} Geometric\+Transformation\+::make\+Translation (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{translation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classGeometricTransformation_a6eaf3dff22eb212019b1560c33939070}
+Factory to build a geometric transformation that represents only a translation. 
+\begin{DoxyParams}{Parameters}
+{\em translation} & The translation to represent. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGeometricTransformation_a4b70167396922e3e440c08040dd242fd}{\index{Geometric\+Transformation@{Geometric\+Transformation}!set\+Orientation@{set\+Orientation}}
+\index{set\+Orientation@{set\+Orientation}!Geometric\+Transformation@{Geometric\+Transformation}}
+\subsubsection[{set\+Orientation}]{\setlength{\rightskip}{0pt plus 5cm}void Geometric\+Transformation\+::set\+Orientation (
+\begin{DoxyParamCaption}
+\item[{const glm\+::quat \&}]{orientation}
+\end{DoxyParamCaption}
+)}}\label{classGeometricTransformation_a4b70167396922e3e440c08040dd242fd}
+Set the orientation of this transformation. 
+\begin{DoxyParams}{Parameters}
+{\em orientation} & The new orientation. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGeometricTransformation_a9b3ac4cc16a1d0d52701dfc504bcea57}{\index{Geometric\+Transformation@{Geometric\+Transformation}!set\+Scale@{set\+Scale}}
+\index{set\+Scale@{set\+Scale}!Geometric\+Transformation@{Geometric\+Transformation}}
+\subsubsection[{set\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}void Geometric\+Transformation\+::set\+Scale (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{scale}
+\end{DoxyParamCaption}
+)}}\label{classGeometricTransformation_a9b3ac4cc16a1d0d52701dfc504bcea57}
+Set the scale of this transformation. 
+\begin{DoxyParams}{Parameters}
+{\em scale} & The new scale. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGeometricTransformation_a4ebe685c978e1b813a38557533e92156}{\index{Geometric\+Transformation@{Geometric\+Transformation}!set\+Translation@{set\+Translation}}
+\index{set\+Translation@{set\+Translation}!Geometric\+Transformation@{Geometric\+Transformation}}
+\subsubsection[{set\+Translation}]{\setlength{\rightskip}{0pt plus 5cm}void Geometric\+Transformation\+::set\+Translation (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{translation}
+\end{DoxyParamCaption}
+)}}\label{classGeometricTransformation_a4ebe685c978e1b813a38557533e92156}
+Set the translation of this transformation. 
+\begin{DoxyParams}{Parameters}
+{\em translation} & The new translation. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGeometricTransformation_ad9310cef53615529c518c267f4dde543}{\index{Geometric\+Transformation@{Geometric\+Transformation}!to\+Matrix@{to\+Matrix}}
+\index{to\+Matrix@{to\+Matrix}!Geometric\+Transformation@{Geometric\+Transformation}}
+\subsubsection[{to\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Geometric\+Transformation\+::to\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classGeometricTransformation_ad9310cef53615529c518c267f4dde543}
+Get a transformation matrix that represent this geometric transformation. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classGeometricTransformation_a9ca739f24f14669c8345c08e15f12488}{\index{Geometric\+Transformation@{Geometric\+Transformation}!m\+\_\+orientation@{m\+\_\+orientation}}
+\index{m\+\_\+orientation@{m\+\_\+orientation}!Geometric\+Transformation@{Geometric\+Transformation}}
+\subsubsection[{m\+\_\+orientation}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::quat Geometric\+Transformation\+::m\+\_\+orientation\hspace{0.3cm}{\ttfamily [private]}}}\label{classGeometricTransformation_a9ca739f24f14669c8345c08e15f12488}
+\hypertarget{classGeometricTransformation_ae5cd66123221556e3cfecab07b84339f}{\index{Geometric\+Transformation@{Geometric\+Transformation}!m\+\_\+scale@{m\+\_\+scale}}
+\index{m\+\_\+scale@{m\+\_\+scale}!Geometric\+Transformation@{Geometric\+Transformation}}
+\subsubsection[{m\+\_\+scale}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Geometric\+Transformation\+::m\+\_\+scale\hspace{0.3cm}{\ttfamily [private]}}}\label{classGeometricTransformation_ae5cd66123221556e3cfecab07b84339f}
+\hypertarget{classGeometricTransformation_a8642aa96a78adfdd279b5c4e1d7ee8db}{\index{Geometric\+Transformation@{Geometric\+Transformation}!m\+\_\+translation@{m\+\_\+translation}}
+\index{m\+\_\+translation@{m\+\_\+translation}!Geometric\+Transformation@{Geometric\+Transformation}}
+\subsubsection[{m\+\_\+translation}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Geometric\+Transformation\+::m\+\_\+translation\hspace{0.3cm}{\ttfamily [private]}}}\label{classGeometricTransformation_a8642aa96a78adfdd279b5c4e1d7ee8db}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{GeometricTransformation_8hpp}{Geometric\+Transformation.\+hpp}\end{DoxyCompactItemize}

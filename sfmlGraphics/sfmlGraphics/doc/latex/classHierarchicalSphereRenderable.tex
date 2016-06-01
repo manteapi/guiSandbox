@@ -1,0 +1,128 @@
+\hypertarget{classHierarchicalSphereRenderable}{\section{Hierarchical\+Sphere\+Renderable Class Reference}
+\label{classHierarchicalSphereRenderable}\index{Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}}
+}
+
+
+{\ttfamily \#include $<$Hierarchical\+Sphere\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Hierarchical\+Sphere\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{classHierarchicalSphereRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Hierarchical\+Sphere\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHierarchicalSphereRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHierarchicalSphereRenderable_ab11112da0ea3de1003b8b5b6f910e555}{$\sim$\+Hierarchical\+Sphere\+Renderable} ()
+\item 
+\hyperlink{classHierarchicalSphereRenderable_a710cadb8babef39601f98a83ad54dab4}{Hierarchical\+Sphere\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classHierarchicalSphereRenderable_a5216d2b3a015c11f888e6ac268362926}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classHierarchicalSphereRenderable_a712e4865f38fced13bc3aa5be7a17764}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classHierarchicalSphereRenderable_a78da197355ab6d1e30978f0a9b24f8d1}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classHierarchicalSphereRenderable_a8875eaeab3e4381ab00de2cfb8f650ba}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classHierarchicalSphereRenderable_a61da071fdee1bd9c74f4a56e8264b90c}{m\+\_\+normals}
+\item 
+unsigned int \hyperlink{classHierarchicalSphereRenderable_a10b5df7bebe5790780d7f12dac654f5f}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classHierarchicalSphereRenderable_ae563ee9c7597aeaf5c00cc430626bdf6}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classHierarchicalSphereRenderable_a3d0052db7a742c21b4b88933ba073fb3}{m\+\_\+n\+Buffer}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classHierarchicalSphereRenderable_ab11112da0ea3de1003b8b5b6f910e555}{\index{Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}!````~Hierarchical\+Sphere\+Renderable@{$\sim$\+Hierarchical\+Sphere\+Renderable}}
+\index{````~Hierarchical\+Sphere\+Renderable@{$\sim$\+Hierarchical\+Sphere\+Renderable}!Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}}
+\subsubsection[{$\sim$\+Hierarchical\+Sphere\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Hierarchical\+Sphere\+Renderable\+::$\sim$\+Hierarchical\+Sphere\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHierarchicalSphereRenderable_ab11112da0ea3de1003b8b5b6f910e555}
+\hypertarget{classHierarchicalSphereRenderable_a710cadb8babef39601f98a83ad54dab4}{\index{Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}!Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}}
+\index{Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}!Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}}
+\subsubsection[{Hierarchical\+Sphere\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Hierarchical\+Sphere\+Renderable\+::\+Hierarchical\+Sphere\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program}
+\end{DoxyParamCaption}
+)}}\label{classHierarchicalSphereRenderable_a710cadb8babef39601f98a83ad54dab4}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classHierarchicalSphereRenderable_a712e4865f38fced13bc3aa5be7a17764}{\index{Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Hierarchical\+Sphere\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classHierarchicalSphereRenderable_a712e4865f38fced13bc3aa5be7a17764}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classHierarchicalSphereRenderable_a5216d2b3a015c11f888e6ac268362926}{\index{Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Hierarchical\+Sphere\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classHierarchicalSphereRenderable_a5216d2b3a015c11f888e6ac268362926}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classHierarchicalSphereRenderable_ae563ee9c7597aeaf5c00cc430626bdf6}{\index{Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Hierarchical\+Sphere\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalSphereRenderable_ae563ee9c7597aeaf5c00cc430626bdf6}
+\hypertarget{classHierarchicalSphereRenderable_a8875eaeab3e4381ab00de2cfb8f650ba}{\index{Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Hierarchical\+Sphere\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalSphereRenderable_a8875eaeab3e4381ab00de2cfb8f650ba}
+\hypertarget{classHierarchicalSphereRenderable_a3d0052db7a742c21b4b88933ba073fb3}{\index{Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Hierarchical\+Sphere\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalSphereRenderable_a3d0052db7a742c21b4b88933ba073fb3}
+\hypertarget{classHierarchicalSphereRenderable_a61da071fdee1bd9c74f4a56e8264b90c}{\index{Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Hierarchical\+Sphere\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalSphereRenderable_a61da071fdee1bd9c74f4a56e8264b90c}
+\hypertarget{classHierarchicalSphereRenderable_a10b5df7bebe5790780d7f12dac654f5f}{\index{Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Hierarchical\+Sphere\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalSphereRenderable_a10b5df7bebe5790780d7f12dac654f5f}
+\hypertarget{classHierarchicalSphereRenderable_a78da197355ab6d1e30978f0a9b24f8d1}{\index{Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Hierarchical\+Sphere\+Renderable@{Hierarchical\+Sphere\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Hierarchical\+Sphere\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalSphereRenderable_a78da197355ab6d1e30978f0a9b24f8d1}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{HierarchicalSphereRenderable_8hpp}{Hierarchical\+Sphere\+Renderable.\+hpp}\end{DoxyCompactItemize}

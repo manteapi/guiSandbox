@@ -1,0 +1,479 @@
+\hypertarget{classPointLight}{\section{Point\+Light Class Reference}
+\label{classPointLight}\index{Point\+Light@{Point\+Light}}
+}
+
+
+A point light.  
+
+
+
+
+{\ttfamily \#include $<$Light.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::shared\+\_\+ptr\\*
+$<$ \hyperlink{classPointLight}{Point\+Light} $>$ \hyperlink{classPointLight_a48c8893ebd8015da2cb3d552f800e4e7}{Point\+Light\+Ptr}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPointLight_aa12d9005d5372dbbe655a82231634341}{$\sim$\+Point\+Light} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classPointLight_abbfdf5f05b559c49016f8bb97b0ca414}{Point\+Light} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classPointLight_a85e984228a1967b53114378b46a8f80a}{Point\+Light} (const \hyperlink{classPointLight}{Point\+Light} \&point\+Light)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classPointLight_a813f361fa033b13412a4c2268263b4de}{Point\+Light} (const glm\+::vec3 \&\hyperlink{classPointLight_a46ba05eb1117e13cf078fa0fe4d1579f}{position}, const glm\+::vec3 \&\hyperlink{classPointLight_a80a915d16e9b7576107ce23318c0d547}{ambient}, const glm\+::vec3 \&\hyperlink{classPointLight_a35474dabe9643e96eff5447f14b41a7b}{diffuse}, const glm\+::vec3 \&\hyperlink{classPointLight_aedd6ede28b41d05e277c26fcbfa1657d}{specular}, const float \&\hyperlink{classPointLight_afa1541cdc95ff0e7283c545e4aec2737}{constant}, const float \&\hyperlink{classPointLight_ad79e03bc6d87477bf0d2f00866531f6c}{linear}, const float \&\hyperlink{classPointLight_ac531ddcb6a17371501f30af9474c7d8c}{quadratic})
+\begin{DoxyCompactList}\small\item\em Specific constructor. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classPointLight_a46ba05eb1117e13cf078fa0fe4d1579f}{position} () const 
+\begin{DoxyCompactList}\small\item\em Access to the position of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classPointLight_a17a969466c4c0fafca34f45b8984c11b}{set\+Position} (const glm\+::vec3 \&\hyperlink{classPointLight_a46ba05eb1117e13cf078fa0fe4d1579f}{position})
+\begin{DoxyCompactList}\small\item\em Set the position of the light. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classPointLight_a80a915d16e9b7576107ce23318c0d547}{ambient} () const 
+\begin{DoxyCompactList}\small\item\em Access to the ambient intensity of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classPointLight_adfb7c1860bdf0c2311a148fd0045cea7}{set\+Ambient} (const glm\+::vec3 \&\hyperlink{classPointLight_a80a915d16e9b7576107ce23318c0d547}{ambient})
+\begin{DoxyCompactList}\small\item\em Set the ambient intensity of the light. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classPointLight_a35474dabe9643e96eff5447f14b41a7b}{diffuse} () const 
+\begin{DoxyCompactList}\small\item\em Access to the diffuse intensity of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classPointLight_a85de8464abaf20336e9f98f7ad48a638}{set\+Diffuse} (const glm\+::vec3 \&\hyperlink{classPointLight_a35474dabe9643e96eff5447f14b41a7b}{diffuse})
+\begin{DoxyCompactList}\small\item\em Set the diffuse intensity of the light. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classPointLight_aedd6ede28b41d05e277c26fcbfa1657d}{specular} () const 
+\begin{DoxyCompactList}\small\item\em Access to the specular intensity of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classPointLight_a7265b55493251009964a44debc40d85d}{set\+Specular} (const glm\+::vec3 \&\hyperlink{classPointLight_aedd6ede28b41d05e277c26fcbfa1657d}{specular})
+\begin{DoxyCompactList}\small\item\em Set the specular intensity of the light. \end{DoxyCompactList}\item 
+const float \& \hyperlink{classPointLight_afa1541cdc95ff0e7283c545e4aec2737}{constant} () const 
+\begin{DoxyCompactList}\small\item\em Access to the coefficient of constant attenuation of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classPointLight_aa72656b486eab2403eb113a4c6a8161e}{set\+Constant} (float \hyperlink{classPointLight_afa1541cdc95ff0e7283c545e4aec2737}{constant})
+\begin{DoxyCompactList}\small\item\em Set the coefficient of constant attenuation of the light. \end{DoxyCompactList}\item 
+const float \& \hyperlink{classPointLight_ad79e03bc6d87477bf0d2f00866531f6c}{linear} () const 
+\begin{DoxyCompactList}\small\item\em Access to the coefficient of linear attenuation of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classPointLight_a91369fd3b2e7717f529faf8b2ac94e57}{set\+Linear} (float \hyperlink{classPointLight_ad79e03bc6d87477bf0d2f00866531f6c}{linear})
+\begin{DoxyCompactList}\small\item\em Set the coefficient of linear attenuation of the light. \end{DoxyCompactList}\item 
+const float \& \hyperlink{classPointLight_ac531ddcb6a17371501f30af9474c7d8c}{quadratic} () const 
+\begin{DoxyCompactList}\small\item\em Access to the coefficient of quadratic attenuation of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classPointLight_a0807e355fe3e00173010539f501e75b1}{set\+Quadratic} (float \hyperlink{classPointLight_ac531ddcb6a17371501f30af9474c7d8c}{quadratic})
+\begin{DoxyCompactList}\small\item\em Set the coefficient of quadratic attenuation of the light. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classPointLight_a09784e83b307a49218362dedd46b3f45}{send\+To\+G\+P\+U} (const \hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} \&program, const \hyperlink{classPointLight_a48c8893ebd8015da2cb3d552f800e4e7}{Point\+Light\+Ptr} \&light)
+\begin{DoxyCompactList}\small\item\em Get location for the attributes of the light and send the data to the G\+P\+U as uniforms. \end{DoxyCompactList}\item 
+static bool \hyperlink{classPointLight_a01a877269592617f8280ed9be418b612}{send\+To\+G\+P\+U} (const \hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} \&program, const std\+::vector$<$ \hyperlink{classPointLight_a48c8893ebd8015da2cb3d552f800e4e7}{Point\+Light\+Ptr} $>$ \&lights)
+\begin{DoxyCompactList}\small\item\em Get location for the attributes of the lights and send the data to the G\+P\+U as uniforms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classPointLight_a52eca397963df514af41178aec06dacf}{number\+Of\+Lights\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the number of lights. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classPointLight_a7c797f6ef8ae47d4ba86747731ed1e91}{light\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classPointLight_a270bf32badcf99da825c752ade0fca03}{position\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the position of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classPointLight_a7a164908b6773d1607d303d7a05e9370}{ambient\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the ambient intensity of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classPointLight_a8aa0ba053b1c4b5a4a6525dc94f1298b}{diffuse\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the diffuse intensity of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classPointLight_a7f02ce1e373b96b445916db3c7397921}{specular\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the specular intensity of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classPointLight_a4b08c94d77d9b1d8b858ecf834bb4aa6}{constant\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the constant attenuation coefficient of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classPointLight_a505d362ac12ed47b169aced70f646bd4}{linear\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the linear attenuation coefficient of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classPointLight_a86032735679d386e6c3d94540767adab}{quadratic\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the quadratic attenuation coefficient of the light. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \hyperlink{classPointLight_a58baecb4dd64a4dc3ea59628f55cbac4}{m\+\_\+position}
+\item 
+glm\+::vec3 \hyperlink{classPointLight_a24fea5d1cc566b9a5266e3fc2df56f22}{m\+\_\+ambient}
+\item 
+glm\+::vec3 \hyperlink{classPointLight_a3e055011470b6dc9000f57fde449b8e2}{m\+\_\+diffuse}
+\item 
+glm\+::vec3 \hyperlink{classPointLight_a07a85987190c6c415b93437554f1f0f1}{m\+\_\+specular}
+\item 
+float \hyperlink{classPointLight_a404f6e39448eaa92dbdbec6183062147}{m\+\_\+constant}
+\item 
+float \hyperlink{classPointLight_aaaf19c31763c3614e3edcd1eef322e96}{m\+\_\+linear}
+\item 
+float \hyperlink{classPointLight_a4cc1b2791d8e3ca503060f6f1f38f774}{m\+\_\+quadratic}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a point light which means a light with a given position somewhere in a world that illuminates in all directions. Good examples of point light are torches. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classPointLight_a48c8893ebd8015da2cb3d552f800e4e7}{\index{Point\+Light@{Point\+Light}!Point\+Light\+Ptr@{Point\+Light\+Ptr}}
+\index{Point\+Light\+Ptr@{Point\+Light\+Ptr}!Point\+Light@{Point\+Light}}
+\subsubsection[{Point\+Light\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::shared\+\_\+ptr$<${\bf Point\+Light}$>$ {\bf Point\+Light\+::\+Point\+Light\+Ptr}}}\label{classPointLight_a48c8893ebd8015da2cb3d552f800e4e7}
+Smart pointer to a point light 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPointLight_aa12d9005d5372dbbe655a82231634341}{\index{Point\+Light@{Point\+Light}!````~Point\+Light@{$\sim$\+Point\+Light}}
+\index{````~Point\+Light@{$\sim$\+Point\+Light}!Point\+Light@{Point\+Light}}
+\subsubsection[{$\sim$\+Point\+Light}]{\setlength{\rightskip}{0pt plus 5cm}Point\+Light\+::$\sim$\+Point\+Light (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPointLight_aa12d9005d5372dbbe655a82231634341}
+\hypertarget{classPointLight_abbfdf5f05b559c49016f8bb97b0ca414}{\index{Point\+Light@{Point\+Light}!Point\+Light@{Point\+Light}}
+\index{Point\+Light@{Point\+Light}!Point\+Light@{Point\+Light}}
+\subsubsection[{Point\+Light}]{\setlength{\rightskip}{0pt plus 5cm}Point\+Light\+::\+Point\+Light (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPointLight_abbfdf5f05b559c49016f8bb97b0ca414}
+\hypertarget{classPointLight_a85e984228a1967b53114378b46a8f80a}{\index{Point\+Light@{Point\+Light}!Point\+Light@{Point\+Light}}
+\index{Point\+Light@{Point\+Light}!Point\+Light@{Point\+Light}}
+\subsubsection[{Point\+Light}]{\setlength{\rightskip}{0pt plus 5cm}Point\+Light\+::\+Point\+Light (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point\+Light} \&}]{point\+Light}
+\end{DoxyParamCaption}
+)}}\label{classPointLight_a85e984228a1967b53114378b46a8f80a}
+\hypertarget{classPointLight_a813f361fa033b13412a4c2268263b4de}{\index{Point\+Light@{Point\+Light}!Point\+Light@{Point\+Light}}
+\index{Point\+Light@{Point\+Light}!Point\+Light@{Point\+Light}}
+\subsubsection[{Point\+Light}]{\setlength{\rightskip}{0pt plus 5cm}Point\+Light\+::\+Point\+Light (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{position, }
+\item[{const glm\+::vec3 \&}]{ambient, }
+\item[{const glm\+::vec3 \&}]{diffuse, }
+\item[{const glm\+::vec3 \&}]{specular, }
+\item[{const float \&}]{constant, }
+\item[{const float \&}]{linear, }
+\item[{const float \&}]{quadratic}
+\end{DoxyParamCaption}
+)}}\label{classPointLight_a813f361fa033b13412a4c2268263b4de}
+Construct a point light.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the light. \\
+\hline
+{\em ambient} & The ambient intensity of the light. \\
+\hline
+{\em diffuse} & The diffuse intensity of the light. \\
+\hline
+{\em specular} & The specular intensity of the light. \\
+\hline
+{\em constant} & The coefficient of constant attenuation of the light. \\
+\hline
+{\em linear} & The coefficient of linear attenuation of the light with respect to the distance to the light. \\
+\hline
+{\em quadratic} & The coefficient of quadratic attenuation of the light with respect to the distance to the light. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPointLight_a80a915d16e9b7576107ce23318c0d547}{\index{Point\+Light@{Point\+Light}!ambient@{ambient}}
+\index{ambient@{ambient}!Point\+Light@{Point\+Light}}
+\subsubsection[{ambient}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Point\+Light\+::ambient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPointLight_a80a915d16e9b7576107ce23318c0d547}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+ambient. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_a7a164908b6773d1607d303d7a05e9370}{\index{Point\+Light@{Point\+Light}!ambient\+Name@{ambient\+Name}}
+\index{ambient\+Name@{ambient\+Name}!Point\+Light@{Point\+Light}}
+\subsubsection[{ambient\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Point\+Light\+::ambient\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classPointLight_a7a164908b6773d1607d303d7a05e9370}
+\begin{DoxyReturn}{Returns}
+The name of the ambient intensity of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_afa1541cdc95ff0e7283c545e4aec2737}{\index{Point\+Light@{Point\+Light}!constant@{constant}}
+\index{constant@{constant}!Point\+Light@{Point\+Light}}
+\subsubsection[{constant}]{\setlength{\rightskip}{0pt plus 5cm}const float\& Point\+Light\+::constant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPointLight_afa1541cdc95ff0e7283c545e4aec2737}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+constant. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_a4b08c94d77d9b1d8b858ecf834bb4aa6}{\index{Point\+Light@{Point\+Light}!constant\+Name@{constant\+Name}}
+\index{constant\+Name@{constant\+Name}!Point\+Light@{Point\+Light}}
+\subsubsection[{constant\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Point\+Light\+::constant\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classPointLight_a4b08c94d77d9b1d8b858ecf834bb4aa6}
+\begin{DoxyReturn}{Returns}
+The name of the constant attenuation coefficient of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_a35474dabe9643e96eff5447f14b41a7b}{\index{Point\+Light@{Point\+Light}!diffuse@{diffuse}}
+\index{diffuse@{diffuse}!Point\+Light@{Point\+Light}}
+\subsubsection[{diffuse}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Point\+Light\+::diffuse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPointLight_a35474dabe9643e96eff5447f14b41a7b}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+diffuse. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_a8aa0ba053b1c4b5a4a6525dc94f1298b}{\index{Point\+Light@{Point\+Light}!diffuse\+Name@{diffuse\+Name}}
+\index{diffuse\+Name@{diffuse\+Name}!Point\+Light@{Point\+Light}}
+\subsubsection[{diffuse\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Point\+Light\+::diffuse\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classPointLight_a8aa0ba053b1c4b5a4a6525dc94f1298b}
+\begin{DoxyReturn}{Returns}
+The name of the diffuse intensity of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_a7c797f6ef8ae47d4ba86747731ed1e91}{\index{Point\+Light@{Point\+Light}!light\+Name@{light\+Name}}
+\index{light\+Name@{light\+Name}!Point\+Light@{Point\+Light}}
+\subsubsection[{light\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Point\+Light\+::light\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classPointLight_a7c797f6ef8ae47d4ba86747731ed1e91}
+\begin{DoxyReturn}{Returns}
+The name of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_ad79e03bc6d87477bf0d2f00866531f6c}{\index{Point\+Light@{Point\+Light}!linear@{linear}}
+\index{linear@{linear}!Point\+Light@{Point\+Light}}
+\subsubsection[{linear}]{\setlength{\rightskip}{0pt plus 5cm}const float\& Point\+Light\+::linear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPointLight_ad79e03bc6d87477bf0d2f00866531f6c}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+linear. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_a505d362ac12ed47b169aced70f646bd4}{\index{Point\+Light@{Point\+Light}!linear\+Name@{linear\+Name}}
+\index{linear\+Name@{linear\+Name}!Point\+Light@{Point\+Light}}
+\subsubsection[{linear\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Point\+Light\+::linear\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classPointLight_a505d362ac12ed47b169aced70f646bd4}
+\begin{DoxyReturn}{Returns}
+The name of the linear attenuation coefficient of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_a52eca397963df514af41178aec06dacf}{\index{Point\+Light@{Point\+Light}!number\+Of\+Lights\+Name@{number\+Of\+Lights\+Name}}
+\index{number\+Of\+Lights\+Name@{number\+Of\+Lights\+Name}!Point\+Light@{Point\+Light}}
+\subsubsection[{number\+Of\+Lights\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Point\+Light\+::number\+Of\+Lights\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classPointLight_a52eca397963df514af41178aec06dacf}
+\begin{DoxyReturn}{Returns}
+The name of the number of lights in the shader. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_a46ba05eb1117e13cf078fa0fe4d1579f}{\index{Point\+Light@{Point\+Light}!position@{position}}
+\index{position@{position}!Point\+Light@{Point\+Light}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Point\+Light\+::position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPointLight_a46ba05eb1117e13cf078fa0fe4d1579f}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+position. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_a270bf32badcf99da825c752ade0fca03}{\index{Point\+Light@{Point\+Light}!position\+Name@{position\+Name}}
+\index{position\+Name@{position\+Name}!Point\+Light@{Point\+Light}}
+\subsubsection[{position\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Point\+Light\+::position\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classPointLight_a270bf32badcf99da825c752ade0fca03}
+\begin{DoxyReturn}{Returns}
+The name of the position of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_ac531ddcb6a17371501f30af9474c7d8c}{\index{Point\+Light@{Point\+Light}!quadratic@{quadratic}}
+\index{quadratic@{quadratic}!Point\+Light@{Point\+Light}}
+\subsubsection[{quadratic}]{\setlength{\rightskip}{0pt plus 5cm}const float\& Point\+Light\+::quadratic (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPointLight_ac531ddcb6a17371501f30af9474c7d8c}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+quadratic. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_a86032735679d386e6c3d94540767adab}{\index{Point\+Light@{Point\+Light}!quadratic\+Name@{quadratic\+Name}}
+\index{quadratic\+Name@{quadratic\+Name}!Point\+Light@{Point\+Light}}
+\subsubsection[{quadratic\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Point\+Light\+::quadratic\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classPointLight_a86032735679d386e6c3d94540767adab}
+\begin{DoxyReturn}{Returns}
+The name of the quadratic attenuation coefficient of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_a09784e83b307a49218362dedd46b3f45}{\index{Point\+Light@{Point\+Light}!send\+To\+G\+P\+U@{send\+To\+G\+P\+U}}
+\index{send\+To\+G\+P\+U@{send\+To\+G\+P\+U}!Point\+Light@{Point\+Light}}
+\subsubsection[{send\+To\+G\+P\+U}]{\setlength{\rightskip}{0pt plus 5cm}static bool Point\+Light\+::send\+To\+G\+P\+U (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shader\+Program\+Ptr} \&}]{program, }
+\item[{const {\bf Point\+Light\+Ptr} \&}]{light}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classPointLight_a09784e83b307a49218362dedd46b3f45}
+
+\begin{DoxyParams}{Parameters}
+{\em program} & A pointer to the shader program where to get the locations. \\
+\hline
+{\em light} & A pointer to the light to send to the G\+P\+U. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if everything was fine, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classPointLight_a01a877269592617f8280ed9be418b612}{\index{Point\+Light@{Point\+Light}!send\+To\+G\+P\+U@{send\+To\+G\+P\+U}}
+\index{send\+To\+G\+P\+U@{send\+To\+G\+P\+U}!Point\+Light@{Point\+Light}}
+\subsubsection[{send\+To\+G\+P\+U}]{\setlength{\rightskip}{0pt plus 5cm}static bool Point\+Light\+::send\+To\+G\+P\+U (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shader\+Program\+Ptr} \&}]{program, }
+\item[{const std\+::vector$<$ {\bf Point\+Light\+Ptr} $>$ \&}]{lights}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classPointLight_a01a877269592617f8280ed9be418b612}
+
+\begin{DoxyParams}{Parameters}
+{\em program} & A pointer to the shader program where to get the locations. \\
+\hline
+{\em lights} & A vector of pointer to the lights to send to the G\+P\+U. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if everything was fine, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classPointLight_adfb7c1860bdf0c2311a148fd0045cea7}{\index{Point\+Light@{Point\+Light}!set\+Ambient@{set\+Ambient}}
+\index{set\+Ambient@{set\+Ambient}!Point\+Light@{Point\+Light}}
+\subsubsection[{set\+Ambient}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+Light\+::set\+Ambient (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{ambient}
+\end{DoxyParamCaption}
+)}}\label{classPointLight_adfb7c1860bdf0c2311a148fd0045cea7}
+Set the value of m\+\_\+ambient. 
+\begin{DoxyParams}{Parameters}
+{\em ambient} & The new ambient intensity of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPointLight_aa72656b486eab2403eb113a4c6a8161e}{\index{Point\+Light@{Point\+Light}!set\+Constant@{set\+Constant}}
+\index{set\+Constant@{set\+Constant}!Point\+Light@{Point\+Light}}
+\subsubsection[{set\+Constant}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+Light\+::set\+Constant (
+\begin{DoxyParamCaption}
+\item[{float}]{constant}
+\end{DoxyParamCaption}
+)}}\label{classPointLight_aa72656b486eab2403eb113a4c6a8161e}
+Set the value of m\+\_\+constant. 
+\begin{DoxyParams}{Parameters}
+{\em constant} & The new coefficient of constant attenuation of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPointLight_a85de8464abaf20336e9f98f7ad48a638}{\index{Point\+Light@{Point\+Light}!set\+Diffuse@{set\+Diffuse}}
+\index{set\+Diffuse@{set\+Diffuse}!Point\+Light@{Point\+Light}}
+\subsubsection[{set\+Diffuse}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+Light\+::set\+Diffuse (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{diffuse}
+\end{DoxyParamCaption}
+)}}\label{classPointLight_a85de8464abaf20336e9f98f7ad48a638}
+Set the value of m\+\_\+diffuse. 
+\begin{DoxyParams}{Parameters}
+{\em diffuse} & The new diffuse intensity of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPointLight_a91369fd3b2e7717f529faf8b2ac94e57}{\index{Point\+Light@{Point\+Light}!set\+Linear@{set\+Linear}}
+\index{set\+Linear@{set\+Linear}!Point\+Light@{Point\+Light}}
+\subsubsection[{set\+Linear}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+Light\+::set\+Linear (
+\begin{DoxyParamCaption}
+\item[{float}]{linear}
+\end{DoxyParamCaption}
+)}}\label{classPointLight_a91369fd3b2e7717f529faf8b2ac94e57}
+Set the value of m\+\_\+linear. 
+\begin{DoxyParams}{Parameters}
+{\em linear} & The new coefficient of linear attenuation of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPointLight_a17a969466c4c0fafca34f45b8984c11b}{\index{Point\+Light@{Point\+Light}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Point\+Light@{Point\+Light}}
+\subsubsection[{set\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+Light\+::set\+Position (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{position}
+\end{DoxyParamCaption}
+)}}\label{classPointLight_a17a969466c4c0fafca34f45b8984c11b}
+Set the value of m\+\_\+position. 
+\begin{DoxyParams}{Parameters}
+{\em position} & The new position of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPointLight_a0807e355fe3e00173010539f501e75b1}{\index{Point\+Light@{Point\+Light}!set\+Quadratic@{set\+Quadratic}}
+\index{set\+Quadratic@{set\+Quadratic}!Point\+Light@{Point\+Light}}
+\subsubsection[{set\+Quadratic}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+Light\+::set\+Quadratic (
+\begin{DoxyParamCaption}
+\item[{float}]{quadratic}
+\end{DoxyParamCaption}
+)}}\label{classPointLight_a0807e355fe3e00173010539f501e75b1}
+Set the value of m\+\_\+quadratic. 
+\begin{DoxyParams}{Parameters}
+{\em quadratic} & The new coefficient of quadratic attenuation of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPointLight_a7265b55493251009964a44debc40d85d}{\index{Point\+Light@{Point\+Light}!set\+Specular@{set\+Specular}}
+\index{set\+Specular@{set\+Specular}!Point\+Light@{Point\+Light}}
+\subsubsection[{set\+Specular}]{\setlength{\rightskip}{0pt plus 5cm}void Point\+Light\+::set\+Specular (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{specular}
+\end{DoxyParamCaption}
+)}}\label{classPointLight_a7265b55493251009964a44debc40d85d}
+Set the value of m\+\_\+specular. 
+\begin{DoxyParams}{Parameters}
+{\em specular} & The new specular intensity of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPointLight_aedd6ede28b41d05e277c26fcbfa1657d}{\index{Point\+Light@{Point\+Light}!specular@{specular}}
+\index{specular@{specular}!Point\+Light@{Point\+Light}}
+\subsubsection[{specular}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Point\+Light\+::specular (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPointLight_aedd6ede28b41d05e277c26fcbfa1657d}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+specular. 
+\end{DoxyReturn}
+\hypertarget{classPointLight_a7f02ce1e373b96b445916db3c7397921}{\index{Point\+Light@{Point\+Light}!specular\+Name@{specular\+Name}}
+\index{specular\+Name@{specular\+Name}!Point\+Light@{Point\+Light}}
+\subsubsection[{specular\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Point\+Light\+::specular\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classPointLight_a7f02ce1e373b96b445916db3c7397921}
+\begin{DoxyReturn}{Returns}
+The name of the specular intensity of the light in the shader. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPointLight_a24fea5d1cc566b9a5266e3fc2df56f22}{\index{Point\+Light@{Point\+Light}!m\+\_\+ambient@{m\+\_\+ambient}}
+\index{m\+\_\+ambient@{m\+\_\+ambient}!Point\+Light@{Point\+Light}}
+\subsubsection[{m\+\_\+ambient}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Point\+Light\+::m\+\_\+ambient\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointLight_a24fea5d1cc566b9a5266e3fc2df56f22}
+Intensity of the light with respect to the object ambient components. \hypertarget{classPointLight_a404f6e39448eaa92dbdbec6183062147}{\index{Point\+Light@{Point\+Light}!m\+\_\+constant@{m\+\_\+constant}}
+\index{m\+\_\+constant@{m\+\_\+constant}!Point\+Light@{Point\+Light}}
+\subsubsection[{m\+\_\+constant}]{\setlength{\rightskip}{0pt plus 5cm}float Point\+Light\+::m\+\_\+constant\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointLight_a404f6e39448eaa92dbdbec6183062147}
+Coefficient of constant attenuation of the light. \hypertarget{classPointLight_a3e055011470b6dc9000f57fde449b8e2}{\index{Point\+Light@{Point\+Light}!m\+\_\+diffuse@{m\+\_\+diffuse}}
+\index{m\+\_\+diffuse@{m\+\_\+diffuse}!Point\+Light@{Point\+Light}}
+\subsubsection[{m\+\_\+diffuse}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Point\+Light\+::m\+\_\+diffuse\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointLight_a3e055011470b6dc9000f57fde449b8e2}
+Intensity of the light with respect to the object diffuse components. \hypertarget{classPointLight_aaaf19c31763c3614e3edcd1eef322e96}{\index{Point\+Light@{Point\+Light}!m\+\_\+linear@{m\+\_\+linear}}
+\index{m\+\_\+linear@{m\+\_\+linear}!Point\+Light@{Point\+Light}}
+\subsubsection[{m\+\_\+linear}]{\setlength{\rightskip}{0pt plus 5cm}float Point\+Light\+::m\+\_\+linear\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointLight_aaaf19c31763c3614e3edcd1eef322e96}
+Coefficient of linear attenuation of the light with respect to the distance to the light position. \hypertarget{classPointLight_a58baecb4dd64a4dc3ea59628f55cbac4}{\index{Point\+Light@{Point\+Light}!m\+\_\+position@{m\+\_\+position}}
+\index{m\+\_\+position@{m\+\_\+position}!Point\+Light@{Point\+Light}}
+\subsubsection[{m\+\_\+position}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Point\+Light\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointLight_a58baecb4dd64a4dc3ea59628f55cbac4}
+The position of the light. \hypertarget{classPointLight_a4cc1b2791d8e3ca503060f6f1f38f774}{\index{Point\+Light@{Point\+Light}!m\+\_\+quadratic@{m\+\_\+quadratic}}
+\index{m\+\_\+quadratic@{m\+\_\+quadratic}!Point\+Light@{Point\+Light}}
+\subsubsection[{m\+\_\+quadratic}]{\setlength{\rightskip}{0pt plus 5cm}float Point\+Light\+::m\+\_\+quadratic\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointLight_a4cc1b2791d8e3ca503060f6f1f38f774}
+Coefficient of quadratic attenuation of the light with respect to the distance to the light position. \hypertarget{classPointLight_a07a85987190c6c415b93437554f1f0f1}{\index{Point\+Light@{Point\+Light}!m\+\_\+specular@{m\+\_\+specular}}
+\index{m\+\_\+specular@{m\+\_\+specular}!Point\+Light@{Point\+Light}}
+\subsubsection[{m\+\_\+specular}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Point\+Light\+::m\+\_\+specular\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointLight_a07a85987190c6c415b93437554f1f0f1}
+Intensity of the light with respect to the object specular components. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/lighting/\hyperlink{Light_8hpp}{Light.\+hpp}\end{DoxyCompactItemize}

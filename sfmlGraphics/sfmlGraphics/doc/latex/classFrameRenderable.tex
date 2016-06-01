@@ -1,0 +1,151 @@
+\hypertarget{classFrameRenderable}{\section{Frame\+Renderable Class Reference}
+\label{classFrameRenderable}\index{Frame\+Renderable@{Frame\+Renderable}}
+}
+
+
+Render the world frame.  
+
+
+
+
+{\ttfamily \#include $<$Frame\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Frame\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classFrameRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Frame\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrameRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFrameRenderable_a823e77f15071737444f4bc7e589ca842}{$\sim$\+Frame\+Renderable} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classFrameRenderable_a6d63f3eb741826c84fb49db9887efd3b}{Frame\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} shader\+Program)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFrameRenderable_a5984573fc1ac50ce3c0761f6e7ba78e1}{Frame\+Renderable} ()
+\begin{DoxyCompactList}\small\item\em Forbidden default constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classFrameRenderable_aafa6b6444c8fa20a177eb562ba1a2672}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw this renderable. \end{DoxyCompactList}\item 
+void \hyperlink{classFrameRenderable_a331b31de3a4988acf6304c30762d99cc}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate this renderable. \end{DoxyCompactList}\item 
+void \hyperlink{classFrameRenderable_a39c514efa0139273930784ffec8329e9}{init\+Attributes} ()
+\begin{DoxyCompactList}\small\item\em Initialize the vertex attributes of the frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classFrameRenderable_a6cb58f4ca3a0198e628da450f2a4c731}{m\+\_\+positions}
+\begin{DoxyCompactList}\small\item\em Position attribute of the vertices. \end{DoxyCompactList}\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classFrameRenderable_a95e44e90b8e1f1ac67967003aea63009}{m\+\_\+colors}
+\item 
+unsigned int \hyperlink{classFrameRenderable_a89c0e4abd391a47198729001a2d5f159}{m\+\_\+p\+Buffer}
+\begin{DoxyCompactList}\small\item\em Location of the position attribute buffer. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classFrameRenderable_a6c8bed148c506c1a26fd7fc3cc5c625a}{m\+\_\+c\+Buffer}
+\begin{DoxyCompactList}\small\item\em Location of the color attribute buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class is the first renderable you will use (see the Tutorial 03 of practical 01). It will render the world frame on the screen\+: a red line for the X axis, a green line for the Y axis and a blue line for the Z axis. Have a look at the source\+: we documented it to help you to understand the details. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFrameRenderable_a823e77f15071737444f4bc7e589ca842}{\index{Frame\+Renderable@{Frame\+Renderable}!````~Frame\+Renderable@{$\sim$\+Frame\+Renderable}}
+\index{````~Frame\+Renderable@{$\sim$\+Frame\+Renderable}!Frame\+Renderable@{Frame\+Renderable}}
+\subsubsection[{$\sim$\+Frame\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Frame\+Renderable\+::$\sim$\+Frame\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFrameRenderable_a823e77f15071737444f4bc7e589ca842}
+Instance destructor. \hypertarget{classFrameRenderable_a6d63f3eb741826c84fb49db9887efd3b}{\index{Frame\+Renderable@{Frame\+Renderable}!Frame\+Renderable@{Frame\+Renderable}}
+\index{Frame\+Renderable@{Frame\+Renderable}!Frame\+Renderable@{Frame\+Renderable}}
+\subsubsection[{Frame\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Frame\+Renderable\+::\+Frame\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{shader\+Program}
+\end{DoxyParamCaption}
+)}}\label{classFrameRenderable_a6d63f3eb741826c84fb49db9887efd3b}
+Create a new instance that will rendered thanks to the given shader program. 
+\begin{DoxyParams}{Parameters}
+{\em shader\+Program} & The shader program to use to render this frame renderable. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFrameRenderable_a5984573fc1ac50ce3c0761f6e7ba78e1}{\index{Frame\+Renderable@{Frame\+Renderable}!Frame\+Renderable@{Frame\+Renderable}}
+\index{Frame\+Renderable@{Frame\+Renderable}!Frame\+Renderable@{Frame\+Renderable}}
+\subsubsection[{Frame\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Frame\+Renderable\+::\+Frame\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classFrameRenderable_a5984573fc1ac50ce3c0761f6e7ba78e1}
+By putting the default constructor in the private section, we make it forbidden (since it is private, no other class can call it). We do not need to provide an implementation as the compiler will never need it. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classFrameRenderable_a331b31de3a4988acf6304c30762d99cc}{\index{Frame\+Renderable@{Frame\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Frame\+Renderable@{Frame\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Frame\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classFrameRenderable_a331b31de3a4988acf6304c30762d99cc}
+The implementation of the \hyperlink{classRenderable_a74fd37d6852fb727e1a5fe72541d269d}{animate( float time )} or \hyperlink{classRenderable}{Renderable}. This does nothing as we do not need to animate it. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classFrameRenderable_aafa6b6444c8fa20a177eb562ba1a2672}{\index{Frame\+Renderable@{Frame\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Frame\+Renderable@{Frame\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Frame\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classFrameRenderable_aafa6b6444c8fa20a177eb562ba1a2672}
+The implementation of the \hyperlink{classRenderable_a0d371901a19b8cfe50b76b842adba70a}{draw()} interface of \hyperlink{classRenderable}{Renderable}. This is where drawing commands are issued. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+\hypertarget{classFrameRenderable_a39c514efa0139273930784ffec8329e9}{\index{Frame\+Renderable@{Frame\+Renderable}!init\+Attributes@{init\+Attributes}}
+\index{init\+Attributes@{init\+Attributes}!Frame\+Renderable@{Frame\+Renderable}}
+\subsubsection[{init\+Attributes}]{\setlength{\rightskip}{0pt plus 5cm}void Frame\+Renderable\+::init\+Attributes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classFrameRenderable_a39c514efa0139273930784ffec8329e9}
+This function intializes the geometry and the color of the frame. We put it in its own method help you to understand what is done in the constructor. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classFrameRenderable_a6c8bed148c506c1a26fd7fc3cc5c625a}{\index{Frame\+Renderable@{Frame\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Frame\+Renderable@{Frame\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Frame\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classFrameRenderable_a6c8bed148c506c1a26fd7fc3cc5c625a}
+Store the location (index) of the color attribute buffer on the shader program used to render the instance. If all instances are rendered by the same shader program, you could make this location static and set this location when the first instance is created. We decided to not make it static as it would be harder to understand and it is quite constraining\+: if you want to use more than shader program to render frame renderable instances, this will lead to bugs tricky to understand for beginners. \hypertarget{classFrameRenderable_a95e44e90b8e1f1ac67967003aea63009}{\index{Frame\+Renderable@{Frame\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Frame\+Renderable@{Frame\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Frame\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classFrameRenderable_a95e44e90b8e1f1ac67967003aea63009}
+\hypertarget{classFrameRenderable_a89c0e4abd391a47198729001a2d5f159}{\index{Frame\+Renderable@{Frame\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Frame\+Renderable@{Frame\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Frame\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classFrameRenderable_a89c0e4abd391a47198729001a2d5f159}
+Store the location (index) of the position attribute buffer on the shader program used to render the instance. If all instances are rendered by the same shader program, you could make this location static and set this location when the first instance is created. We decided to not make it static as it would be harder to understand and it is quite constraining\+: if you want to use more than shader program to render frame renderable instances, this will lead to bugs tricky to understand for beginners. \hypertarget{classFrameRenderable_a6cb58f4ca3a0198e628da450f2a4c731}{\index{Frame\+Renderable@{Frame\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Frame\+Renderable@{Frame\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Frame\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classFrameRenderable_a6cb58f4ca3a0198e628da450f2a4c731}
+Store the position attribute of the vertices. Notice that all the instances, those positions would be the same. Thus, you could make this data member static\+: shared by all instances of the class. We decided to not make it static to help people that are new to c++.Color attribute of the vertices.
+
+Store the color attribute of the vertices. Notice that all the instances, those colors would be the same. Thus, you could make this data member static\+: shared by all instances of the class. We decided to not make it static to help people that are new to c++. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{FrameRenderable_8hpp}{Frame\+Renderable.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,172 @@
+\hypertarget{classKeyframedCylinderRenderable}{\section{Keyframed\+Cylinder\+Renderable Class Reference}
+\label{classKeyframedCylinderRenderable}\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+}
+
+
+{\ttfamily \#include $<$Keyframed\+Cylinder\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Keyframed\+Cylinder\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{classKeyframedCylinderRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Keyframed\+Cylinder\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classKeyframedCylinderRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classKeyframedCylinderRenderable_a0ce1e2ce884579462524de5d60bc8200}{$\sim$\+Keyframed\+Cylinder\+Renderable} ()
+\item 
+\hyperlink{classKeyframedCylinderRenderable_abb362bfe0ad89b97e1a5657da6562f85}{Keyframed\+Cylinder\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program)
+\item 
+void \hyperlink{classKeyframedCylinderRenderable_a15d31ab79223c27b090e891f078ac64b}{add\+Local\+Transform\+Keyframe} (const \hyperlink{classGeometricTransformation}{Geometric\+Transformation} \&transformation, float time)
+\begin{DoxyCompactList}\small\item\em Add a keyframe for the local transformation of the renderable. \end{DoxyCompactList}\item 
+void \hyperlink{classKeyframedCylinderRenderable_ae635ccde0bfc30285b5bd3f47a24b9ad}{add\+Parent\+Transform\+Keyframe} (const \hyperlink{classGeometricTransformation}{Geometric\+Transformation} \&transformation, float time)
+\begin{DoxyCompactList}\small\item\em Add a keyframe for the parent transformation of the renderable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKeyframedCylinderRenderable_abbfc6deaafd95aa58feb2c08b22d1050}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classKeyframedCylinderRenderable_a59d9e6dedbf2e4105c08a8b6516cdd56}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classKeyframedCylinderRenderable_a6429ca81b8b337a5b2fdbf25e5a232d2}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classKeyframedCylinderRenderable_a7e70c2f1e07d14372589ef88f16e7bcd}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classKeyframedCylinderRenderable_a4d306f63513ee46874d65078fb041a52}{m\+\_\+normals}
+\item 
+\hyperlink{classKeyframeCollection}{Keyframe\+Collection} \hyperlink{classKeyframedCylinderRenderable_a8d821f7953d26700d2eb49ca4b66cc18}{m\+\_\+local\+Keyframes}
+\item 
+\hyperlink{classKeyframeCollection}{Keyframe\+Collection} \hyperlink{classKeyframedCylinderRenderable_afcb8c6b8048454621f6375a1eebb2ca1}{m\+\_\+parent\+Keyframes}
+\item 
+unsigned int \hyperlink{classKeyframedCylinderRenderable_ae72ab893df021692d8c4e4d8e7081931}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classKeyframedCylinderRenderable_afdf432acba934c57255874373f234875}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classKeyframedCylinderRenderable_a73db5a6ed8d7452244834ef396cb0279}{m\+\_\+n\+Buffer}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classKeyframedCylinderRenderable_a0ce1e2ce884579462524de5d60bc8200}{\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!````~Keyframed\+Cylinder\+Renderable@{$\sim$\+Keyframed\+Cylinder\+Renderable}}
+\index{````~Keyframed\+Cylinder\+Renderable@{$\sim$\+Keyframed\+Cylinder\+Renderable}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\subsubsection[{$\sim$\+Keyframed\+Cylinder\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Keyframed\+Cylinder\+Renderable\+::$\sim$\+Keyframed\+Cylinder\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classKeyframedCylinderRenderable_a0ce1e2ce884579462524de5d60bc8200}
+\hypertarget{classKeyframedCylinderRenderable_abb362bfe0ad89b97e1a5657da6562f85}{\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\subsubsection[{Keyframed\+Cylinder\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Keyframed\+Cylinder\+Renderable\+::\+Keyframed\+Cylinder\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program}
+\end{DoxyParamCaption}
+)}}\label{classKeyframedCylinderRenderable_abb362bfe0ad89b97e1a5657da6562f85}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classKeyframedCylinderRenderable_a15d31ab79223c27b090e891f078ac64b}{\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!add\+Local\+Transform\+Keyframe@{add\+Local\+Transform\+Keyframe}}
+\index{add\+Local\+Transform\+Keyframe@{add\+Local\+Transform\+Keyframe}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\subsubsection[{add\+Local\+Transform\+Keyframe}]{\setlength{\rightskip}{0pt plus 5cm}void Keyframed\+Cylinder\+Renderable\+::add\+Local\+Transform\+Keyframe (
+\begin{DoxyParamCaption}
+\item[{const {\bf Geometric\+Transformation} \&}]{transformation, }
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)}}\label{classKeyframedCylinderRenderable_a15d31ab79223c27b090e891f078ac64b}
+Add a keyframe to m\+\_\+local\+Keyframes described by a geometric transformation and a time. 
+\begin{DoxyParams}{Parameters}
+{\em transformation} & The geometric transformation of the keyframe. \\
+\hline
+{\em time} & The time of the keyframe. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKeyframedCylinderRenderable_ae635ccde0bfc30285b5bd3f47a24b9ad}{\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!add\+Parent\+Transform\+Keyframe@{add\+Parent\+Transform\+Keyframe}}
+\index{add\+Parent\+Transform\+Keyframe@{add\+Parent\+Transform\+Keyframe}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\subsubsection[{add\+Parent\+Transform\+Keyframe}]{\setlength{\rightskip}{0pt plus 5cm}void Keyframed\+Cylinder\+Renderable\+::add\+Parent\+Transform\+Keyframe (
+\begin{DoxyParamCaption}
+\item[{const {\bf Geometric\+Transformation} \&}]{transformation, }
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)}}\label{classKeyframedCylinderRenderable_ae635ccde0bfc30285b5bd3f47a24b9ad}
+Add a keyframe to m\+\_\+parent\+Keyframes described by a geometric transformation and a time. 
+\begin{DoxyParams}{Parameters}
+{\em transformation} & The geometric transformation of the keyframe. \\
+\hline
+{\em time} & The time of the keyframe. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKeyframedCylinderRenderable_a59d9e6dedbf2e4105c08a8b6516cdd56}{\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Keyframed\+Cylinder\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classKeyframedCylinderRenderable_a59d9e6dedbf2e4105c08a8b6516cdd56}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classKeyframedCylinderRenderable_abbfc6deaafd95aa58feb2c08b22d1050}{\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Keyframed\+Cylinder\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classKeyframedCylinderRenderable_abbfc6deaafd95aa58feb2c08b22d1050}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classKeyframedCylinderRenderable_afdf432acba934c57255874373f234875}{\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Keyframed\+Cylinder\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classKeyframedCylinderRenderable_afdf432acba934c57255874373f234875}
+\hypertarget{classKeyframedCylinderRenderable_a7e70c2f1e07d14372589ef88f16e7bcd}{\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Keyframed\+Cylinder\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classKeyframedCylinderRenderable_a7e70c2f1e07d14372589ef88f16e7bcd}
+\hypertarget{classKeyframedCylinderRenderable_a8d821f7953d26700d2eb49ca4b66cc18}{\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!m\+\_\+local\+Keyframes@{m\+\_\+local\+Keyframes}}
+\index{m\+\_\+local\+Keyframes@{m\+\_\+local\+Keyframes}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+local\+Keyframes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Keyframe\+Collection} Keyframed\+Cylinder\+Renderable\+::m\+\_\+local\+Keyframes\hspace{0.3cm}{\ttfamily [private]}}}\label{classKeyframedCylinderRenderable_a8d821f7953d26700d2eb49ca4b66cc18}
+A collection of keyframes for the local transformation of renderable. \hypertarget{classKeyframedCylinderRenderable_a73db5a6ed8d7452244834ef396cb0279}{\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Keyframed\+Cylinder\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classKeyframedCylinderRenderable_a73db5a6ed8d7452244834ef396cb0279}
+\hypertarget{classKeyframedCylinderRenderable_a4d306f63513ee46874d65078fb041a52}{\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Keyframed\+Cylinder\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classKeyframedCylinderRenderable_a4d306f63513ee46874d65078fb041a52}
+\hypertarget{classKeyframedCylinderRenderable_afcb8c6b8048454621f6375a1eebb2ca1}{\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!m\+\_\+parent\+Keyframes@{m\+\_\+parent\+Keyframes}}
+\index{m\+\_\+parent\+Keyframes@{m\+\_\+parent\+Keyframes}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+parent\+Keyframes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Keyframe\+Collection} Keyframed\+Cylinder\+Renderable\+::m\+\_\+parent\+Keyframes\hspace{0.3cm}{\ttfamily [private]}}}\label{classKeyframedCylinderRenderable_afcb8c6b8048454621f6375a1eebb2ca1}
+A collection of keyframes for the parent transformation of renderable. \hypertarget{classKeyframedCylinderRenderable_ae72ab893df021692d8c4e4d8e7081931}{\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Keyframed\+Cylinder\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classKeyframedCylinderRenderable_ae72ab893df021692d8c4e4d8e7081931}
+\hypertarget{classKeyframedCylinderRenderable_a6429ca81b8b337a5b2fdbf25e5a232d2}{\index{Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Keyframed\+Cylinder\+Renderable@{Keyframed\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Keyframed\+Cylinder\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classKeyframedCylinderRenderable_a6429ca81b8b337a5b2fdbf25e5a232d2}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{KeyframedCylinderRenderable_8hpp}{Keyframed\+Cylinder\+Renderable.\+hpp}\end{DoxyCompactItemize}

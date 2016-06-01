@@ -1,0 +1,123 @@
+\hypertarget{classKeyframeCollection}{\section{Keyframe\+Collection Class Reference}
+\label{classKeyframeCollection}\index{Keyframe\+Collection@{Keyframe\+Collection}}
+}
+
+
+An ordered collection of keyframes.  
+
+
+
+
+{\ttfamily \#include $<$Keyframe\+Collection.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classKeyframeCollection_a3a64207c2b2423818dc1dd8124c6441b}{add} (const \hyperlink{classGeometricTransformation}{Geometric\+Transformation} \&transformation, float time)
+\begin{DoxyCompactList}\small\item\em Add a key frame to the collection. \end{DoxyCompactList}\item 
+glm\+::mat4 \hyperlink{classKeyframeCollection_a15a2b936aafe20d9a486defbdc3fcb50}{interpolate\+Transformation} (float time) const 
+\begin{DoxyCompactList}\small\item\em Interpolate a transformation at a given time. \end{DoxyCompactList}\item 
+bool \hyperlink{classKeyframeCollection_a919aa0bd438836d7035424aa9401c994}{empty} () const 
+\begin{DoxyCompactList}\small\item\em Check if the collection is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::pair$<$ float, \\*
+\hyperlink{classGeometricTransformation}{Geometric\+Transformation} $>$ \hyperlink{classKeyframeCollection_a06ac3762e94d3485f093371d0ee8d0c9}{Keyframe}
+\begin{DoxyCompactList}\small\item\em Definition of a keyframe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ \hyperlink{classKeyframeCollection_a06ac3762e94d3485f093371d0ee8d0c9}{Keyframe}, 2 $>$ \hyperlink{classKeyframeCollection_ab482950c2cdaa0ad1ec27eb1f0d49b4d}{get\+Bounding\+Keyframes} (float time) const 
+\begin{DoxyCompactList}\small\item\em Get the bounding keyframes at a specific time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ float, \\*
+\hyperlink{classGeometricTransformation}{Geometric\+Transformation} $>$ \hyperlink{classKeyframeCollection_a157e3b47f4d1016d0f62ccb8abc5bc82}{m\+\_\+keyframes}
+\begin{DoxyCompactList}\small\item\em Internal storage of the keyframes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class store the keyframes in ascending time order. For now, the key frames only define a geometric transformation at a given time. You can either extend this class to add other attributes to interpolate, such as colors, or to create another class similar to this one. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classKeyframeCollection_a06ac3762e94d3485f093371d0ee8d0c9}{\index{Keyframe\+Collection@{Keyframe\+Collection}!Keyframe@{Keyframe}}
+\index{Keyframe@{Keyframe}!Keyframe\+Collection@{Keyframe\+Collection}}
+\subsubsection[{Keyframe}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::pair$<$ float, {\bf Geometric\+Transformation} $>$ {\bf Keyframe\+Collection\+::\+Keyframe}\hspace{0.3cm}{\ttfamily [private]}}}\label{classKeyframeCollection_a06ac3762e94d3485f093371d0ee8d0c9}
+A keyframe is, for now, a geometric transformation at a given time. This is represented as a pair, since it is exactly how it will be stored inside m\+\_\+keyframes (avoids conversions). 
+
+\subsection{Member Function Documentation}
+\hypertarget{classKeyframeCollection_a3a64207c2b2423818dc1dd8124c6441b}{\index{Keyframe\+Collection@{Keyframe\+Collection}!add@{add}}
+\index{add@{add}!Keyframe\+Collection@{Keyframe\+Collection}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void Keyframe\+Collection\+::add (
+\begin{DoxyParamCaption}
+\item[{const {\bf Geometric\+Transformation} \&}]{transformation, }
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)}}\label{classKeyframeCollection_a3a64207c2b2423818dc1dd8124c6441b}
+Add a key frame to the collection. 
+\begin{DoxyParams}{Parameters}
+{\em transformation} & The geometric transformation of the keyframe. \\
+\hline
+{\em time} & The time of the keyframe. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classKeyframeCollection_a919aa0bd438836d7035424aa9401c994}{\index{Keyframe\+Collection@{Keyframe\+Collection}!empty@{empty}}
+\index{empty@{empty}!Keyframe\+Collection@{Keyframe\+Collection}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}bool Keyframe\+Collection\+::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classKeyframeCollection_a919aa0bd438836d7035424aa9401c994}
+\begin{DoxyReturn}{Returns}
+True if the collection is empty, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{classKeyframeCollection_ab482950c2cdaa0ad1ec27eb1f0d49b4d}{\index{Keyframe\+Collection@{Keyframe\+Collection}!get\+Bounding\+Keyframes@{get\+Bounding\+Keyframes}}
+\index{get\+Bounding\+Keyframes@{get\+Bounding\+Keyframes}!Keyframe\+Collection@{Keyframe\+Collection}}
+\subsubsection[{get\+Bounding\+Keyframes}]{\setlength{\rightskip}{0pt plus 5cm}std\+::array$<$ {\bf Keyframe}, 2 $>$ Keyframe\+Collection\+::get\+Bounding\+Keyframes (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classKeyframeCollection_ab482950c2cdaa0ad1ec27eb1f0d49b4d}
+This function get the keyframes that are bounding the given time. They will be used to interpolate the transformation at this specific time. 
+\begin{DoxyParams}{Parameters}
+{\em time} & Interpolation time. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The bounding keyframes stored in this collection. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+We could return only an iterator here, but we thought it might be easier to understand the function \hyperlink{classKeyframeCollection_a15a2b936aafe20d9a486defbdc3fcb50}{interpolate\+Transformation()} if the result is returned this way. 
+\end{DoxyNote}
+\hypertarget{classKeyframeCollection_a15a2b936aafe20d9a486defbdc3fcb50}{\index{Keyframe\+Collection@{Keyframe\+Collection}!interpolate\+Transformation@{interpolate\+Transformation}}
+\index{interpolate\+Transformation@{interpolate\+Transformation}!Keyframe\+Collection@{Keyframe\+Collection}}
+\subsubsection[{interpolate\+Transformation}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Keyframe\+Collection\+::interpolate\+Transformation (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+) const}}\label{classKeyframeCollection_a15a2b936aafe20d9a486defbdc3fcb50}
+This function will interpolate a geometric transformation at a given time, using the stored keyframes. Since a geometric transformation is likely to be used as a mat4 to be send to the G\+P\+U, we return directly here the transformation in this representation.
+
+If the time is out of the range of stored keyframes, the closest keyframe is returned. In case there is no keyframe, the identity matrix is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Interpolation time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The interpolated geometric transformation. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classKeyframeCollection_a157e3b47f4d1016d0f62ccb8abc5bc82}{\index{Keyframe\+Collection@{Keyframe\+Collection}!m\+\_\+keyframes@{m\+\_\+keyframes}}
+\index{m\+\_\+keyframes@{m\+\_\+keyframes}!Keyframe\+Collection@{Keyframe\+Collection}}
+\subsubsection[{m\+\_\+keyframes}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$ float, {\bf Geometric\+Transformation} $>$ Keyframe\+Collection\+::m\+\_\+keyframes\hspace{0.3cm}{\ttfamily [private]}}}\label{classKeyframeCollection_a157e3b47f4d1016d0f62ccb8abc5bc82}
+Keyframes are stored inside a map. Such collection associate to a time a geometric transformation. Its specificity is to store the data in a way that it is trivial to iterate over the keyframes in a increasing time order. Internally, a map element is similar to a set of pair$<$ float, Geometric\+Transformation $>$. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{KeyframeCollection_8hpp}{Keyframe\+Collection.\+hpp}\end{DoxyCompactItemize}

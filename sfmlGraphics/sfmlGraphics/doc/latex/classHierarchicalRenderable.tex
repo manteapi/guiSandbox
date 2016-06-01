@@ -1,0 +1,275 @@
+\hypertarget{classHierarchicalRenderable}{\section{Hierarchical\+Renderable Class Reference}
+\label{classHierarchicalRenderable}\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+}
+
+
+\hyperlink{classHierarchicalRenderable}{Hierarchical\+Renderable} interface.  
+
+
+
+
+{\ttfamily \#include $<$Hierarchical\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Hierarchical\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classHierarchicalRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Hierarchical\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHierarchicalRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classHierarchicalRenderable_a5b52660ebd8fc6ae221baf813359c5dc}{$\sim$\+Hierarchical\+Renderable} ()
+\begin{DoxyCompactList}\small\item\em Instance destructor. \end{DoxyCompactList}\item 
+\hyperlink{classHierarchicalRenderable_ad4869fc0d6af636308bef824d4882d66}{Hierarchical\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} shader\+Program)
+\begin{DoxyCompactList}\small\item\em Instance constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classHierarchicalRenderable_a5f63685ed92393c8c43362540934b6c1}{update\+Model\+Matrix} ()
+\begin{DoxyCompactList}\small\item\em Compute the model matrix of the instance. \end{DoxyCompactList}\item 
+glm\+::mat4 \hyperlink{classHierarchicalRenderable_ac9ae8fd8114c2f8ce274b22661435d69}{compute\+Total\+Parent\+Transform} () const 
+\begin{DoxyCompactList}\small\item\em Compute the total parent transformation. \end{DoxyCompactList}\item 
+const glm\+::mat4 \& \hyperlink{classHierarchicalRenderable_ad2481b795d921e43d2697e36e5086727}{get\+Parent\+Transform} () const 
+\begin{DoxyCompactList}\small\item\em Read only access to the parent transformation. \end{DoxyCompactList}\item 
+void \hyperlink{classHierarchicalRenderable_aca80e8715bc7844967047602c5f9bb2d}{set\+Parent\+Transform} (const glm\+::mat4 \&parent\+Transform)
+\begin{DoxyCompactList}\small\item\em Set the value of the parent transformation. \end{DoxyCompactList}\item 
+const glm\+::mat4 \& \hyperlink{classHierarchicalRenderable_a201ce5c2ec7f323e6f3d0224a1eb31ef}{get\+Local\+Transform} () const 
+\begin{DoxyCompactList}\small\item\em Read only access to the local transformation. \end{DoxyCompactList}\item 
+void \hyperlink{classHierarchicalRenderable_a6dc43305b230675bd308566746aa1539}{set\+Local\+Transform} (const glm\+::mat4 \&local\+Transform)
+\begin{DoxyCompactList}\small\item\em Set the value of the local transformation. \end{DoxyCompactList}\item 
+std\+::vector\\*
+$<$ \hyperlink{HierarchicalRenderable_8hpp_a9de1dda7f7ef0bca09b721bdb133964a}{Hierarchical\+Renderable\+Ptr} $>$ \& \hyperlink{classHierarchicalRenderable_a8a9b40b55e05760d76e39c8045bc9c71}{get\+Children} ()
+\begin{DoxyCompactList}\small\item\em Access to the children of this renderable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classHierarchicalRenderable_a0a8014f41a0439e86b18a78e8fbc448b}{add\+Child} (\hyperlink{HierarchicalRenderable_8hpp_a9de1dda7f7ef0bca09b721bdb133964a}{Hierarchical\+Renderable\+Ptr} parent, \hyperlink{HierarchicalRenderable_8hpp_a9de1dda7f7ef0bca09b721bdb133964a}{Hierarchical\+Renderable\+Ptr} child)
+\begin{DoxyCompactList}\small\item\em Set hierarchical relationship between two \hyperlink{classHierarchicalRenderable}{Hierarchical\+Renderable} instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classHierarchicalRenderable_aedbaa13858872d5dcd7ce644da9a66e1}{before\+Draw} ()
+\begin{DoxyCompactList}\small\item\em Perform computations before \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{do\+\_\+draw()} \end{DoxyCompactList}\item 
+virtual void \hyperlink{classHierarchicalRenderable_a50fa8b46938a3da839829523838ddf2c}{after\+Draw} ()
+\begin{DoxyCompactList}\small\item\em Perform computations after \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{do\+\_\+draw()} \end{DoxyCompactList}\item 
+virtual void \hyperlink{classHierarchicalRenderable_a8de5020d6678c97050079150bcb131fa}{after\+Animate} (float time)
+\begin{DoxyCompactList}\small\item\em Perform computations after \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{do\+\_\+animate()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{HierarchicalRenderable_8hpp_a9de1dda7f7ef0bca09b721bdb133964a}{Hierarchical\+Renderable\+Ptr} \hyperlink{classHierarchicalRenderable_a8549e3830ff55e5f9ce5d6335421a207}{m\+\_\+parent}
+\begin{DoxyCompactList}\small\item\em Pointer to the parent renderable. \end{DoxyCompactList}\item 
+std\+::vector\\*
+$<$ \hyperlink{HierarchicalRenderable_8hpp_a9de1dda7f7ef0bca09b721bdb133964a}{Hierarchical\+Renderable\+Ptr} $>$ \hyperlink{classHierarchicalRenderable_a0e3d2a642ba4d2ea58c595a1532a6c8a}{m\+\_\+children}
+\begin{DoxyCompactList}\small\item\em List of the children of the instance. \end{DoxyCompactList}\item 
+glm\+::mat4 \hyperlink{classHierarchicalRenderable_a03c1fee357c0148132468224d3480d92}{m\+\_\+parent\+Transform}
+\begin{DoxyCompactList}\small\item\em Transformation with respect to the parent. \end{DoxyCompactList}\item 
+glm\+::mat4 \hyperlink{classHierarchicalRenderable_a467e3ba997e6d98af60033fb74333c37}{m\+\_\+local\+Transform}
+\begin{DoxyCompactList}\small\item\em Local transformation of this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A hierarchical renderable is used to describe objects made of several renderables. The hierarchy is used to position objects relatively to others.
+
+It becomes a powerful tool if the object is animated. In this case, animating a node of the hierarchy will implicitly animate its children.
+
+The hierarchy is described by specifying the parent and the children of the instance. If the instance is the root of the hierarchy then it has no parent. If the instance is a leaf of the hierarchy then it has no children.
+
+A \hyperlink{classHierarchicalRenderable}{Hierarchical\+Renderable} instance has two specific matrices\+:
+\begin{DoxyItemize}
+\item m\+\_\+parent\+Transform that defines the transformation with respect to the parent. The compositions of the parent transforms up to the root provides the local frame of the instance, in world space. The result of this composition is named the total parent transform.
+\item m\+\_\+local\+Transform that defines an additional transformation, applied to the local frame of the instance, in order to obtain the model matrix. This transformation is not transmitted to the children of the instance. This allows to define a scale for example, without needing to apply the reverse operation to all its children.
+\end{DoxyItemize}
+
+Only the root instance is meant to be added to the \hyperlink{classViewer}{Viewer} instance\+: that root will take care itself to draw and animate all the hierarchy. However, if you want to interact with all the hierarchy, you will have to propagate yourself the interaction calls, such as \hyperlink{classRenderable_a49e39be950dca7a925b8b79c13241e6b}{do\+\_\+key\+Pressed\+Event()} to the children. This is not the default behavior as it could be easier to let the root the only instance that deals with interaction. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classHierarchicalRenderable_a5b52660ebd8fc6ae221baf813359c5dc}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!````~Hierarchical\+Renderable@{$\sim$\+Hierarchical\+Renderable}}
+\index{````~Hierarchical\+Renderable@{$\sim$\+Hierarchical\+Renderable}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{$\sim$\+Hierarchical\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}virtual Hierarchical\+Renderable\+::$\sim$\+Hierarchical\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classHierarchicalRenderable_a5b52660ebd8fc6ae221baf813359c5dc}
+Since this class is meant to be derived (as it is abstract because we do not give an implementation for \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable\+::do\+\_\+draw()} for example), the destructor should be either public and virtual or protected and nonvirtual. We chose to make it public and virtual to let you delete concrete final class instances with a pointer to a Hierarchichal\+Renderable. \hypertarget{classHierarchicalRenderable_ad4869fc0d6af636308bef824d4882d66}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{Hierarchical\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Hierarchical\+Renderable\+::\+Hierarchical\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{shader\+Program}
+\end{DoxyParamCaption}
+)}}\label{classHierarchicalRenderable_ad4869fc0d6af636308bef824d4882d66}
+Initialize the local and parent transforms to identity, the model matrix to identity and the \hyperlink{classRenderable_ad4004cea2d9ca6cc91eb03b4ce885088}{m\+\_\+shader\+Program} to {\itshape shader\+Program}. 
+\begin{DoxyParams}{Parameters}
+{\em shader\+Program} & Shader program to use to draw this. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classShaderProgram}{Shader\+Program} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classHierarchicalRenderable_a0a8014f41a0439e86b18a78e8fbc448b}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{add\+Child}]{\setlength{\rightskip}{0pt plus 5cm}static void Hierarchical\+Renderable\+::add\+Child (
+\begin{DoxyParamCaption}
+\item[{{\bf Hierarchical\+Renderable\+Ptr}}]{parent, }
+\item[{{\bf Hierarchical\+Renderable\+Ptr}}]{child}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classHierarchicalRenderable_a0a8014f41a0439e86b18a78e8fbc448b}
+This function adds {\itshape child} to the m\+\_\+children of {\itshape parent} and set the m\+\_\+parent member of {\itshape child} to {\itshape parent}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & A pointer to the parent. \\
+\hline
+{\em child} & A pointer to the child.\\
+\hline
+\end{DoxyParams}
+Note\+: the children and the parents of an instance are stored in a shared pointer. If we want to have a member function for this functionality, we would try to use \char`\"{}this\char`\"{}, either to add it to the children of an instance or to set it to be the parent of another instance. However, \char`\"{}this\char`\"{} is not a shared pointer, and if we try to create a shared pointer in the member function, that would mess completely with the memory management done in a shared pointer. \hypertarget{classHierarchicalRenderable_a8de5020d6678c97050079150bcb131fa}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!after\+Animate@{after\+Animate}}
+\index{after\+Animate@{after\+Animate}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{after\+Animate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Hierarchical\+Renderable\+::after\+Animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classHierarchicalRenderable_a8de5020d6678c97050079150bcb131fa}
+
+
+Reimplemented from \hyperlink{classRenderable_a027e4c23636f492df33461a23320a336}{Renderable}.
+
+\hypertarget{classHierarchicalRenderable_a50fa8b46938a3da839829523838ddf2c}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!after\+Draw@{after\+Draw}}
+\index{after\+Draw@{after\+Draw}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{after\+Draw}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Hierarchical\+Renderable\+::after\+Draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classHierarchicalRenderable_a50fa8b46938a3da839829523838ddf2c}
+
+
+Reimplemented from \hyperlink{classRenderable_a9c715cafdda260b94bf6fe12853a3bb7}{Renderable}.
+
+\hypertarget{classHierarchicalRenderable_aedbaa13858872d5dcd7ce644da9a66e1}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!before\+Draw@{before\+Draw}}
+\index{before\+Draw@{before\+Draw}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{before\+Draw}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Hierarchical\+Renderable\+::before\+Draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classHierarchicalRenderable_aedbaa13858872d5dcd7ce644da9a66e1}
+
+
+Reimplemented from \hyperlink{classRenderable_ad2fd96564194f598555b4f141e8c48be}{Renderable}.
+
+\hypertarget{classHierarchicalRenderable_ac9ae8fd8114c2f8ce274b22661435d69}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!compute\+Total\+Parent\+Transform@{compute\+Total\+Parent\+Transform}}
+\index{compute\+Total\+Parent\+Transform@{compute\+Total\+Parent\+Transform}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{compute\+Total\+Parent\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Hierarchical\+Renderable\+::compute\+Total\+Parent\+Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classHierarchicalRenderable_ac9ae8fd8114c2f8ce274b22661435d69}
+This function computes recursively the total parent transformation until it reaches the root of the hierarchy.
+
+\begin{DoxyReturn}{Returns}
+The total parent transformation matrix. 
+\end{DoxyReturn}
+\hypertarget{classHierarchicalRenderable_a8a9b40b55e05760d76e39c8045bc9c71}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!get\+Children@{get\+Children}}
+\index{get\+Children@{get\+Children}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{get\+Children}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Hierarchical\+Renderable\+Ptr} $>$\& Hierarchical\+Renderable\+::get\+Children (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHierarchicalRenderable_a8a9b40b55e05760d76e39c8045bc9c71}
+Get the children of this hierarchical renderable. \begin{DoxyReturn}{Returns}
+A vector of hierarchical renderable shared pointers. 
+\end{DoxyReturn}
+\hypertarget{classHierarchicalRenderable_a201ce5c2ec7f323e6f3d0224a1eb31ef}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!get\+Local\+Transform@{get\+Local\+Transform}}
+\index{get\+Local\+Transform@{get\+Local\+Transform}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{get\+Local\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::mat4\& Hierarchical\+Renderable\+::get\+Local\+Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classHierarchicalRenderable_a201ce5c2ec7f323e6f3d0224a1eb31ef}
+Write to the \hyperlink{classHierarchicalRenderable_a467e3ba997e6d98af60033fb74333c37}{m\+\_\+local\+Transform} matrix.
+
+\begin{DoxyReturn}{Returns}
+A read only reference to \hyperlink{classHierarchicalRenderable_a467e3ba997e6d98af60033fb74333c37}{m\+\_\+local\+Transform}, the local transformation matrix. 
+\end{DoxyReturn}
+\hypertarget{classHierarchicalRenderable_ad2481b795d921e43d2697e36e5086727}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!get\+Parent\+Transform@{get\+Parent\+Transform}}
+\index{get\+Parent\+Transform@{get\+Parent\+Transform}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{get\+Parent\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::mat4\& Hierarchical\+Renderable\+::get\+Parent\+Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classHierarchicalRenderable_ad2481b795d921e43d2697e36e5086727}
+Allows to read the value of \hyperlink{classHierarchicalRenderable_a03c1fee357c0148132468224d3480d92}{m\+\_\+parent\+Transform}.
+
+\begin{DoxyReturn}{Returns}
+A read only reference to \hyperlink{classHierarchicalRenderable_a03c1fee357c0148132468224d3480d92}{m\+\_\+parent\+Transform}, the parent transformation matrix. 
+\end{DoxyReturn}
+\hypertarget{classHierarchicalRenderable_a6dc43305b230675bd308566746aa1539}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!set\+Local\+Transform@{set\+Local\+Transform}}
+\index{set\+Local\+Transform@{set\+Local\+Transform}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{set\+Local\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}void Hierarchical\+Renderable\+::set\+Local\+Transform (
+\begin{DoxyParamCaption}
+\item[{const glm\+::mat4 \&}]{local\+Transform}
+\end{DoxyParamCaption}
+)}}\label{classHierarchicalRenderable_a6dc43305b230675bd308566746aa1539}
+Write to the \hyperlink{classHierarchicalRenderable_a467e3ba997e6d98af60033fb74333c37}{m\+\_\+local\+Transform} matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em local\+Transform} & The new local transformation matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classHierarchicalRenderable_aca80e8715bc7844967047602c5f9bb2d}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!set\+Parent\+Transform@{set\+Parent\+Transform}}
+\index{set\+Parent\+Transform@{set\+Parent\+Transform}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{set\+Parent\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}void Hierarchical\+Renderable\+::set\+Parent\+Transform (
+\begin{DoxyParamCaption}
+\item[{const glm\+::mat4 \&}]{parent\+Transform}
+\end{DoxyParamCaption}
+)}}\label{classHierarchicalRenderable_aca80e8715bc7844967047602c5f9bb2d}
+Write to the \hyperlink{classHierarchicalRenderable_a03c1fee357c0148132468224d3480d92}{m\+\_\+parent\+Transform} matrix. Avoid to have non uniform scale here\+: prefer to make it in the local transform. Otherwise, you will obtain shearing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent\+Transform} & The new parent transformation matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classHierarchicalRenderable_a5f63685ed92393c8c43362540934b6c1}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!update\+Model\+Matrix@{update\+Model\+Matrix}}
+\index{update\+Model\+Matrix@{update\+Model\+Matrix}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{update\+Model\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}void Hierarchical\+Renderable\+::update\+Model\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHierarchicalRenderable_a5f63685ed92393c8c43362540934b6c1}
+Since a model matrix is the transformation from the object coordinates to the world coordinates, it should be computed thanks to the hierarchy and the matrices \hyperlink{classHierarchicalRenderable_a03c1fee357c0148132468224d3480d92}{m\+\_\+parent\+Transform}. This computation is done in this function and should be typically applied before drawing a hierarchical renderable. The result is stored in \hyperlink{classRenderable_ab3a7f6112bd9d8c37ab10dac24186b25}{m\+\_\+model}. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classHierarchicalRenderable_a0e3d2a642ba4d2ea58c595a1532a6c8a}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!m\+\_\+children@{m\+\_\+children}}
+\index{m\+\_\+children@{m\+\_\+children}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{m\+\_\+children}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Hierarchical\+Renderable\+Ptr} $>$ Hierarchical\+Renderable\+::m\+\_\+children\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalRenderable_a0e3d2a642ba4d2ea58c595a1532a6c8a}
+This list contains all the children of the instance. Those children all have this as a parent. \hypertarget{classHierarchicalRenderable_a467e3ba997e6d98af60033fb74333c37}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!m\+\_\+local\+Transform@{m\+\_\+local\+Transform}}
+\index{m\+\_\+local\+Transform@{m\+\_\+local\+Transform}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{m\+\_\+local\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Hierarchical\+Renderable\+::m\+\_\+local\+Transform\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalRenderable_a467e3ba997e6d98af60033fb74333c37}
+This transformation is applied to the global parent transformation to give the model matrix. It is particularly useful to deform the geometry of the object using scaling. Keep in mind that this transformation will N\+O\+T be used by the children. \hypertarget{classHierarchicalRenderable_a8549e3830ff55e5f9ce5d6335421a207}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!m\+\_\+parent@{m\+\_\+parent}}
+\index{m\+\_\+parent@{m\+\_\+parent}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{m\+\_\+parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hierarchical\+Renderable\+Ptr} Hierarchical\+Renderable\+::m\+\_\+parent\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalRenderable_a8549e3830ff55e5f9ce5d6335421a207}
+If it has no parent then the pointer value is nullptr. This is the case if the instance is the root of the hierarchy.
+
+The instance is positioned relatively to the parent. \hypertarget{classHierarchicalRenderable_a03c1fee357c0148132468224d3480d92}{\index{Hierarchical\+Renderable@{Hierarchical\+Renderable}!m\+\_\+parent\+Transform@{m\+\_\+parent\+Transform}}
+\index{m\+\_\+parent\+Transform@{m\+\_\+parent\+Transform}!Hierarchical\+Renderable@{Hierarchical\+Renderable}}
+\subsubsection[{m\+\_\+parent\+Transform}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Hierarchical\+Renderable\+::m\+\_\+parent\+Transform\hspace{0.3cm}{\ttfamily [private]}}}\label{classHierarchicalRenderable_a03c1fee357c0148132468224d3480d92}
+This matrix gives the transformation of this instance relatively to its parent. If it has no parent the the matrix is set to identity. Keep in mind that this transformation will be used by the children. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{HierarchicalRenderable_8hpp}{Hierarchical\+Renderable.\+hpp}\end{DoxyCompactItemize}

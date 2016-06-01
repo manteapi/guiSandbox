@@ -1,0 +1,192 @@
+\hypertarget{classControlledForceFieldRenderable}{\section{Controlled\+Force\+Field\+Renderable Class Reference}
+\label{classControlledForceFieldRenderable}\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+}
+
+
+Implement a force field controlled by user input.  
+
+
+
+
+{\ttfamily \#include $<$Controlled\+Force\+Field\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Controlled\+Force\+Field\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classControlledForceFieldRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Controlled\+Force\+Field\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classControlledForceFieldRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classControlledForceFieldRenderable_a0b3f0aa9e5b4eca0146beefd5ba8862f}{Controlled\+Force\+Field\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program, \hyperlink{ConstantForceField_8hpp_a7b80b566be4aeb0b5474a8aeb2e0ff49}{Constant\+Force\+Field\+Ptr} force\+Field)
+\begin{DoxyCompactList}\small\item\em Build a new controlled force field renderable. \end{DoxyCompactList}\item 
+\hyperlink{classControlledForceFieldRenderable_ad5dff1b4ecdbda434729e8a4ef68073a}{$\sim$\+Controlled\+Force\+Field\+Renderable} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classControlledForceFieldRenderable_a7313ffabf0b3d4bf27c10d57d7f143de}{do\+\_\+key\+Pressed\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a key pressed event. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classControlledForceFieldRenderable_a68aaf096b1bf911717c9374abc51e3df}{do\+\_\+key\+Released\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a key released event. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classControlledForceFieldRenderable_a3ab6b5efaa5d5b988d92c4fee3e770a0}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classControlledForceFieldRenderable_a5b73eb28c70b0a37ce4f69ec6a63823a}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classControlledForceFieldStatus}{Controlled\+Force\+Field\+Status} \hyperlink{classControlledForceFieldRenderable_aeb5e06ce7914d6050578f9466d3c67ad}{m\+\_\+status}
+\item 
+\hyperlink{ConstantForceField_8hpp_a7b80b566be4aeb0b5474a8aeb2e0ff49}{Constant\+Force\+Field\+Ptr} \hyperlink{classControlledForceFieldRenderable_a6832a057549138e1f7aea221677be189}{m\+\_\+force}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classControlledForceFieldRenderable_a754e3c8fe79f1d95020f631fae8a6e40}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classControlledForceFieldRenderable_a825c0d5323c7bc212b4b9325614a9414}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classControlledForceFieldRenderable_ab6d76f2f8b7ea00b0facdc0938808a25}{m\+\_\+normals}
+\item 
+unsigned int \hyperlink{classControlledForceFieldRenderable_a53bfe9b2180551039b1c7eb54f2d4974}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classControlledForceFieldRenderable_a7494339c295c2b0b6550e34c89fbd9c1}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classControlledForceFieldRenderable_a314a07bcaed1f7db3ded7283996474c3}{m\+\_\+n\+Buffer}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class is an example of what you could do to control a dynamic component (e.\+g. the kart in your project) thanks to user inputs. This is done by modifying the force of a constant force field applied to the mobile(s) you want to control.
+
+We derive from a renderable to be able to react to user input. This might look nasty, but since you dealt with renderables during all previous praticales, we think this is the easiest way to do so. We derive from a hierarchical renderable to be able to use the same local frame as the dynamic system using the force field (see \hyperlink{classDynamicSystemRenderable}{Dynamic\+System\+Renderable}). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classControlledForceFieldRenderable_a0b3f0aa9e5b4eca0146beefd5ba8862f}{\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\subsubsection[{Controlled\+Force\+Field\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Controlled\+Force\+Field\+Renderable\+::\+Controlled\+Force\+Field\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program, }
+\item[{{\bf Constant\+Force\+Field\+Ptr}}]{force\+Field}
+\end{DoxyParamCaption}
+)}}\label{classControlledForceFieldRenderable_a0b3f0aa9e5b4eca0146beefd5ba8862f}
+Build a new controlled force field by user inputs. 
+\begin{DoxyParams}{Parameters}
+{\em program} & The shader program used to render the force applied to particles. \\
+\hline
+{\em force\+Field} & The force field to control with user inputs. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classControlledForceFieldRenderable_ad5dff1b4ecdbda434729e8a4ef68073a}{\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!````~Controlled\+Force\+Field\+Renderable@{$\sim$\+Controlled\+Force\+Field\+Renderable}}
+\index{````~Controlled\+Force\+Field\+Renderable@{$\sim$\+Controlled\+Force\+Field\+Renderable}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\subsubsection[{$\sim$\+Controlled\+Force\+Field\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Controlled\+Force\+Field\+Renderable\+::$\sim$\+Controlled\+Force\+Field\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classControlledForceFieldRenderable_ad5dff1b4ecdbda434729e8a4ef68073a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classControlledForceFieldRenderable_a3ab6b5efaa5d5b988d92c4fee3e770a0}{\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Controlled\+Force\+Field\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classControlledForceFieldRenderable_a3ab6b5efaa5d5b988d92c4fee3e770a0}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classControlledForceFieldRenderable_a5b73eb28c70b0a37ce4f69ec6a63823a}{\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Controlled\+Force\+Field\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classControlledForceFieldRenderable_a5b73eb28c70b0a37ce4f69ec6a63823a}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+\hypertarget{classControlledForceFieldRenderable_a7313ffabf0b3d4bf27c10d57d7f143de}{\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!do\+\_\+key\+Pressed\+Event@{do\+\_\+key\+Pressed\+Event}}
+\index{do\+\_\+key\+Pressed\+Event@{do\+\_\+key\+Pressed\+Event}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\subsubsection[{do\+\_\+key\+Pressed\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Controlled\+Force\+Field\+Renderable\+::do\+\_\+key\+Pressed\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classControlledForceFieldRenderable_a7313ffabf0b3d4bf27c10d57d7f143de}
+Implementation to react to a key pressed. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The key pressed event. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classRenderable_a49e39be950dca7a925b8b79c13241e6b}{Renderable}.
+
+\hypertarget{classControlledForceFieldRenderable_a68aaf096b1bf911717c9374abc51e3df}{\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!do\+\_\+key\+Released\+Event@{do\+\_\+key\+Released\+Event}}
+\index{do\+\_\+key\+Released\+Event@{do\+\_\+key\+Released\+Event}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\subsubsection[{do\+\_\+key\+Released\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Controlled\+Force\+Field\+Renderable\+::do\+\_\+key\+Released\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classControlledForceFieldRenderable_a68aaf096b1bf911717c9374abc51e3df}
+Implementation to react to a key released. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The key released event. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classRenderable_a89d4bacd849c3606529f92c44b0a3bc1}{Renderable}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classControlledForceFieldRenderable_a7494339c295c2b0b6550e34c89fbd9c1}{\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Controlled\+Force\+Field\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classControlledForceFieldRenderable_a7494339c295c2b0b6550e34c89fbd9c1}
+\hypertarget{classControlledForceFieldRenderable_a825c0d5323c7bc212b4b9325614a9414}{\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Controlled\+Force\+Field\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classControlledForceFieldRenderable_a825c0d5323c7bc212b4b9325614a9414}
+\hypertarget{classControlledForceFieldRenderable_a6832a057549138e1f7aea221677be189}{\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!m\+\_\+force@{m\+\_\+force}}
+\index{m\+\_\+force@{m\+\_\+force}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+force}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Constant\+Force\+Field\+Ptr} Controlled\+Force\+Field\+Renderable\+::m\+\_\+force\hspace{0.3cm}{\ttfamily [private]}}}\label{classControlledForceFieldRenderable_a6832a057549138e1f7aea221677be189}
+\hypertarget{classControlledForceFieldRenderable_a314a07bcaed1f7db3ded7283996474c3}{\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Controlled\+Force\+Field\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classControlledForceFieldRenderable_a314a07bcaed1f7db3ded7283996474c3}
+\hypertarget{classControlledForceFieldRenderable_ab6d76f2f8b7ea00b0facdc0938808a25}{\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Controlled\+Force\+Field\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classControlledForceFieldRenderable_ab6d76f2f8b7ea00b0facdc0938808a25}
+\hypertarget{classControlledForceFieldRenderable_a53bfe9b2180551039b1c7eb54f2d4974}{\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Controlled\+Force\+Field\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classControlledForceFieldRenderable_a53bfe9b2180551039b1c7eb54f2d4974}
+\hypertarget{classControlledForceFieldRenderable_a754e3c8fe79f1d95020f631fae8a6e40}{\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Controlled\+Force\+Field\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classControlledForceFieldRenderable_a754e3c8fe79f1d95020f631fae8a6e40}
+\hypertarget{classControlledForceFieldRenderable_aeb5e06ce7914d6050578f9466d3c67ad}{\index{Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}!m\+\_\+status@{m\+\_\+status}}
+\index{m\+\_\+status@{m\+\_\+status}!Controlled\+Force\+Field\+Renderable@{Controlled\+Force\+Field\+Renderable}}
+\subsubsection[{m\+\_\+status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Controlled\+Force\+Field\+Status} Controlled\+Force\+Field\+Renderable\+::m\+\_\+status\hspace{0.3cm}{\ttfamily [private]}}}\label{classControlledForceFieldRenderable_aeb5e06ce7914d6050578f9466d3c67ad}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{ControlledForceFieldRenderable_8hpp}{Controlled\+Force\+Field\+Renderable.\+hpp}\end{DoxyCompactItemize}

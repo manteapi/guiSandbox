@@ -1,0 +1,81 @@
+\hypertarget{classForceField}{\section{Force\+Field Class Reference}
+\label{classForceField}\index{Force\+Field@{Force\+Field}}
+}
+
+
+Force field interface.  
+
+
+
+
+{\ttfamily \#include $<$Force\+Field.\+hpp$>$}
+
+
+
+Inheritance diagram for Force\+Field\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classForceField__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classForceField_a8273c2e8667bc21edb7599c1210dda4a}{Force\+Field} ()
+\item 
+virtual \hyperlink{classForceField_a718e3d630818c01519a99aa2088c0900}{$\sim$\+Force\+Field} ()
+\item 
+void \hyperlink{classForceField_acf0c3bb94b1a27adccab0835c49a47f1}{add\+Force} ()
+\begin{DoxyCompactList}\small\item\em Add a force to particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classForceField_a2f44520a00188a3aaeb04e667e8d2673}{do\+\_\+add\+Force} ()=0
+\begin{DoxyCompactList}\small\item\em Add force implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define an interface for a force field. A force field applies forces to a set of handled particles. Those particles are stored in derived classes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classForceField_a8273c2e8667bc21edb7599c1210dda4a}{\index{Force\+Field@{Force\+Field}!Force\+Field@{Force\+Field}}
+\index{Force\+Field@{Force\+Field}!Force\+Field@{Force\+Field}}
+\subsubsection[{Force\+Field}]{\setlength{\rightskip}{0pt plus 5cm}Force\+Field\+::\+Force\+Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classForceField_a8273c2e8667bc21edb7599c1210dda4a}
+\hypertarget{classForceField_a718e3d630818c01519a99aa2088c0900}{\index{Force\+Field@{Force\+Field}!````~Force\+Field@{$\sim$\+Force\+Field}}
+\index{````~Force\+Field@{$\sim$\+Force\+Field}!Force\+Field@{Force\+Field}}
+\subsubsection[{$\sim$\+Force\+Field}]{\setlength{\rightskip}{0pt plus 5cm}virtual Force\+Field\+::$\sim$\+Force\+Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classForceField_a718e3d630818c01519a99aa2088c0900}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classForceField_acf0c3bb94b1a27adccab0835c49a47f1}{\index{Force\+Field@{Force\+Field}!add\+Force@{add\+Force}}
+\index{add\+Force@{add\+Force}!Force\+Field@{Force\+Field}}
+\subsubsection[{add\+Force}]{\setlength{\rightskip}{0pt plus 5cm}void Force\+Field\+::add\+Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classForceField_acf0c3bb94b1a27adccab0835c49a47f1}
+Add a force to the particles influenced by this force field. \hypertarget{classForceField_a2f44520a00188a3aaeb04e667e8d2673}{\index{Force\+Field@{Force\+Field}!do\+\_\+add\+Force@{do\+\_\+add\+Force}}
+\index{do\+\_\+add\+Force@{do\+\_\+add\+Force}!Force\+Field@{Force\+Field}}
+\subsubsection[{do\+\_\+add\+Force}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Force\+Field\+::do\+\_\+add\+Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [pure virtual]}}}\label{classForceField_a2f44520a00188a3aaeb04e667e8d2673}
+The actual implementation to add force to the particles. This should be implemented in derived classes. 
+
+Implemented in \hyperlink{classConstantForceField_a4336bdbfa85ac10cc8a50170ab515061}{Constant\+Force\+Field}, \hyperlink{classDampingForceField_a5677c09b83f6f2d13e70e40c08c4e85f}{Damping\+Force\+Field}, and \hyperlink{classSpringForceField_a09e9e100a1947a43fdc1c9487d72a08e}{Spring\+Force\+Field}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{ForceField_8hpp}{Force\+Field.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,534 @@
+\hypertarget{classRenderable}{\section{Renderable Class Reference}
+\label{classRenderable}\index{Renderable@{Renderable}}
+}
+
+
+\hyperlink{classRenderable}{Renderable} interface.  
+
+
+
+
+{\ttfamily \#include $<$Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Construction/\+Destruction of renderable instances.}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classRenderable_a4c9e03ac345df99a010c2ad9f8632af2}{$\sim$\+Renderable} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classRenderable_ae02271675fa76ef56e7e3b8b26d1efb0}{Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRenderable}{Renderable} program constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Public interface}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classRenderable_a70d8b63cc49efc0327bbb119c521dcef}{set\+Model\+Matrix} (const glm\+::mat4 \&model)
+\begin{DoxyCompactList}\small\item\em Set the model matrix. \end{DoxyCompactList}\item 
+const glm\+::mat4 \& \hyperlink{classRenderable_ab4e9182825d81d3bf3d3822bc26c4714}{get\+Model\+Matrix} () const 
+\begin{DoxyCompactList}\small\item\em Get the model matrix. \end{DoxyCompactList}\item 
+void \hyperlink{classRenderable_a58242b044ba6359e4d89ed284b96906c}{set\+Shader\+Program} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} prog)
+\begin{DoxyCompactList}\small\item\em Change the shader program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Public interface used by Viewer.}\par
+{\em Those functions are automatically called by the \hyperlink{classViewer}{Viewer} on added \hyperlink{classRenderable}{Renderable}. You are not expected to call them directly. }\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classRenderable_aaa73d54539b1b84d5b3e12293d7b3610}{bind\+Shader\+Program} ()
+\begin{DoxyCompactList}\small\item\em Bind the shader program on the G\+P\+U. \end{DoxyCompactList}\item 
+void \hyperlink{classRenderable_a1d3d81445852e84244bc6f5c3f078292}{unbind\+Shader\+Program} ()
+\begin{DoxyCompactList}\small\item\em Unbind the shader program of the G\+P\+U. \end{DoxyCompactList}\item 
+int \hyperlink{classRenderable_a905c76682e391c2aed94f021447bf63d}{projection\+Location} ()
+\begin{DoxyCompactList}\small\item\em Get the location of the projection matrix in the shader program. \end{DoxyCompactList}\item 
+int \hyperlink{classRenderable_a3e7c969092e6e42d30fec9dfa6ba988a}{view\+Location} ()
+\begin{DoxyCompactList}\small\item\em Get the location of the view matrix in the shader program. \end{DoxyCompactList}\item 
+void \hyperlink{classRenderable_a0d371901a19b8cfe50b76b842adba70a}{draw} ()
+\begin{DoxyCompactList}\small\item\em Draw this renderable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRenderable_a74fd37d6852fb727e1a5fe72541d269d}{animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate this renderable. \end{DoxyCompactList}\item 
+void \hyperlink{classRenderable_a02e29d97fae52b6240ffb43ac5fb82de}{key\+Pressed\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a key pressed event. \end{DoxyCompactList}\item 
+void \hyperlink{classRenderable_a07d0883e8566fa86d224b4d281b373b3}{key\+Released\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a key released event. \end{DoxyCompactList}\item 
+void \hyperlink{classRenderable_a2cc5c2d8476a762be1b0d47425c1149b}{mouse\+Press\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a mouse pressed event. \end{DoxyCompactList}\item 
+void \hyperlink{classRenderable_a1a9c0d11946d3708462b8b4a364ac0d3}{mouse\+Release\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a mouse released event. \end{DoxyCompactList}\item 
+void \hyperlink{classRenderable_a3ee244b2ff6682fb4b4b11b92819c2a2}{mouse\+Wheel\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a mouse wheel event. \end{DoxyCompactList}\item 
+void \hyperlink{classRenderable_aabf21b5d1b75aed4c4f4b9466d658caa}{mouse\+Move\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a mouse move event. \end{DoxyCompactList}\item 
+\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} \hyperlink{classRenderable_ad6bb136447d0d5968345724d3381714a}{get\+Shader\+Program} () const 
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Attributes}
+\begin{Indent}{\bf Protected members.}\par
+{\em We want those members to be accessible in the derived classes. }\begin{DoxyCompactItemize}
+\item 
+glm\+::mat4 \hyperlink{classRenderable_ab3a7f6112bd9d8c37ab10dac24186b25}{m\+\_\+model}
+\item 
+\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} \hyperlink{classRenderable_ad4004cea2d9ca6cc91eb03b4ce885088}{m\+\_\+shader\+Program}
+\item 
+friend \hyperlink{classRenderable_aaf644a3bff63df86024c9ad960d00e74}{Viewer}
+\item 
+\hyperlink{classViewer}{Viewer} $\ast$ \hyperlink{classRenderable_a691422fa44ec05fae13d94902870d6c0}{m\+\_\+viewer}
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Member Functions}
+\begin{Indent}{\bf Private viewer interface.}\par
+{\em According to guideline \#1, we have used the Template method. Now we are using guideline \#2 for virtual methods. }\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{do\+\_\+draw} ()=0
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{do\+\_\+animate} (float time)=0
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRenderable_a49e39be950dca7a925b8b79c13241e6b}{do\+\_\+key\+Pressed\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a key pressed event. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRenderable_a89d4bacd849c3606529f92c44b0a3bc1}{do\+\_\+key\+Released\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a key released event. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRenderable_a9de3c5f272bbeeb32151056df9384309}{do\+\_\+mouse\+Press\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a mouse pressed event. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRenderable_adae67d88a7803f445f4d8b81a56cec60}{do\+\_\+mouse\+Release\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a mouse released event. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRenderable_ab0d2c0b1171e5c593918fc39cd7fec19}{do\+\_\+mouse\+Wheel\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a mouse wheel event. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRenderable_a4e7d850da9dd8ad9ef5693dadd4001d2}{do\+\_\+mouse\+Move\+Event} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Handle a mouse move event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Private interface for Renderable sub classes.}\par
+{\em Those functions are meant to be overridden in subclassed of \hyperlink{classRenderable}{Renderable}, in order to have additional operations done before and after drawing and animating. \begin{DoxySeeAlso}{See also}
+\hyperlink{classHierarchicalRenderable}{Hierarchical\+Renderable}. 
+\end{DoxySeeAlso}
+}\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classRenderable_ad2fd96564194f598555b4f141e8c48be}{before\+Draw} ()
+\begin{DoxyCompactList}\small\item\em Perform operation before drawing a renderable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRenderable_a9c715cafdda260b94bf6fe12853a3bb7}{after\+Draw} ()
+\begin{DoxyCompactList}\small\item\em Perform operation after drawing a renderable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRenderable_a8eea615c4abdd96d6747afab8e0c7a95}{before\+Animate} (float time)
+\begin{DoxyCompactList}\small\item\em Perform operation before animating a renderable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRenderable_a027e4c23636f492df33461a23320a336}{after\+Animate} (float time)
+\begin{DoxyCompactList}\small\item\em Perform operation after animating a renderable. \end{DoxyCompactList}\item 
+\hyperlink{classViewer}{Viewer} $\ast$ \hyperlink{classRenderable_aa7e8cdb8786681b77ee454b5ebe00483}{get\+Viewer} () const 
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+A renderable is a concept often used in graphic applications. It can wear many names, such as drawable in the Android Framework \href{http://developer.android.com/guide/topics/resources/drawable-resource.html}{\tt http\+://developer.\+android.\+com/guide/topics/resources/drawable-\/resource.\+html} and in the S\+F\+M\+L library \href{http://www.sfml-dev.org/documentation/2.0/classsf_1_1Drawable.php,}{\tt http\+://www.\+sfml-\/dev.\+org/documentation/2.\+0/classsf\+\_\+1\+\_\+1\+Drawable.\+php,} or \hyperlink{classRenderable}{Renderable} in the O\+G\+R\+E Engine \href{http://www.ogre3d.org/docs/api/1.9/class_ogre_1_1_renderable.html}{\tt http\+://www.\+ogre3d.\+org/docs/api/1.\+9/class\+\_\+ogre\+\_\+1\+\_\+1\+\_\+renderable.\+html}. There are other commonly used concepts such as animable. Instead of building a wide hierarchy of concepts, we chose to merge all the necessary concepts of the objects that will compose our scenes into the \hyperlink{classRenderable}{Renderable} class.
+
+This class is an interface we need to implement to create 3\+D objects. In particular, we must define the pure virtual member functions \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{do\+\_\+draw()} and \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{do\+\_\+animate( float time )}. The \hyperlink{classViewer}{Viewer} class can handle any non abstract derived class to display it for you, animate it or to send interaction events to it.
+
+If you want the \hyperlink{classViewer}{Viewer} managing your renderables to automatically set the view and the projection matrices for you, remember to name the corresponding uniform matrices as follow in your shaders\+:
+\begin{DoxyItemize}
+\item {\ttfamily mat4} {\ttfamily view\+Mat}, for the view matrix
+\item {\ttfamily mat4} {\ttfamily proj\+Mat}, for the projection matrix
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+As this class use virtuality, here are some words about the subject to ease your learning of c++ as well as learning computer graphics. This note is taken from a nice article available at \href{http://www.gotw.ca/publications/mill18.htm}{\tt http\+://www.\+gotw.\+ca/publications/mill18.\+htm}. Prefer to make base class virtual functions private (or protected if you really must). This separates the concerns of interface and implementation, which stabilizes interfaces and makes implementation decisions easier to change and refactor later. Here are some guidelines\+: \begin{DoxyItemize}
+\item \#1 Prefer to make interfaces nonvirtual, using Template Method. \item \#2 Prefer to make virtual functions private. \item \#3 Only if derived classes need to invoke the base implementation of a virtual function, make the virtual function protected. \item \#4 A base class destructor should be either public and virtual, or protected and nonvirtual. In the first case, you can do something like {\ttfamily  delete base\+Ptr}, while in the second case, you can not.\end{DoxyItemize}
+
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classHierarchicalRenderable}{Hierarchical\+Renderable} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRenderable_a4c9e03ac345df99a010c2ad9f8632af2}{\index{Renderable@{Renderable}!````~Renderable@{$\sim$\+Renderable}}
+\index{````~Renderable@{$\sim$\+Renderable}!Renderable@{Renderable}}
+\subsubsection[{$\sim$\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}virtual Renderable\+::$\sim$\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRenderable_a4c9e03ac345df99a010c2ad9f8632af2}
+Some smart pointers to this base class could be stored, such as in \hyperlink{classViewer}{Viewer}. As such, the destructor needs to be public and virtual (guideline \#4). \hypertarget{classRenderable_ae02271675fa76ef56e7e3b8b26d1efb0}{\index{Renderable@{Renderable}!Renderable@{Renderable}}
+\index{Renderable@{Renderable}!Renderable@{Renderable}}
+\subsubsection[{Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Renderable\+::\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program}
+\end{DoxyParamCaption}
+)}}\label{classRenderable_ae02271675fa76ef56e7e3b8b26d1efb0}
+Initialize the model matrix \hyperlink{classRenderable_ab3a7f6112bd9d8c37ab10dac24186b25}{m\+\_\+model} to identity. Set the shader program \hyperlink{classRenderable_ad4004cea2d9ca6cc91eb03b4ce885088}{m\+\_\+shader\+Program} to {\itshape program}. 
+\begin{DoxyParams}{Parameters}
+{\em program} & Shader program to use to draw this. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classShaderProgram}{Shader\+Program} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRenderable_a027e4c23636f492df33461a23320a336}{\index{Renderable@{Renderable}!after\+Animate@{after\+Animate}}
+\index{after\+Animate@{after\+Animate}!Renderable@{Renderable}}
+\subsubsection[{after\+Animate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderable\+::after\+Animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classRenderable_a027e4c23636f492df33461a23320a336}
+Override this function to perform additional operations after calling \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{do\+\_\+animate()} of the concrete renderable class. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classHierarchicalRenderable_a8de5020d6678c97050079150bcb131fa}{Hierarchical\+Renderable}.
+
+\hypertarget{classRenderable_a9c715cafdda260b94bf6fe12853a3bb7}{\index{Renderable@{Renderable}!after\+Draw@{after\+Draw}}
+\index{after\+Draw@{after\+Draw}!Renderable@{Renderable}}
+\subsubsection[{after\+Draw}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderable\+::after\+Draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classRenderable_a9c715cafdda260b94bf6fe12853a3bb7}
+Override this function to perform additional operations after calling \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{do\+\_\+draw()} of the concrete renderable class. 
+
+Reimplemented in \hyperlink{classHierarchicalRenderable_a50fa8b46938a3da839829523838ddf2c}{Hierarchical\+Renderable}.
+
+\hypertarget{classRenderable_a74fd37d6852fb727e1a5fe72541d269d}{\index{Renderable@{Renderable}!animate@{animate}}
+\index{animate@{animate}!Renderable@{Renderable}}
+\subsubsection[{animate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderable\+::animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRenderable_a74fd37d6852fb727e1a5fe72541d269d}
+This function calls the private pure virtual function {\ttfamily  do\+\_\+animate(time) } (guidelines \#1 and \#2). The simulation time equals zero when the animation is started (see \hyperlink{classViewer_a912259c3206eed1ebc1d24f7425e99cd}{Viewer\+::start\+Animation()}). 
+\begin{DoxyParams}{Parameters}
+{\em time} & Current simulation time. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRenderable_a8eea615c4abdd96d6747afab8e0c7a95}{\index{Renderable@{Renderable}!before\+Animate@{before\+Animate}}
+\index{before\+Animate@{before\+Animate}!Renderable@{Renderable}}
+\subsubsection[{before\+Animate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderable\+::before\+Animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classRenderable_a8eea615c4abdd96d6747afab8e0c7a95}
+Override this function to perform additional operations before calling \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{do\+\_\+animate()} of the concrete renderable class. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRenderable_ad2fd96564194f598555b4f141e8c48be}{\index{Renderable@{Renderable}!before\+Draw@{before\+Draw}}
+\index{before\+Draw@{before\+Draw}!Renderable@{Renderable}}
+\subsubsection[{before\+Draw}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderable\+::before\+Draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classRenderable_ad2fd96564194f598555b4f141e8c48be}
+Override this function to perform additional operations before calling \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{do\+\_\+draw()} of the concrete renderable class. 
+
+Reimplemented in \hyperlink{classHierarchicalRenderable_aedbaa13858872d5dcd7ce644da9a66e1}{Hierarchical\+Renderable}.
+
+\hypertarget{classRenderable_aaa73d54539b1b84d5b3e12293d7b3610}{\index{Renderable@{Renderable}!bind\+Shader\+Program@{bind\+Shader\+Program}}
+\index{bind\+Shader\+Program@{bind\+Shader\+Program}!Renderable@{Renderable}}
+\subsubsection[{bind\+Shader\+Program}]{\setlength{\rightskip}{0pt plus 5cm}void Renderable\+::bind\+Shader\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRenderable_aaa73d54539b1b84d5b3e12293d7b3610}
+Modify the Open\+G\+L state such that the next drawing command use the program shader of this renderable to render the primitives. \hypertarget{classRenderable_aa5206322555c9dece40b21e797629b34}{\index{Renderable@{Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Renderable@{Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [pure virtual]}}}\label{classRenderable_aa5206322555c9dece40b21e797629b34}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classControlledForceFieldRenderable_a3ab6b5efaa5d5b988d92c4fee3e770a0}{Controlled\+Force\+Field\+Renderable}, \hyperlink{classFrameRenderable_a331b31de3a4988acf6304c30762d99cc}{Frame\+Renderable}, \hyperlink{classDynamicSystemRenderable_acd30af04cdca7cdc68ae2d49c179d2dc}{Dynamic\+System\+Renderable}, \hyperlink{classKeyframedCylinderRenderable_a59d9e6dedbf2e4105c08a8b6516cdd56}{Keyframed\+Cylinder\+Renderable}, \hyperlink{classQuadRenderable_a19fc1c1704e35cd89c31997e898fb9ba}{Quad\+Renderable}, \hyperlink{classParticleListRenderable_a25adb6020cb86abb50d33d76a5cde1f1}{Particle\+List\+Renderable}, \hyperlink{classBillboardRenderable_a99db8d2221571aed576e2f1e56ddc00e}{Billboard\+Renderable}, \hyperlink{classSpringListRenderable_a32460ca63254ddaf716697b8402c8a37}{Spring\+List\+Renderable}, \hyperlink{classParticleRenderable_a8c4e33166ba0e4ee4cf1985eedea5aa3}{Particle\+Renderable}, \hyperlink{classSpringForceFieldRenderable_a7ddf9b99051f6a3bd0c4d1f215f4c2b6}{Spring\+Force\+Field\+Renderable}, \hyperlink{classConstantForceFieldRenderable_aa2c53dcf6411244d5a5e4ed562f9574c}{Constant\+Force\+Field\+Renderable}, \hyperlink{classTexturedPlaneRenderable_a945edb4f74583f73813821bfcecbda0f}{Textured\+Plane\+Renderable}, \hyperlink{classLightedMeshRenderable_aa22c64fe3f33f88c164ffa087c9ec71f}{Lighted\+Mesh\+Renderable}, \hyperlink{classDirectionalLightRenderable_a7caf2f55742229944de3f6a9ee3f27ac}{Directional\+Light\+Renderable}, \hyperlink{classMipMapCubeRenderable_a24b35ddfe3681e641db25ed3dd46fda6}{Mip\+Map\+Cube\+Renderable}, \hyperlink{classMultiTexturedCubeRenderable_a1db1e5f6c10f62874aef22e346906979}{Multi\+Textured\+Cube\+Renderable}, \hyperlink{classLightedCylinderRenderable_a7ecf5b614bf6e98335e9b46edfc64e67}{Lighted\+Cylinder\+Renderable}, \hyperlink{classTexturedCubeRenderable_a8c48dedcd36a690591de101e2288cb0a}{Textured\+Cube\+Renderable}, \hyperlink{classHierarchicalMeshRenderable_a291689e73c0d7d2e733c587cd0062747}{Hierarchical\+Mesh\+Renderable}, \hyperlink{classLightedCubeRenderable_a2888876e6b826899dfe0611c0021b161}{Lighted\+Cube\+Renderable}, \hyperlink{classPointLightRenderable_a5c4efe61c5061c739d3b68a7702f9df4}{Point\+Light\+Renderable}, \hyperlink{classSpotLightRenderable_a628c20078ed7f102927e5d36fe25bb57}{Spot\+Light\+Renderable}, \hyperlink{classHierarchicalCylinderRenderable_a151ed55445a3bbbabdc9d19231a64a52}{Hierarchical\+Cylinder\+Renderable}, and \hyperlink{classHierarchicalSphereRenderable_a712e4865f38fced13bc3aa5be7a17764}{Hierarchical\+Sphere\+Renderable}.
+
+\hypertarget{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{\index{Renderable@{Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Renderable@{Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [pure virtual]}}}\label{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}
+Implementation to draw this renderable. 
+
+Implemented in \hyperlink{classControlledForceFieldRenderable_a5b73eb28c70b0a37ce4f69ec6a63823a}{Controlled\+Force\+Field\+Renderable}, \hyperlink{classFrameRenderable_aafa6b6444c8fa20a177eb562ba1a2672}{Frame\+Renderable}, \hyperlink{classDynamicSystemRenderable_a8064176726a5d4b857a5e6a0fc73ff29}{Dynamic\+System\+Renderable}, \hyperlink{classKeyframedCylinderRenderable_abbfc6deaafd95aa58feb2c08b22d1050}{Keyframed\+Cylinder\+Renderable}, \hyperlink{classQuadRenderable_a584444dfbbb34ef5a6fac48a72aa51e6}{Quad\+Renderable}, \hyperlink{classParticleListRenderable_af34f9d0c377aa749e52d226d9cf49d89}{Particle\+List\+Renderable}, \hyperlink{classBillboardRenderable_af3c5c220c558b0902acbbb5dd3f81174}{Billboard\+Renderable}, \hyperlink{classSpringListRenderable_a3188f3904567441c4578ebbbc1d4db92}{Spring\+List\+Renderable}, \hyperlink{classParticleRenderable_a1313290984b718988098504838fd4ee9}{Particle\+Renderable}, \hyperlink{classSpringForceFieldRenderable_ad74386934bac1b650a973abeed2a9a33}{Spring\+Force\+Field\+Renderable}, \hyperlink{classConstantForceFieldRenderable_af9ee973e392967a5da31b0b9b67d3fdd}{Constant\+Force\+Field\+Renderable}, \hyperlink{classTexturedPlaneRenderable_ab81503b6d91dc3b3a16f774197a14438}{Textured\+Plane\+Renderable}, \hyperlink{classLightedMeshRenderable_a7e4e538e3f45818789f28924fd18a478}{Lighted\+Mesh\+Renderable}, \hyperlink{classDirectionalLightRenderable_a9560a1e6c2b525de69140ab0d8059734}{Directional\+Light\+Renderable}, \hyperlink{classMipMapCubeRenderable_a739176af783a8cb15239d86b723f9882}{Mip\+Map\+Cube\+Renderable}, \hyperlink{classMultiTexturedCubeRenderable_a3dafc49b8a8b6b5f9ed2928c91c2cd6f}{Multi\+Textured\+Cube\+Renderable}, \hyperlink{classLightedCylinderRenderable_a327da1ffb8ac46a01b4c8057ea532acb}{Lighted\+Cylinder\+Renderable}, \hyperlink{classTexturedCubeRenderable_a014828d1aa179b991a63d362f9d295e6}{Textured\+Cube\+Renderable}, \hyperlink{classHierarchicalMeshRenderable_a044c9f6688ee58184b8b3e4582f6baa1}{Hierarchical\+Mesh\+Renderable}, \hyperlink{classLightedCubeRenderable_a62c74cad13c77f9442a8baab0c7d156c}{Lighted\+Cube\+Renderable}, \hyperlink{classPointLightRenderable_afdb8498c6af494231394d96a3f3f2315}{Point\+Light\+Renderable}, \hyperlink{classSpotLightRenderable_a21d59c1b51e65288de7ff1d8bb861471}{Spot\+Light\+Renderable}, \hyperlink{classHierarchicalCylinderRenderable_a4c2f4ead07f0c700e3b94f961a7be412}{Hierarchical\+Cylinder\+Renderable}, and \hyperlink{classHierarchicalSphereRenderable_a5216d2b3a015c11f888e6ac268362926}{Hierarchical\+Sphere\+Renderable}.
+
+\hypertarget{classRenderable_a49e39be950dca7a925b8b79c13241e6b}{\index{Renderable@{Renderable}!do\+\_\+key\+Pressed\+Event@{do\+\_\+key\+Pressed\+Event}}
+\index{do\+\_\+key\+Pressed\+Event@{do\+\_\+key\+Pressed\+Event}!Renderable@{Renderable}}
+\subsubsection[{do\+\_\+key\+Pressed\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderable\+::do\+\_\+key\+Pressed\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classRenderable_a49e39be950dca7a925b8b79c13241e6b}
+Implementation to react to a key pressed. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The key pressed event. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classControlledForceFieldRenderable_a7313ffabf0b3d4bf27c10d57d7f143de}{Controlled\+Force\+Field\+Renderable}, \hyperlink{classDynamicSystemRenderable_ac179f3ba1cc294589327e7cb569c50da}{Dynamic\+System\+Renderable}, and \hyperlink{classTexturedPlaneRenderable_adc51b7b2ad32fb1ca8ccdbc59d9a9a4f}{Textured\+Plane\+Renderable}.
+
+\hypertarget{classRenderable_a89d4bacd849c3606529f92c44b0a3bc1}{\index{Renderable@{Renderable}!do\+\_\+key\+Released\+Event@{do\+\_\+key\+Released\+Event}}
+\index{do\+\_\+key\+Released\+Event@{do\+\_\+key\+Released\+Event}!Renderable@{Renderable}}
+\subsubsection[{do\+\_\+key\+Released\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderable\+::do\+\_\+key\+Released\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classRenderable_a89d4bacd849c3606529f92c44b0a3bc1}
+Implementation to react to a key released. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The key released event. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classControlledForceFieldRenderable_a68aaf096b1bf911717c9374abc51e3df}{Controlled\+Force\+Field\+Renderable}, and \hyperlink{classDynamicSystemRenderable_ac074ccfc934f15607b4db103c2281a64}{Dynamic\+System\+Renderable}.
+
+\hypertarget{classRenderable_a4e7d850da9dd8ad9ef5693dadd4001d2}{\index{Renderable@{Renderable}!do\+\_\+mouse\+Move\+Event@{do\+\_\+mouse\+Move\+Event}}
+\index{do\+\_\+mouse\+Move\+Event@{do\+\_\+mouse\+Move\+Event}!Renderable@{Renderable}}
+\subsubsection[{do\+\_\+mouse\+Move\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderable\+::do\+\_\+mouse\+Move\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classRenderable_a4e7d850da9dd8ad9ef5693dadd4001d2}
+Implementation to react to a mouse displacement. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The mouse displacement event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRenderable_a9de3c5f272bbeeb32151056df9384309}{\index{Renderable@{Renderable}!do\+\_\+mouse\+Press\+Event@{do\+\_\+mouse\+Press\+Event}}
+\index{do\+\_\+mouse\+Press\+Event@{do\+\_\+mouse\+Press\+Event}!Renderable@{Renderable}}
+\subsubsection[{do\+\_\+mouse\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderable\+::do\+\_\+mouse\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classRenderable_a9de3c5f272bbeeb32151056df9384309}
+Implementation to react to a mouse pressed. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The mouse pressed event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRenderable_adae67d88a7803f445f4d8b81a56cec60}{\index{Renderable@{Renderable}!do\+\_\+mouse\+Release\+Event@{do\+\_\+mouse\+Release\+Event}}
+\index{do\+\_\+mouse\+Release\+Event@{do\+\_\+mouse\+Release\+Event}!Renderable@{Renderable}}
+\subsubsection[{do\+\_\+mouse\+Release\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderable\+::do\+\_\+mouse\+Release\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classRenderable_adae67d88a7803f445f4d8b81a56cec60}
+Implementation to react to a mouse released. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The mouse release event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRenderable_ab0d2c0b1171e5c593918fc39cd7fec19}{\index{Renderable@{Renderable}!do\+\_\+mouse\+Wheel\+Event@{do\+\_\+mouse\+Wheel\+Event}}
+\index{do\+\_\+mouse\+Wheel\+Event@{do\+\_\+mouse\+Wheel\+Event}!Renderable@{Renderable}}
+\subsubsection[{do\+\_\+mouse\+Wheel\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderable\+::do\+\_\+mouse\+Wheel\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classRenderable_ab0d2c0b1171e5c593918fc39cd7fec19}
+Implementation to react to a mouse wheel change. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The mouse wheel event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRenderable_a0d371901a19b8cfe50b76b842adba70a}{\index{Renderable@{Renderable}!draw@{draw}}
+\index{draw@{draw}!Renderable@{Renderable}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Renderable\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRenderable_a0d371901a19b8cfe50b76b842adba70a}
+This function calls the private pure virtual function {\ttfamily  \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{do\+\_\+draw()} } (guidelines \#1 and \#2). When this function is called by the \hyperlink{classViewer}{Viewer}, the shader program is already binded, the view and projection matrices are already set. \hypertarget{classRenderable_ab4e9182825d81d3bf3d3822bc26c4714}{\index{Renderable@{Renderable}!get\+Model\+Matrix@{get\+Model\+Matrix}}
+\index{get\+Model\+Matrix@{get\+Model\+Matrix}!Renderable@{Renderable}}
+\subsubsection[{get\+Model\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::mat4\& Renderable\+::get\+Model\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classRenderable_ab4e9182825d81d3bf3d3822bc26c4714}
+Allow a read-\/only access to the model matrix. \begin{DoxyReturn}{Returns}
+The model matrix. 
+\end{DoxyReturn}
+\hypertarget{classRenderable_ad6bb136447d0d5968345724d3381714a}{\index{Renderable@{Renderable}!get\+Shader\+Program@{get\+Shader\+Program}}
+\index{get\+Shader\+Program@{get\+Shader\+Program}!Renderable@{Renderable}}
+\subsubsection[{get\+Shader\+Program}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shader\+Program\+Ptr} Renderable\+::get\+Shader\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classRenderable_ad6bb136447d0d5968345724d3381714a}
+\hypertarget{classRenderable_aa7e8cdb8786681b77ee454b5ebe00483}{\index{Renderable@{Renderable}!get\+Viewer@{get\+Viewer}}
+\index{get\+Viewer@{get\+Viewer}!Renderable@{Renderable}}
+\subsubsection[{get\+Viewer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Viewer}$\ast$ Renderable\+::get\+Viewer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classRenderable_aa7e8cdb8786681b77ee454b5ebe00483}
+\hypertarget{classRenderable_a02e29d97fae52b6240ffb43ac5fb82de}{\index{Renderable@{Renderable}!key\+Pressed\+Event@{key\+Pressed\+Event}}
+\index{key\+Pressed\+Event@{key\+Pressed\+Event}!Renderable@{Renderable}}
+\subsubsection[{key\+Pressed\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Renderable\+::key\+Pressed\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{classRenderable_a02e29d97fae52b6240ffb43ac5fb82de}
+React to a key pressed. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The key pressed event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRenderable_a07d0883e8566fa86d224b4d281b373b3}{\index{Renderable@{Renderable}!key\+Released\+Event@{key\+Released\+Event}}
+\index{key\+Released\+Event@{key\+Released\+Event}!Renderable@{Renderable}}
+\subsubsection[{key\+Released\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Renderable\+::key\+Released\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{classRenderable_a07d0883e8566fa86d224b4d281b373b3}
+React to a key released. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The key released event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRenderable_aabf21b5d1b75aed4c4f4b9466d658caa}{\index{Renderable@{Renderable}!mouse\+Move\+Event@{mouse\+Move\+Event}}
+\index{mouse\+Move\+Event@{mouse\+Move\+Event}!Renderable@{Renderable}}
+\subsubsection[{mouse\+Move\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Renderable\+::mouse\+Move\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{classRenderable_aabf21b5d1b75aed4c4f4b9466d658caa}
+React to a mouse displacement. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The mouse displacement event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRenderable_a2cc5c2d8476a762be1b0d47425c1149b}{\index{Renderable@{Renderable}!mouse\+Press\+Event@{mouse\+Press\+Event}}
+\index{mouse\+Press\+Event@{mouse\+Press\+Event}!Renderable@{Renderable}}
+\subsubsection[{mouse\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Renderable\+::mouse\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{classRenderable_a2cc5c2d8476a762be1b0d47425c1149b}
+React to a mouse pressed. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The mouse pressed event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRenderable_a1a9c0d11946d3708462b8b4a364ac0d3}{\index{Renderable@{Renderable}!mouse\+Release\+Event@{mouse\+Release\+Event}}
+\index{mouse\+Release\+Event@{mouse\+Release\+Event}!Renderable@{Renderable}}
+\subsubsection[{mouse\+Release\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Renderable\+::mouse\+Release\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{classRenderable_a1a9c0d11946d3708462b8b4a364ac0d3}
+React to a mouse released. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The mouse release event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRenderable_a3ee244b2ff6682fb4b4b11b92819c2a2}{\index{Renderable@{Renderable}!mouse\+Wheel\+Event@{mouse\+Wheel\+Event}}
+\index{mouse\+Wheel\+Event@{mouse\+Wheel\+Event}!Renderable@{Renderable}}
+\subsubsection[{mouse\+Wheel\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Renderable\+::mouse\+Wheel\+Event (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Event \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{classRenderable_a3ee244b2ff6682fb4b4b11b92819c2a2}
+React to a mouse wheel change. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The mouse wheel event. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRenderable_a905c76682e391c2aed94f021447bf63d}{\index{Renderable@{Renderable}!projection\+Location@{projection\+Location}}
+\index{projection\+Location@{projection\+Location}!Renderable@{Renderable}}
+\subsubsection[{projection\+Location}]{\setlength{\rightskip}{0pt plus 5cm}int Renderable\+::projection\+Location (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRenderable_a905c76682e391c2aed94f021447bf63d}
+Get the uniform identifier of the projection matrix for the shader program of this renderable. This uniform should be named \char`\"{}proj\+Mat\char`\"{} in your shader to be automatically set by the \hyperlink{classViewer}{Viewer}.
+
+\begin{DoxyReturn}{Returns}
+the location of the projection matrix uniform or -\/1 if the associated shader program does not use such an uniform (\char`\"{}proj\+Mat\char`\"{}). 
+\end{DoxyReturn}
+\hypertarget{classRenderable_a70d8b63cc49efc0327bbb119c521dcef}{\index{Renderable@{Renderable}!set\+Model\+Matrix@{set\+Model\+Matrix}}
+\index{set\+Model\+Matrix@{set\+Model\+Matrix}!Renderable@{Renderable}}
+\subsubsection[{set\+Model\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}void Renderable\+::set\+Model\+Matrix (
+\begin{DoxyParamCaption}
+\item[{const glm\+::mat4 \&}]{model}
+\end{DoxyParamCaption}
+)}}\label{classRenderable_a70d8b63cc49efc0327bbb119c521dcef}
+Define the model matrix, that is the way this object is scaled, oriented and placed in world space. 
+\begin{DoxyParams}{Parameters}
+{\em model} & The new model matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRenderable_a58242b044ba6359e4d89ed284b96906c}{\index{Renderable@{Renderable}!set\+Shader\+Program@{set\+Shader\+Program}}
+\index{set\+Shader\+Program@{set\+Shader\+Program}!Renderable@{Renderable}}
+\subsubsection[{set\+Shader\+Program}]{\setlength{\rightskip}{0pt plus 5cm}void Renderable\+::set\+Shader\+Program (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{prog}
+\end{DoxyParamCaption}
+)}}\label{classRenderable_a58242b044ba6359e4d89ed284b96906c}
+Set a new shader program to use for the rendering. 
+\begin{DoxyParams}{Parameters}
+{\em prog} & The new shader program. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classShaderProgram}{Shader\+Program} 
+\end{DoxySeeAlso}
+\hypertarget{classRenderable_a1d3d81445852e84244bc6f5c3f078292}{\index{Renderable@{Renderable}!unbind\+Shader\+Program@{unbind\+Shader\+Program}}
+\index{unbind\+Shader\+Program@{unbind\+Shader\+Program}!Renderable@{Renderable}}
+\subsubsection[{unbind\+Shader\+Program}]{\setlength{\rightskip}{0pt plus 5cm}void Renderable\+::unbind\+Shader\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRenderable_a1d3d81445852e84244bc6f5c3f078292}
+Change the Open\+G\+L state such that the next drawing command does not use any shader program. \hypertarget{classRenderable_a3e7c969092e6e42d30fec9dfa6ba988a}{\index{Renderable@{Renderable}!view\+Location@{view\+Location}}
+\index{view\+Location@{view\+Location}!Renderable@{Renderable}}
+\subsubsection[{view\+Location}]{\setlength{\rightskip}{0pt plus 5cm}int Renderable\+::view\+Location (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRenderable_a3e7c969092e6e42d30fec9dfa6ba988a}
+Get the uniform identifier of the view matrix for the shader program of this renderable. This uniform should be named \char`\"{}view\+Mat\char`\"{} in your shader to be automatically set by the \hyperlink{classViewer}{Viewer}. \begin{DoxyReturn}{Returns}
+the location of the view matrix uniform or -\/1 if the associated shader program does not use such an uniform (\char`\"{}view\+Mat\char`\"{}). 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classRenderable_ab3a7f6112bd9d8c37ab10dac24186b25}{\index{Renderable@{Renderable}!m\+\_\+model@{m\+\_\+model}}
+\index{m\+\_\+model@{m\+\_\+model}!Renderable@{Renderable}}
+\subsubsection[{m\+\_\+model}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Renderable\+::m\+\_\+model\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRenderable_ab3a7f6112bd9d8c37ab10dac24186b25}
+Model matrix of the renderable. \hypertarget{classRenderable_ad4004cea2d9ca6cc91eb03b4ce885088}{\index{Renderable@{Renderable}!m\+\_\+shader\+Program@{m\+\_\+shader\+Program}}
+\index{m\+\_\+shader\+Program@{m\+\_\+shader\+Program}!Renderable@{Renderable}}
+\subsubsection[{m\+\_\+shader\+Program}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shader\+Program\+Ptr} Renderable\+::m\+\_\+shader\+Program\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRenderable_ad4004cea2d9ca6cc91eb03b4ce885088}
+Shader program of the renderable. \hypertarget{classRenderable_a691422fa44ec05fae13d94902870d6c0}{\index{Renderable@{Renderable}!m\+\_\+viewer@{m\+\_\+viewer}}
+\index{m\+\_\+viewer@{m\+\_\+viewer}!Renderable@{Renderable}}
+\subsubsection[{m\+\_\+viewer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Viewer}$\ast$ Renderable\+::m\+\_\+viewer\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRenderable_a691422fa44ec05fae13d94902870d6c0}
+\hyperlink{classViewer}{Viewer} instance that manage this renderable \hypertarget{classRenderable_aaf644a3bff63df86024c9ad960d00e74}{\index{Renderable@{Renderable}!Viewer@{Viewer}}
+\index{Viewer@{Viewer}!Renderable@{Renderable}}
+\subsubsection[{Viewer}]{\setlength{\rightskip}{0pt plus 5cm}friend Renderable\+::\+Viewer\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRenderable_aaf644a3bff63df86024c9ad960d00e74}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\hyperlink{Renderable_8hpp}{Renderable.\+hpp}\end{DoxyCompactItemize}

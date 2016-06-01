@@ -1,0 +1,153 @@
+\hypertarget{classLightedMeshRenderable}{\section{Lighted\+Mesh\+Renderable Class Reference}
+\label{classLightedMeshRenderable}\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+}
+
+
+{\ttfamily \#include $<$Lighted\+Mesh\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Lighted\+Mesh\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classLightedMeshRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Lighted\+Mesh\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLightedMeshRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLightedMeshRenderable_a9d63d77cb9fb570b7ff61b32b1d19367}{$\sim$\+Lighted\+Mesh\+Renderable} ()
+\item 
+\hyperlink{classLightedMeshRenderable_a1631f932be02e2df689ada7a79f6f77b}{Lighted\+Mesh\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program, const std\+::string \&filename)
+\item 
+void \hyperlink{classLightedMeshRenderable_acbc08d68271c47c60c36dfa52e90b340}{set\+Material} (const \hyperlink{Material_8hpp_a1d47cd05ca683e287435cf0b363fbfe1}{Material\+Ptr} \&material)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLightedMeshRenderable_a7e4e538e3f45818789f28924fd18a478}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classLightedMeshRenderable_aa22c64fe3f33f88c164ffa087c9ec71f}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classLightedMeshRenderable_acc09c83711ed52719dce8ecb21402b73}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classLightedMeshRenderable_a37b64e7bf9a9062aaad0aac05f04714c}{m\+\_\+normals}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classLightedMeshRenderable_ac22bb908efafa4720767615e7eab7bf9}{m\+\_\+colors}
+\item 
+std\+::vector$<$ unsigned int $>$ \hyperlink{classLightedMeshRenderable_af2bb140e6238e4740cb2b59efb431801}{m\+\_\+indices}
+\item 
+unsigned int \hyperlink{classLightedMeshRenderable_a1617b5e5bfddb4395ca27ab80271c915}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classLightedMeshRenderable_afd73d691c525f8b5d7f93aa65561f928}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classLightedMeshRenderable_a86a21c313ce8b7d1fff4bfbc7d60bfce}{m\+\_\+n\+Buffer}
+\item 
+unsigned int \hyperlink{classLightedMeshRenderable_adc7552281a74337733996a2812fe1fa6}{m\+\_\+i\+Buffer}
+\item 
+\hyperlink{Material_8hpp_a1d47cd05ca683e287435cf0b363fbfe1}{Material\+Ptr} \hyperlink{classLightedMeshRenderable_abfe2d1ed84db96d131d681c55671584b}{m\+\_\+material}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLightedMeshRenderable_a9d63d77cb9fb570b7ff61b32b1d19367}{\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!````~Lighted\+Mesh\+Renderable@{$\sim$\+Lighted\+Mesh\+Renderable}}
+\index{````~Lighted\+Mesh\+Renderable@{$\sim$\+Lighted\+Mesh\+Renderable}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\subsubsection[{$\sim$\+Lighted\+Mesh\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Lighted\+Mesh\+Renderable\+::$\sim$\+Lighted\+Mesh\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLightedMeshRenderable_a9d63d77cb9fb570b7ff61b32b1d19367}
+\hypertarget{classLightedMeshRenderable_a1631f932be02e2df689ada7a79f6f77b}{\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\subsubsection[{Lighted\+Mesh\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Lighted\+Mesh\+Renderable\+::\+Lighted\+Mesh\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program, }
+\item[{const std\+::string \&}]{filename}
+\end{DoxyParamCaption}
+)}}\label{classLightedMeshRenderable_a1631f932be02e2df689ada7a79f6f77b}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLightedMeshRenderable_aa22c64fe3f33f88c164ffa087c9ec71f}{\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Lighted\+Mesh\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classLightedMeshRenderable_aa22c64fe3f33f88c164ffa087c9ec71f}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classLightedMeshRenderable_a7e4e538e3f45818789f28924fd18a478}{\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Lighted\+Mesh\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classLightedMeshRenderable_a7e4e538e3f45818789f28924fd18a478}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+\hypertarget{classLightedMeshRenderable_acbc08d68271c47c60c36dfa52e90b340}{\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!set\+Material@{set\+Material}}
+\index{set\+Material@{set\+Material}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\subsubsection[{set\+Material}]{\setlength{\rightskip}{0pt plus 5cm}void Lighted\+Mesh\+Renderable\+::set\+Material (
+\begin{DoxyParamCaption}
+\item[{const {\bf Material\+Ptr} \&}]{material}
+\end{DoxyParamCaption}
+)}}\label{classLightedMeshRenderable_acbc08d68271c47c60c36dfa52e90b340}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLightedMeshRenderable_afd73d691c525f8b5d7f93aa65561f928}{\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Lighted\+Mesh\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedMeshRenderable_afd73d691c525f8b5d7f93aa65561f928}
+\hypertarget{classLightedMeshRenderable_ac22bb908efafa4720767615e7eab7bf9}{\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Lighted\+Mesh\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedMeshRenderable_ac22bb908efafa4720767615e7eab7bf9}
+\hypertarget{classLightedMeshRenderable_adc7552281a74337733996a2812fe1fa6}{\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!m\+\_\+i\+Buffer@{m\+\_\+i\+Buffer}}
+\index{m\+\_\+i\+Buffer@{m\+\_\+i\+Buffer}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+i\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Lighted\+Mesh\+Renderable\+::m\+\_\+i\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedMeshRenderable_adc7552281a74337733996a2812fe1fa6}
+\hypertarget{classLightedMeshRenderable_af2bb140e6238e4740cb2b59efb431801}{\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!m\+\_\+indices@{m\+\_\+indices}}
+\index{m\+\_\+indices@{m\+\_\+indices}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+indices}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ unsigned int $>$ Lighted\+Mesh\+Renderable\+::m\+\_\+indices\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedMeshRenderable_af2bb140e6238e4740cb2b59efb431801}
+\hypertarget{classLightedMeshRenderable_abfe2d1ed84db96d131d681c55671584b}{\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!m\+\_\+material@{m\+\_\+material}}
+\index{m\+\_\+material@{m\+\_\+material}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+material}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Material\+Ptr} Lighted\+Mesh\+Renderable\+::m\+\_\+material\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedMeshRenderable_abfe2d1ed84db96d131d681c55671584b}
+\hypertarget{classLightedMeshRenderable_a86a21c313ce8b7d1fff4bfbc7d60bfce}{\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Lighted\+Mesh\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedMeshRenderable_a86a21c313ce8b7d1fff4bfbc7d60bfce}
+\hypertarget{classLightedMeshRenderable_a37b64e7bf9a9062aaad0aac05f04714c}{\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Lighted\+Mesh\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedMeshRenderable_a37b64e7bf9a9062aaad0aac05f04714c}
+\hypertarget{classLightedMeshRenderable_a1617b5e5bfddb4395ca27ab80271c915}{\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Lighted\+Mesh\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedMeshRenderable_a1617b5e5bfddb4395ca27ab80271c915}
+\hypertarget{classLightedMeshRenderable_acc09c83711ed52719dce8ecb21402b73}{\index{Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Lighted\+Mesh\+Renderable@{Lighted\+Mesh\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Lighted\+Mesh\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedMeshRenderable_acc09c83711ed52719dce8ecb21402b73}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/lighting/\hyperlink{LightedMeshRenderable_8hpp}{Lighted\+Mesh\+Renderable.\+hpp}\end{DoxyCompactItemize}

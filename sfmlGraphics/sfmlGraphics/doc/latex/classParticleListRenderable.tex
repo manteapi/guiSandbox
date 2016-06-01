@@ -1,0 +1,139 @@
+\hypertarget{classParticleListRenderable}{\section{Particle\+List\+Renderable Class Reference}
+\label{classParticleListRenderable}\index{Particle\+List\+Renderable@{Particle\+List\+Renderable}}
+}
+
+
+Draw a list of particles.  
+
+
+
+
+{\ttfamily \#include $<$Particle\+List\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Particle\+List\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classParticleListRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Particle\+List\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classParticleListRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParticleListRenderable_a24b513eaf7e3c847270d7da34cb1208d}{$\sim$\+Particle\+List\+Renderable} ()
+\item 
+\hyperlink{classParticleListRenderable_a847158b58dccb013af2902b40361363e}{Particle\+List\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program, std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \&particles)
+\begin{DoxyCompactList}\small\item\em Build a renderable to render a set of particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classParticleListRenderable_af34f9d0c377aa749e52d226d9cf49d89}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classParticleListRenderable_a25adb6020cb86abb50d33d76a5cde1f1}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \hyperlink{classParticleListRenderable_a2debf6d432dfd9854718e0c16c4f6f51}{m\+\_\+particles}
+\item 
+size\+\_\+t \hyperlink{classParticleListRenderable_a0971e99dfa53c5729d040b6a96d47a4f}{m\+\_\+number\+Of\+Vertices}
+\item 
+unsigned int \hyperlink{classParticleListRenderable_a87f491d5861bb1b9f98541e5926c4c5e}{m\+\_\+position\+Buffer}
+\item 
+unsigned int \hyperlink{classParticleListRenderable_a7e967af4fe279662d35d1cf08e4e2e86}{m\+\_\+color\+Buffer}
+\item 
+unsigned int \hyperlink{classParticleListRenderable_ae6b22324c801f946afe8a9eee5ff7be5}{m\+\_\+normal\+Buffer}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class is used to draw a list of particle. This is more efficient than to render individually each particle. We could do even more efficient but it is beyond the objectives of those practicals. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classParticleListRenderable_a24b513eaf7e3c847270d7da34cb1208d}{\index{Particle\+List\+Renderable@{Particle\+List\+Renderable}!````~Particle\+List\+Renderable@{$\sim$\+Particle\+List\+Renderable}}
+\index{````~Particle\+List\+Renderable@{$\sim$\+Particle\+List\+Renderable}!Particle\+List\+Renderable@{Particle\+List\+Renderable}}
+\subsubsection[{$\sim$\+Particle\+List\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Particle\+List\+Renderable\+::$\sim$\+Particle\+List\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classParticleListRenderable_a24b513eaf7e3c847270d7da34cb1208d}
+\hypertarget{classParticleListRenderable_a847158b58dccb013af2902b40361363e}{\index{Particle\+List\+Renderable@{Particle\+List\+Renderable}!Particle\+List\+Renderable@{Particle\+List\+Renderable}}
+\index{Particle\+List\+Renderable@{Particle\+List\+Renderable}!Particle\+List\+Renderable@{Particle\+List\+Renderable}}
+\subsubsection[{Particle\+List\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Particle\+List\+Renderable\+::\+Particle\+List\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program, }
+\item[{std\+::vector$<$ {\bf Particle\+Ptr} $>$ \&}]{particles}
+\end{DoxyParamCaption}
+)}}\label{classParticleListRenderable_a847158b58dccb013af2902b40361363e}
+Build a renderable to render a set of particles. 
+\begin{DoxyParams}{Parameters}
+{\em program} & The shader program used to render the particles. \\
+\hline
+{\em particles} & The set of particles to render. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classParticleListRenderable_a25adb6020cb86abb50d33d76a5cde1f1}{\index{Particle\+List\+Renderable@{Particle\+List\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Particle\+List\+Renderable@{Particle\+List\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Particle\+List\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classParticleListRenderable_a25adb6020cb86abb50d33d76a5cde1f1}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classParticleListRenderable_af34f9d0c377aa749e52d226d9cf49d89}{\index{Particle\+List\+Renderable@{Particle\+List\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Particle\+List\+Renderable@{Particle\+List\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Particle\+List\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classParticleListRenderable_af34f9d0c377aa749e52d226d9cf49d89}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classParticleListRenderable_a7e967af4fe279662d35d1cf08e4e2e86}{\index{Particle\+List\+Renderable@{Particle\+List\+Renderable}!m\+\_\+color\+Buffer@{m\+\_\+color\+Buffer}}
+\index{m\+\_\+color\+Buffer@{m\+\_\+color\+Buffer}!Particle\+List\+Renderable@{Particle\+List\+Renderable}}
+\subsubsection[{m\+\_\+color\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Particle\+List\+Renderable\+::m\+\_\+color\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticleListRenderable_a7e967af4fe279662d35d1cf08e4e2e86}
+\hypertarget{classParticleListRenderable_ae6b22324c801f946afe8a9eee5ff7be5}{\index{Particle\+List\+Renderable@{Particle\+List\+Renderable}!m\+\_\+normal\+Buffer@{m\+\_\+normal\+Buffer}}
+\index{m\+\_\+normal\+Buffer@{m\+\_\+normal\+Buffer}!Particle\+List\+Renderable@{Particle\+List\+Renderable}}
+\subsubsection[{m\+\_\+normal\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Particle\+List\+Renderable\+::m\+\_\+normal\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticleListRenderable_ae6b22324c801f946afe8a9eee5ff7be5}
+\hypertarget{classParticleListRenderable_a0971e99dfa53c5729d040b6a96d47a4f}{\index{Particle\+List\+Renderable@{Particle\+List\+Renderable}!m\+\_\+number\+Of\+Vertices@{m\+\_\+number\+Of\+Vertices}}
+\index{m\+\_\+number\+Of\+Vertices@{m\+\_\+number\+Of\+Vertices}!Particle\+List\+Renderable@{Particle\+List\+Renderable}}
+\subsubsection[{m\+\_\+number\+Of\+Vertices}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Particle\+List\+Renderable\+::m\+\_\+number\+Of\+Vertices\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticleListRenderable_a0971e99dfa53c5729d040b6a96d47a4f}
+\hypertarget{classParticleListRenderable_a2debf6d432dfd9854718e0c16c4f6f51}{\index{Particle\+List\+Renderable@{Particle\+List\+Renderable}!m\+\_\+particles@{m\+\_\+particles}}
+\index{m\+\_\+particles@{m\+\_\+particles}!Particle\+List\+Renderable@{Particle\+List\+Renderable}}
+\subsubsection[{m\+\_\+particles}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Particle\+Ptr} $>$ Particle\+List\+Renderable\+::m\+\_\+particles\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticleListRenderable_a2debf6d432dfd9854718e0c16c4f6f51}
+\hypertarget{classParticleListRenderable_a87f491d5861bb1b9f98541e5926c4c5e}{\index{Particle\+List\+Renderable@{Particle\+List\+Renderable}!m\+\_\+position\+Buffer@{m\+\_\+position\+Buffer}}
+\index{m\+\_\+position\+Buffer@{m\+\_\+position\+Buffer}!Particle\+List\+Renderable@{Particle\+List\+Renderable}}
+\subsubsection[{m\+\_\+position\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Particle\+List\+Renderable\+::m\+\_\+position\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticleListRenderable_a87f491d5861bb1b9f98541e5926c4c5e}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{ParticleListRenderable_8hpp}{Particle\+List\+Renderable.\+hpp}\end{DoxyCompactItemize}

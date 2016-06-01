@@ -1,0 +1,153 @@
+\hypertarget{Utils_8hpp}{\section{/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\+Utils.hpp File Reference}
+\label{Utils_8hpp}\index{/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\+Utils.\+hpp@{/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/\+Utils.\+hpp}}
+}
+
+
+Some useful functions to ease the development.  
+
+
+{\ttfamily \#include \char`\"{}Geometric\+Transformation.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Sphere.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Plane.\+hpp\char`\"{}}\\*
+{\ttfamily \#include $<$array$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$glm/glm.\+hpp$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{Utils_8hpp_ae48e233e44ee318428ac8b07ce14ceb9}{random} (float a, float b)
+\begin{DoxyCompactList}\small\item\em Get a random number uniformly sampled in \mbox{[}a,b\mbox{[}. \end{DoxyCompactList}\item 
+glm\+::vec4 \hyperlink{Utils_8hpp_a5b3b5b50e29ea8a89289561444ba98d9}{random\+Color} ()
+\begin{DoxyCompactList}\small\item\em Get a random valid color. \end{DoxyCompactList}\item 
+glm\+::vec4 \hyperlink{Utils_8hpp_aecd04c1d7bef27b0998ab03bd3d7f723}{get\+Color} (const float \&factor, const float \&low, const float \&high)
+\begin{DoxyCompactList}\small\item\em Get a color to represent a one dimensional parameter. \end{DoxyCompactList}\item 
+void \hyperlink{Utils_8hpp_a6a2158bd33b4d2c7e8bebf571bd73e89}{get\+Unit\+Indexed\+Cube} (std\+::vector$<$ glm\+::vec3 $>$ \&positions, std\+::vector$<$ glm\+::vec3 $>$ \&normals, std\+::vector$<$ glm\+::ivec3 $>$ \&indices)
+\item 
+void \hyperlink{Utils_8hpp_a8ff66c9bfe29c0da2a3b99c10b9b24c1}{get\+Unit\+Plane} (std\+::vector$<$ glm\+::vec3 $>$ \&positions, std\+::vector$<$ glm\+::vec3 $>$ \&normals, std\+::vector$<$ glm\+::vec2 $>$ \&tex\+Coords)
+\item 
+void \hyperlink{Utils_8hpp_a1e4454a02ac2945d11c3cf187477e55a}{get\+Unit\+Cube} (std\+::vector$<$ glm\+::vec3 $>$ \&positions, std\+::vector$<$ glm\+::vec3 $>$ \&normals, std\+::vector$<$ glm\+::vec2 $>$ \&tex\+Coords)
+\item 
+void \hyperlink{Utils_8hpp_aa963694713f1623671d72ef177f3278a}{get\+Unit\+Cylinder} (std\+::vector$<$ glm\+::vec3 $>$ \&positions, std\+::vector$<$ glm\+::vec3 $>$ \&normals, const unsigned int \&slices)
+\item 
+void \hyperlink{Utils_8hpp_a6284cff49c476680e3d7addd3008cf39}{get\+Unit\+Sphere} (std\+::vector$<$ glm\+::vec3 $>$ \&positions, std\+::vector$<$ glm\+::vec3 $>$ \&normals, const unsigned int \&strips, const unsigned int \&slices)
+\item 
+void \hyperlink{Utils_8hpp_ad78e540d05342c00b1c564a6aaee07d0}{get\+Torus} (std\+::vector$<$ glm\+::vec3 $>$ \&positions, std\+::vector$<$ glm\+::vec3 $>$ \&normals, const float \&a, const float \&c, const unsigned int \&strips, const unsigned int \&slices)
+\item 
+void \hyperlink{Utils_8hpp_a6208e61d56e0777921ee04679dd71767}{get\+Unit\+Cone} (std\+::vector$<$ glm\+::vec3 $>$ \&positions, std\+::vector$<$ glm\+::vec3 $>$ \&normals, const unsigned int \&strips, const unsigned int \&slices)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{Utils_8hpp_aecd04c1d7bef27b0998ab03bd3d7f723}{\index{Utils.\+hpp@{Utils.\+hpp}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Utils.\+hpp@{Utils.\+hpp}}
+\subsubsection[{get\+Color}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec4 get\+Color (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{factor, }
+\item[{const float \&}]{low, }
+\item[{const float \&}]{high}
+\end{DoxyParamCaption}
+)}}\label{Utils_8hpp_aecd04c1d7bef27b0998ab03bd3d7f723}
+This function allows to visually represent one dimensional parameter thanks to a color code\+: cold colors (blue) for small values and hot colors (red) for big values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factor} & The factor to visually represent. \\
+\hline
+{\em low} & The minimum expected value for the factor (will return a blue color). \\
+\hline
+{\em high} & The maximum expected value for the factor (will return a red color). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The generated color vector. 
+\end{DoxyReturn}
+\hypertarget{Utils_8hpp_ad78e540d05342c00b1c564a6aaee07d0}{\index{Utils.\+hpp@{Utils.\+hpp}!get\+Torus@{get\+Torus}}
+\index{get\+Torus@{get\+Torus}!Utils.\+hpp@{Utils.\+hpp}}
+\subsubsection[{get\+Torus}]{\setlength{\rightskip}{0pt plus 5cm}void get\+Torus (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{positions, }
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{normals, }
+\item[{const float \&}]{a, }
+\item[{const float \&}]{c, }
+\item[{const unsigned int \&}]{strips, }
+\item[{const unsigned int \&}]{slices}
+\end{DoxyParamCaption}
+)}}\label{Utils_8hpp_ad78e540d05342c00b1c564a6aaee07d0}
+\hypertarget{Utils_8hpp_a6208e61d56e0777921ee04679dd71767}{\index{Utils.\+hpp@{Utils.\+hpp}!get\+Unit\+Cone@{get\+Unit\+Cone}}
+\index{get\+Unit\+Cone@{get\+Unit\+Cone}!Utils.\+hpp@{Utils.\+hpp}}
+\subsubsection[{get\+Unit\+Cone}]{\setlength{\rightskip}{0pt plus 5cm}void get\+Unit\+Cone (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{positions, }
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{normals, }
+\item[{const unsigned int \&}]{strips, }
+\item[{const unsigned int \&}]{slices}
+\end{DoxyParamCaption}
+)}}\label{Utils_8hpp_a6208e61d56e0777921ee04679dd71767}
+\hypertarget{Utils_8hpp_a1e4454a02ac2945d11c3cf187477e55a}{\index{Utils.\+hpp@{Utils.\+hpp}!get\+Unit\+Cube@{get\+Unit\+Cube}}
+\index{get\+Unit\+Cube@{get\+Unit\+Cube}!Utils.\+hpp@{Utils.\+hpp}}
+\subsubsection[{get\+Unit\+Cube}]{\setlength{\rightskip}{0pt plus 5cm}void get\+Unit\+Cube (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{positions, }
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{normals, }
+\item[{std\+::vector$<$ glm\+::vec2 $>$ \&}]{tex\+Coords}
+\end{DoxyParamCaption}
+)}}\label{Utils_8hpp_a1e4454a02ac2945d11c3cf187477e55a}
+\hypertarget{Utils_8hpp_aa963694713f1623671d72ef177f3278a}{\index{Utils.\+hpp@{Utils.\+hpp}!get\+Unit\+Cylinder@{get\+Unit\+Cylinder}}
+\index{get\+Unit\+Cylinder@{get\+Unit\+Cylinder}!Utils.\+hpp@{Utils.\+hpp}}
+\subsubsection[{get\+Unit\+Cylinder}]{\setlength{\rightskip}{0pt plus 5cm}void get\+Unit\+Cylinder (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{positions, }
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{normals, }
+\item[{const unsigned int \&}]{slices}
+\end{DoxyParamCaption}
+)}}\label{Utils_8hpp_aa963694713f1623671d72ef177f3278a}
+\hypertarget{Utils_8hpp_a6a2158bd33b4d2c7e8bebf571bd73e89}{\index{Utils.\+hpp@{Utils.\+hpp}!get\+Unit\+Indexed\+Cube@{get\+Unit\+Indexed\+Cube}}
+\index{get\+Unit\+Indexed\+Cube@{get\+Unit\+Indexed\+Cube}!Utils.\+hpp@{Utils.\+hpp}}
+\subsubsection[{get\+Unit\+Indexed\+Cube}]{\setlength{\rightskip}{0pt plus 5cm}void get\+Unit\+Indexed\+Cube (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{positions, }
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{normals, }
+\item[{std\+::vector$<$ glm\+::ivec3 $>$ \&}]{indices}
+\end{DoxyParamCaption}
+)}}\label{Utils_8hpp_a6a2158bd33b4d2c7e8bebf571bd73e89}
+\hypertarget{Utils_8hpp_a8ff66c9bfe29c0da2a3b99c10b9b24c1}{\index{Utils.\+hpp@{Utils.\+hpp}!get\+Unit\+Plane@{get\+Unit\+Plane}}
+\index{get\+Unit\+Plane@{get\+Unit\+Plane}!Utils.\+hpp@{Utils.\+hpp}}
+\subsubsection[{get\+Unit\+Plane}]{\setlength{\rightskip}{0pt plus 5cm}void get\+Unit\+Plane (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{positions, }
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{normals, }
+\item[{std\+::vector$<$ glm\+::vec2 $>$ \&}]{tex\+Coords}
+\end{DoxyParamCaption}
+)}}\label{Utils_8hpp_a8ff66c9bfe29c0da2a3b99c10b9b24c1}
+\hypertarget{Utils_8hpp_a6284cff49c476680e3d7addd3008cf39}{\index{Utils.\+hpp@{Utils.\+hpp}!get\+Unit\+Sphere@{get\+Unit\+Sphere}}
+\index{get\+Unit\+Sphere@{get\+Unit\+Sphere}!Utils.\+hpp@{Utils.\+hpp}}
+\subsubsection[{get\+Unit\+Sphere}]{\setlength{\rightskip}{0pt plus 5cm}void get\+Unit\+Sphere (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{positions, }
+\item[{std\+::vector$<$ glm\+::vec3 $>$ \&}]{normals, }
+\item[{const unsigned int \&}]{strips, }
+\item[{const unsigned int \&}]{slices}
+\end{DoxyParamCaption}
+)}}\label{Utils_8hpp_a6284cff49c476680e3d7addd3008cf39}
+\hypertarget{Utils_8hpp_ae48e233e44ee318428ac8b07ce14ceb9}{\index{Utils.\+hpp@{Utils.\+hpp}!random@{random}}
+\index{random@{random}!Utils.\+hpp@{Utils.\+hpp}}
+\subsubsection[{random}]{\setlength{\rightskip}{0pt plus 5cm}float random (
+\begin{DoxyParamCaption}
+\item[{float}]{a, }
+\item[{float}]{b}
+\end{DoxyParamCaption}
+)}}\label{Utils_8hpp_ae48e233e44ee318428ac8b07ce14ceb9}
+This function returns a random number in \mbox{[}a,b\mbox{[}. \begin{DoxyReturn}{Returns}
+The random number generated. 
+\end{DoxyReturn}
+\hypertarget{Utils_8hpp_a5b3b5b50e29ea8a89289561444ba98d9}{\index{Utils.\+hpp@{Utils.\+hpp}!random\+Color@{random\+Color}}
+\index{random\+Color@{random\+Color}!Utils.\+hpp@{Utils.\+hpp}}
+\subsubsection[{random\+Color}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec4 random\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{Utils_8hpp_a5b3b5b50e29ea8a89289561444ba98d9}
+This function creates for you a random color you can use to render your vertices. \begin{DoxyReturn}{Returns}
+The random color created. 
+\end{DoxyReturn}

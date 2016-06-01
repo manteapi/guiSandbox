@@ -1,0 +1,109 @@
+\hypertarget{classParticlePlaneCollision}{\section{Particle\+Plane\+Collision Class Reference}
+\label{classParticlePlaneCollision}\index{Particle\+Plane\+Collision@{Particle\+Plane\+Collision}}
+}
+
+
+Implement the resolution of a collision event between a plane and a particle.  
+
+
+
+
+{\ttfamily \#include $<$Particle\+Plane\+Collision.\+hpp$>$}
+
+
+
+Inheritance diagram for Particle\+Plane\+Collision\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classParticlePlaneCollision__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Particle\+Plane\+Collision\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classParticlePlaneCollision__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParticlePlaneCollision_a155964653537ec6de0e91b25d3f7aa44}{$\sim$\+Particle\+Plane\+Collision} ()
+\item 
+\hyperlink{classParticlePlaneCollision_a5432307edb35e9762d9267c4146be9b3}{Particle\+Plane\+Collision} (\hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} particle, \hyperlink{Plane_8hpp_a146e10989049e4a48eae6973c2f798f5}{Plane\+Ptr} plane, float restitution)
+\begin{DoxyCompactList}\small\item\em Build a new collision event between a plane and a particle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classParticlePlaneCollision_a1516ee9898275c1ad9bfbc8bad675b1b}{do\+\_\+solve\+Collision} ()
+\begin{DoxyCompactList}\small\item\em Solve the collision between the plane and the particle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} \hyperlink{classParticlePlaneCollision_a26c423083839ce4155c62f422f03361b}{m\+\_\+particle}
+\item 
+\hyperlink{Plane_8hpp_a146e10989049e4a48eae6973c2f798f5}{Plane\+Ptr} \hyperlink{classParticlePlaneCollision_aad67527436168ca3413b7c7dba3f146c}{m\+\_\+plane}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implementation of the resolution of a collision event between a plane and a particle. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classParticlePlaneCollision_a155964653537ec6de0e91b25d3f7aa44}{\index{Particle\+Plane\+Collision@{Particle\+Plane\+Collision}!````~Particle\+Plane\+Collision@{$\sim$\+Particle\+Plane\+Collision}}
+\index{````~Particle\+Plane\+Collision@{$\sim$\+Particle\+Plane\+Collision}!Particle\+Plane\+Collision@{Particle\+Plane\+Collision}}
+\subsubsection[{$\sim$\+Particle\+Plane\+Collision}]{\setlength{\rightskip}{0pt plus 5cm}Particle\+Plane\+Collision\+::$\sim$\+Particle\+Plane\+Collision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classParticlePlaneCollision_a155964653537ec6de0e91b25d3f7aa44}
+\hypertarget{classParticlePlaneCollision_a5432307edb35e9762d9267c4146be9b3}{\index{Particle\+Plane\+Collision@{Particle\+Plane\+Collision}!Particle\+Plane\+Collision@{Particle\+Plane\+Collision}}
+\index{Particle\+Plane\+Collision@{Particle\+Plane\+Collision}!Particle\+Plane\+Collision@{Particle\+Plane\+Collision}}
+\subsubsection[{Particle\+Plane\+Collision}]{\setlength{\rightskip}{0pt plus 5cm}Particle\+Plane\+Collision\+::\+Particle\+Plane\+Collision (
+\begin{DoxyParamCaption}
+\item[{{\bf Particle\+Ptr}}]{particle, }
+\item[{{\bf Plane\+Ptr}}]{plane, }
+\item[{float}]{restitution}
+\end{DoxyParamCaption}
+)}}\label{classParticlePlaneCollision_a5432307edb35e9762d9267c4146be9b3}
+Build a collision event between a plane and a particle. This collision will be resolved assuming the plane is fixed. 
+\begin{DoxyParams}{Parameters}
+{\em particle} & The particle colliding a plane. \\
+\hline
+{\em plane} & The plane colliding a particle. \\
+\hline
+{\em restitution} & Restitution factor of this collision. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classParticlePlaneCollision_a1516ee9898275c1ad9bfbc8bad675b1b}{\index{Particle\+Plane\+Collision@{Particle\+Plane\+Collision}!do\+\_\+solve\+Collision@{do\+\_\+solve\+Collision}}
+\index{do\+\_\+solve\+Collision@{do\+\_\+solve\+Collision}!Particle\+Plane\+Collision@{Particle\+Plane\+Collision}}
+\subsubsection[{do\+\_\+solve\+Collision}]{\setlength{\rightskip}{0pt plus 5cm}void Particle\+Plane\+Collision\+::do\+\_\+solve\+Collision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classParticlePlaneCollision_a1516ee9898275c1ad9bfbc8bad675b1b}
+Update the particle position and velocity after its collision with the fixed plane. 
+
+Implements \hyperlink{classCollision_a5fa2b29df51abd8723660cd07050e616}{Collision}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classParticlePlaneCollision_a26c423083839ce4155c62f422f03361b}{\index{Particle\+Plane\+Collision@{Particle\+Plane\+Collision}!m\+\_\+particle@{m\+\_\+particle}}
+\index{m\+\_\+particle@{m\+\_\+particle}!Particle\+Plane\+Collision@{Particle\+Plane\+Collision}}
+\subsubsection[{m\+\_\+particle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Particle\+Ptr} Particle\+Plane\+Collision\+::m\+\_\+particle\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticlePlaneCollision_a26c423083839ce4155c62f422f03361b}
+\hypertarget{classParticlePlaneCollision_aad67527436168ca3413b7c7dba3f146c}{\index{Particle\+Plane\+Collision@{Particle\+Plane\+Collision}!m\+\_\+plane@{m\+\_\+plane}}
+\index{m\+\_\+plane@{m\+\_\+plane}!Particle\+Plane\+Collision@{Particle\+Plane\+Collision}}
+\subsubsection[{m\+\_\+plane}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plane\+Ptr} Particle\+Plane\+Collision\+::m\+\_\+plane\hspace{0.3cm}{\ttfamily [private]}}}\label{classParticlePlaneCollision_aad67527436168ca3413b7c7dba3f146c}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{ParticlePlaneCollision_8hpp}{Particle\+Plane\+Collision.\+hpp}\end{DoxyCompactItemize}

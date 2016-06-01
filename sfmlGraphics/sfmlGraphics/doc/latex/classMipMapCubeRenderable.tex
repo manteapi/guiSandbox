@@ -1,0 +1,158 @@
+\hypertarget{classMipMapCubeRenderable}{\section{Mip\+Map\+Cube\+Renderable Class Reference}
+\label{classMipMapCubeRenderable}\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+}
+
+
+{\ttfamily \#include $<$Mip\+Map\+Cube\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Mip\+Map\+Cube\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classMipMapCubeRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mip\+Map\+Cube\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMipMapCubeRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMipMapCubeRenderable_a891b6fb7b140fe031308f0fdb547eeb4}{$\sim$\+Mip\+Map\+Cube\+Renderable} ()
+\item 
+\hyperlink{classMipMapCubeRenderable_ad73277c8783cdd3e609a06a9ac3e103c}{Mip\+Map\+Cube\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} shader\+Program, std\+::vector$<$ std\+::string $>$ \&filenames)
+\item 
+void \hyperlink{classMipMapCubeRenderable_afb53a094d737952ae1053fa0eaf20812}{set\+Material} (const \hyperlink{Material_8hpp_a1d47cd05ca683e287435cf0b363fbfe1}{Material\+Ptr} \&material)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMipMapCubeRenderable_a739176af783a8cb15239d86b723f9882}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classMipMapCubeRenderable_a24b35ddfe3681e641db25ed3dd46fda6}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classMipMapCubeRenderable_a48b568e8e3cc7bf7b1f5e961b7a5d18b}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classMipMapCubeRenderable_a5221f8391c0ef9ad9a4cc5cd0a079463}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classMipMapCubeRenderable_adefb2e222b21ec9d5983fd578c61daa0}{m\+\_\+normals}
+\item 
+std\+::vector$<$ glm\+::vec2 $>$ \hyperlink{classMipMapCubeRenderable_a8c1d0d581985087fffa7328474e8167c}{m\+\_\+tex\+Coords}
+\item 
+unsigned int \hyperlink{classMipMapCubeRenderable_a3baff6d567731575017c9f03f28073cd}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classMipMapCubeRenderable_a1e9b398ba5e9adbfc80291d6eb64c8f3}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classMipMapCubeRenderable_a62a8adc606b023420b2089961499de09}{m\+\_\+n\+Buffer}
+\item 
+unsigned int \hyperlink{classMipMapCubeRenderable_a370e12a065599c98250fa40b80078a4d}{m\+\_\+t\+Buffer}
+\item 
+unsigned int \hyperlink{classMipMapCubeRenderable_af1dd441331717c8edffc73b18edb17e1}{m\+\_\+tex\+Id}
+\item 
+\hyperlink{Material_8hpp_a1d47cd05ca683e287435cf0b363fbfe1}{Material\+Ptr} \hyperlink{classMipMapCubeRenderable_a0173b7f4dbc0e7b6cc7e6ef48e05d4a1}{m\+\_\+material}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMipMapCubeRenderable_a891b6fb7b140fe031308f0fdb547eeb4}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!````~Mip\+Map\+Cube\+Renderable@{$\sim$\+Mip\+Map\+Cube\+Renderable}}
+\index{````~Mip\+Map\+Cube\+Renderable@{$\sim$\+Mip\+Map\+Cube\+Renderable}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{$\sim$\+Mip\+Map\+Cube\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Mip\+Map\+Cube\+Renderable\+::$\sim$\+Mip\+Map\+Cube\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMipMapCubeRenderable_a891b6fb7b140fe031308f0fdb547eeb4}
+\hypertarget{classMipMapCubeRenderable_ad73277c8783cdd3e609a06a9ac3e103c}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{Mip\+Map\+Cube\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Mip\+Map\+Cube\+Renderable\+::\+Mip\+Map\+Cube\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{shader\+Program, }
+\item[{std\+::vector$<$ std\+::string $>$ \&}]{filenames}
+\end{DoxyParamCaption}
+)}}\label{classMipMapCubeRenderable_ad73277c8783cdd3e609a06a9ac3e103c}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMipMapCubeRenderable_a24b35ddfe3681e641db25ed3dd46fda6}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Mip\+Map\+Cube\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classMipMapCubeRenderable_a24b35ddfe3681e641db25ed3dd46fda6}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classMipMapCubeRenderable_a739176af783a8cb15239d86b723f9882}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Mip\+Map\+Cube\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classMipMapCubeRenderable_a739176af783a8cb15239d86b723f9882}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+\hypertarget{classMipMapCubeRenderable_afb53a094d737952ae1053fa0eaf20812}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!set\+Material@{set\+Material}}
+\index{set\+Material@{set\+Material}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{set\+Material}]{\setlength{\rightskip}{0pt plus 5cm}void Mip\+Map\+Cube\+Renderable\+::set\+Material (
+\begin{DoxyParamCaption}
+\item[{const {\bf Material\+Ptr} \&}]{material}
+\end{DoxyParamCaption}
+)}}\label{classMipMapCubeRenderable_afb53a094d737952ae1053fa0eaf20812}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMipMapCubeRenderable_a1e9b398ba5e9adbfc80291d6eb64c8f3}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Mip\+Map\+Cube\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classMipMapCubeRenderable_a1e9b398ba5e9adbfc80291d6eb64c8f3}
+\hypertarget{classMipMapCubeRenderable_a5221f8391c0ef9ad9a4cc5cd0a079463}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Mip\+Map\+Cube\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classMipMapCubeRenderable_a5221f8391c0ef9ad9a4cc5cd0a079463}
+\hypertarget{classMipMapCubeRenderable_a0173b7f4dbc0e7b6cc7e6ef48e05d4a1}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!m\+\_\+material@{m\+\_\+material}}
+\index{m\+\_\+material@{m\+\_\+material}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+material}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Material\+Ptr} Mip\+Map\+Cube\+Renderable\+::m\+\_\+material\hspace{0.3cm}{\ttfamily [private]}}}\label{classMipMapCubeRenderable_a0173b7f4dbc0e7b6cc7e6ef48e05d4a1}
+\hypertarget{classMipMapCubeRenderable_a62a8adc606b023420b2089961499de09}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Mip\+Map\+Cube\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classMipMapCubeRenderable_a62a8adc606b023420b2089961499de09}
+\hypertarget{classMipMapCubeRenderable_adefb2e222b21ec9d5983fd578c61daa0}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Mip\+Map\+Cube\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classMipMapCubeRenderable_adefb2e222b21ec9d5983fd578c61daa0}
+\hypertarget{classMipMapCubeRenderable_a3baff6d567731575017c9f03f28073cd}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Mip\+Map\+Cube\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classMipMapCubeRenderable_a3baff6d567731575017c9f03f28073cd}
+\hypertarget{classMipMapCubeRenderable_a48b568e8e3cc7bf7b1f5e961b7a5d18b}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Mip\+Map\+Cube\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classMipMapCubeRenderable_a48b568e8e3cc7bf7b1f5e961b7a5d18b}
+\hypertarget{classMipMapCubeRenderable_a370e12a065599c98250fa40b80078a4d}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!m\+\_\+t\+Buffer@{m\+\_\+t\+Buffer}}
+\index{m\+\_\+t\+Buffer@{m\+\_\+t\+Buffer}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+t\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Mip\+Map\+Cube\+Renderable\+::m\+\_\+t\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classMipMapCubeRenderable_a370e12a065599c98250fa40b80078a4d}
+\hypertarget{classMipMapCubeRenderable_a8c1d0d581985087fffa7328474e8167c}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!m\+\_\+tex\+Coords@{m\+\_\+tex\+Coords}}
+\index{m\+\_\+tex\+Coords@{m\+\_\+tex\+Coords}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+tex\+Coords}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec2 $>$ Mip\+Map\+Cube\+Renderable\+::m\+\_\+tex\+Coords\hspace{0.3cm}{\ttfamily [private]}}}\label{classMipMapCubeRenderable_a8c1d0d581985087fffa7328474e8167c}
+\hypertarget{classMipMapCubeRenderable_af1dd441331717c8edffc73b18edb17e1}{\index{Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}!m\+\_\+tex\+Id@{m\+\_\+tex\+Id}}
+\index{m\+\_\+tex\+Id@{m\+\_\+tex\+Id}!Mip\+Map\+Cube\+Renderable@{Mip\+Map\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+tex\+Id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Mip\+Map\+Cube\+Renderable\+::m\+\_\+tex\+Id\hspace{0.3cm}{\ttfamily [private]}}}\label{classMipMapCubeRenderable_af1dd441331717c8edffc73b18edb17e1}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/texturing/\hyperlink{MipMapCubeRenderable_8hpp}{Mip\+Map\+Cube\+Renderable.\+hpp}\end{DoxyCompactItemize}

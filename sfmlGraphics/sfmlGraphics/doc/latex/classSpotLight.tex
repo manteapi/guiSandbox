@@ -1,0 +1,617 @@
+\hypertarget{classSpotLight}{\section{Spot\+Light Class Reference}
+\label{classSpotLight}\index{Spot\+Light@{Spot\+Light}}
+}
+
+
+A spot light.  
+
+
+
+
+{\ttfamily \#include $<$Light.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::shared\+\_\+ptr\\*
+$<$ \hyperlink{classSpotLight}{Spot\+Light} $>$ \hyperlink{classSpotLight_ac20419604c70594b85e7c019effd1998}{Spot\+Light\+Ptr}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSpotLight_aa16b741d73aa198c203ce40a066a115c}{$\sim$\+Spot\+Light} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classSpotLight_ae4045cd7c8c6d18af39b57c9cf6f9ce6}{Spot\+Light} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classSpotLight_a59cf2853bf97a548e05b876019c15e20}{Spot\+Light} (const \hyperlink{classSpotLight}{Spot\+Light} \&spot\+Light)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classSpotLight_a5fba5c7e47bf73a436f96ba4b528e37a}{Spot\+Light} (const glm\+::vec3 \&\hyperlink{classSpotLight_abe749d17a6042232df070529dd2d1229}{position}, const glm\+::vec3 \&\hyperlink{classSpotLight_a9832f6f55fdd521b47e9c9eda8a9149b}{spot\+Direction}, const glm\+::vec3 \&\hyperlink{classSpotLight_a820fb8db9835283e3ed7793a8623d630}{ambient}, const glm\+::vec3 \&\hyperlink{classSpotLight_a84be0450fb59905a908b6e09f16bb2e7}{diffuse}, const glm\+::vec3 \&\hyperlink{classSpotLight_a2dd83ce57f35badb6c0147bf0aa56b02}{specular}, const float \&\hyperlink{classSpotLight_a950b700c0244974abac7a5985674f4c5}{constant}, const float \&\hyperlink{classSpotLight_ac55d82286a1219c99a32be7d996a5e7b}{linear}, const float \&\hyperlink{classSpotLight_af30e894a67433d26393c2014a9033f1e}{quadratic}, const float \&\hyperlink{classSpotLight_a591b58209ca0783c963ac42b5ff0dafb}{inner\+Cut\+Off}, const float \&\hyperlink{classSpotLight_a68177100b781d157b98a02b144938c51}{outer\+Cut\+Off})
+\begin{DoxyCompactList}\small\item\em Specific constructor. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classSpotLight_abe749d17a6042232df070529dd2d1229}{position} () const 
+\begin{DoxyCompactList}\small\item\em Access to the position of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classSpotLight_a7382bfe5fe8b92b0ff9dad5e25b5d48a}{set\+Position} (const glm\+::vec3 \&\hyperlink{classSpotLight_abe749d17a6042232df070529dd2d1229}{position})
+\begin{DoxyCompactList}\small\item\em Set the position of the light. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classSpotLight_a9832f6f55fdd521b47e9c9eda8a9149b}{spot\+Direction} () const 
+\begin{DoxyCompactList}\small\item\em Access to the direction of the spot. \end{DoxyCompactList}\item 
+void \hyperlink{classSpotLight_adf02edfdbbb7f7f15c879e484ed4ea2f}{set\+Spot\+Direction} (const glm\+::vec3 \&\hyperlink{classSpotLight_a9832f6f55fdd521b47e9c9eda8a9149b}{spot\+Direction})
+\begin{DoxyCompactList}\small\item\em Set the direction of the spot. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classSpotLight_a820fb8db9835283e3ed7793a8623d630}{ambient} () const 
+\begin{DoxyCompactList}\small\item\em Access to the ambient intensity of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classSpotLight_a626e1e5331afe95e371193eca71b25f9}{set\+Ambient} (const glm\+::vec3 \&\hyperlink{classSpotLight_a820fb8db9835283e3ed7793a8623d630}{ambient})
+\begin{DoxyCompactList}\small\item\em Set the ambient intensity of the light. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classSpotLight_a84be0450fb59905a908b6e09f16bb2e7}{diffuse} () const 
+\begin{DoxyCompactList}\small\item\em Access to the diffuse intensity of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classSpotLight_a20a505694de0025c8595cd2ff8876ba8}{set\+Diffuse} (const glm\+::vec3 \&\hyperlink{classSpotLight_a84be0450fb59905a908b6e09f16bb2e7}{diffuse})
+\begin{DoxyCompactList}\small\item\em Set the diffuse intensity of the light. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classSpotLight_a2dd83ce57f35badb6c0147bf0aa56b02}{specular} () const 
+\begin{DoxyCompactList}\small\item\em Access to the specular intensity of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classSpotLight_a9e602b8df45447032985f839c3ff9a3c}{set\+Specular} (const glm\+::vec3 \&\hyperlink{classSpotLight_a2dd83ce57f35badb6c0147bf0aa56b02}{specular})
+\begin{DoxyCompactList}\small\item\em Set the specular intensity of the light. \end{DoxyCompactList}\item 
+const float \& \hyperlink{classSpotLight_a950b700c0244974abac7a5985674f4c5}{constant} () const 
+\begin{DoxyCompactList}\small\item\em Access to the coefficient of constant attenuation of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classSpotLight_aff5255b08bba012f85fdde5d070129ee}{set\+Constant} (float \hyperlink{classSpotLight_a950b700c0244974abac7a5985674f4c5}{constant})
+\begin{DoxyCompactList}\small\item\em Set the coefficient of constant attenuation of the light. \end{DoxyCompactList}\item 
+const float \& \hyperlink{classSpotLight_ac55d82286a1219c99a32be7d996a5e7b}{linear} () const 
+\begin{DoxyCompactList}\small\item\em Access to the coefficient of linear attenuation of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classSpotLight_a14852dde240213108b56be911841b09d}{set\+Linear} (float \hyperlink{classSpotLight_ac55d82286a1219c99a32be7d996a5e7b}{linear})
+\begin{DoxyCompactList}\small\item\em Set the coefficient of linear attenuation of the light. \end{DoxyCompactList}\item 
+const float \& \hyperlink{classSpotLight_af30e894a67433d26393c2014a9033f1e}{quadratic} () const 
+\begin{DoxyCompactList}\small\item\em Access to the coefficient of quadratic attenuation of the light. \end{DoxyCompactList}\item 
+void \hyperlink{classSpotLight_a4ca75b46bacac76bd8684a1c88341e6d}{set\+Quadratic} (float \hyperlink{classSpotLight_af30e894a67433d26393c2014a9033f1e}{quadratic})
+\begin{DoxyCompactList}\small\item\em Set the coefficient of quadratic attenuation of the light. \end{DoxyCompactList}\item 
+const float \& \hyperlink{classSpotLight_a591b58209ca0783c963ac42b5ff0dafb}{inner\+Cut\+Off} () const 
+\begin{DoxyCompactList}\small\item\em Access to the cosinus of the inner cut off angle of the spot. \end{DoxyCompactList}\item 
+void \hyperlink{classSpotLight_adae6ef8846a33afeb379dfb39142799a}{set\+Inner\+Cut\+Off} (float \hyperlink{classSpotLight_a591b58209ca0783c963ac42b5ff0dafb}{inner\+Cut\+Off})
+\begin{DoxyCompactList}\small\item\em Set the cosinus of the inner cut off angle of the spot. \end{DoxyCompactList}\item 
+const float \& \hyperlink{classSpotLight_a68177100b781d157b98a02b144938c51}{outer\+Cut\+Off} () const 
+\begin{DoxyCompactList}\small\item\em Access to the cosinus of the outer cut off angle of the spot. \end{DoxyCompactList}\item 
+void \hyperlink{classSpotLight_a53217911a646632e3ae54c0c19343dd2}{set\+Outer\+Cut\+Off} (float \hyperlink{classSpotLight_a68177100b781d157b98a02b144938c51}{outer\+Cut\+Off})
+\begin{DoxyCompactList}\small\item\em Set the cosinus of the outer cut off angle of the spot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classSpotLight_a99eb20c31e4e7fda4d2c695c96bb5d3a}{send\+To\+G\+P\+U} (const \hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} \&program, const \hyperlink{classSpotLight_ac20419604c70594b85e7c019effd1998}{Spot\+Light\+Ptr} \&light)
+\begin{DoxyCompactList}\small\item\em Get location for the attributes of the light and send the data to the G\+P\+U as uniforms. \end{DoxyCompactList}\item 
+static bool \hyperlink{classSpotLight_aa137cccf70b2eff8f7a2a188553ec818}{send\+To\+G\+P\+U} (const \hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} \&program, const std\+::vector$<$ \hyperlink{classSpotLight_ac20419604c70594b85e7c019effd1998}{Spot\+Light\+Ptr} $>$ \&lights)
+\begin{DoxyCompactList}\small\item\em Get location for the attributes of the lights and send the data to the G\+P\+U as uniforms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classSpotLight_ae26bb39132ced26535799ec56642468a}{number\+Of\+Lights\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the number of lights. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSpotLight_a4cbe9f9afcdf316cff2a840300196e25}{light\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSpotLight_a1e3ef448e3022abe369db9ec4e83ab26}{position\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the position of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSpotLight_a72e18c47be1700bc41621d98dd0a69d5}{spot\+Direction\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the direction of the spot. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSpotLight_ad649e5056280bd5264cd560c320cd3ad}{ambient\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the ambient intensity of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSpotLight_a74444439ad227bf44cfd63e88a6e0eaf}{diffuse\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the diffuse intensity of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSpotLight_aaf72c2c6a8abc7618be8ae712b67b4ab}{specular\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the specular intensity of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSpotLight_aba7db4b7aaf45e77c1719205e9ea55b6}{constant\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the constant attenuation coefficient of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSpotLight_a7b114e2b107ee726c8b8129e4934f945}{linear\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the linear attenuation coefficient of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSpotLight_a9882313871fac602139953c9bc5a71a9}{quadratic\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the quadratic attenuation coefficient of the light. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSpotLight_ab6be95b430231205dbe809ab75e75eda}{inner\+Cut\+Off\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the inner cut off cosinus angle of the spot. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSpotLight_a043bfff100806a24928e7efd0c5a8b73}{outer\+Cut\+Off\+Name} ()
+\begin{DoxyCompactList}\small\item\em Get the uniform name of the cosinus of the outer cut off angle of the spot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \hyperlink{classSpotLight_ab10a89bbb4076364f7f028b750207522}{m\+\_\+position}
+\item 
+glm\+::vec3 \hyperlink{classSpotLight_ae950bb31005fc7d62232bfc78d1ef8f6}{m\+\_\+spot\+Direction}
+\item 
+glm\+::vec3 \hyperlink{classSpotLight_a8120c87715c0d55a139562b01f0af3c6}{m\+\_\+ambient}
+\item 
+glm\+::vec3 \hyperlink{classSpotLight_aba029b38f4ee2b6942bc7c2819621cef}{m\+\_\+diffuse}
+\item 
+glm\+::vec3 \hyperlink{classSpotLight_a6814d385600a409b73a2877afd545136}{m\+\_\+specular}
+\item 
+float \hyperlink{classSpotLight_a34d9b43d8bfe559da5d13566ca7882f9}{m\+\_\+constant}
+\item 
+float \hyperlink{classSpotLight_a9127c53d783524782e2a6f31b8702173}{m\+\_\+linear}
+\item 
+float \hyperlink{classSpotLight_a6d81863546c671662f84b71a15328654}{m\+\_\+quadratic}
+\item 
+float \hyperlink{classSpotLight_a9b7c5db8293b0bab65df4474a578bb5d}{m\+\_\+inner\+Cut\+Off}
+\item 
+float \hyperlink{classSpotLight_a48ede6ee3dc2397941d4d8b96e6bd76a}{m\+\_\+outer\+Cut\+Off}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a spot light which means a light whose source is located somewhere in the environment and instead of shooting light rays in all directions, only shoots them in a specific direction. As a result, only the objects within a certain radius of the spotlight's direction are lit and everything else stays dark. A good example of a spotlight would be a street lamp. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classSpotLight_ac20419604c70594b85e7c019effd1998}{\index{Spot\+Light@{Spot\+Light}!Spot\+Light\+Ptr@{Spot\+Light\+Ptr}}
+\index{Spot\+Light\+Ptr@{Spot\+Light\+Ptr}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{Spot\+Light\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::shared\+\_\+ptr$<${\bf Spot\+Light}$>$ {\bf Spot\+Light\+::\+Spot\+Light\+Ptr}}}\label{classSpotLight_ac20419604c70594b85e7c019effd1998}
+Smart pointer to a spot light 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSpotLight_aa16b741d73aa198c203ce40a066a115c}{\index{Spot\+Light@{Spot\+Light}!````~Spot\+Light@{$\sim$\+Spot\+Light}}
+\index{````~Spot\+Light@{$\sim$\+Spot\+Light}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{$\sim$\+Spot\+Light}]{\setlength{\rightskip}{0pt plus 5cm}Spot\+Light\+::$\sim$\+Spot\+Light (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSpotLight_aa16b741d73aa198c203ce40a066a115c}
+\hypertarget{classSpotLight_ae4045cd7c8c6d18af39b57c9cf6f9ce6}{\index{Spot\+Light@{Spot\+Light}!Spot\+Light@{Spot\+Light}}
+\index{Spot\+Light@{Spot\+Light}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{Spot\+Light}]{\setlength{\rightskip}{0pt plus 5cm}Spot\+Light\+::\+Spot\+Light (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSpotLight_ae4045cd7c8c6d18af39b57c9cf6f9ce6}
+\hypertarget{classSpotLight_a59cf2853bf97a548e05b876019c15e20}{\index{Spot\+Light@{Spot\+Light}!Spot\+Light@{Spot\+Light}}
+\index{Spot\+Light@{Spot\+Light}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{Spot\+Light}]{\setlength{\rightskip}{0pt plus 5cm}Spot\+Light\+::\+Spot\+Light (
+\begin{DoxyParamCaption}
+\item[{const {\bf Spot\+Light} \&}]{spot\+Light}
+\end{DoxyParamCaption}
+)}}\label{classSpotLight_a59cf2853bf97a548e05b876019c15e20}
+\hypertarget{classSpotLight_a5fba5c7e47bf73a436f96ba4b528e37a}{\index{Spot\+Light@{Spot\+Light}!Spot\+Light@{Spot\+Light}}
+\index{Spot\+Light@{Spot\+Light}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{Spot\+Light}]{\setlength{\rightskip}{0pt plus 5cm}Spot\+Light\+::\+Spot\+Light (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{position, }
+\item[{const glm\+::vec3 \&}]{spot\+Direction, }
+\item[{const glm\+::vec3 \&}]{ambient, }
+\item[{const glm\+::vec3 \&}]{diffuse, }
+\item[{const glm\+::vec3 \&}]{specular, }
+\item[{const float \&}]{constant, }
+\item[{const float \&}]{linear, }
+\item[{const float \&}]{quadratic, }
+\item[{const float \&}]{inner\+Cut\+Off, }
+\item[{const float \&}]{outer\+Cut\+Off}
+\end{DoxyParamCaption}
+)}}\label{classSpotLight_a5fba5c7e47bf73a436f96ba4b528e37a}
+Construct a spot light.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the light. \\
+\hline
+{\em spot\+Direction} & The direction of the light. \\
+\hline
+{\em ambient} & The ambient intensity of the light. \\
+\hline
+{\em diffuse} & The diffuse intensity of the light. \\
+\hline
+{\em specular} & The specular intensity of the light. \\
+\hline
+{\em constant} & The coefficient of constant attenuation of the light. \\
+\hline
+{\em linear} & The coefficient of linear attenuation of the light with respect to the distance to the light. \\
+\hline
+{\em quadratic} & The coefficient of quadratic attenuation of the light with respect to the distance to the light. \\
+\hline
+{\em inner\+Cut\+Off} & The cosinus of the inner cut off angle of the spot. \\
+\hline
+{\em outer\+Cut\+Off} & The cosinus of the outer cut off angle of the spot. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSpotLight_a820fb8db9835283e3ed7793a8623d630}{\index{Spot\+Light@{Spot\+Light}!ambient@{ambient}}
+\index{ambient@{ambient}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{ambient}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Spot\+Light\+::ambient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSpotLight_a820fb8db9835283e3ed7793a8623d630}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+ambient. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_ad649e5056280bd5264cd560c320cd3ad}{\index{Spot\+Light@{Spot\+Light}!ambient\+Name@{ambient\+Name}}
+\index{ambient\+Name@{ambient\+Name}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{ambient\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Spot\+Light\+::ambient\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classSpotLight_ad649e5056280bd5264cd560c320cd3ad}
+\begin{DoxyReturn}{Returns}
+The name of the ambient intensity of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_a950b700c0244974abac7a5985674f4c5}{\index{Spot\+Light@{Spot\+Light}!constant@{constant}}
+\index{constant@{constant}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{constant}]{\setlength{\rightskip}{0pt plus 5cm}const float\& Spot\+Light\+::constant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSpotLight_a950b700c0244974abac7a5985674f4c5}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+constant. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_aba7db4b7aaf45e77c1719205e9ea55b6}{\index{Spot\+Light@{Spot\+Light}!constant\+Name@{constant\+Name}}
+\index{constant\+Name@{constant\+Name}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{constant\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Spot\+Light\+::constant\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classSpotLight_aba7db4b7aaf45e77c1719205e9ea55b6}
+\begin{DoxyReturn}{Returns}
+The name of the constant attenuation coefficient of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_a84be0450fb59905a908b6e09f16bb2e7}{\index{Spot\+Light@{Spot\+Light}!diffuse@{diffuse}}
+\index{diffuse@{diffuse}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{diffuse}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Spot\+Light\+::diffuse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSpotLight_a84be0450fb59905a908b6e09f16bb2e7}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+diffuse. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_a74444439ad227bf44cfd63e88a6e0eaf}{\index{Spot\+Light@{Spot\+Light}!diffuse\+Name@{diffuse\+Name}}
+\index{diffuse\+Name@{diffuse\+Name}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{diffuse\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Spot\+Light\+::diffuse\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classSpotLight_a74444439ad227bf44cfd63e88a6e0eaf}
+\begin{DoxyReturn}{Returns}
+The name of the diffuse intensity of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_a591b58209ca0783c963ac42b5ff0dafb}{\index{Spot\+Light@{Spot\+Light}!inner\+Cut\+Off@{inner\+Cut\+Off}}
+\index{inner\+Cut\+Off@{inner\+Cut\+Off}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{inner\+Cut\+Off}]{\setlength{\rightskip}{0pt plus 5cm}const float\& Spot\+Light\+::inner\+Cut\+Off (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSpotLight_a591b58209ca0783c963ac42b5ff0dafb}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+inner\+Cut\+Off. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_ab6be95b430231205dbe809ab75e75eda}{\index{Spot\+Light@{Spot\+Light}!inner\+Cut\+Off\+Name@{inner\+Cut\+Off\+Name}}
+\index{inner\+Cut\+Off\+Name@{inner\+Cut\+Off\+Name}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{inner\+Cut\+Off\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Spot\+Light\+::inner\+Cut\+Off\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classSpotLight_ab6be95b430231205dbe809ab75e75eda}
+\begin{DoxyReturn}{Returns}
+The name of the cosinus of the inner cut off angle of the spot in the shader. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_a4cbe9f9afcdf316cff2a840300196e25}{\index{Spot\+Light@{Spot\+Light}!light\+Name@{light\+Name}}
+\index{light\+Name@{light\+Name}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{light\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Spot\+Light\+::light\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classSpotLight_a4cbe9f9afcdf316cff2a840300196e25}
+\begin{DoxyReturn}{Returns}
+The name of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_ac55d82286a1219c99a32be7d996a5e7b}{\index{Spot\+Light@{Spot\+Light}!linear@{linear}}
+\index{linear@{linear}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{linear}]{\setlength{\rightskip}{0pt plus 5cm}const float\& Spot\+Light\+::linear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSpotLight_ac55d82286a1219c99a32be7d996a5e7b}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+linear. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_a7b114e2b107ee726c8b8129e4934f945}{\index{Spot\+Light@{Spot\+Light}!linear\+Name@{linear\+Name}}
+\index{linear\+Name@{linear\+Name}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{linear\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Spot\+Light\+::linear\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classSpotLight_a7b114e2b107ee726c8b8129e4934f945}
+\begin{DoxyReturn}{Returns}
+The name of the linear attenuation coefficient of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_ae26bb39132ced26535799ec56642468a}{\index{Spot\+Light@{Spot\+Light}!number\+Of\+Lights\+Name@{number\+Of\+Lights\+Name}}
+\index{number\+Of\+Lights\+Name@{number\+Of\+Lights\+Name}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{number\+Of\+Lights\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Spot\+Light\+::number\+Of\+Lights\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classSpotLight_ae26bb39132ced26535799ec56642468a}
+\begin{DoxyReturn}{Returns}
+The name of the number of lights in the shader. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_a68177100b781d157b98a02b144938c51}{\index{Spot\+Light@{Spot\+Light}!outer\+Cut\+Off@{outer\+Cut\+Off}}
+\index{outer\+Cut\+Off@{outer\+Cut\+Off}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{outer\+Cut\+Off}]{\setlength{\rightskip}{0pt plus 5cm}const float\& Spot\+Light\+::outer\+Cut\+Off (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSpotLight_a68177100b781d157b98a02b144938c51}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+outer\+Cut\+Off. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_a043bfff100806a24928e7efd0c5a8b73}{\index{Spot\+Light@{Spot\+Light}!outer\+Cut\+Off\+Name@{outer\+Cut\+Off\+Name}}
+\index{outer\+Cut\+Off\+Name@{outer\+Cut\+Off\+Name}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{outer\+Cut\+Off\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Spot\+Light\+::outer\+Cut\+Off\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classSpotLight_a043bfff100806a24928e7efd0c5a8b73}
+\begin{DoxyReturn}{Returns}
+The name of the the cosinus of the outer cut off cosinus angle of the spot in the shader. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_abe749d17a6042232df070529dd2d1229}{\index{Spot\+Light@{Spot\+Light}!position@{position}}
+\index{position@{position}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Spot\+Light\+::position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSpotLight_abe749d17a6042232df070529dd2d1229}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+position. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_a1e3ef448e3022abe369db9ec4e83ab26}{\index{Spot\+Light@{Spot\+Light}!position\+Name@{position\+Name}}
+\index{position\+Name@{position\+Name}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{position\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Spot\+Light\+::position\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classSpotLight_a1e3ef448e3022abe369db9ec4e83ab26}
+\begin{DoxyReturn}{Returns}
+The name of the position of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_af30e894a67433d26393c2014a9033f1e}{\index{Spot\+Light@{Spot\+Light}!quadratic@{quadratic}}
+\index{quadratic@{quadratic}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{quadratic}]{\setlength{\rightskip}{0pt plus 5cm}const float\& Spot\+Light\+::quadratic (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSpotLight_af30e894a67433d26393c2014a9033f1e}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+quadratic. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_a9882313871fac602139953c9bc5a71a9}{\index{Spot\+Light@{Spot\+Light}!quadratic\+Name@{quadratic\+Name}}
+\index{quadratic\+Name@{quadratic\+Name}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{quadratic\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Spot\+Light\+::quadratic\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classSpotLight_a9882313871fac602139953c9bc5a71a9}
+\begin{DoxyReturn}{Returns}
+The name of the quadratic attenuation coefficient of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_a99eb20c31e4e7fda4d2c695c96bb5d3a}{\index{Spot\+Light@{Spot\+Light}!send\+To\+G\+P\+U@{send\+To\+G\+P\+U}}
+\index{send\+To\+G\+P\+U@{send\+To\+G\+P\+U}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{send\+To\+G\+P\+U}]{\setlength{\rightskip}{0pt plus 5cm}static bool Spot\+Light\+::send\+To\+G\+P\+U (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shader\+Program\+Ptr} \&}]{program, }
+\item[{const {\bf Spot\+Light\+Ptr} \&}]{light}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classSpotLight_a99eb20c31e4e7fda4d2c695c96bb5d3a}
+
+\begin{DoxyParams}{Parameters}
+{\em program} & A pointer to the shader program where to get the locations. \\
+\hline
+{\em light} & A pointer to the light to send to the G\+P\+U. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if everything was fine, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_aa137cccf70b2eff8f7a2a188553ec818}{\index{Spot\+Light@{Spot\+Light}!send\+To\+G\+P\+U@{send\+To\+G\+P\+U}}
+\index{send\+To\+G\+P\+U@{send\+To\+G\+P\+U}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{send\+To\+G\+P\+U}]{\setlength{\rightskip}{0pt plus 5cm}static bool Spot\+Light\+::send\+To\+G\+P\+U (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shader\+Program\+Ptr} \&}]{program, }
+\item[{const std\+::vector$<$ {\bf Spot\+Light\+Ptr} $>$ \&}]{lights}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classSpotLight_aa137cccf70b2eff8f7a2a188553ec818}
+
+\begin{DoxyParams}{Parameters}
+{\em program} & A pointer to the shader program where to get the locations. \\
+\hline
+{\em lights} & A vector of pointer to the lights to send to the G\+P\+U. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if everything was fine, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_a626e1e5331afe95e371193eca71b25f9}{\index{Spot\+Light@{Spot\+Light}!set\+Ambient@{set\+Ambient}}
+\index{set\+Ambient@{set\+Ambient}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{set\+Ambient}]{\setlength{\rightskip}{0pt plus 5cm}void Spot\+Light\+::set\+Ambient (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{ambient}
+\end{DoxyParamCaption}
+)}}\label{classSpotLight_a626e1e5331afe95e371193eca71b25f9}
+Set the value of m\+\_\+ambient. 
+\begin{DoxyParams}{Parameters}
+{\em ambient} & The new ambient intensity of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSpotLight_aff5255b08bba012f85fdde5d070129ee}{\index{Spot\+Light@{Spot\+Light}!set\+Constant@{set\+Constant}}
+\index{set\+Constant@{set\+Constant}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{set\+Constant}]{\setlength{\rightskip}{0pt plus 5cm}void Spot\+Light\+::set\+Constant (
+\begin{DoxyParamCaption}
+\item[{float}]{constant}
+\end{DoxyParamCaption}
+)}}\label{classSpotLight_aff5255b08bba012f85fdde5d070129ee}
+Set the value of m\+\_\+constant. 
+\begin{DoxyParams}{Parameters}
+{\em constant} & The new coefficient of constant attenuation of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSpotLight_a20a505694de0025c8595cd2ff8876ba8}{\index{Spot\+Light@{Spot\+Light}!set\+Diffuse@{set\+Diffuse}}
+\index{set\+Diffuse@{set\+Diffuse}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{set\+Diffuse}]{\setlength{\rightskip}{0pt plus 5cm}void Spot\+Light\+::set\+Diffuse (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{diffuse}
+\end{DoxyParamCaption}
+)}}\label{classSpotLight_a20a505694de0025c8595cd2ff8876ba8}
+Set the value of m\+\_\+diffuse. 
+\begin{DoxyParams}{Parameters}
+{\em diffuse} & The new diffuse intensity of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSpotLight_adae6ef8846a33afeb379dfb39142799a}{\index{Spot\+Light@{Spot\+Light}!set\+Inner\+Cut\+Off@{set\+Inner\+Cut\+Off}}
+\index{set\+Inner\+Cut\+Off@{set\+Inner\+Cut\+Off}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{set\+Inner\+Cut\+Off}]{\setlength{\rightskip}{0pt plus 5cm}void Spot\+Light\+::set\+Inner\+Cut\+Off (
+\begin{DoxyParamCaption}
+\item[{float}]{inner\+Cut\+Off}
+\end{DoxyParamCaption}
+)}}\label{classSpotLight_adae6ef8846a33afeb379dfb39142799a}
+Set the value of m\+\_\+inner\+Cut\+Off. 
+\begin{DoxyParams}{Parameters}
+{\em inner\+Cut\+Off} & The new cosinus of the inner cut off angle of the spot. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSpotLight_a14852dde240213108b56be911841b09d}{\index{Spot\+Light@{Spot\+Light}!set\+Linear@{set\+Linear}}
+\index{set\+Linear@{set\+Linear}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{set\+Linear}]{\setlength{\rightskip}{0pt plus 5cm}void Spot\+Light\+::set\+Linear (
+\begin{DoxyParamCaption}
+\item[{float}]{linear}
+\end{DoxyParamCaption}
+)}}\label{classSpotLight_a14852dde240213108b56be911841b09d}
+Set the value of m\+\_\+linear. 
+\begin{DoxyParams}{Parameters}
+{\em linear} & The new coefficient of linear attenuation of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSpotLight_a53217911a646632e3ae54c0c19343dd2}{\index{Spot\+Light@{Spot\+Light}!set\+Outer\+Cut\+Off@{set\+Outer\+Cut\+Off}}
+\index{set\+Outer\+Cut\+Off@{set\+Outer\+Cut\+Off}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{set\+Outer\+Cut\+Off}]{\setlength{\rightskip}{0pt plus 5cm}void Spot\+Light\+::set\+Outer\+Cut\+Off (
+\begin{DoxyParamCaption}
+\item[{float}]{outer\+Cut\+Off}
+\end{DoxyParamCaption}
+)}}\label{classSpotLight_a53217911a646632e3ae54c0c19343dd2}
+Set the value of m\+\_\+outer\+Cut\+Off. 
+\begin{DoxyParams}{Parameters}
+{\em outer\+Cut\+Off} & The new cosinus of the outer cut off angle of the spot. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSpotLight_a7382bfe5fe8b92b0ff9dad5e25b5d48a}{\index{Spot\+Light@{Spot\+Light}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{set\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Spot\+Light\+::set\+Position (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{position}
+\end{DoxyParamCaption}
+)}}\label{classSpotLight_a7382bfe5fe8b92b0ff9dad5e25b5d48a}
+Set the value of m\+\_\+position. 
+\begin{DoxyParams}{Parameters}
+{\em position} & The new position of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSpotLight_a4ca75b46bacac76bd8684a1c88341e6d}{\index{Spot\+Light@{Spot\+Light}!set\+Quadratic@{set\+Quadratic}}
+\index{set\+Quadratic@{set\+Quadratic}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{set\+Quadratic}]{\setlength{\rightskip}{0pt plus 5cm}void Spot\+Light\+::set\+Quadratic (
+\begin{DoxyParamCaption}
+\item[{float}]{quadratic}
+\end{DoxyParamCaption}
+)}}\label{classSpotLight_a4ca75b46bacac76bd8684a1c88341e6d}
+Set the value of m\+\_\+quadratic. 
+\begin{DoxyParams}{Parameters}
+{\em quadratic} & The new coefficient of quadratic attenuation of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSpotLight_a9e602b8df45447032985f839c3ff9a3c}{\index{Spot\+Light@{Spot\+Light}!set\+Specular@{set\+Specular}}
+\index{set\+Specular@{set\+Specular}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{set\+Specular}]{\setlength{\rightskip}{0pt plus 5cm}void Spot\+Light\+::set\+Specular (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{specular}
+\end{DoxyParamCaption}
+)}}\label{classSpotLight_a9e602b8df45447032985f839c3ff9a3c}
+Set the value of m\+\_\+specular. 
+\begin{DoxyParams}{Parameters}
+{\em specular} & The new specular intensity of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSpotLight_adf02edfdbbb7f7f15c879e484ed4ea2f}{\index{Spot\+Light@{Spot\+Light}!set\+Spot\+Direction@{set\+Spot\+Direction}}
+\index{set\+Spot\+Direction@{set\+Spot\+Direction}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{set\+Spot\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}void Spot\+Light\+::set\+Spot\+Direction (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{spot\+Direction}
+\end{DoxyParamCaption}
+)}}\label{classSpotLight_adf02edfdbbb7f7f15c879e484ed4ea2f}
+Set the value of m\+\_\+direction. 
+\begin{DoxyParams}{Parameters}
+{\em spot\+Direction} & The new direction of the light. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSpotLight_a2dd83ce57f35badb6c0147bf0aa56b02}{\index{Spot\+Light@{Spot\+Light}!specular@{specular}}
+\index{specular@{specular}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{specular}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Spot\+Light\+::specular (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSpotLight_a2dd83ce57f35badb6c0147bf0aa56b02}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+specular. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_aaf72c2c6a8abc7618be8ae712b67b4ab}{\index{Spot\+Light@{Spot\+Light}!specular\+Name@{specular\+Name}}
+\index{specular\+Name@{specular\+Name}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{specular\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Spot\+Light\+::specular\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classSpotLight_aaf72c2c6a8abc7618be8ae712b67b4ab}
+\begin{DoxyReturn}{Returns}
+The name of the specular intensity of the light in the shader. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_a9832f6f55fdd521b47e9c9eda8a9149b}{\index{Spot\+Light@{Spot\+Light}!spot\+Direction@{spot\+Direction}}
+\index{spot\+Direction@{spot\+Direction}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{spot\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Spot\+Light\+::spot\+Direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSpotLight_a9832f6f55fdd521b47e9c9eda8a9149b}
+\begin{DoxyReturn}{Returns}
+A const reference to m\+\_\+direction. 
+\end{DoxyReturn}
+\hypertarget{classSpotLight_a72e18c47be1700bc41621d98dd0a69d5}{\index{Spot\+Light@{Spot\+Light}!spot\+Direction\+Name@{spot\+Direction\+Name}}
+\index{spot\+Direction\+Name@{spot\+Direction\+Name}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{spot\+Direction\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Spot\+Light\+::spot\+Direction\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classSpotLight_a72e18c47be1700bc41621d98dd0a69d5}
+\begin{DoxyReturn}{Returns}
+The name of the direction of the spot in the shader. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSpotLight_a8120c87715c0d55a139562b01f0af3c6}{\index{Spot\+Light@{Spot\+Light}!m\+\_\+ambient@{m\+\_\+ambient}}
+\index{m\+\_\+ambient@{m\+\_\+ambient}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{m\+\_\+ambient}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Spot\+Light\+::m\+\_\+ambient\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLight_a8120c87715c0d55a139562b01f0af3c6}
+Intensity of the light with respect to the object ambient components. \hypertarget{classSpotLight_a34d9b43d8bfe559da5d13566ca7882f9}{\index{Spot\+Light@{Spot\+Light}!m\+\_\+constant@{m\+\_\+constant}}
+\index{m\+\_\+constant@{m\+\_\+constant}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{m\+\_\+constant}]{\setlength{\rightskip}{0pt plus 5cm}float Spot\+Light\+::m\+\_\+constant\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLight_a34d9b43d8bfe559da5d13566ca7882f9}
+Coefficient of constant attenuation of the light. \hypertarget{classSpotLight_aba029b38f4ee2b6942bc7c2819621cef}{\index{Spot\+Light@{Spot\+Light}!m\+\_\+diffuse@{m\+\_\+diffuse}}
+\index{m\+\_\+diffuse@{m\+\_\+diffuse}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{m\+\_\+diffuse}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Spot\+Light\+::m\+\_\+diffuse\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLight_aba029b38f4ee2b6942bc7c2819621cef}
+Intensity of the light with respect to the object diffuse components. \hypertarget{classSpotLight_a9b7c5db8293b0bab65df4474a578bb5d}{\index{Spot\+Light@{Spot\+Light}!m\+\_\+inner\+Cut\+Off@{m\+\_\+inner\+Cut\+Off}}
+\index{m\+\_\+inner\+Cut\+Off@{m\+\_\+inner\+Cut\+Off}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{m\+\_\+inner\+Cut\+Off}]{\setlength{\rightskip}{0pt plus 5cm}float Spot\+Light\+::m\+\_\+inner\+Cut\+Off\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLight_a9b7c5db8293b0bab65df4474a578bb5d}
+The cosinus of the inner cutoff angle that specifies the spotlight's inner radius. Everything inside this angle is fully lit by the spotlight. \hypertarget{classSpotLight_a9127c53d783524782e2a6f31b8702173}{\index{Spot\+Light@{Spot\+Light}!m\+\_\+linear@{m\+\_\+linear}}
+\index{m\+\_\+linear@{m\+\_\+linear}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{m\+\_\+linear}]{\setlength{\rightskip}{0pt plus 5cm}float Spot\+Light\+::m\+\_\+linear\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLight_a9127c53d783524782e2a6f31b8702173}
+Coefficient of linear attenuation of the light with respect to the distance to the light position. \hypertarget{classSpotLight_a48ede6ee3dc2397941d4d8b96e6bd76a}{\index{Spot\+Light@{Spot\+Light}!m\+\_\+outer\+Cut\+Off@{m\+\_\+outer\+Cut\+Off}}
+\index{m\+\_\+outer\+Cut\+Off@{m\+\_\+outer\+Cut\+Off}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{m\+\_\+outer\+Cut\+Off}]{\setlength{\rightskip}{0pt plus 5cm}float Spot\+Light\+::m\+\_\+outer\+Cut\+Off\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLight_a48ede6ee3dc2397941d4d8b96e6bd76a}
+The cosinus of the outer cutoff angle that specifies the spotlight's outer radius. Everything outside this angle is not lit by the spotlight. \hypertarget{classSpotLight_ab10a89bbb4076364f7f028b750207522}{\index{Spot\+Light@{Spot\+Light}!m\+\_\+position@{m\+\_\+position}}
+\index{m\+\_\+position@{m\+\_\+position}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{m\+\_\+position}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Spot\+Light\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLight_ab10a89bbb4076364f7f028b750207522}
+The position of the light. \hypertarget{classSpotLight_a6d81863546c671662f84b71a15328654}{\index{Spot\+Light@{Spot\+Light}!m\+\_\+quadratic@{m\+\_\+quadratic}}
+\index{m\+\_\+quadratic@{m\+\_\+quadratic}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{m\+\_\+quadratic}]{\setlength{\rightskip}{0pt plus 5cm}float Spot\+Light\+::m\+\_\+quadratic\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLight_a6d81863546c671662f84b71a15328654}
+Coefficient of quadratic attenuation of the light with respect to the distance to the light position. \hypertarget{classSpotLight_a6814d385600a409b73a2877afd545136}{\index{Spot\+Light@{Spot\+Light}!m\+\_\+specular@{m\+\_\+specular}}
+\index{m\+\_\+specular@{m\+\_\+specular}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{m\+\_\+specular}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Spot\+Light\+::m\+\_\+specular\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLight_a6814d385600a409b73a2877afd545136}
+Intensity of the light with respect to the object specular components. \hypertarget{classSpotLight_ae950bb31005fc7d62232bfc78d1ef8f6}{\index{Spot\+Light@{Spot\+Light}!m\+\_\+spot\+Direction@{m\+\_\+spot\+Direction}}
+\index{m\+\_\+spot\+Direction@{m\+\_\+spot\+Direction}!Spot\+Light@{Spot\+Light}}
+\subsubsection[{m\+\_\+spot\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Spot\+Light\+::m\+\_\+spot\+Direction\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpotLight_ae950bb31005fc7d62232bfc78d1ef8f6}
+The direction of the spot. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/lighting/\hyperlink{Light_8hpp}{Light.\+hpp}\end{DoxyCompactItemize}

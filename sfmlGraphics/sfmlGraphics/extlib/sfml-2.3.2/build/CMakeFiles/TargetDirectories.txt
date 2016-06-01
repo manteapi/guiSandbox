@@ -1,0 +1,5 @@
+/home/chardon/Depot/ensimag/2A_G3D/practicals/teacherSource/extlib/sfml-2.3.2/build/src/SFML/Audio/CMakeFiles/sfml-audio.dir
+/home/chardon/Depot/ensimag/2A_G3D/practicals/teacherSource/extlib/sfml-2.3.2/build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
+/home/chardon/Depot/ensimag/2A_G3D/practicals/teacherSource/extlib/sfml-2.3.2/build/src/SFML/Network/CMakeFiles/sfml-network.dir
+/home/chardon/Depot/ensimag/2A_G3D/practicals/teacherSource/extlib/sfml-2.3.2/build/src/SFML/System/CMakeFiles/sfml-system.dir
+/home/chardon/Depot/ensimag/2A_G3D/practicals/teacherSource/extlib/sfml-2.3.2/build/src/SFML/Window/CMakeFiles/sfml-window.dir

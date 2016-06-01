@@ -1,0 +1,97 @@
+\hypertarget{classSolver}{\section{Solver Class Reference}
+\label{classSolver}\index{Solver@{Solver}}
+}
+
+
+Dynamic system solver interface.  
+
+
+
+
+{\ttfamily \#include $<$Solver.\+hpp$>$}
+
+
+
+Inheritance diagram for Solver\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classSolver__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSolver_a9dfe7ae9ce617e8a6398be34284c907a}{Solver} ()
+\item 
+virtual \hyperlink{classSolver_a14f7014dd6e46e3990dea30b5ad3c087}{$\sim$\+Solver} ()
+\item 
+void \hyperlink{classSolver_a61a7ee82c1f64bec35c76d1efd3b26f6}{solve} (const float \&dt, std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \&particles)
+\begin{DoxyCompactList}\small\item\em Solve the dynamic system of particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classSolver_a4559f655c64c879fffd49557de27ab7d}{do\+\_\+solve} (const float \&dt, std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \&particles)=0
+\begin{DoxyCompactList}\small\item\em Solve implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define an interface for dynamic system solver. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSolver_a9dfe7ae9ce617e8a6398be34284c907a}{\index{Solver@{Solver}!Solver@{Solver}}
+\index{Solver@{Solver}!Solver@{Solver}}
+\subsubsection[{Solver}]{\setlength{\rightskip}{0pt plus 5cm}Solver\+::\+Solver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSolver_a9dfe7ae9ce617e8a6398be34284c907a}
+\hypertarget{classSolver_a14f7014dd6e46e3990dea30b5ad3c087}{\index{Solver@{Solver}!````~Solver@{$\sim$\+Solver}}
+\index{````~Solver@{$\sim$\+Solver}!Solver@{Solver}}
+\subsubsection[{$\sim$\+Solver}]{\setlength{\rightskip}{0pt plus 5cm}virtual Solver\+::$\sim$\+Solver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classSolver_a14f7014dd6e46e3990dea30b5ad3c087}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSolver_a4559f655c64c879fffd49557de27ab7d}{\index{Solver@{Solver}!do\+\_\+solve@{do\+\_\+solve}}
+\index{do\+\_\+solve@{do\+\_\+solve}!Solver@{Solver}}
+\subsubsection[{do\+\_\+solve}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Solver\+::do\+\_\+solve (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{dt, }
+\item[{std\+::vector$<$ {\bf Particle\+Ptr} $>$ \&}]{particles}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [pure virtual]}}}\label{classSolver_a4559f655c64c879fffd49557de27ab7d}
+The actual implementation to solve the dynamic system. This should be implemented in derived classes. 
+\begin{DoxyParams}{Parameters}
+{\em dt} & The time step for the integration. \\
+\hline
+{\em particles} & The collection of particles. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classEulerExplicitSolver_aaaa3657876aff1c53a9a8a78c610757e}{Euler\+Explicit\+Solver}.
+
+\hypertarget{classSolver_a61a7ee82c1f64bec35c76d1efd3b26f6}{\index{Solver@{Solver}!solve@{solve}}
+\index{solve@{solve}!Solver@{Solver}}
+\subsubsection[{solve}]{\setlength{\rightskip}{0pt plus 5cm}void Solver\+::solve (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{dt, }
+\item[{std\+::vector$<$ {\bf Particle\+Ptr} $>$ \&}]{particles}
+\end{DoxyParamCaption}
+)}}\label{classSolver_a61a7ee82c1f64bec35c76d1efd3b26f6}
+Solve the dynamic system of particles for a specified time step. 
+\begin{DoxyParams}{Parameters}
+{\em dt} & The time step for the integration. \\
+\hline
+{\em particles} & The collection of particles. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{Solver_8hpp}{Solver.\+hpp}\end{DoxyCompactItemize}

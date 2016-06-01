@@ -1,0 +1,148 @@
+\hypertarget{classConstantForceField}{\section{Constant\+Force\+Field Class Reference}
+\label{classConstantForceField}\index{Constant\+Force\+Field@{Constant\+Force\+Field}}
+}
+
+
+Constant force field.  
+
+
+
+
+{\ttfamily \#include $<$Constant\+Force\+Field.\+hpp$>$}
+
+
+
+Inheritance diagram for Constant\+Force\+Field\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classConstantForceField__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Constant\+Force\+Field\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classConstantForceField__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classConstantForceField_aae2c264a31c790130fc0b76c6e93160b}{Constant\+Force\+Field} (const std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \&particles, const glm\+::vec3 \&force)
+\begin{DoxyCompactList}\small\item\em Build a constant force field. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \hyperlink{classConstantForceField_a80d7579494fc32b0c83daab452130371}{get\+Particles} ()
+\begin{DoxyCompactList}\small\item\em Access to the set of managed particles. \end{DoxyCompactList}\item 
+void \hyperlink{classConstantForceField_acd6c41391f38bb37890a7a9f5864e04d}{set\+Particles} (const std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \&particles)
+\begin{DoxyCompactList}\small\item\em Define a new set of particles managed by this constant force field. \end{DoxyCompactList}\item 
+const glm\+::vec3 \& \hyperlink{classConstantForceField_a7e914a757101de443694df79f9665586}{get\+Force} ()
+\begin{DoxyCompactList}\small\item\em Access to the force applied to all influenced particles. \end{DoxyCompactList}\item 
+void \hyperlink{classConstantForceField_a46c997f9f771cc83ef47bfdf6898734a}{set\+Force} (const glm\+::vec3 \&force)
+\begin{DoxyCompactList}\small\item\em Set the force applied to all influenced particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classConstantForceField_a4336bdbfa85ac10cc8a50170ab515061}{do\+\_\+add\+Force} ()
+\begin{DoxyCompactList}\small\item\em Add force implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{Particle_8hpp_a9a7abc8635002993537b61ef2c857fdd}{Particle\+Ptr} $>$ \hyperlink{classConstantForceField_acedcc9ed06f8d7b10714db6c321a188d}{m\+\_\+particles}
+\item 
+glm\+::vec3 \hyperlink{classConstantForceField_abba1f35001942ccdb89cb9a8a654d373}{m\+\_\+force}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of a force field that is constant, i.\+e. the same for all managed particles. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classConstantForceField_aae2c264a31c790130fc0b76c6e93160b}{\index{Constant\+Force\+Field@{Constant\+Force\+Field}!Constant\+Force\+Field@{Constant\+Force\+Field}}
+\index{Constant\+Force\+Field@{Constant\+Force\+Field}!Constant\+Force\+Field@{Constant\+Force\+Field}}
+\subsubsection[{Constant\+Force\+Field}]{\setlength{\rightskip}{0pt plus 5cm}Constant\+Force\+Field\+::\+Constant\+Force\+Field (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf Particle\+Ptr} $>$ \&}]{particles, }
+\item[{const glm\+::vec3 \&}]{force}
+\end{DoxyParamCaption}
+)}}\label{classConstantForceField_aae2c264a31c790130fc0b76c6e93160b}
+Build a constant force field for a set of particles. 
+\begin{DoxyParams}{Parameters}
+{\em particles} & The set of particles influenced by this force field. \\
+\hline
+{\em force} & The constant force applied to all particles. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classConstantForceField_a4336bdbfa85ac10cc8a50170ab515061}{\index{Constant\+Force\+Field@{Constant\+Force\+Field}!do\+\_\+add\+Force@{do\+\_\+add\+Force}}
+\index{do\+\_\+add\+Force@{do\+\_\+add\+Force}!Constant\+Force\+Field@{Constant\+Force\+Field}}
+\subsubsection[{do\+\_\+add\+Force}]{\setlength{\rightskip}{0pt plus 5cm}void Constant\+Force\+Field\+::do\+\_\+add\+Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classConstantForceField_a4336bdbfa85ac10cc8a50170ab515061}
+The actual implementation to add force to the particles. This should be implemented in derived classes. 
+
+Implements \hyperlink{classForceField_a2f44520a00188a3aaeb04e667e8d2673}{Force\+Field}.
+
+\hypertarget{classConstantForceField_a7e914a757101de443694df79f9665586}{\index{Constant\+Force\+Field@{Constant\+Force\+Field}!get\+Force@{get\+Force}}
+\index{get\+Force@{get\+Force}!Constant\+Force\+Field@{Constant\+Force\+Field}}
+\subsubsection[{get\+Force}]{\setlength{\rightskip}{0pt plus 5cm}const glm\+::vec3\& Constant\+Force\+Field\+::get\+Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classConstantForceField_a7e914a757101de443694df79f9665586}
+Get the constant force of this force field. \begin{DoxyReturn}{Returns}
+The force of this force field. 
+\end{DoxyReturn}
+\hypertarget{classConstantForceField_a80d7579494fc32b0c83daab452130371}{\index{Constant\+Force\+Field@{Constant\+Force\+Field}!get\+Particles@{get\+Particles}}
+\index{get\+Particles@{get\+Particles}!Constant\+Force\+Field@{Constant\+Force\+Field}}
+\subsubsection[{get\+Particles}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<${\bf Particle\+Ptr}$>$ Constant\+Force\+Field\+::get\+Particles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classConstantForceField_a80d7579494fc32b0c83daab452130371}
+Get the set of managed particles of this constant force field. \begin{DoxyReturn}{Returns}
+The managed force field. 
+\end{DoxyReturn}
+\hypertarget{classConstantForceField_a46c997f9f771cc83ef47bfdf6898734a}{\index{Constant\+Force\+Field@{Constant\+Force\+Field}!set\+Force@{set\+Force}}
+\index{set\+Force@{set\+Force}!Constant\+Force\+Field@{Constant\+Force\+Field}}
+\subsubsection[{set\+Force}]{\setlength{\rightskip}{0pt plus 5cm}void Constant\+Force\+Field\+::set\+Force (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{force}
+\end{DoxyParamCaption}
+)}}\label{classConstantForceField_a46c997f9f771cc83ef47bfdf6898734a}
+Set the force applied to all particles influenced by this force field. 
+\begin{DoxyParams}{Parameters}
+{\em force} & The new force. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classConstantForceField_acd6c41391f38bb37890a7a9f5864e04d}{\index{Constant\+Force\+Field@{Constant\+Force\+Field}!set\+Particles@{set\+Particles}}
+\index{set\+Particles@{set\+Particles}!Constant\+Force\+Field@{Constant\+Force\+Field}}
+\subsubsection[{set\+Particles}]{\setlength{\rightskip}{0pt plus 5cm}void Constant\+Force\+Field\+::set\+Particles (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf Particle\+Ptr} $>$ \&}]{particles}
+\end{DoxyParamCaption}
+)}}\label{classConstantForceField_acd6c41391f38bb37890a7a9f5864e04d}
+Set the particles influenced by this constant force field. 
+\begin{DoxyParams}{Parameters}
+{\em particles} & The new set of particles. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classConstantForceField_abba1f35001942ccdb89cb9a8a654d373}{\index{Constant\+Force\+Field@{Constant\+Force\+Field}!m\+\_\+force@{m\+\_\+force}}
+\index{m\+\_\+force@{m\+\_\+force}!Constant\+Force\+Field@{Constant\+Force\+Field}}
+\subsubsection[{m\+\_\+force}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Constant\+Force\+Field\+::m\+\_\+force\hspace{0.3cm}{\ttfamily [private]}}}\label{classConstantForceField_abba1f35001942ccdb89cb9a8a654d373}
+\hypertarget{classConstantForceField_acedcc9ed06f8d7b10714db6c321a188d}{\index{Constant\+Force\+Field@{Constant\+Force\+Field}!m\+\_\+particles@{m\+\_\+particles}}
+\index{m\+\_\+particles@{m\+\_\+particles}!Constant\+Force\+Field@{Constant\+Force\+Field}}
+\subsubsection[{m\+\_\+particles}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Particle\+Ptr}$>$ Constant\+Force\+Field\+::m\+\_\+particles\hspace{0.3cm}{\ttfamily [private]}}}\label{classConstantForceField_acedcc9ed06f8d7b10714db6c321a188d}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/dynamics/\hyperlink{ConstantForceField_8hpp}{Constant\+Force\+Field.\+hpp}\end{DoxyCompactItemize}

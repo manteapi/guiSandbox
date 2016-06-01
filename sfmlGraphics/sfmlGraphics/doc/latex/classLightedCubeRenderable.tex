@@ -1,0 +1,142 @@
+\hypertarget{classLightedCubeRenderable}{\section{Lighted\+Cube\+Renderable Class Reference}
+\label{classLightedCubeRenderable}\index{Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}}
+}
+
+
+{\ttfamily \#include $<$Lighted\+Cube\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Lighted\+Cube\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classLightedCubeRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Lighted\+Cube\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLightedCubeRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLightedCubeRenderable_a5fa09ed9225574f38bae4620f7b38a93}{$\sim$\+Lighted\+Cube\+Renderable} ()
+\item 
+\hyperlink{classLightedCubeRenderable_a4ed004e7c6705115eb0cfc923d7d4323}{Lighted\+Cube\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program)
+\item 
+void \hyperlink{classLightedCubeRenderable_a6dbf380a735cd69da08e80cd506ca7a3}{set\+Material} (const \hyperlink{Material_8hpp_a1d47cd05ca683e287435cf0b363fbfe1}{Material\+Ptr} \&material)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLightedCubeRenderable_a62c74cad13c77f9442a8baab0c7d156c}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classLightedCubeRenderable_a2888876e6b826899dfe0611c0021b161}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classLightedCubeRenderable_a0c0c5eb370f23cabfd1a683d784559af}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classLightedCubeRenderable_a8d300c68f52441ea4b0b8633cdb80a2c}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classLightedCubeRenderable_af2d85e3194b02e6f94004f0cd08195f9}{m\+\_\+normals}
+\item 
+unsigned int \hyperlink{classLightedCubeRenderable_a9454b080496e7ceb563615c1fa14be9b}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classLightedCubeRenderable_aab6ae791b76f419fc6f0255718cc3ab1}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classLightedCubeRenderable_a65b42742eca437c5d84b75137abafbd7}{m\+\_\+n\+Buffer}
+\item 
+\hyperlink{Material_8hpp_a1d47cd05ca683e287435cf0b363fbfe1}{Material\+Ptr} \hyperlink{classLightedCubeRenderable_a06c8156cc469df88e25ee2cdeb00fa4a}{m\+\_\+material}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLightedCubeRenderable_a5fa09ed9225574f38bae4620f7b38a93}{\index{Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}!````~Lighted\+Cube\+Renderable@{$\sim$\+Lighted\+Cube\+Renderable}}
+\index{````~Lighted\+Cube\+Renderable@{$\sim$\+Lighted\+Cube\+Renderable}!Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}}
+\subsubsection[{$\sim$\+Lighted\+Cube\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Lighted\+Cube\+Renderable\+::$\sim$\+Lighted\+Cube\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLightedCubeRenderable_a5fa09ed9225574f38bae4620f7b38a93}
+\hypertarget{classLightedCubeRenderable_a4ed004e7c6705115eb0cfc923d7d4323}{\index{Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}!Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}}
+\index{Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}!Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}}
+\subsubsection[{Lighted\+Cube\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Lighted\+Cube\+Renderable\+::\+Lighted\+Cube\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program}
+\end{DoxyParamCaption}
+)}}\label{classLightedCubeRenderable_a4ed004e7c6705115eb0cfc923d7d4323}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLightedCubeRenderable_a2888876e6b826899dfe0611c0021b161}{\index{Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Lighted\+Cube\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classLightedCubeRenderable_a2888876e6b826899dfe0611c0021b161}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classLightedCubeRenderable_a62c74cad13c77f9442a8baab0c7d156c}{\index{Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Lighted\+Cube\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classLightedCubeRenderable_a62c74cad13c77f9442a8baab0c7d156c}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+\hypertarget{classLightedCubeRenderable_a6dbf380a735cd69da08e80cd506ca7a3}{\index{Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}!set\+Material@{set\+Material}}
+\index{set\+Material@{set\+Material}!Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}}
+\subsubsection[{set\+Material}]{\setlength{\rightskip}{0pt plus 5cm}void Lighted\+Cube\+Renderable\+::set\+Material (
+\begin{DoxyParamCaption}
+\item[{const {\bf Material\+Ptr} \&}]{material}
+\end{DoxyParamCaption}
+)}}\label{classLightedCubeRenderable_a6dbf380a735cd69da08e80cd506ca7a3}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLightedCubeRenderable_aab6ae791b76f419fc6f0255718cc3ab1}{\index{Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Lighted\+Cube\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedCubeRenderable_aab6ae791b76f419fc6f0255718cc3ab1}
+\hypertarget{classLightedCubeRenderable_a8d300c68f52441ea4b0b8633cdb80a2c}{\index{Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Lighted\+Cube\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedCubeRenderable_a8d300c68f52441ea4b0b8633cdb80a2c}
+\hypertarget{classLightedCubeRenderable_a06c8156cc469df88e25ee2cdeb00fa4a}{\index{Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}!m\+\_\+material@{m\+\_\+material}}
+\index{m\+\_\+material@{m\+\_\+material}!Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+material}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Material\+Ptr} Lighted\+Cube\+Renderable\+::m\+\_\+material\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedCubeRenderable_a06c8156cc469df88e25ee2cdeb00fa4a}
+\hypertarget{classLightedCubeRenderable_a65b42742eca437c5d84b75137abafbd7}{\index{Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Lighted\+Cube\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedCubeRenderable_a65b42742eca437c5d84b75137abafbd7}
+\hypertarget{classLightedCubeRenderable_af2d85e3194b02e6f94004f0cd08195f9}{\index{Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Lighted\+Cube\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedCubeRenderable_af2d85e3194b02e6f94004f0cd08195f9}
+\hypertarget{classLightedCubeRenderable_a9454b080496e7ceb563615c1fa14be9b}{\index{Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Lighted\+Cube\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedCubeRenderable_a9454b080496e7ceb563615c1fa14be9b}
+\hypertarget{classLightedCubeRenderable_a0c0c5eb370f23cabfd1a683d784559af}{\index{Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Lighted\+Cube\+Renderable@{Lighted\+Cube\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Lighted\+Cube\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedCubeRenderable_a0c0c5eb370f23cabfd1a683d784559af}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/lighting/\hyperlink{LightedCubeRenderable_8hpp}{Lighted\+Cube\+Renderable.\+hpp}\end{DoxyCompactItemize}

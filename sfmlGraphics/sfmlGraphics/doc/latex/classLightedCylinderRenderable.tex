@@ -1,0 +1,142 @@
+\hypertarget{classLightedCylinderRenderable}{\section{Lighted\+Cylinder\+Renderable Class Reference}
+\label{classLightedCylinderRenderable}\index{Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}}
+}
+
+
+{\ttfamily \#include $<$Lighted\+Cylinder\+Renderable.\+hpp$>$}
+
+
+
+Inheritance diagram for Lighted\+Cylinder\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classLightedCylinderRenderable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Lighted\+Cylinder\+Renderable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLightedCylinderRenderable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLightedCylinderRenderable_a099f169da178f08e3b3e1c39873ff54e}{$\sim$\+Lighted\+Cylinder\+Renderable} ()
+\item 
+\hyperlink{classLightedCylinderRenderable_a77e38146024a45063d5874ac176bf84f}{Lighted\+Cylinder\+Renderable} (\hyperlink{ShaderProgram_8hpp_af8e4af1ad4c53875ee5d32ab7e1f4966}{Shader\+Program\+Ptr} program)
+\item 
+void \hyperlink{classLightedCylinderRenderable_af63ed94be5df5dc25a58c01b44a2e82d}{set\+Material} (const \hyperlink{Material_8hpp_a1d47cd05ca683e287435cf0b363fbfe1}{Material\+Ptr} \&material)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLightedCylinderRenderable_a327da1ffb8ac46a01b4c8057ea532acb}{do\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draw virtual function. \end{DoxyCompactList}\item 
+void \hyperlink{classLightedCylinderRenderable_a7ecf5b614bf6e98335e9b46edfc64e67}{do\+\_\+animate} (float time)
+\begin{DoxyCompactList}\small\item\em Animate virtual function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classLightedCylinderRenderable_af92700359498f5307fb416f641a9015d}{m\+\_\+positions}
+\item 
+std\+::vector$<$ glm\+::vec4 $>$ \hyperlink{classLightedCylinderRenderable_a33d59e3d7e08b0123102624da0caa396}{m\+\_\+colors}
+\item 
+std\+::vector$<$ glm\+::vec3 $>$ \hyperlink{classLightedCylinderRenderable_ae5305cb063f670b7c8943423b82f2d1f}{m\+\_\+normals}
+\item 
+unsigned int \hyperlink{classLightedCylinderRenderable_abf3d79539f561c684db8394bc489cf38}{m\+\_\+p\+Buffer}
+\item 
+unsigned int \hyperlink{classLightedCylinderRenderable_a2795079c02ff376e0b4a7e2507371d94}{m\+\_\+c\+Buffer}
+\item 
+unsigned int \hyperlink{classLightedCylinderRenderable_abb74e2395d504a3393ba2b59276bf361}{m\+\_\+n\+Buffer}
+\item 
+\hyperlink{Material_8hpp_a1d47cd05ca683e287435cf0b363fbfe1}{Material\+Ptr} \hyperlink{classLightedCylinderRenderable_a69203c5141f12784a61ab3cefb885b3f}{m\+\_\+material}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLightedCylinderRenderable_a099f169da178f08e3b3e1c39873ff54e}{\index{Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}!````~Lighted\+Cylinder\+Renderable@{$\sim$\+Lighted\+Cylinder\+Renderable}}
+\index{````~Lighted\+Cylinder\+Renderable@{$\sim$\+Lighted\+Cylinder\+Renderable}!Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}}
+\subsubsection[{$\sim$\+Lighted\+Cylinder\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Lighted\+Cylinder\+Renderable\+::$\sim$\+Lighted\+Cylinder\+Renderable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLightedCylinderRenderable_a099f169da178f08e3b3e1c39873ff54e}
+\hypertarget{classLightedCylinderRenderable_a77e38146024a45063d5874ac176bf84f}{\index{Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}!Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}}
+\index{Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}!Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}}
+\subsubsection[{Lighted\+Cylinder\+Renderable}]{\setlength{\rightskip}{0pt plus 5cm}Lighted\+Cylinder\+Renderable\+::\+Lighted\+Cylinder\+Renderable (
+\begin{DoxyParamCaption}
+\item[{{\bf Shader\+Program\+Ptr}}]{program}
+\end{DoxyParamCaption}
+)}}\label{classLightedCylinderRenderable_a77e38146024a45063d5874ac176bf84f}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLightedCylinderRenderable_a7ecf5b614bf6e98335e9b46edfc64e67}{\index{Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}!do\+\_\+animate@{do\+\_\+animate}}
+\index{do\+\_\+animate@{do\+\_\+animate}!Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}}
+\subsubsection[{do\+\_\+animate}]{\setlength{\rightskip}{0pt plus 5cm}void Lighted\+Cylinder\+Renderable\+::do\+\_\+animate (
+\begin{DoxyParamCaption}
+\item[{float}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classLightedCylinderRenderable_a7ecf5b614bf6e98335e9b46edfc64e67}
+Implementation to animate this renderable. 
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRenderable_aa5206322555c9dece40b21e797629b34}{Renderable}.
+
+\hypertarget{classLightedCylinderRenderable_a327da1ffb8ac46a01b4c8057ea532acb}{\index{Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}!do\+\_\+draw@{do\+\_\+draw}}
+\index{do\+\_\+draw@{do\+\_\+draw}!Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}}
+\subsubsection[{do\+\_\+draw}]{\setlength{\rightskip}{0pt plus 5cm}void Lighted\+Cylinder\+Renderable\+::do\+\_\+draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classLightedCylinderRenderable_a327da1ffb8ac46a01b4c8057ea532acb}
+Implementation to draw this renderable. 
+
+Implements \hyperlink{classRenderable_a98ab6308c1d2b56dacda7c435fb38d5b}{Renderable}.
+
+\hypertarget{classLightedCylinderRenderable_af63ed94be5df5dc25a58c01b44a2e82d}{\index{Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}!set\+Material@{set\+Material}}
+\index{set\+Material@{set\+Material}!Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}}
+\subsubsection[{set\+Material}]{\setlength{\rightskip}{0pt plus 5cm}void Lighted\+Cylinder\+Renderable\+::set\+Material (
+\begin{DoxyParamCaption}
+\item[{const {\bf Material\+Ptr} \&}]{material}
+\end{DoxyParamCaption}
+)}}\label{classLightedCylinderRenderable_af63ed94be5df5dc25a58c01b44a2e82d}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLightedCylinderRenderable_a2795079c02ff376e0b4a7e2507371d94}{\index{Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}!m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}}
+\index{m\+\_\+c\+Buffer@{m\+\_\+c\+Buffer}!Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+c\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Lighted\+Cylinder\+Renderable\+::m\+\_\+c\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedCylinderRenderable_a2795079c02ff376e0b4a7e2507371d94}
+\hypertarget{classLightedCylinderRenderable_a33d59e3d7e08b0123102624da0caa396}{\index{Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}!m\+\_\+colors@{m\+\_\+colors}}
+\index{m\+\_\+colors@{m\+\_\+colors}!Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec4 $>$ Lighted\+Cylinder\+Renderable\+::m\+\_\+colors\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedCylinderRenderable_a33d59e3d7e08b0123102624da0caa396}
+\hypertarget{classLightedCylinderRenderable_a69203c5141f12784a61ab3cefb885b3f}{\index{Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}!m\+\_\+material@{m\+\_\+material}}
+\index{m\+\_\+material@{m\+\_\+material}!Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+material}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Material\+Ptr} Lighted\+Cylinder\+Renderable\+::m\+\_\+material\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedCylinderRenderable_a69203c5141f12784a61ab3cefb885b3f}
+\hypertarget{classLightedCylinderRenderable_abb74e2395d504a3393ba2b59276bf361}{\index{Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}!m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}}
+\index{m\+\_\+n\+Buffer@{m\+\_\+n\+Buffer}!Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+n\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Lighted\+Cylinder\+Renderable\+::m\+\_\+n\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedCylinderRenderable_abb74e2395d504a3393ba2b59276bf361}
+\hypertarget{classLightedCylinderRenderable_ae5305cb063f670b7c8943423b82f2d1f}{\index{Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}!m\+\_\+normals@{m\+\_\+normals}}
+\index{m\+\_\+normals@{m\+\_\+normals}!Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Lighted\+Cylinder\+Renderable\+::m\+\_\+normals\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedCylinderRenderable_ae5305cb063f670b7c8943423b82f2d1f}
+\hypertarget{classLightedCylinderRenderable_abf3d79539f561c684db8394bc489cf38}{\index{Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Lighted\+Cylinder\+Renderable\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedCylinderRenderable_abf3d79539f561c684db8394bc489cf38}
+\hypertarget{classLightedCylinderRenderable_af92700359498f5307fb416f641a9015d}{\index{Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}!m\+\_\+positions@{m\+\_\+positions}}
+\index{m\+\_\+positions@{m\+\_\+positions}!Lighted\+Cylinder\+Renderable@{Lighted\+Cylinder\+Renderable}}
+\subsubsection[{m\+\_\+positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ glm\+::vec3 $>$ Lighted\+Cylinder\+Renderable\+::m\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}}\label{classLightedCylinderRenderable_af92700359498f5307fb416f641a9015d}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/chardon/\+Depot/ensimag/2\+A\+\_\+\+G3\+D/practicals/teacher\+Source/include/lighting/\hyperlink{LightedCylinderRenderable_8hpp}{Lighted\+Cylinder\+Renderable.\+hpp}\end{DoxyCompactItemize}
