@@ -44,8 +44,8 @@ Viewer::Viewer(float width, float height) :
         sf::Style::Default,
         sf::ContextSettings{ 24 /* depth*/, 8 /*stencil*/, 4 /*anti aliasing level*/, 4 /*GL major version*/, 0 /*GL minor version*/}
         },
-    m_modeInformationTextDisappearanceTime{ clock::now() + g_modeInformationTextTimeout },
-    m_modeInformationText{ "Arcball Camera Activated" },
+    //m_modeInformationTextDisappearanceTime{ clock::now() + g_modeInformationTextTimeout },
+    //m_modeInformationText{ "Arcball Camera Activated" },
     m_applicationRunning{ true }, m_animationLoop{ false }, m_animationIsStarted{ false },
     m_loopDuration{0}, m_simulationTime{0},
     m_screenshotCounter{0}, m_helpDisplayed{false},
@@ -68,8 +68,8 @@ Viewer::Viewer(float width, float height) :
 
     //Initialize the text engine (this SHOULD be done after initializeGL, as the text
     //engine store some data on the graphic card)
-    m_tengine.init();
-    m_tengine.setWindowDimensions( m_window.getSize().x, m_window.getSize().y );
+    //m_tengine.init();
+    //m_tengine.setWindowDimensions( m_window.getSize().x, m_window.getSize().y );
 }
 
 static const std::string g_help_message =
@@ -119,17 +119,20 @@ void Viewer::draw()
     }
 
     //Refresh the viewer.m_window
+    /*
     if( clock::now() < m_modeInformationTextDisappearanceTime )
     {
-        m_tengine.render( m_modeInformationText, glm::vec2(10, m_window.getSize().y - 30), glm::vec3(0.1, 0.1, 0.1) );
+        //m_tengine.render( m_modeInformationText, glm::vec2(10, m_window.getSize().y - 30), glm::vec3(0.1, 0.1, 0.1) );
     }
     {
         std::ostringstream ss;
         ss << "FPS: " << std::setprecision( 2 ) << std::fixed << m_fpsCounter.getFPS();
-        m_tengine.render( ss.str(), glm::vec2(m_window.getSize().x - 200, m_window.getSize().y - 30), glm::vec3(0.1,0.1,0.1) );
+        //m_tengine.render( ss.str(), glm::vec2(m_window.getSize().x - 200, m_window.getSize().y - 30), glm::vec3(0.1,0.1,0.1) );
     }
     if( m_helpDisplayed )
         m_tengine.render( g_help_message, glm::vec2(100, 650), glm::vec3{.0, .1, .2});
+    */
+
 }
 
 float Viewer::getTime()
@@ -366,7 +369,7 @@ void Viewer::handleEvent()
         case sf::Event::Resized:
             m_window.setView(sf::View(sf::FloatRect(0, 0, event.size.width, event.size.height)));
             m_camera.setRatio( (float)(m_window.getSize().x)/(float)(m_window.getSize().y) );
-            m_tengine.setWindowDimensions( m_window.getSize().x, m_window.getSize().y );
+            //m_tengine.setWindowDimensions( m_window.getSize().x, m_window.getSize().y );
             glcheck(glViewport(0, 0, event.size.width, event.size.height));
             break;
         case sf::Event::KeyPressed:
@@ -432,14 +435,14 @@ void Viewer::changeCameraMode()
     if( m_camera.getMouseBehavior() == Camera::ARCBALL_BEHAVIOR )
     {
         m_camera.setMouseBehavior( Camera::SPACESHIP_BEHAVIOR );
-        m_modeInformationText = "Spaceship Camera Activated";
+        //m_modeInformationText = "Spaceship Camera Activated";
     }
     else
     {
         m_camera.setMouseBehavior( Camera::ARCBALL_BEHAVIOR );
-        m_modeInformationText = "Arcball Camera Activated";
+        //m_modeInformationText = "Arcball Camera Activated";
     }
-    m_modeInformationTextDisappearanceTime = clock::now() + g_modeInformationTextTimeout;
+    //m_modeInformationTextDisappearanceTime = clock::now() + g_modeInformationTextTimeout;
 }
 
 bool Viewer::isRunning() const
@@ -480,8 +483,8 @@ glm::vec3 Viewer::worldToWindow( const glm::vec3& worldCoordinate )
     return glm::project( worldCoordinate, m_camera.viewMatrix(), m_camera.projectionMatrix(), glm::vec4(0,0,size.x, size.y));
 }
 
-void Viewer::displayText(std::string text, Viewer::Duration duration)
-{
-    m_modeInformationText = text;
-    m_modeInformationTextDisappearanceTime = clock::now() + duration;
-}
+//void Viewer::displayText(std::string text, Viewer::Duration duration)
+//{
+    //m_modeInformationText = text;
+    //m_modeInformationTextDisappearanceTime = clock::now() + duration;
+//}

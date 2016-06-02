@@ -131,7 +131,7 @@ Viewer* Renderable::getViewer() const
     return m_viewer;
 }
 
-void Renderable::displayTextInViewer(std::string text) const
-{
-    getViewer()->displayText(text);
-}
+//void Renderable::displayTextInViewer(std::string text) const
+//{
+//    getViewer()->displayText(text);
+//}

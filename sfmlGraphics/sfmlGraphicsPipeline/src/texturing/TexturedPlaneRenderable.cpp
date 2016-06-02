@@ -249,7 +249,7 @@ void TexturedPlaneRenderable::updateTextureOption()
     //Release the texture
     glBindTexture(GL_TEXTURE_2D, 0);
 
-    displayTextInViewer(text);
+    //displayTextInViewer(text);
 }
 
 void TexturedPlaneRenderable::do_keyPressedEvent( sf::Event& e )

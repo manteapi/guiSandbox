@@ -15,7 +15,7 @@ int main( int argc, char* argv[] )
 {
     Viewer viewer(1280,720);
 
-    unsigned int scene_to_load = 7;
+    unsigned int scene_to_load = 2;
 
     for( int i = 1; i < argc; ++ i )
     {

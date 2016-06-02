@@ -207,7 +207,7 @@ void MipMapCubeRenderable::updateTextureOption()
     //Release the texture
     glBindTexture(GL_TEXTURE_2D, 0);
 
-    displayTextInViewer(text);
+    //displayTextInViewer(text);
 }
 
 void MipMapCubeRenderable::do_keyPressedEvent( sf::Event& e )

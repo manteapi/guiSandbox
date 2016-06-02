@@ -206,7 +206,7 @@ public:
 
     ShaderProgramPtr getShaderProgram() const;
 
-    void displayTextInViewer(std::string text) const;
+    //void displayTextInViewer(std::string text) const;
 
 private:
     /** @name Private viewer interface.

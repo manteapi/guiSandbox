@@ -37,48 +37,18 @@ include_directories(${GLM_INCLUDE_DIRS})
 #GLEW Libraries
 set(GLEW_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/extlib/glew-1.13.0/include" CACHE PATH "glew")
 include_directories(${GLEW_INCLUDE_DIRS})
-if(UNIX)
-    set(GLEW_LIBRARIES "${CMAKE_CURRENT_SOURCE_DIR}/extlib/glew-1.13.0/lib/libGLEW.so" CACHE FILEPATH "glew")
-elseif(APPLE)
-    message("APPLE platform not handled")
-elseif(WIN32)
-    message("WINDOWS platform not handled")
-endif()
 
 #SFML Libraries
 set(SFML_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/extlib/sfml-2.3.2/include/" CACHE PATH "sfml")
 include_directories(${SFML_INCLUDE_DIRS})
-if(UNIX)
-    set(SFML_SYSTEM_LIBRARIES "${CMAKE_CURRENT_SOURCE_DIR}/extlib/sfml-2.3.2/build/lib/libsfml-system.so" CACHE FILEPATH "sfml")
-    set(SFML_WINDOW_LIBRARIES "${CMAKE_CURRENT_SOURCE_DIR}/extlib/sfml-2.3.2/build/lib/libsfml-window.so" CACHE FILEPATH "sfml")
-    set(SFML_GRAPHICS_LIBRARIES "${CMAKE_CURRENT_SOURCE_DIR}/extlib/sfml-2.3.2/build/lib/libsfml-graphics.so" CACHE FILEPATH "sfml")
-elseif(APPLE)
-    message("APPLE platform not handled")
-elseif(WIN32)
-    message("WINDOWS platform not handled")
-endif()
 
 #FREETYPE Libraries
 set(FREETYPE_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/extlib/freetype-2.5.5/include" CACHE PATH "freetype")
 include_directories(${FREETYPE_INCLUDE_DIRS})
-if(UNIX)
-    set(FREETYPE_LIBRARIES "${CMAKE_CURRENT_SOURCE_DIR}/extlib/freetype-2.5.5/build/libfreetype.a" CACHE FILEPATH "freetype")
-elseif(APPLE)
-    message("APPLE platform not handled")
-elseif(WIN32)
-    message("WINDOWS platform not handled")
-endif()
 
 #TINYOBJLOADER Libraries
 set(TINYOBJLOADER_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/extlib/tinyobjloader/" CACHE PATH "tinyobjloader")
 include_directories(${TINYOBJLOADER_INCLUDE_DIRS})
-if(UNIX)
-    set(TINYOBJLOADER_LIBRARIES "${CMAKE_CURRENT_SOURCE_DIR}/extlib/tinyobjloader/build/libtinyobjloader.a" CACHE FILEPATH "tinyobjloader")
-elseif(APPLE)
-    message("APPLE platform not handled")
-elseif(WIN32)
-    message("WINDOWS platform not handled")
-endif()
 
 find_package(OpenGL REQUIRED)
 
@@ -102,8 +72,6 @@ file(
     SHADER_FILES
     shaders/*.glsl
     )
-
-set(EXECUTABLE_NAME main)
 
 #==============================================
 #Project library 
@@ -132,6 +100,5 @@ set(EXTRA_CLEANING
     ${CMAKE_CURRENT_SOURCE_DIR}/doc/doxygen_sqlite3.db
     )
 set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES "${EXTRA_CLEANING}")
-
 
 message( "The build type is set to " ${CMAKE_BUILD_TYPE})

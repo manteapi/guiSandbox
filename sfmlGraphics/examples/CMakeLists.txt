@@ -107,17 +107,16 @@ add_executable(${EXECUTABLE_NAME} ${HEADER_FILES} ${SOURCE_FILES})
 #==============================================
 #Linking with libraries
 #==============================================
+target_link_libraries(${EXECUTABLE_NAME} ${SFML_GRAPHICS_PIPELINE_LIBRARIES})
+target_link_libraries(${EXECUTABLE_NAME} ${SFML_SYSTEM_LIBRARIES})
+target_link_libraries(${EXECUTABLE_NAME} ${SFML_WINDOW_LIBRARIES})
+target_link_libraries(${EXECUTABLE_NAME} ${SFML_GRAPHICS_LIBRARIES})
+target_link_libraries(${EXECUTABLE_NAME} ${GLEW_LIBRARIES})
+target_link_libraries(${EXECUTABLE_NAME} ${FREETYPE_LIBRARIES})
+target_link_libraries(${EXECUTABLE_NAME} ${TINYOBJLOADER_LIBRARIES})
 if (OPENGL_FOUND)
     target_link_libraries(${EXECUTABLE_NAME} ${OPENGL_LIBRARIES})
     target_link_libraries(${EXECUTABLE_NAME} m)  # if you use maths.h
 endif()
-
-target_link_libraries(${EXECUTABLE_NAME} ${GLEW_LIBRARIES})
-target_link_libraries(${EXECUTABLE_NAME} ${FREETYPE_LIBRARIES})
-target_link_libraries(${EXECUTABLE_NAME} ${SFML_SYSTEM_LIBRARIES})
-target_link_libraries(${EXECUTABLE_NAME} ${SFML_WINDOW_LIBRARIES})
-target_link_libraries(${EXECUTABLE_NAME} ${SFML_GRAPHICS_LIBRARIES})
-target_link_libraries(${EXECUTABLE_NAME} ${TINYOBJLOADER_LIBRARIES})
-target_link_libraries(${EXECUTABLE_NAME} ${SFML_GRAPHICS_PIPELINE})
 
 message( "The build type is set to " ${CMAKE_BUILD_TYPE})

@@ -11,7 +11,7 @@
 #include "Renderable.hpp"
 #include "Camera.hpp"
 #include "lighting/Light.hpp"
-#include "TextEngine.hpp"
+//#include "TextEngine.hpp"
 #include "FPSCounter.hpp"
 
 #include <unordered_set>
@@ -212,7 +212,7 @@ public:
 
     void addSpotLight(const SpotLightPtr& spotLight);
 
-    void displayText(std::string text, Viewer::Duration duration = std::chrono::seconds(3));
+    //void displayText(std::string text, Viewer::Duration duration = std::chrono::seconds(3));
 
 private:
     /**@brief Forbidden default constructor.
@@ -274,9 +274,9 @@ private:
 
     std::unordered_set< ShaderProgramPtr > m_programs;
 
-    TextEngine m_tengine; /*!< Engine to display textual information. */
-    TimePoint m_modeInformationTextDisappearanceTime; /*!< Duration of appearance for textual information in seconds. */
-    std::string m_modeInformationText; /*!< Textual information that will be displayed. */
+    //TextEngine m_tengine; /*!< Engine to display textual information. */
+    //TimePoint m_modeInformationTextDisappearanceTime; /*!< Duration of appearance for textual information in seconds. */
+    //std::string m_modeInformationText; /*!< Textual information that will be displayed. */
 
     bool m_applicationRunning; /*!< Boolean that runs the main animation loop. Always true except when closing the application. */
     bool m_animationLoop; /*!< True if the animation loops after a given duration, \ref m_loopDuration. */
