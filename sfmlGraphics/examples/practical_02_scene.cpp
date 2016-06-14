@@ -1,6 +1,5 @@
+#include "practical_02_scene.hpp"
 #include <ShaderProgram.hpp>
-#include <Viewer.hpp>
-
 #include <CylinderRenderable.hpp>
 #include <FrameRenderable.hpp>
 #include <MeshRenderable.hpp>

@@ -20,7 +20,8 @@
 void initialize_practical_05_scene( Viewer& viewer )
 {
     //Set up a shader and add a 3D frame.
-    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>("../shaders/flatVertex.glsl", "../shaders/flatFragment.glsl");
+    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>(  "../../sfmlGraphicsPipeline/shaders/flatVertex.glsl", 
+                                                                    "../../sfmlGraphicsPipeline/shaders/flatFragment.glsl");
     viewer.addShaderProgram( flatShader );
     FrameRenderablePtr frame = std::make_shared<FrameRenderable>(flatShader);
     viewer.addRenderable(frame);
@@ -55,7 +56,8 @@ void practical05_particles(Viewer& viewer, DynamicSystemPtr& system, DynamicSyst
     viewer.getCamera().setViewMatrix( glm::lookAt( glm::vec3( 0, -6, 0 ), glm::vec3(0,0,0), glm::vec3(0,0,1)));
 
     //Initialize a shader for the following renderables
-    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>("../shaders/flatVertex.glsl","../shaders/flatFragment.glsl");
+    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>(  "../../sfmlGraphicsPipeline/shaders/flatVertex.glsl",
+                                                                    "../../sfmlGraphicsPipeline/shaders/flatFragment.glsl");
     viewer.addShaderProgram( flatShader );
 
     //We diminish the time step to be able to see what happens before particles go too far
@@ -105,7 +107,8 @@ void practical05_springs(Viewer& viewer, DynamicSystemPtr& system, DynamicSystem
     viewer.getCamera().setViewMatrix( glm::lookAt( glm::vec3( -10, 0, 2 ), glm::vec3(0,0,0), glm::vec3(0,0,1)));
 
     //Initialize a shader for the following renderables
-    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>("../shaders/flatVertex.glsl","../shaders/flatFragment.glsl");
+    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>(  "../../sfmlGraphicsPipeline/shaders/flatVertex.glsl",
+                                                                    "../../sfmlGraphicsPipeline/shaders/flatFragment.glsl");
     viewer.addShaderProgram( flatShader );
 
     //Initialize particle attributes (radius, mass)
@@ -203,7 +206,8 @@ void practical05_collisions(Viewer& viewer, DynamicSystemPtr& system, DynamicSys
 
 
     //Initialize a shader for the following renderables
-    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>("../shaders/flatVertex.glsl","../shaders/flatFragment.glsl");
+    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>(  "../../sfmlGraphicsPipeline/shaders/flatVertex.glsl",
+                                                                    "../../sfmlGraphicsPipeline/shaders/flatFragment.glsl");
     viewer.addShaderProgram( flatShader );
 
     //Activate collision detection
@@ -278,7 +282,8 @@ void practical05_collisions(Viewer& viewer, DynamicSystemPtr& system, DynamicSys
 void practical05_playPool(Viewer& viewer, DynamicSystemPtr& system, DynamicSystemRenderablePtr& systemRenderable)
 {
     //Initialize a shader for the following renderables
-    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>("../shaders/flatVertex.glsl","../shaders/flatFragment.glsl");
+    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>(  "../../sfmlGraphicsPipeline/shaders/flatVertex.glsl",
+                                                                    "../../sfmlGraphicsPipeline/shaders/flatFragment.glsl");
     viewer.addShaderProgram( flatShader );
 
     //Position the camera

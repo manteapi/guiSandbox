@@ -14,11 +14,13 @@
 void initialize_practical_06_scene( Viewer& viewer )
 {
     //Default shader
-    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>("../shaders/flatVertex.glsl","../shaders/flatFragment.glsl");
+    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>(  "../../sfmlGraphicsPipeline/shaders/flatVertex.glsl",
+                                                                    "../../sfmlGraphicsPipeline/shaders/flatFragment.glsl");
     viewer.addShaderProgram( flatShader );
 
     //Define a shader that encode an illumination model
-    ShaderProgramPtr phongShader = std::make_shared<ShaderProgram>("../shaders/phongVertex.glsl", "../shaders/phongFragment.glsl");
+    ShaderProgramPtr phongShader = std::make_shared<ShaderProgram>( "../../sfmlGraphicsPipeline/shaders/phongVertex.glsl", 
+                                                                    "../../sfmlGraphicsPipeline/shaders/phongFragment.glsl");
     viewer.addShaderProgram( phongShader );
 
     //Add a 3D frame to the viewer
@@ -106,7 +108,7 @@ void initialize_practical_06_scene( Viewer& viewer )
 
     //Lighted Mesh 1
     MaterialPtr bronze = Material::Bronze();
-    LightedMeshRenderablePtr suzanne1 = std::make_shared<LightedMeshRenderable>(phongShader, "./../meshes/suzanne.obj");
+    LightedMeshRenderablePtr suzanne1 = std::make_shared<LightedMeshRenderable>(phongShader, "./../../sfmlGraphicsPipeline/meshes/suzanne.obj");
     parentTransformation = glm::translate( glm::mat4(1.0), glm::vec3(-2.0,0.0,0.0) );
     localTransformation = glm::mat4(1.0);
     suzanne1->setParentTransform(parentTransformation);
@@ -116,7 +118,7 @@ void initialize_practical_06_scene( Viewer& viewer )
 
     //Lighted Mesh 2
     MaterialPtr emerald = Material::Emerald();
-    LightedMeshRenderablePtr suzanne2 = std::make_shared<LightedMeshRenderable>(phongShader, "./../meshes/suzanne.obj");
+    LightedMeshRenderablePtr suzanne2 = std::make_shared<LightedMeshRenderable>(phongShader, "./../../sfmlGraphicsPipeline/meshes/suzanne.obj");
     parentTransformation = glm::translate( glm::mat4(1.0), glm::vec3(2.0,0.0,0.0) );
     localTransformation = glm::mat4(1.0);
     suzanne2->setParentTransform(parentTransformation);

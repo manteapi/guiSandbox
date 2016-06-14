@@ -4,12 +4,12 @@
 #include <sstream>
 
 void initialize_practical_02_scene( Viewer& viewer );
-//void initialize_practical_03_scene( Viewer& viewer );
-//void initialize_practical_04_scene( Viewer& viewer );
-//void initialize_practical_05_scene( Viewer& viewer );
-//void initialize_practical_06_scene( Viewer& viewer );
-//void initialize_practical_07_scene( Viewer& viewer );
-//void initialize_practical_07_triangle( Viewer& viewer );
+void initialize_practical_03_scene( Viewer& viewer );
+void initialize_practical_04_scene( Viewer& viewer );
+void initialize_practical_05_scene( Viewer& viewer );
+void initialize_practical_06_scene( Viewer& viewer );
+void initialize_practical_07_scene( Viewer& viewer );
+void initialize_practical_07_triangle( Viewer& viewer );
 
 int main( int argc, char* argv[] )
 {
@@ -34,23 +34,23 @@ int main( int argc, char* argv[] )
     }
     else if( scene_to_load == 3 )
     {
-        //initialize_practical_03_scene( viewer );
+        initialize_practical_03_scene( viewer );
     }
     else if( scene_to_load == 4 )
     {
-        //initialize_practical_04_scene( viewer );
+        initialize_practical_04_scene( viewer );
     }
     else if( scene_to_load == 5 )
     {
-        //initialize_practical_05_scene( viewer );
+        initialize_practical_05_scene( viewer );
     }
     else if( scene_to_load == 6 )
     {
-        //initialize_practical_06_scene( viewer );
+        initialize_practical_06_scene( viewer );
     }
     else if( scene_to_load == 7 )
     {
-        //initialize_practical_07_scene( viewer );
+        initialize_practical_07_scene( viewer );
     }
     else
     {

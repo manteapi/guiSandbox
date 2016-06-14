@@ -17,7 +17,8 @@ void initialize_practical_04_scene( Viewer& viewer )
 void practical04_movingTree( Viewer& viewer )
 {
     //Add shader
-    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>("../shaders/flatVertex.glsl", "../shaders/flatFragment.glsl");
+    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>(  "../../sfmlGraphicsPipeline/shaders/flatVertex.glsl", 
+                                                                    "../../sfmlGraphicsPipeline/shaders/flatFragment.glsl");
     viewer.addShaderProgram( flatShader );
 
     //Frame
@@ -121,7 +122,8 @@ void practical04_movingTree( Viewer& viewer )
 void practical04_movingCylinder( Viewer& viewer )
 {
     //Add shader
-    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>("../shaders/flatVertex.glsl", "../shaders/flatFragment.glsl");
+    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>(  "../../sfmlGraphicsPipeline/shaders/flatVertex.glsl", 
+                                                                    "../../sfmlGraphicsPipeline/shaders/flatFragment.glsl");
     viewer.addShaderProgram( flatShader );
 
     //Frame

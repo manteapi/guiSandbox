@@ -17,7 +17,8 @@ void initialize_practical_07_triangle( Viewer& viewer )
     viewer.getCamera().setViewMatrix( glm::lookAt( glm::vec3(0, 0, 8 ), glm::vec3(0, 0, 0), glm::vec3( 0, 1, 0 ) ) );
 
     //Default shader
-    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>("../shaders/flatVertex.glsl","../shaders/flatFragment.glsl");
+    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>(  "../../sfmlGraphicsPipeline/shaders/flatVertex.glsl",
+                                                                    "../../sfmlGraphicsPipeline/shaders/flatFragment.glsl");
     viewer.addShaderProgram( flatShader );
 
     //Add a 3D frame to the viewer
@@ -30,12 +31,13 @@ void initialize_practical_07_triangle( Viewer& viewer )
 
     //Textured shader
     //    ShaderProgramPtr texShader = std::make_shared<ShaderProgram>("../shaders/textureVertex.glsl","../shaders/textureFragment.glsl");
-    ShaderProgramPtr texShader = std::make_shared<ShaderProgram>("../shaders/simpleTextureVertex.glsl","../shaders/simpleTextureFragment.glsl");
+    ShaderProgramPtr texShader = std::make_shared<ShaderProgram>(   "../../sfmlGraphicsPipeline/shaders/simpleTextureVertex.glsl",
+                                                                    "../../sfmlGraphicsPipeline/shaders/simpleTextureFragment.glsl");
     viewer.addShaderProgram( texShader );
 
     //Textured plane
-    filename = "./../textures/checkerboard.png";
-    filename = "./../textures/number_two.jpg";
+    filename = "./../../sfmlGraphicsPipeline/textures/checkerboard.png";
+    filename = "./../../sfmlGraphicsPipeline/textures/number_two.jpg";
 
 //    TexturedPlaneRenderablePtr texPlane = std::make_shared<TexturedPlaneRenderable>(texShader, filename);
     TexturedTriangleRenderablePtr texPlane = std::make_shared<TexturedTriangleRenderable>(texShader, filename);

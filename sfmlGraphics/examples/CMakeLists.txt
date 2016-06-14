@@ -89,11 +89,23 @@ find_package(OpenGL REQUIRED)
 #==============================================
 set(
     HEADER_FILES
+    practical_02_scene.hpp
+    practical_03_scene.hpp
+    practical_04_scene.hpp
+    practical_05_scene.hpp
+    practical_06_scene.hpp
+    practical_07_scene.hpp
     )
 
 set(
     SOURCE_FILES
     practical_02_scene.cpp
+    practical_03_scene.cpp
+    practical_04_scene.cpp
+    practical_05_scene.cpp
+    practical_06_scene.cpp
+    practical_07_scene.cpp
+    practical_07_triangle.cpp
     main.cpp
     )
     

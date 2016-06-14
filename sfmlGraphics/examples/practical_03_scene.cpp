@@ -8,8 +8,8 @@
 void initialize_practical_03_scene( Viewer& viewer )
 {
   ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>(
-      "../shaders/flatVertex.glsl",
-      "../shaders/flatFragment.glsl");
+      "../../sfmlGraphicsPipeline/shaders/flatVertex.glsl",
+      "../../sfmlGraphicsPipeline/shaders/flatFragment.glsl");
 
   viewer.addShaderProgram( flatShader );
 
@@ -28,7 +28,7 @@ void initialize_practical_03_scene( Viewer& viewer )
    torso->setLocalTransform(scaleM*torso->getModelMatrix());
 
    //Head
-   HierarchicalMeshRenderablePtr head= std::make_shared<HierarchicalMeshRenderable>(flatShader, "./../meshes/suzanne.obj");
+   HierarchicalMeshRenderablePtr head= std::make_shared<HierarchicalMeshRenderable>(flatShader, "./../../sfmlGraphicsPipeline/meshes/suzanne.obj");
    translationM = glm::translate(glm::mat4(1.0), glm::vec3(0,0,3));
    head->setParentTransform(translationM);
    rotationM = glm::rotate(glm::mat4(1.0), (float)(M_PI/2.0), glm::vec3(1,0,0));
@@ -43,7 +43,7 @@ void initialize_practical_03_scene( Viewer& viewer )
    leftArm->setLocalTransform(rotationM*scaleM);
 
    //Left hand
-   HierarchicalMeshRenderablePtr leftHand= std::make_shared<HierarchicalMeshRenderable>(flatShader, "./../meshes/suzanne.obj");
+   HierarchicalMeshRenderablePtr leftHand= std::make_shared<HierarchicalMeshRenderable>(flatShader, "./../../sfmlGraphicsPipeline/meshes/suzanne.obj");
    translationM = glm::translate(glm::mat4(1.0), glm::vec3(-2.5,0,0));
    leftHand->setParentTransform(translationM);
    scaleM = glm::scale(glm::mat4(1.0), glm::vec3(0.5,0.5,0.5));
@@ -60,7 +60,7 @@ void initialize_practical_03_scene( Viewer& viewer )
    rightArm->setLocalTransform(rotationM*scaleM);
 
    //Right hand
-   HierarchicalMeshRenderablePtr rightHand= std::make_shared<HierarchicalMeshRenderable>(flatShader, "./../meshes/suzanne.obj");
+   HierarchicalMeshRenderablePtr rightHand= std::make_shared<HierarchicalMeshRenderable>(flatShader, "./../../sfmlGraphicsPipeline/meshes/suzanne.obj");
    translationM = glm::translate(glm::mat4(1.0), glm::vec3(2.5,0,0));
    rightHand->setParentTransform(translationM);
    scaleM = glm::scale(glm::mat4(1.0), glm::vec3(0.5,0.5,0.5));

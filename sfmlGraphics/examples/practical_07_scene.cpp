@@ -15,7 +15,8 @@ void initialize_practical_07_scene( Viewer& viewer )
     viewer.getCamera().setViewMatrix( glm::lookAt( glm::vec3(0, -8, 8 ), glm::vec3(0, 0, 0), glm::vec3( 0, 0, 1 ) ) );
 
     //Default shader
-    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>("../shaders/flatVertex.glsl","../shaders/flatFragment.glsl");
+    ShaderProgramPtr flatShader = std::make_shared<ShaderProgram>(  "../../sfmlGraphicsPipeline/shaders/flatVertex.glsl",
+                                                                    "../../sfmlGraphicsPipeline/shaders/flatFragment.glsl");
     viewer.addShaderProgram( flatShader );
 
     //Add a 3D frame to the viewer
@@ -40,14 +41,16 @@ void initialize_practical_07_scene( Viewer& viewer )
     viewer.addRenderable(directionalLightRenderable);
 
     //Textured shader
-    ShaderProgramPtr texShader = std::make_shared<ShaderProgram>("../shaders/textureVertex.glsl","../shaders/textureFragment.glsl");
+    ShaderProgramPtr texShader = std::make_shared<ShaderProgram>(   "../../sfmlGraphicsPipeline/shaders/textureVertex.glsl",
+                                                                    "../../sfmlGraphicsPipeline/shaders/textureFragment.glsl");
     viewer.addShaderProgram( texShader );
 
-    ShaderProgramPtr multiTexShader = std::make_shared<ShaderProgram>("../shaders/multiTextureVertex.glsl","../shaders/multiTextureFragment.glsl");
+    ShaderProgramPtr multiTexShader = std::make_shared<ShaderProgram>(  "../../sfmlGraphicsPipeline/shaders/multiTextureVertex.glsl",
+                                                                        "../../sfmlGraphicsPipeline/shaders/multiTextureFragment.glsl");
     viewer.addShaderProgram( multiTexShader );
 
     //Textured plane
-    filename = "./../textures/grass_texture.png";
+    filename = "./../../sfmlGraphicsPipeline/textures/grass_texture.png";
     TexturedPlaneRenderablePtr texPlane = std::make_shared<TexturedPlaneRenderable>(texShader, filename);
     parentTransformation = glm::scale(glm::mat4(1.0), glm::vec3(10.0,10.0,10.0));
     texPlane->setParentTransform(parentTransformation);
@@ -55,7 +58,7 @@ void initialize_practical_07_scene( Viewer& viewer )
     viewer.addRenderable(texPlane);
 
     //Textured cube
-    filename = "./../textures/mipmap1.png";
+    filename = "./../../sfmlGraphicsPipeline/textures/mipmap1.png";
     TexturedCubeRenderablePtr texCube = std::make_shared<TexturedCubeRenderable>(texShader, filename);
     parentTransformation = glm::translate(glm::mat4(1.0), glm::vec3(-2,0.0,0.5));
     texCube->setParentTransform(parentTransformation);
@@ -64,11 +67,11 @@ void initialize_practical_07_scene( Viewer& viewer )
 
     //Mipmap cube
     std::vector< std::string > filenames;
-    filenames.push_back("./../textures/mipmap1.png");
-    filenames.push_back("./../textures/mipmap2.png");
-    filenames.push_back("./../textures/mipmap3.png");
-    filenames.push_back("./../textures/mipmap4.png");
-    filenames.push_back("./../textures/mipmap5.png");
+    filenames.push_back("./../../sfmlGraphicsPipeline/textures/mipmap1.png");
+    filenames.push_back("./../../sfmlGraphicsPipeline/textures/mipmap2.png");
+    filenames.push_back("./../../sfmlGraphicsPipeline/textures/mipmap3.png");
+    filenames.push_back("./../../sfmlGraphicsPipeline/textures/mipmap4.png");
+    filenames.push_back("./../../sfmlGraphicsPipeline/textures/mipmap5.png");
 
     MipMapCubeRenderablePtr mipmapCube = std::make_shared<MipMapCubeRenderable>(texShader, filenames);
     parentTransformation = glm::translate(glm::mat4(1.0), glm::vec3(0.0,0.0,0.5));
@@ -77,7 +80,7 @@ void initialize_practical_07_scene( Viewer& viewer )
     viewer.addRenderable(mipmapCube);
 
     //Multi-textured cube
-    std::string filename1="./../textures/crate.jpg", filename2="./../textures/halflife.png";
+    std::string filename1="./../../sfmlGraphicsPipeline/textures/crate.jpg", filename2="./../../sfmlGraphicsPipeline/textures/halflife.png";
     MultiTexturedCubeRenderablePtr multitexCube = std::make_shared<MultiTexturedCubeRenderable>(multiTexShader, filename1, filename2);
     parentTransformation = glm::translate(glm::mat4(1.0), glm::vec3(2,0.0,0.5));
     multitexCube->setParentTransform(parentTransformation);
@@ -85,7 +88,7 @@ void initialize_practical_07_scene( Viewer& viewer )
     viewer.addRenderable(multitexCube);
 
     // textured bunny
-    TexturedLightedMeshRenderablePtr bunny = std::make_shared<TexturedLightedMeshRenderable>( texShader, "../meshes/Bunny.obj", "../textures/TexturedBunny.png");
+    TexturedLightedMeshRenderablePtr bunny = std::make_shared<TexturedLightedMeshRenderable>( texShader, "../../sfmlGraphicsPipeline/meshes/Bunny.obj", "../../sfmlGraphicsPipeline/textures/TexturedBunny.png");
     bunny->setMaterial(pearl);
     parentTransformation = glm::translate( glm::mat4(1.0), glm::vec3( 0, 4, 1.0 ) );
     parentTransformation = glm::rotate( parentTransformation, float(M_PI_2), glm::vec3(1,0,0) );
