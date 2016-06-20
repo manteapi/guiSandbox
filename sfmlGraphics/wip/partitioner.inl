@@ -185,7 +185,24 @@ Partitioner<PartitionData>::Partitioner(CustomPolyhedron &polyhedron, const HRea
             }
         }
     }
-    //Step 4: Basic flood fill on triangels in BORDER cells
+
+    //Step 4: Basic flood fill on triangles in BORDER cells
+    for(size_t i=0; i<m_image.size(); ++i)
+    {
+        Voxel<PartitionData> & voxel = m_image[i];
+        if(voxel.m_type==VoxelType::Border)
+        {
+            std::vector< FacetHandleSet > triangles;
+            floodfill(voxel.triangles, triangles);
+            for(size_t j=0; j<triangles.size(); ++j)
+            {
+                std::set<Vec2i, Vec2iCompare> neighborhood;
+                PartitionData data;
+                Partition<PartitionData> partition(i, triangles[j], neighborhood, data);
+                voxel.partitions.push_back(partition);
+            }
+        }
+    }
 
     //Step 5: ...
 }

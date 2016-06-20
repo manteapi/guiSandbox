@@ -26,6 +26,7 @@ struct Vec2iCompare {bool operator() (const Vec2i& lhs, const Vec2i& rhs) const{
 std::set<unsigned int> getCellsOverTriangle(const GridUtility& grid, const std::array<Vec3r,3>& t);
 std::array<float,8> trilinearWeights(const std::array<Vec3r,8>& cellVertices, const Vec3r& x);
 bool trianglePlaneIntersection(std::array<Vec3r, 4>& plane, const std::array<Vec3r, 3>& t);
+void floodfill(const FacetHandleList& triangles, std::vector<FacetHandleSet> &trianglesSets);
 
 template<class PartitionData>
 class Partition

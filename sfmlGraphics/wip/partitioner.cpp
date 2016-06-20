@@ -71,6 +71,43 @@ std::array<float,8> trilinearWeights(const std::array<Vec3r,8>& cellVertices, co
     return weights;
 }
 
+void floodfill(const FacetHandleList& triangles, std::vector<FacetHandleSet>& trianglesSets)
+{
+    std::set<FacetHandle> visited;
+    for(const FacetHandle& f : triangles)
+    {
+        if(visited.find(f)==visited.end())
+        {
+            std::set<FacetHandle> component;
+            std::vector<FacetHandle> tovisit;
+            tovisit.push_back(f);
+            while(!tovisit.empty())
+            {
+                const FacetHandle & candidate = tovisit.back();
+                tovisit.pop_back();
+                component.insert(candidate);
+                visited.insert(candidate);
+                Polyhedron::Halfedge_around_facet_circulator eBegin = candidate->facet_begin(), eit=eBegin;
+                do
+                {
+                    if(!eit->opposite()->is_border())
+                    {
+                        FacetHandle n = eit->opposite()->facet();
+                        bool isInsideCell = std::find(triangles.begin(), triangles.end(), n)!=triangles.end();
+                        bool isVisited = visited.find(n) != visited.end();
+                        if(isInsideCell && !isVisited)
+                        {
+                            tovisit.push_back(n);
+                        }
+                    }
+                }
+                while(++eit != eBegin);
+            }
+            trianglesSets.push_back(component);
+        }
+    }
+}
+
 bool trianglePlaneIntersection(std::array<Vec3r, 4>& plane, const std::array<Vec3r,3>& t)
 {
     bool intersect = false;

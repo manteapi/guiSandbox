@@ -39,6 +39,12 @@ public:
     const CGALVector & normal() const {return m_normal;}
 };
 
+template <class Refs>
+struct CustomHalfedge : public CGAL::HalfedgeDS_halfedge_base<Refs>
+{
+public:
+};
+
 //An items type using CustomFace and CustomVertex.
 struct CustomItems : public CGAL::Polyhedron_items_3
 {
@@ -50,7 +56,7 @@ public:
     };
     template < class Refs, class Traits>
     struct Halfedge_wrapper {
-        typedef CGAL::HalfedgeDS_halfedge_base< Refs>                Halfedge;
+        typedef CustomHalfedge<Refs>    Halfedge;
     };
     template < class Refs, class Traits>
     struct Face_wrapper {
