@@ -188,8 +188,9 @@ void PartitionerRenderable<PartitionData>::buildVoxelPoints()
     m_voxelPointsColors.clear();
 
     glm::vec3 offset(0.5f*m_partitioner->m_gridInfo.spacing());
-    for(const Voxel<PartitionData>& voxel : m_partitioner->m_image)
+    for(size_t i=0; i<m_partitioner->m_image.size(); ++i)
     {
+        const Voxel<PartitionData>& voxel  = m_partitioner->m_image[i];
         if(voxel.m_type==VoxelType::Out)
         {
             m_voxelPointsPositions.push_back( voxel.offset + offset );
@@ -197,8 +198,19 @@ void PartitionerRenderable<PartitionData>::buildVoxelPoints()
         }
         else if(voxel.m_type==VoxelType::In)
         {
+            std::vector<int> neighbors;
+            m_partitioner->m_gridInfo.get27Neighbors(neighbors, i, m_partitioner->m_gridInfo.spacing());
+            bool hasBorderNeighbor = false;
+            for(const int & n : neighbors) if(m_partitioner->m_image[n].m_type==VoxelType::Border) hasBorderNeighbor = true;
             m_voxelPointsPositions.push_back( voxel.offset + offset );
-            m_voxelPointsColors.push_back( glm::vec4(1.0,0.0,0.0,1.0) );
+            if(!hasBorderNeighbor)
+            {
+                m_voxelPointsColors.push_back( glm::vec4(1.0,0.0,0.0,1.0) );
+            }
+            else
+            {
+                m_voxelPointsColors.push_back( glm::vec4(1.0,1.0,1.0,1.0) );
+            }
         }
         else if(voxel.m_type==VoxelType::Border)
         {
@@ -211,7 +223,6 @@ void PartitionerRenderable<PartitionData>::buildVoxelPoints()
             m_voxelPointsColors.push_back( glm::vec4(0.0,0.0,0.0,1.0) );
         }
     }
-    std::cout << "Size: " << m_voxelPointsPositions.size() << " / " << m_voxelPointsColors.size() << std::endl;
 
     //Create buffers
     glGenBuffers(1, &m_voxelPointsBuffer[0]); //vertices

@@ -10,6 +10,7 @@
 #include "cgalToolBox.inl"
 #include <omp.h>
 
+
 enum VoxelType { None, Out, In, Border};
 
 typedef glm::ivec2 Vec2i;
@@ -19,6 +20,8 @@ typedef std::vector< std::vector< std::set< Vec2i > > > PartitionerConnectivity;
 typedef std::vector< FacetHandle > FacetHandleList;
 typedef std::set< FacetHandle > FacetHandleSet;
 typedef std::vector< Vec2i > VertexToPartition;
+
+struct Vec2iCompare {bool operator() (const Vec2i& lhs, const Vec2i& rhs) const{return lhs[0] < rhs[0];}};
 
 std::set<unsigned int> getCellsOverTriangle(const GridUtility& grid, const std::array<Vec3r,3>& t);
 std::array<float,8> trilinearWeights(const std::array<Vec3r,8>& cellVertices, const Vec3r& x);
@@ -35,18 +38,20 @@ public:
      * \param partition a partition to clone.
      */
     Partition(const Partition& partition);
+    Partition(const int& voxelId, const FacetHandleSet& triangles,
+              const std::set<Vec2i, Vec2iCompare> &neighbors, const PartitionData& data);
 
-    int voxelId; //!< A reference to the voxel which contains this partition.
-    FacetHandleSet triangles; //!< A set of triangles which constitutes the partition.
-    std::set<Vec2i> neighbors; //<! Store the coordinates (voxelId,partitionId) of the neighbors.
-    PartitionData data; //!< Partition data.
+    int m_voxelId; //!< A reference to the voxel which contains this partition.
+    FacetHandleSet m_triangles; //!< A set of triangles which constitutes the partition.
+    std::set<Vec2i, Vec2iCompare> m_neighbors; //<! Store the coordinates (voxelId,partitionId) of the neighbors.
+    PartitionData m_data; //!< Partition data.
 
     /*!
      * \brief Return a list of neighbors of the current partition.
      * \return A list of coordinates (voxelId,partitionId) of the partition's neighbors.
      */
-    std::set<Vec2i>& getNeighbors();
-    const std::set<Vec2i>& getNeighbors() const;
+    std::set<Vec2i, Vec2iCompare>& getNeighbors();
+    const std::set<Vec2i, Vec2iCompare> &getNeighbors() const;
     void clearGeometry();
     void addTriangle(const FacetHandle& facetHandle);
 };

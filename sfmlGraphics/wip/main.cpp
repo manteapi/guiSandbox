@@ -70,7 +70,7 @@ int main( int argc, char* argv[] )
     //Build a partitioner for the mesh
     HReal voxelSpacing = 0.1;
     std::shared_ptr< Partitioner<int> > partitioner = std::make_shared< Partitioner<int> >(m_polyhedron, voxelSpacing);
-    std::cout << *(partitioner.get()) << std::endl;
+    //std::cout << *(partitioner.get()) << std::endl;
     std::shared_ptr< PartitionerRenderable<int> > partitionerRenderable = std::make_shared< PartitionerRenderable<int> >(flatShader, partitioner);
     viewer.addRenderable(partitionerRenderable);
     partitionerRenderable->voxelTriangles(points, triangles, normals);

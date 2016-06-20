@@ -81,35 +81,44 @@ template<class PartitionData>
 Partition<PartitionData>::Partition(){}
 
 template<class PartitionData>
+Partition<PartitionData>::Partition(const int& voxelId, const FacetHandleSet& triangles, const std::set<Vec2i,Vec2iCompare>& neighbors, const PartitionData& data)
+{
+    m_voxelId = voxelId;
+    m_triangles = triangles;
+    for(const Vec2i & n : neighbors) m_neighbors.insert(n);
+    m_data = data;
+}
+
+template<class PartitionData>
 Partition<PartitionData>::Partition( const Partition& partition )
 {
-    triangles = partition.triangles;
-    neighbors = partition.neighbors;
-    data = partition.data;
+    m_triangles = partition.m_triangles;
+    m_neighbors = partition.m_neighbors;
+    m_data = partition.m_data;
 }
 
 template<class PartitionData>
-std::set<Vec2i>& Partition<PartitionData>::getNeighbors()
+std::set<Vec2i, Vec2iCompare> &Partition<PartitionData>::getNeighbors()
 {
-    return neighbors;
+    return m_neighbors;
 }
 
 template<class PartitionData>
-const std::set<Vec2i>& Partition<PartitionData>::getNeighbors() const
+const std::set<Vec2i, Vec2iCompare>& Partition<PartitionData>::getNeighbors() const
 {
-    return neighbors;
+    return m_neighbors;
 }
 
 template<class PartitionData>
 void Partition<PartitionData>::clearGeometry()
 {
-    triangles.clear();
+    m_triangles.clear();
 }
 
 template<class PartitionData>
 void Partition<PartitionData>::addTriangle(const FacetHandle& facetHandle)
 {
-    triangles.insert(facetHandle);
+    m_triangles.insert(facetHandle);
 }
 
 //--------------------------------------------------------------------------
@@ -155,7 +164,28 @@ Partitioner<PartitionData>::Partitioner(CustomPolyhedron &polyhedron, const HRea
     //Step 3: Mark the cells as IN/OUT/BORDER
     markVoxels();
 
-    //Step 4: Handle BORDER cells
+    //Step 4: Build connectivity for IN cells with no BORDER cells as neighbors
+    for(size_t i=0; i<m_image.size(); ++i)
+    {
+        Voxel<PartitionData> & voxel = m_image[i];
+        if(voxel.m_type==VoxelType::In)
+        {
+            std::vector<int> neighbors;
+            m_gridInfo.get27Neighbors(neighbors, i, m_gridInfo.spacing());
+            bool hasBorderNeighbor = false;
+            for(const int & n : neighbors) if(m_image[n].m_type==VoxelType::Border) hasBorderNeighbor = true;
+            if(!hasBorderNeighbor)
+            {
+                std::set<Vec2i, Vec2iCompare> neighborhood;
+                FacetHandleSet triangles;
+                PartitionData data;
+                for(const int & n : neighbors) neighborhood.insert( Vec2i(n,0) );
+                Partition<PartitionData> partition(i, triangles, neighborhood, data);
+                voxel.partitions.push_back(partition);
+            }
+        }
+    }
+    //Step 4: Basic flood fill on triangels in BORDER cells
 
     //Step 5: ...
 }
