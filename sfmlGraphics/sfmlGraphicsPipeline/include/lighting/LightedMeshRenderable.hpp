@@ -14,7 +14,13 @@ class LightedMeshRenderable : public HierarchicalRenderable
     public:
         ~LightedMeshRenderable();
         LightedMeshRenderable(ShaderProgramPtr program, const std::string& filename);
+        LightedMeshRenderable(ShaderProgramPtr shaderProgram, const std::vector< glm::vec3 >& positions, const std::vector<unsigned int>& indices,
+                              const std::vector<glm::vec3>& normals, const std::vector<glm::vec2>& texCoords);
         void setMaterial(const MaterialPtr& material);
+        std::vector< glm::vec3 > & positions();
+        const std::vector< glm::vec3 > & positions() const;
+        std::vector< unsigned int >& indices();
+        const std::vector< unsigned int >& indices() const;
 
     private:
         void do_draw();

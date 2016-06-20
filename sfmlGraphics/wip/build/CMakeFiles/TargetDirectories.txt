@@ -1,0 +1,1 @@
+/home/manteapi/Depot/github/guiSandbox/sfmlGraphics/wip/build/CMakeFiles/main.dir
