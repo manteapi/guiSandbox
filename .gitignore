@@ -1,7 +1,10 @@
 sfmlGraphics/sfmlGraphicsPipeline/build/
+sfmlGraphics/sfmlGraphicsPipeline/*.user
 sfmlGraphics/sfmlGraphicsPipeline/extlib/sfml-2.3.2/build/
 sfmlGraphics/sfmlGraphicsPipeline/extlib/tinyobjloader/build/
 sfmlGraphics/sfmlGraphicsPipeline/extlib/freetype-2.5.5/build/
 sfmlGraphics/sfmlGraphicsPipeline/extlib/glew-1.13.0/lib/
 sfmlGraphics/sfmlGraphicsPipeline/extlib/glew-1.13.0/bin/
 sfmlGraphics/examples/build/
+sfmlGraphics/wip/build/
+sfmlGraphics/wip/*.user

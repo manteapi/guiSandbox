@@ -15,6 +15,9 @@ Voxel<PartitionData>::Voxel()
 {
     length = 0.0;
     offset = Vec3r(0.0,0.0,0.0);
+    m_type = VoxelType::None;
+    triangles.clear();
+    partitions.clear();
 }
 
 template<class PartitionData>
@@ -23,6 +26,8 @@ Voxel<PartitionData>::Voxel(const HReal length_, const Vec3r &offset_, VoxelType
     length = length_;
     offset = offset_;
     m_type = type_;
+    triangles.clear();
+    partitions.clear();
 }
 
 template<class PartitionData>
@@ -158,6 +163,12 @@ Partitioner<PartitionData>::Partitioner(CustomPolyhedron &polyhedron, const HRea
 template<class PartitionData>
 void Partitioner<PartitionData>::markVoxels()
 {
+    //Mark border voxels
+    for(Voxel<PartitionData>& voxel : m_image)
+    {
+        if(!voxel.triangles.empty()) voxel.m_type=VoxelType::Border;
+    }
+
     //Mark out voxels
     std::vector<unsigned int> tovisit;
     std::set<unsigned int> visited;
@@ -172,21 +183,20 @@ void Partitioner<PartitionData>::markVoxels()
         m_gridInfo.get27Neighbors(neighbors, cellId, m_gridInfo.spacing());
         for(const int& n : neighbors)
         {
+            bool isNotBorder = (m_image[n].m_type != VoxelType::Border);
             bool hasBeenVisited = (visited.find(n) != visited.end());
             bool willBeVisited = (std::find(tovisit.begin(), tovisit.end(), n)!=tovisit.end());
-            if(!hasBeenVisited && !willBeVisited)
+            if(!hasBeenVisited && !willBeVisited && isNotBorder)
                 tovisit.push_back(n);
         }
     }
 
+    //Mark in voxels
     for(Voxel<PartitionData>& voxel : m_image)
     {
-        if(voxel.m_type==VoxelType::None)
+        if(voxel.m_type==VoxelType::None && voxel.triangles.empty())
         {
-            if(voxel.triangles.empty())
-                voxel.m_type=VoxelType::In;
-            else
-                voxel.m_type=VoxelType::Border;
+            voxel.m_type=VoxelType::In;
         }
     }
 }
@@ -211,11 +221,10 @@ template<class PartitionData>
 void Partitioner<PartitionData>::initImage()
 {
     m_image.resize(m_gridInfo.size());
-    int voxelId=0;
-    for(Voxel<PartitionData>& voxel : m_image)
+    for(size_t i=0; i<m_image.size(); ++i)
     {
-        Vec3r voxelOffset = m_gridInfo.gridToWorld(voxelId);
-        voxel = Voxel<PartitionData>(m_gridInfo.spacing(), voxelOffset, VoxelType::None);
+        Vec3r voxelOffset = m_gridInfo.gridToWorld(i);
+        m_image[i] = Voxel<PartitionData>(m_gridInfo.spacing(), voxelOffset, VoxelType::None);
     }
 }
 

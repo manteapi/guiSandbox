@@ -27,6 +27,9 @@ private:
         void buildGrid();
         void drawGrid();
 
+        void buildVoxelPoints();
+        void drawVoxelPoints();
+
         void do_draw();
         void do_animate( float time );
 
@@ -48,6 +51,11 @@ private:
         std::vector< glm::vec3 > m_voxelTriNormals;
         std::vector< glm::vec4 > m_voxelTriColors;
         std::array<unsigned int,2> m_voxelTriBuffer;
+
+        //Data for the voxel type of the partitioner
+        std::vector< glm::vec3 > m_voxelPointsPositions;
+        std::vector< glm::vec4 > m_voxelPointsColors;
+        std::array<unsigned int,2> m_voxelPointsBuffer;
 };
 
 #endif

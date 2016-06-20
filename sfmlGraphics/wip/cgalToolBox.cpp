@@ -37,4 +37,11 @@ std::vector<glm::vec3> CustomPolyhedron::positions()
     return positions;
 }
 
+void computeFacetNormal( FacetHandle& f )
+{
+    HalfedgeHandle h = f->halfedge();
+    f->normal() = CGAL::cross_product(h->next()->vertex()->point() - h->vertex()->point(), h->next()->next()->vertex()->point() - h->next()->vertex()->point());
+    f->normal() = f->normal()/f->normal().squared_length();
+}
+
 #endif

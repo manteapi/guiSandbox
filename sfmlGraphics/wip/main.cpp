@@ -50,11 +50,16 @@ int main( int argc, char* argv[] )
     TriangleList triangles;
     std::vector<glm::vec2> texCoords;
     std::vector<glm::vec3> normals;
-    std::string meshFileName = "./../../sfmlGraphicsPipeline/meshes/Bunny.obj";
+    std::string meshFileName = "./../../sfmlGraphicsPipeline/meshes/Bunny_repaired.obj";
     read_obj(meshFileName, points, triangles, normals, texCoords);
     MeshToPolyhedronBuilder<HalfedgeDS, PointList, TriangleList> polyBuilder( &points, &triangles );
     CustomPolyhedron m_polyhedron;
     m_polyhedron.delegate(polyBuilder);
+    for(Polyhedron::Face_iterator fit = m_polyhedron.facets_begin(); fit!=m_polyhedron.facets_end(); ++fit)
+    {
+        computeFacetNormal(fit);
+    }
+
     /*
     points = m_polyhedron.positions();
     triangles = m_polyhedron.indices();
