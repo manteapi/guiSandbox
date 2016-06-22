@@ -204,7 +204,29 @@ Partitioner<PartitionData>::Partitioner(CustomPolyhedron &polyhedron, const HRea
         }
     }
 
-    //Step 5: ...
+    //Step 5: Compute intersections of triangles with cells
+    for(size_t i=0; i<m_image.size(); ++i)
+    {
+        Voxel<PartitionData> & voxel = m_image[i];
+        std::array<std::array<Vec3r,4>,6> voxelFaces = m_gridInfo.cellFaces(i);
+        for(size_t j=0; j<voxelFaces.size(); ++j)
+        {
+            for(size_t k=0; k<voxel.size(); ++k)
+            {
+                Partition<PartitionData> & partition = voxel.partitions[k];
+                FacetHandleSet & triangles = partition.m_triangles;
+                for(const FacetHandle & f : triangles)
+                {
+                    std::set<IntersectionPtr> intersections;
+                    triangleVoxelIntersection(j, voxelFaces[j], f, intersections);
+                    for(const IntersectionPtr & inter : intersections)
+                    {
+                        partition.m_intersections.insert(inter);
+                    }
+                }
+            }
+        }
+    }
 }
 
 template<class PartitionData>

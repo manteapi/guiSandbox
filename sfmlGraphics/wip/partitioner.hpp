@@ -23,9 +23,54 @@ typedef std::vector< Vec2i > VertexToPartition;
 
 struct Vec2iCompare {bool operator() (const Vec2i& lhs, const Vec2i& rhs) const{return lhs[0] < rhs[0];}};
 
+class Intersection
+{
+public:
+    Intersection();
+    Intersection(const FacetHandle& meshFace, const int gridFace);
+    ~Intersection();
+    FacetHandle m_meshFace;
+    int m_gridFace;
+};
+typedef std::shared_ptr<Intersection> IntersectionPtr;
+
+class PointIntersection : public Intersection
+{
+public:
+    PointIntersection();
+    PointIntersection(const FacetHandle& meshFace, const int gridFace, const CGALPoint& point);
+    ~PointIntersection();
+    CGALPoint m_point;
+};
+typedef std::shared_ptr<PointIntersection> PointIntersectionPtr;
+
+class SegmentIntersection : public Intersection
+{
+public:
+    SegmentIntersection();
+    SegmentIntersection(const FacetHandle& meshFace, const int gridFace, const CGALSegment& segment);
+    ~SegmentIntersection();
+    CGALSegment m_segment;
+};
+typedef std::shared_ptr<SegmentIntersection> SegmentIntersectionPtr;
+
+class TriangleIntersection : public Intersection
+{
+public:
+    TriangleIntersection();
+    TriangleIntersection(const FacetHandle& meshFace, const int gridFace, const CGALTriangle& triangle);
+    ~TriangleIntersection();
+    CGALTriangle m_triangle;
+};
+typedef std::shared_ptr<TriangleIntersection> TriangleIntersectionPtr;
+
 std::set<unsigned int> getCellsOverTriangle(const GridUtility& grid, const std::array<Vec3r,3>& t);
 std::array<float,8> trilinearWeights(const std::array<Vec3r,8>& cellVertices, const Vec3r& x);
 bool trianglePlaneIntersection(std::array<Vec3r, 4>& plane, const std::array<Vec3r, 3>& t);
+std::array<Vec3r,3> getTriangleFromFace(const FacetHandle& f);
+bool triangleVoxelIntersection(const int voxelFaceId, const std::array<Vec3r, 4> &voxelFaces,
+                               const FacetHandle &meshFace, std::set<IntersectionPtr>& intersections);
+
 void floodfill(const FacetHandleList& triangles, std::vector<FacetHandleSet> &trianglesSets);
 
 template<class PartitionData>
@@ -44,6 +89,7 @@ public:
 
     int m_voxelId; //!< A reference to the voxel which contains this partition.
     FacetHandleSet m_triangles; //!< A set of triangles which constitutes the partition.
+    std::set<IntersectionPtr> m_intersections;
     std::set<Vec2i, Vec2iCompare> m_neighbors; //<! Store the coordinates (voxelId,partitionId) of the neighbors.
     PartitionData m_data; //!< Partition data.
 

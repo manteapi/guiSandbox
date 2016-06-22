@@ -4,6 +4,39 @@
 #include "partitioner.inl"
 #include <array>
 
+Intersection::Intersection(){}
+Intersection::Intersection(const FacetHandle& meshFace, const int gridFace) :
+    m_meshFace(meshFace), m_gridFace(gridFace)
+{
+}
+Intersection::~Intersection(){}
+
+SegmentIntersection::SegmentIntersection(){}
+SegmentIntersection::SegmentIntersection(const FacetHandle& meshFace, const int gridFace, const CGALSegment& segment) :
+    Intersection(meshFace, gridFace), m_segment(segment)
+{
+
+}
+SegmentIntersection::~SegmentIntersection(){}
+
+PointIntersection::PointIntersection(){}
+PointIntersection::PointIntersection(const FacetHandle& meshFace, const int gridFace, const CGALPoint& point) :
+        Intersection(meshFace, gridFace), m_point(point)
+{
+
+}
+
+PointIntersection::~PointIntersection(){}
+
+TriangleIntersection::TriangleIntersection(){}
+TriangleIntersection::TriangleIntersection(const FacetHandle& meshFace, const int gridFace, const CGALTriangle& triangle) :
+    Intersection(meshFace, gridFace), m_triangle(triangle)
+{
+
+}
+TriangleIntersection::~TriangleIntersection(){}
+
+
 std::set<unsigned int> getCellsOverTriangle(const GridUtility& grid, const std::array<Vec3r,3>& t)
 {
     std::set<unsigned int> result;
@@ -106,6 +139,72 @@ void floodfill(const FacetHandleList& triangles, std::vector<FacetHandleSet>& tr
             trianglesSets.push_back(component);
         }
     }
+}
+
+std::array<Vec3r,3> getTriangleFromFace(const FacetHandle& f)
+{
+    int i = 0;
+    std::array<Vec3r,3> triangle;
+    Polyhedron::Halfedge_around_facet_const_circulator eBegin = f->facet_begin(), eit=eBegin;
+    do{triangle[i] = Vec3r(eit->vertex()->point()[0], eit->vertex()->point()[1], eit->vertex()->point()[2]); ++i;} while(++eit != eBegin);
+    return triangle;
+}
+
+bool triangleVoxelIntersection(const int voxelFaceId, const std::array<Vec3r,4>& voxelFaces,
+                               const FacetHandle & meshFace, std::set<IntersectionPtr>& intersections)
+{
+    bool intersect = false;
+    std::array<Vec3r,3> t = getTriangleFromFace(meshFace);
+    CGALTriangle cgT( CGALPoint(t[0][0], t[0][1], t[0][2]), CGALPoint(t[1][0], t[1][1], t[1][2]), CGALPoint(t[2][0], t[2][1], t[2][2]) );
+    CGALTriangle cgP1( CGALPoint(voxelFaces[0][0], voxelFaces[0][1], voxelFaces[0][2]), CGALPoint(voxelFaces[1][0], voxelFaces[1][1], voxelFaces[1][2]), CGALPoint(voxelFaces[2][0], voxelFaces[2][1], voxelFaces[2][2]) );
+    CGALTriangle cgP2( CGALPoint(voxelFaces[0][0], voxelFaces[0][1], voxelFaces[0][2]), CGALPoint(voxelFaces[2][0], voxelFaces[2][1], voxelFaces[2][2]), CGALPoint(voxelFaces[3][0], voxelFaces[3][1], voxelFaces[3][2]) );
+
+    auto result1 = CGAL::intersection(cgT, cgP1);
+    CGALTriangle iTriangle1;
+    CGALPoint iPoint1;
+    CGALSegment iSegment1;
+    if(CGAL::assign(iTriangle1, result1))
+    {
+        intersect = true;
+        TriangleIntersectionPtr inter = std::make_shared<TriangleIntersection>();
+        intersections.insert(inter);
+    }
+    else if(CGAL::assign(iPoint1, result1))
+    {
+        intersect = true;
+        PointIntersectionPtr inter = std::make_shared<PointIntersection>();
+        intersections.insert(inter);
+    }
+    else if(CGAL::assign(iSegment1, result1))
+    {
+        intersect = true;
+        SegmentIntersectionPtr inter = std::make_shared<SegmentIntersection>();
+        intersections.insert(inter);
+    }
+
+    auto result2 = CGAL::intersection(cgT, cgP2);
+    CGALTriangle iTriangle2;
+    CGALPoint iPoint2;
+    CGALSegment iSegment2;
+    if(CGAL::assign(iTriangle2, result2))
+    {
+        intersect = true;
+        TriangleIntersectionPtr inter = std::make_shared<TriangleIntersection>();
+        intersections.insert(inter);
+    }
+    else if(CGAL::assign(iPoint2, result2))
+    {
+        intersect = true;
+        PointIntersectionPtr inter = std::make_shared<PointIntersection>();
+        intersections.insert(inter);
+    }
+    else if(CGAL::assign(iSegment2, result2))
+    {
+        intersect = true;
+        SegmentIntersectionPtr inter = std::make_shared<SegmentIntersection>();
+        intersections.insert(inter);
+    }
+    return intersect;
 }
 
 bool trianglePlaneIntersection(std::array<Vec3r, 4>& plane, const std::array<Vec3r,3>& t)
