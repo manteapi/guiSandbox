@@ -1,0 +1,244 @@
+/* Header: navigation + banner */
+.tutorial header {
+  margin-bottom:0px;
+}
+.tutorial .navbar {
+  background-color:white; 
+  margin:0px;
+}
+.tutorial .navbar-nav li a {
+  color:#397530;
+}
+.tutorial .navbar-nav button {
+  color:#397530;
+  background:none;
+  border:none;
+	cursor:pointer;
+  margin-top:1em;
+  padding-left:1em;
+}
+
+.tutorial .navbar-brand {
+  color:#397530;
+}
+.tutorial .header {
+  background-color:#397530;
+  background-image: linear-gradient(to bottom,#397530 0,#558D4C 100%);
+  background-repeat: repeat-x;
+  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+  padding:35px;
+  font-size:24px;
+  color:white;
+  margin-bottom:40px;
+}
+.tutorial .header .title {
+  font-size:45px; 
+}
+.tutorial .header .menu-button {
+   color:#397530;
+}
+
+.tutorial article header h1 {
+  text-align: center;
+}
+
+.tutorial ol li {
+  font-size:inherit; 
+}
+
+/* footer: just the licence for now */
+.tutorial footer {
+  margin-top:10px;
+  padding-top:40px;
+  border-top: 1px solid #e5e5e5;
+  line-height: 40px;
+  color: #767676;
+}
+.tutorial footer p {
+  text-align:center; 
+}
+
+/* Utilities */
+.tutorial .vcenter {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Articles */
+.tutorial section {
+  line-height:1.5;
+  margin-left:auto;
+  margin-right:auto;
+  /*width:1200px;*/
+}
+
+.tutorial p {
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 12pt;
+}
+
+.tutorial ul {
+    font-size: 12pt;
+    line-height: 1.5;
+}
+
+.tutorial ol {
+    font-size: 12pt;
+    line-height: 1.5;
+}
+
+.tutorial .note {
+    border-radius: 25px;
+    padding: 15px;
+    background-color: rgb(153,153,255);
+}
+
+.tutorial .note-header {
+    font-weight: bold;
+}
+
+.tutorial-img {
+    margin: 25px;
+}
+
+
+.tutorial pre {
+  border:none;
+  padding: 2em;
+  margin: 0;
+  background: inherit;
+    
+}
+
+.tutorial pre code {
+    font-size: 12pt;
+}
+
+.tutorial .btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.tutorial .bash {
+  background-color:lightgray;
+}
+
+.tutorial .cpp {
+  background-color:lightblue;
+}
+
+.tutorial .glsl {
+  background-color:lightgreen;
+}
+
+table {
+    font-size: 12pt;
+    width:100%;
+}
+
+td {
+    border-spacing: 0px;
+    padding: 0px;
+}
+
+th {
+    text-align: center;
+}
+
+caption {
+    display: table-caption;
+    text-align: center;
+}
+
+.tutorial li {
+  margin-top: 10px;
+}
+
+
+/*******************
+ * PAGE NAVIGATION *
+ *************************************************************************
+ *
+ * 
+ *
+ *
+ *
+ *
+ *
+ *
+ */ 
+
+.tutorial body {
+  position: relative;
+}
+
+.tutorial #page-nav.affix-top {
+  width: 100%;
+}
+
+.tutorial #page-nav.affix-bottom {
+  width: 100%;
+}
+
+.tutorial #page-nav.affix {
+  top: 20px;
+  width: 100%;
+  z-index:10;
+}
+
+.tutorial #page-nav .to-top {
+  text-align:center;  
+}
+
+.tutorial #page-nav .nav a {
+  color: black;
+  font-style: italic;
+  color:#397530;
+}
+
+.tutorial #page-nav .nav li a:hover,
+.tutorial #page-nav .nav li a:focus {
+  background: #f5f5f5;
+}
+
+.tutorial #page-nav .nav .active {
+  font-weight: bold;
+  background: #f5f5f5;
+}
+
+.tutorial #page-nav .nav .nav {
+  display: none;
+  padding-left: 20px;
+}
+
+.tutorial #page-nav .nav .active .nav {
+  display: block;
+}
+
+.tutorial #page-nav .nav .nav a {
+  font-weight: normal;
+  font-size: .85em;
+}
+
+.tutorial #page-nav .nav .nav .active a,
+.tutorial #page-nav .nav .nav .active:hover a,
+.tutorial #page-nav .nav .nav .active:focus a {
+  font-weight: bold;
+  /*padding-left: 30px;*/
+  /*border-left: 5px solid black;*/
+}
+
+
+.tutorial #page-nav .nav .nav span {
+  margin: 0 5px 0 2px;
+}
+
+
+.tutorial #page-nav .nav .nav .active span,
+.tutorial #page-nav .nav .nav .active:hover span,
+.tutorial #page-nav .nav .nav .active:focus span {
+  display: none;
+}
+

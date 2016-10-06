@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title> Practical 2: 3D primitive modeling</title>
+    
+    <!-- metadata -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ENSIMAG Computer Graphics 3D Tutorials.">
+    <meta name="author" content="Pierre-Luc Manteaux">
+    <meta name="author" content="Thomas Delame">
+    
+    <!-- 
+    #############
+    # libraries #
+    #############
+      bootstrap for style/appearance
+      jquery for interactions
+      mathjax for mathematic symbols (basically latex in html) 
+      highlight for code highlighting -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['\\(', '\\)']]
+        }
+      });
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="./javascript/mathjax_local.js"></script>
+    <!-- Highlight package for code highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/idea.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!--
+    ####################
+    # linked resources #
+    #################### -->
+    <link href="./css/tutorial.css" rel="stylesheet">
+  </head>
+  <body data-spy="scroll" data-target="#page-nav" class="tutorial">
+    <header> 
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+              <span class="sr-only"> Toggle navigation </span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html">3DCG Practicals</a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li>
+                <button type="button" data-toggle="dropdown"> Practicals <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="./practical_01.html">Pratical 1 - A quick & dirty introduction to OpenGL</a></li>
+                    <li><a href="./practical_02.html">Pratical 2 - 3D primitive modeling</a></li>
+                    <li><a href="./practical_03.html">Pratical 3 - Hierarchical modeling </a></li>
+                    <li><a href="./practical_04.html">Pratical 4 - Procedural animation </a></li>
+                    <li><a href="./practical_05.html">Pratical 5 - Physics-based animation </a></li>
+                    <li><a href="./practical_06.html">Pratical 6 - Local illumination </a></li>
+                    <li><a href="./practical_07.html">Pratical 7 - Texturing </a></li>
+                </ul>
+              <li><a href="./project.html"> Project</a></li>
+              <li><a href="../api_doc/index.html"> Documentation </a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <div class="header">
+      <div class="container">
+        <span class="title"> 3D Computer Graphics Practicals </span>
+        <p> 
+            Introduction to Computer Graphics with OpenGL 4 and C++
+        </p>
+      </div>
+    </div>   
+      
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10" role="main">
+
+        <header><h1> Practical 2 - 3D primitive modeling </h1></header>
+        
+        <p> 
+            Computer Graphics is a science mainly composed of three fields.
+        </p>
+        <ol>
+            <li><strong>Modeling</strong>: How to create and represent 3D shapes efficiently.</li>
+            <li><strong>Rendering</strong>: How to compute the appearance of a shape.</li>
+            <li><strong>Animation</strong>: How to add a dynamic behavior to a shape in a virtual space.</li>
+        </ol>
+          
+        <p>
+            This practical introduces two of the most basic modeling techniques.
+        </p>
+            <ul>
+                <li>
+                    <strong>Parametric modeling:</strong> The surface of an object 
+                    is described by a set of equations that can be used to build its geometry.
+                    This technique is mostly used to describe simple objects that can be then
+                    assembled in more complex ones.
+                    <img id="parametric_modeling" src="./images/primitives.png" class="tutorial-img img-rounded img-responsive" style="max-width: 75%" alt="Parametric modeling of a sphere, a cylinder, a cone and a torus" >
+                </li>
+                <li>
+                    <strong>Descriptive modeling:</strong> Step by step, vertices and faces are
+                    built to describe the surface of an object. Without any sculpting tools, this
+                    is certainly the most tedious way of sculpting. Therefore many methods were
+                    proposed to ease this process.
+                    <img id="descriptive_modeling" src="./images/suzanne.png" class="tutorial-img img-rounded img-responsive" style="max-width: 75%" alt="Parametric modeling of Suzanne" >
+                </li>
+            </ul>
+            
+        <h2 id="new_resources">Additional resources and what to do with them</h2>
+
+		<p>
+            As always, if you work in Ensimag rooms, first source the script to use a C++11 compiler:</p>
+			<pre><code class="bash">source gcc493.sh</code></pre>
+        <p>
+            For this practical, you will need additional files 
+            to the archive of the first practical. 
+            <br/>
+            These files are available in the <samp>practical2.zip</samp> archive 
+            <a href="./../resources/practical2.zip"> here </a>.
+        </p>
+
+        <p>
+            The archive contains resources dedicated to this practical, the solution for the cube and indexed cube and a small fix 
+            of the shader program. To spend a nice and quiet practical, place the content of the
+            archive as follows:
+        </p>
+        <ul>
+            <li>Replace the <samp>CMakeLists.txt</samp> file at the root of your project directory.
+            <li>Copy the <samp>meshes</samp> folder at the root of the project.</li>
+            <li>Copy all <samp>.hpp</samp> files in the <samp>include</samp> directory.</li>
+            <li>Copy all <samp>.cpp</samp> files in the <samp>src</samp> directory.</li>
+            <li>Copy the <samp>Makefile</samp> and folder <samp>tinyobjloader</samp> in the <samp>extlib</samp> directory. <br >
+            Then recompile the external libraries (<code class="bash">make build_tinyobjloader</code> should be enough)</li>
+            <li>Finally, rebuild your project: in your <samp>build</samp> directory, run <code class="bash">make clean</code>, 
+            <code class="bash">cmake ..</code> then <code class="bash">make</code>.<br >
+            (If you encouter problems: remove the <samp>build</samp> directory, create a new one, go into it, 
+            then run <code class="bash">cmake .. &amp;&amp; make</code>)
+        </ul>
+
+        <p>
+        The <samp>solution_practical1</samp> directory contains solutions of the first pratical:
+        </p>
+        <ul>
+        	<li>The cube whithout indexing: <samp>CubeRenderable.hpp</samp> &amp; <samp>.cpp</samp></li>
+        	<li>The cube whith indexing: <samp>IndexedCubeRenderable.hpp</samp> &amp; <samp>.cpp</samp></li>
+        	<li>An adequate shader <samp>flatVertex.glsl</samp> that loads colors in a buffer</li>
+        </ul>
+        <p>
+        	<strong>Warning</strong>: do not overwrite your own files with these solutions, rename them!
+        </p>
+
+            
+        <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#null_location">Shader program null location</button>
+        <div id="null_location" class="collapse">
+        <div class="well">
+        <p>
+          Sometimes, you can ask for a uniform or an attribute that does not exist a shader program (with <code class="cpp">ShaderProgram::getUniformLocation()</code> or <code class="cpp">ShaderProgram::getAttributeLocation()</code>). Since this variable does not exist, the location returned by those functions should not point to any existing variable.
+          In such case, the value <code class="cpp">ShaderProgram::null_location</code> is returned ; a value guaranteed to never point to an existing variable in
+        the shader program. 
+        </p>
+        <p> 
+        When a null location is returned, this is not always an error. 
+        Indeed, when a uniform or an attribute is not used in the
+        shader sources (the compiler can be pretty smart), it is optimized out. 
+        Thus, there is no valid location for this variable.
+        Any failure to set it will not change the rendering. 
+        So it is up to you to detect when a null location is returned by a shader
+        program and to decide what to do if this is the case.
+        </p>
+        </div>
+        </div>
+
+
+        <h2 id="exo1">Exercice 1: Cylinder</h2>
+            <p>
+                The lateral surface of a unit cylinder can be described by the following parametric equations:
+            </p>
+            
+            <table>
+                <tr>
+                    <td>
+                        <img id="cylinder_structure" src="./images/cylinder.png" class="tutorial-img img-rounded img-responsive" alt="Cylinder structure" >
+                    </td>
+                    <td>
+                    <p>
+                        \(\left\lbrace\begin{array}{lcl}
+                        x &amp; = &amp; \cos \theta \\
+                        y &amp; = &amp; \sin \theta \\
+                        z &amp; = &amp; h
+                        \end{array}\right.\),
+                    </p>
+                    <p>
+                        for \(\theta \in \left[0,2\pi\right[\) 
+                        and \(h\in\left[0, 1\right]\).
+                    </p>
+                    </td>	
+                </tr>
+            </table>
+            
+            <p>
+                In the <em>CylinderRenderable</em> class, you will create a "canonical" cylinder centered along the <em>z</em> axis, with a radius of 1 and bases on <em>h = 0</em> and <em>h = 1</em>:
+            </p>
+
+            <ul>
+                <li>
+                     Discretize the lateral surface of the cylinder into quad facets, then triangles. The number of facets could be parametrized in the constructor.
+                </li>
+                <li>
+                    Complete the geometry with the bottom and top bases (different colors could be used).
+                </li>
+                <li>
+                    Color the triangle of your cylinder using the function <code>randomColor()</code> and <code>getColor()</code> from the file <samp>Utils.hpp</samp>.
+                </li>
+                <li>
+                    Add your new renderable in the viewer.
+                </li>
+            </ul>
+
+        <p>
+            <strong>Warning</strong>: A skeleton of class <code>CylinderRenderable</code> is provided; comments indicate you where to code.
+        </p>
+
+         <!--
+              <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#cylinder_drawing_command">Other triangle primitives </button>
+              <div id="cylinder_drawing_command" class="collapse">
+                <div class="well">
+                <p>We draw triangle one by one by using the mode <code class="cpp">GL_TRIANGLES</code> in <code class="cpp">glDraw*()</code>. It is
+                  possible to be more efficient with other triangle primitives (see <a href="https://www.opengl.org/wiki/Primitive#Triangle_primitives">
+                  here</a>). For example, we can use <code class="cpp">GL_TRIANGLE_FAN</code> for the disks of the cylinder and <code class="cpp">GL_TRIANGLE_STRIP</code> for the remaining part
+                  of the cylinder. However, there is a low probability that you will need it for your project. 
+                  Also, you can quickly learn about those other triangle primitives. So we do not ask you to use such triangle primitives.</p>
+                  </div>
+              </div>
+
+              <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#cylinder_vertices">About cylinder vertices </button>
+              <div id="cylinder_vertices" class="collapse">
+                <div class="well">
+                <p> The vertices of such primitive will never change, so ask yourself where to compute and store their attributes. When you became
+                confident with the concept (and C++), you could store the vertex positions inside a static buffer (on the CPU side). Then, you
+                build only one buffer on the GPU and share it with all instances of the cylinder renderable. That is not mandatory, so do it only
+                when everything else works.
+                </p>          
+                </div>
+              </div>
+            -->
+              
+            <!--
+          <p> You should open something like the figure below. We used different colors to check we formed correctly the triangles. A frame is also displayed to
+            check the orientation and the dimensions of the cylinder.</p>
+          <img id="flat_cylinder" src="./../images/flat_cylinder.png" class="tutorial-img img-rounded img-responsive" alt="Flat cylinder rendering" style="max-width: 75%" >-->
+            
+        <h2 id="exo2">Exercice 2: Normals</h2>
+
+            <p>
+            This exercice is about normal computations. It serves two purposes:
+            </p>
+            
+            <ul>
+                <li>Getting more familiar with normal computing.</li>
+                <li>Preparing the next practical about illumination &amp; rendering.</li>
+            </ul>
+            
+            <p>
+                Propose two ways of computing the normals at a point on the lateral surface of the cylinder:
+                </p>
+            <ul>
+                <li>Using the parametric equations.</li>
+                <li>Using the edges of the triangle you built.</li>
+            </ul>
+            <p>
+                <strong>Warning: </strong> Normals should be <strong>normalized</strong>.
+                It must be ensured by construction or using the <code>glm::normalize()</code> function.
+            </p>
+
+            <p>Compute :</p>
+            <ul>
+                <li>
+                    <strong>Normal per face</strong>: Each vertex stores the normal of the face.
+                </li>
+                <li>
+                    <strong>Normal per vertex</strong>: Each vertex stores the normal at its position.
+                </li>                
+            </ul>
+
+            <p>
+                <strong>Warning:</strong> So far, normals are not used by your shaders. 
+                As a test, you could store them in the color buffer <code>m_colors</code> instead of random colors.
+                If normals are well computed, you should observe nice shades of color around the cylinder body.
+            <p>
+
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#moreprimitives">More primitives</button>
+        <div id="moreprimitives" class="collapse">
+        <div class="well">
+        <p>
+            Parametric equations for numerous primitives can be found <a href="http://mathworld.wolfram.com">here</a>.
+            We advice you to implement the basic primitives for your project: sphere, torus, cone.
+        </p>
+        </div>
+        </div>
+
+        <h2 id="exo3">Exercice 3: Mesh</h2>
+            
+        <ul>
+            <li>Use the functions in the file <samp>Io.hpp</samp> to import an obj mesh in the class <code>MeshRenderable</code>.</li>
+            <li>Look at the mesh <samp>suzanne.obj</samp> to get an idea of how a mesh can be stored into a file.</li>
+            <li>Add a <code>MeshRenderable</code> in the viewer that load Suzanne.</li>
+            <!-- <li><strong>Warning: You will need to update the inputs of your shader.</strong>-->
+            <li><strong>Warning:</strong> add random colors in you buffer to see each facets</li>
+        </ul>
+
+            <!--
+            <p>
+                Update your scene:
+            </p>
+            <ul>
+                <li>
+                    Instanciate a first <em>CylinderRenderable</em> and add it to the viewer, in the default location.
+                </li>
+                <li>
+                    Add a second cylinder, setting its model matrix so that:
+                    <ul>
+                        <li>it is centered at the origin </li>
+                        <li>its axis is in the <em>x</em> direction</li>
+                        <li>its has a length of 2.0 units</li>
+                        <li>it has a radius of 0.5</li>
+                    </ul>
+                </li>
+            </ul>
+            -->
+
+          
+            <!--
+          <h3 id="exo2_per_triangle">Exercice 2.1: Normal per face</h3>
+          
+          <p> Compute one normal per triangle. This will give a polygonized appearance to your cylinder. There are two ways to do so: one by 
+            computing the normal of the triangle thanks to its vertices positions, and another by having a close look to the parametric equation.
+            Find the two methods and implement them. You will obtain a result similar to:
+          </p>
+          
+          <img id="flat_cylinder" src="./../images/cylinder_per_face.png" class="tutorial-img img-rounded img-responsive" alt="Cylinder with one normal per triangle" style="max-width: 75%" >
+
+          <h3 id="exo2_per_vertex"> 2.2 One normal per vertex </h3>
+          
+          <p> A cylinder is a smooth surface (except at its extremities). Right now, it does not look smooth. 
+            This is because there is one normal by triangle. Thus all fragments will have the same normal and each triangle will look flat.
+            However, if the vertices of a triangle have different normals, the fragments will have smoothly interpolated normals.
+            So compute one normal per vertex and compare with the results of one normal per face.
+          </p>
+          
+          <img id="per_vertex_cylinder" src="./../images/cylinder_per_vertex.png" class="tutorial-img img-rounded img-responsive" alt="Cylinder with one normal per vertex" style="max-width: 75%" >
+          
+        <h2 id="exo3">3. Mesh </h2>
+        <h2 id="exo4">4. NIT - The normal inverse transpose matrix</h2>
+          
+          
+          <p> Toggle NIT, with an uniform used in the shader to actually use the NIT or not.</p>
+                  -->
+            
+        </div>
+        
+        <div class="col-md-2 scrollspy" role="complementary" id="page-nav">
+          <nav class="hidden-xs hidden-sm hidden-print" data-spy="affix">
+            <ul class="nav">
+              <li> <a href="#new_resources"> Additional resources</a> </li>
+              <li> <a href="#exo1">1. Cylinder</a> </li>
+              <li> <a href="#exo2">2. Normals</a> </li>
+              <li> <a href="#exo3">3. Mesh</a> </li>              
+              <li> <a href="../api_doc/index.html"> API's documentation </a> </li>
+              <li> <a class="to-top" href="#top"><span class="glyphicon glyphicon-menu-up"></span>Back to top </a> </li>
+            </ul>
+          </nav>
+        </div> <!-- end scrollspy sidebare-->
+      </div> <!-- end of row -->
+    </div> <!-- end of container -->
+    <footer>
+      <p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
+          </a>
+          <span property="dct:title"> CG3D practicals</span> by 
+          <span property="cc:attributionName">Pierre-Luc Manteaux</span> and 
+          <span property="cc:attributionName">Thomas Delame</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+    </footer>
+  </body>

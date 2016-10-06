@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> Practical 6: Local illumination</title>
+
+    <!-- metadata -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ENSIMAG Computer Graphics 3D Tutorials.">
+    <meta name="author" content="Pierre-Luc Manteaux">
+    <meta name="author" content="Thomas Delame">
+
+    <!-- 
+#############
+# libraries #
+#############
+bootstrap for style/appearance
+jquery for interactions
+mathjax for mathematic symbols (basically latex in html) 
+highlight for code highlighting -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['\\(', '\\)']]
+        }
+      });
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="./javascript/mathjax_local.js"></script>
+    <!-- Highlight package for code highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/idea.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!--
+####################
+# linked resources #
+#################### -->
+    <link href="./css/tutorial.css" rel="stylesheet">
+  </head>
+  <body data-spy="scroll" data-target="#page-nav" class="tutorial">
+    <header> 
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+              <span class="sr-only"> Toggle navigation </span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html">3DCG Practicals</a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li>
+                <button type="button" data-toggle="dropdown"> Practicals <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="./practical_01.html">Pratical 1 - A quick &amp; dirty introduction to OpenGL</a></li>
+                  <li><a href="./practical_02.html">Pratical 2 - 3D primitive modeling</a></li>
+                  <li><a href="./practical_03.html">Pratical 3 - Hierarchical modeling </a></li>
+                  <li><a href="./practical_04.html">Pratical 4 - Procedural animation </a></li>
+                  <li><a href="./practical_05.html">Pratical 5 - Physics-based animation </a></li>
+                  <li><a href="./practical_06.html">Pratical 6 - Local illumination </a></li>
+                  <li><a href="./practical_07.html">Pratical 7 - Texturing </a></li>
+                </ul>
+              <li><a href="./project.html"> Project</a></li>
+              <li><a href="./../api_doc/index.html"> Documentation </a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="header">
+      <div class="container">
+        <span class="title"> 3D Computer Graphics Practicals </span>
+        <p> 
+          Introduction to Computer Graphics with OpenGL 4 and C++
+        </p>
+      </div>
+    </div>   
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10" role="main">
+          <header><h1> Practical 6 - Local Illumination </h1></header>
+
+          <p> In all previous practicals, the scene was not really pleasant to see. Indeed, the depth of objects was not perceptible and the appearance was neither realistic nor expressive. It is high time to change that! In this practical we will implement basic local illumination techniques: nothing fancy, just enough to bring back the fun in your scene. </p>
+
+          <h2 id="reminder">1. Reminder: How to compile from scratch</h2>
+
+          <pre><code class="bash">#Switch to a C++11 compiler (at ENSIMAG only)
+source gcc493.sh
+
+#Compile external libraries (if new lib has been added)
+cd extlib/
+make clean_all
+make
+
+#Compile project
+cd ../
+rm -rf build/
+mkdir build/
+cd build/
+cmake ..
+make -j 8</code></pre>
+
+          <h2 id="additional">2. Additional files</h2>
+          <ul>
+            <li>Download the source of the practical <a href="./../resources/practical6.zip"> here </a>.</li>
+            <li>Unzip it.</li>
+            <li>Copy the <samp>extlib</samp> directory from you previous practical in this new directory called <samp>practical6</samp>.
+              Alternatively, you can simply create a symbolic link to the existing libraries. <br>
+              For example: <samp>cd practical6</samp> then <samp>ln -s ../practical2/extlib</samp></li>
+            <li>Compile your project by following the <a href="#reminder">previous instructions</a>.</li>
+          </ul>
+
+          <h2 id="provided_code">3. About the provided code</h2>
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#shortVersion">Short version, quick starter</button>
+          <div id="shortVersion" class="collapse">
+            <div class="well">
+              <p> 
+                The viewer is now able to manage lights: one directional light, a list of spot lights and a list of point lights. Those lights are automatically set on the GPU for the shader programs <strong> managed by the Viewer</strong>, provided the shader programs have the right uniforms in their sources (look at <samp>phongFragment.glsl</samp> to see those uniforms). 
+              </p>
+              <p> 
+                Most of the work takes place on the GPU side, in the GLSL fragment shader <samp>phongFragment.glsl</samp>.
+              </p>
+            </div>
+          </div>
+
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#longVersion">Long version, slow starter</button>
+          <div id="longVersion" class="collapse">
+            <div class="well">
+              <p> 
+                The provided code enables to add different type of lights in the scene in order to lit objects and to reflect their material properties. Lights and material are based on the local illumination model of Phong. 
+              </p>
+
+              <p>
+                For this practical, CPU and GPU code is provided.
+              </p>
+              <ul>
+                <li>
+                  CPU code is encapsulated into C++ classes that are gathered in a <samp>lighting</samp> subdirectory. 
+                </li>
+                <li>
+                  GPU code is gathered in the <samp>shaders</samp> subdirectory.
+                </li>
+              </ul>
+
+              <p>
+                The first group of class is the core of the lighting system:
+              </p>
+              <ul>
+                <li>
+                  The <code><a href="../api_doc/classDirectionalLight.html">DirectionalLight</a></code>, <code><a href="../api_doc/classPointLight.html">PointLight</a></code>, <code><a href="../api_doc/classSpotLight.html">SpotLight</a></code> classes. They define the attributes of the different kind of light in the Phong illumination model and provide functions to send these attributes to the GPU. (See <a href="#light_types">this section</a>) 
+                <li>
+                  The <code><a href="../api_doc/classMaterial.html">Material</a></code> class. It defines the material of an object in the Phong illumination model.
+                </li>
+              </ul>
+
+              <p>
+                The second group of class are <code><a href="../api_doc/classRenderable.html">Renderable</a></code> objects used for vizualisation:
+              </p>
+              <ul>
+                <li>
+                  The <code><a href="../api_doc/classDirectionalLightRenderable.html">DirectionalLightRenderable</a></code> class, <code><a href="../api_doc/classPointLightRenderable.html">PointLightRenderable</a></code>, <code><a href="../api_doc/classSpotLightRenderable.html">SpotLightRenderable</a></code> class. These classes allow to debug the parameters of your lights and animate your light or to control it with keyboard input. Indeed, such functionalities are easily implemented thanks to a <samp>Renderable</samp> class.
+                </li>
+                <li>
+                  The <code><a href="../api_doc/classLightedMeshRenderable.html">LightedMeshRenderable</a></code>, <code><a href="../api_doc/classLightedCylinderRenderable.html">LightedCylinderRenderable</a></code> class. They are similar to the renderable classes of previous practicals, but with the ability to be lit by lights. This is the kind of class you will need to adapt in your project to compute nice rendering for you scene.
+                </li>
+              </ul>
+
+              <p>
+                The third group of code are the shaders. These are the files you will work on during this practical:
+              </p>
+              <ul>
+                <li>
+                  The vertex shader <samp>phongVertex.glsl</samp>.
+                </li>
+                <li>
+                  The fragment shader <samp>phongFragment.glsl</samp>.
+                </li>
+              </ul>
+
+
+              <p>
+                <strong>The viewer class was also modified to take into lights. <br/> We strongly advise you to update all the code and not only the aforementionned classes.</strong>
+              </p>
+
+            </div>
+          </div>
+
+
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#reloadShaders">Dynamic reload of the shaders</button>
+          <div id="reloadShaders" class="collapse">
+            <div class="well">
+              <p>
+                You do not need to call <code>make</code> to update your shaders. <br/>
+                Shaders are compiled at run-time. <br/>
+                The Viewer can reload, compile and link them on demand if you press <samp>F3</samp>.<br/>
+                Edit your shader sources and press <samp>F3</samp> to see the results, without relaunching the executable.
+              </p>
+            </div>
+          </div>
+
+
+          <h2 id="light_mecanism"> 4. Light mecanism</h2>
+
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#course">Course</button>
+          <div id="course" class="collapse">
+            <div class="well">
+              <p> You already know that in the fragment shader processes fragments. A fragment is a linear (trilinear in case of triangle primitives) interpolation of vertex attributes, projected onto the screen. If the fragment is on top of all primitive fragments (its depth is smaller), it will become a pixel. </p>
+
+              <p> Here, vertices have position and normal attributes. Thus, fragments will have those two attributes too and will represent <strong>surfels</strong>: surface elements. While it may look like fragments and surfels are the same, keep in mind that they are in different spaces: fragments are on the 2D screen (screen coordinates) while surfel are in the 3D world (world coordinates). </p>
+
+              <p> A light is applied to a surfel. According to the Phong model, this light will react to the position and normal of the surfel, and also to the material applied on the surface.
+                We will explain here how the light react to such properties to compute the appearance of a surfel. You may find different model on the internet: that's fine, people are adapting the same model to suits their need.</p>
+
+              <h3 id="light_types"> Light types </h3>
+              <img id="lights_types_image" src="./images/05_lights_types.jpeg" class="tutorial-img img-rounded img-responsive" style="max-width: 90%" alt="Three kind of lights"> 
+              <p>Three kind of (standard) lights are used in this tutorial:</p>
+              <ul>
+                <li>
+                  A <i>directional light</i> represents a light which source is so far away from the camera that the light rays can be considered parallel when they reach an object, regardless of the position of the objects or the camera. A good example is the sun. For such a light, we have the following direction: \(\overrightarrow{\mathit{surfel\_to\_light}}=-\overrightarrow{\mathit{light\_direction}}\)
+                </li>
+                <li>
+                  A <i>point light</i> is located at a given position, and illuminates in all directions. Good examples of point light are torches. Usually, the light intensity received by an objet decreases when its far from the source. In this case, we have this direction to light: \(\overrightarrow{\mathit{surfel\_to\_light}}=\text{normalize}(\mathit{light\_position}-\mathit{surfel\_position})\). 
+                </li>
+                <li>
+                  A <i>spot light</i> is light which source is located somewhere in the environment, but rays are only shot in some directions instead of all around.
+                  An object receives light only if located in the cone defined by the spot. A good example of a spotlight would be a street lamp. The set of possible light ray directions is modelized by
+                  two cones with the same apex and directions. We will see their explanation in <a href="#ex_hard_spot"> exercice 3</a> and <a href="#ex_smooth_spot"> exercice 4</a>.
+                </li>
+              </ul>
+
+              <h3 id="phong_model"> Phong's decomposition of light color </h3>
+              <img id="lights_color_decomposition" src="./images/05_phong_decomposition.png" class="tutorial-img img-rounded img-responsive" style="max-width: 90%" alt="Decomposition of a light's color into 3 components"> 
+              <p>
+                The Phong illumination model relies on the decomposition of a <strong>light</strong> \(\mathit{L}\) color into three components: ambient, diffuse and specular.
+              </p>
+              <ul>
+                <li>
+                  The ambient component \(\mathit{L}_a\) specifies a minimum brightness. Even if there is no light ray directly hitting a surfel, the ambient component will lit a little this surfel, preventing it from being completely dark. The ambient component is constant for all surfels. It could be understood as what remains from a light's color after rays have infinitely bounced in every directions.
+                </li>
+                <li>
+                  The diffuse component \(\mathit{L}_d\) is the most important one to give a 3D appearance to a surfel. It models the light's color received by a ray directly hitting the surfel. 
+                  <!--The diffuse component may be the most meaningful one.
+It reflects an incoming light ray uniformly in every direction, whith an intensity depending from the incidence of the ligth with reflect to the surface normal. This provides a shadow effect, the objet being more enlighted when facing the light.
+This component is actually perceived as the true color of the object itself (under a pure white light) rather than a reflection of the light. -->
+                </li>
+                <li>
+                  The specularity \(\mathit{L}_s\) is the shiny component of the light, i.e. the color of a shiny spot on the object.
+                  <!--                  The specular component is what makes a surface look shiny. Its is seen as a bright spot, which intensity depends of the camera position and the angle of incidence of the light ray. Its is mostly visible when the camera faces the reflected direction of the light, relative to the object normal.-->
+                </li>
+              </ul>
+
+              <p> The color of a surfel is also divided into this three components. However, instead of being vertex attributes, those components are the same for the whole object.
+                Combined, those components form the <strong>material</strong> of such object. The material defines how a surfel will react to the ambient, diffuse and specular components of a light.
+                Sometimes, the diffuse component of the material can be replaced by a vertex attribute: it depends on what you want to render.
+              </p>
+
+              <h3> Appearance computation </h3>
+              <p> The appearance of a surfel lit by a particular light \(\mathit{L}\) is computed from: </p>
+              <ul>
+                <li> the color components of the light \(\mathit{L}_a, \mathit{L}_d, \mathit{L}_s\),</li>
+                <li> the material of the object \(\mathit{K}_a, \mathit{K}_d, \mathit{K}_s\) and \(\mathit{shininess}\)</li>
+                <li> the position and the normal of the surfel \(\mathit{surfel\_position}, \mathit{surfel\_normal}\), </li>
+                <li> and the other light properties (more about that in the exercices).</li>
+              </ul>
+
+              <p> The appearance is computed component by component, then summed to obtain the contribution of a particular light to a surfel. When there are more than one light in the scene, the contributions
+                of all lights are added. The result is the final appearance of a surfel, i.e. the color of its fragment. </p>
+
+              <p> Without taking into account distance attenuation and spot attenuation, the appearance computation for one light is given by:</p>
+              \[
+              \begin{eqnarray*}
+              &\text{vec3 ambient}  &= 1                      &* \mathit{L}_a &* \mathit{K}_a \\
+              &\text{vec3 diffuse}  &= \text{diffuse_factor}  &* \mathit{L}_d &* \mathit{K}_d \\
+              &\text{vec3 specular} &= \text{specular_factor} &* \mathit{L}_s &* \mathit{K}_s \\
+              \end{eqnarray*}
+
+              \]
+
+              <p> The diffuse factor allows to decrease the diffuse component when the \(\mathit{surfel\_to\_light}\) and \(\mathit{surfel\_normal}\) directions are too different. Indeed, when they are different, fewer photons will be reflected in the direction of the camera. The diffuse factor is then:</p>
+              \[
+              \text{diffuse_factor} = \max(\overrightarrow{surfel\_normal} \cdot \overrightarrow{surfel\_to\_light}, 0.0);
+              \]
+              <p> The maximum function is here to keep the diffuse factor non negative. It is valid since when the dot product is negative, the ray arrive from <i>under</i> the surface. Thus, the ray will never hit the surface on the direction we are interested in (assuming the normals of surfels are pointing in such direction). Using minimum or maximum to keep the values in valid ranges is a common thing in Computer Graphis and is referred to as clamping.</p>
+
+              <p> The specular factor is more difficult to understand. This is why we will only give its equation. It uses the reflected direction of the light relatively to the surfel normal:</p>
+              <img id="specularity_computation" src="./images/05_specularity.jpeg" class="tutorial-img img-rounded img-responsive" style="max-width: 80%" alt="Directions used to compute the specularity"> 
+              \[
+              \text{specular_factor} = \text{pow}(\max( \overrightarrow{\mathit{surfel\_to\_camera}} \cdot \overrightarrow{\mathit{reflect\_direction}}, 0), \mathit{shininess})
+              \]
+              <p> Again, here we have a maximum function to avoid strange values (real power of a negative value) while remaining correct (if the dot product is negative, this means the camera is not in the cone of highly dense photons reflected by the surfel giving birth to a shiny spot).</p>
+
+            </div>
+          </div>
+
+
+          <h2 id="exo1"> Exercice 1: Phong shading</h2>
+          <ul>
+            <li> Start the main program and check that you get the expected result. </li>
+            <li> In <samp>practical_05_scene.cpp</samp>,  observe how the scene is set up. </li>
+            <li> In <samp>phongFragment.glsl</samp>, read carefully the <code>computeDirectionalLight()</code> function and make the parallel with the the equations of <a href="#phong_model">Phong</a>.</li>
+          </ul>
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#expectedResult1">Expected result</button>
+          <div id="expectedResult1" class="collapse">
+            <div class="well">
+              <img id="initial_scene" src="./images/05_initial_scene.png" class="tutorial-img img-rounded img-responsive" style="style= max-width: 100%" alt="Initial Scene">
+            </div>
+          </div>
+
+
+          <h2 id="exo2"> Exercice 2: Attenuation </h2>
+          <p>
+            To get a more realistic approximation of the light, one cheap improvement is to simulate its intensity decay through a medium. In computer graphics, we model this attenuation \(a\) thanks to three coefficients and the distance from the light to the surface of the lit object \(d\):
+          </p>
+          \[ \mathit{a} = \frac{1}{ k_{\mathit{constant}} + k_{\mathit{linear}} * d+ k_{\mathit{quadratic}} * d^2}
+          \]
+          <p> 
+            The three factors \(k_{\mathit{constant}}\), \(k_{\mathit{linear}}\) and \(k_{\mathit{quadratic}}\) are properties of a light, and are applied to the three illumination components computed of a surfel (ambient, diffuse and specular).
+          </p>
+          <ul>
+            <li>
+              In <samp> phongFragment.glsl</samp>, in the function <code>computePointLight()</code>, implement the aforementionned attenuation model and apply it to the light attributes.
+            </li>
+            <li>
+              Do the same for the spot light.
+            </li>
+            <li>
+              Check that you get a result similar to the one below.
+            </li>
+          </ul>
+
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#expectedResult2">Expected result</button>
+          <div id="expectedResult2" class="collapse">
+            <div class="well">
+              <img id="attenuation_scene" src="./images/05_scene_with_attenuation.png" class="tutorial-img img-rounded img-responsive" style="style= max-width: 100%" alt="Scene with attenuation">
+            </div>
+          </div>
+
+
+          <h2 id="ex_hard_spot"> Exercice 3: Spot light</h2>
+
+          <p> A spot light cast light inside a cone of direction \(\overrightarrow{\mathit{spot\_direction}}\) with an aperture \(\theta\). Whenever a surfel is outside this cone, it is not lit by the spot (i.e. the spot intensity is set to 0 for this surfel). This case occurs when:</p>
+          \[ \cos(\phi) = \overrightarrow{\mathit{surfel\_to\_light}}\cdot(-\overrightarrow{\mathit{spot\_direction}}) \lt \cos(\theta)\]
+
+          <ul>
+            <li>
+              In <samp>phongFragment.glsl</samp>, modify the function <code>computeSpotLight()</code> so that it takes into account the cone aperture and computes correctly the spot intensity factor.
+            </li>
+            <li>
+              Check that you get a result similar to the image below.
+            </li>
+          </ul>
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#expectedResult3">Expected result</button>
+          <div id="expectedResult3" class="collapse">
+            <div class="well">
+              <img id="spot_scene" src="./images/05_scene_with_hard_spot.png" class="tutorial-img img-rounded img-responsive" style="style= max-width: 100%" alt="Scene with hard spot light">
+            </div>
+          </div>
+
+
+          <h2 id="ex_smooth_spot"> Exercice 4: Smooth spot edges</h2>
+
+          <p> You can see that the spot light has hard edges that are not likely to appear in the real world. To increase the realism of a spot light, we will use two cones of light. The first cone, named the inner cone, is the same as before, with an aperture of \(\theta_{\mathit{inner}}\). The second cone is larged and referred to as the outer cone, with an aperture of \(\theta_{\mathit{outer}}\). When a surfel is between the inner and the outer cone, its intensity value will be between 0 and 1. If the surfel is inside the inner cone, its intensity is still 1, while when outside both cones, its intensity is set to 0. To compute the spot intensity, we have the following nice formula: </p>
+          \[ \mathit{intensity} = clamp\left( \frac{ \cos(\phi) - \cos(\theta_{\mathit{outer}}) }{\cos(\theta_{\mathit{inner}}) - \cos(\theta_{\mathit{outer}})  }, 0, 1 \right)\]
+
+          <ul>
+            <li>Implement this other version of the spot light intensity.</li>
+            <li>Check that you get a result similar to the expected one.</li>
+          </ul>
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#expectedResult4">Expected result</button>
+          <div id="expectedResult4" class="collapse">
+            <div class="well">
+              <img id="smooth_spot_scene" src="./images/05_scene_with_smooth_spot.png" class="tutorial-img img-rounded img-responsive" style="style= max-width: 100%" alt="Scene with smooth spot light">
+            </div>
+          </div>
+
+
+          <h2 id="exo5"> Exercice 5: project related </h2>
+
+          <ul>
+            <li>Transfer the light system to your project scene.</li>
+            <li>If you are curious, you know the basics to look for other interesting rendering methods, such as toon shading or fog.</li>
+          </ul>
+      </div>
+
+      <div class="col-md-2 scrollspy" role="complementary" id="page-nav">
+        <nav class="hidden-xs hidden-sm hidden-print" data-spy="affix">
+          <ul class="nav">
+            <li> <a href="#reminder"> 1. Reminder </a> </li>
+            <li> <a href="#additional"> 2. Additional resources</a> </li>
+            <li> <a href="#provided_code"> 3. Provided code </a> </li>
+            <li> <a href="#light_mecanism"> 4. Light mecanism </a> </li>
+            <li> <a href="#exo1"> Exercice 1: Phong shading </a> </li>
+            <li> <a href="#exo2"> Exercice 2: Attenuation </a> </li>
+            <li> <a href="#ex_hard_spot"> Exercice 3: Spot light </a> </li>
+            <li> <a href="#ex_smooth_spot"> Exercice 4: Smooth spot edges </a> </li>
+            <li> <a href="#exo5"> Exercice 5: Project related </a> </li>
+            <li> <a href="../api_doc/index.html"> API's documentation </a> </li>
+            <li> <a class="to-top" href="#top"><span class="glyphicon glyphicon-menu-up"></span>Back to top </a> </li>
+          </ul>
+        </nav>
+      </div> <!-- end scrollspy sidebare-->
+    </div> <!-- end of row -->
+    </div> <!-- end of container -->
+  <footer>
+    <p>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
+      </a>
+      <span property="dct:title"> CG3D practicals</span> by 
+      <span property="cc:attributionName">Pierre-Luc Manteaux</span> and 
+      <span property="cc:attributionName">Thomas Delame</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+  </footer>
+  </body>

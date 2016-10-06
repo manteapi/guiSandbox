@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title> Practical 4: Procedural animation</title>
+            
+    <!-- metadata -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ENSIMAG Computer Graphics 3D Tutorials.">
+    <meta name="author" content="Pierre-Luc Manteaux">
+    <meta name="author" content="Thomas Delame">
+    
+    <!-- 
+    #############
+    # libraries #
+    #############
+      bootstrap for style/appearance
+      jquery for interactions
+      mathjax for mathematic symbols (basically latex in html) 
+      highlight for code highlighting -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['\\(', '\\)']]
+        }
+      });
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="./javascript/mathjax_local.js"></script>
+    <!-- Highlight package for code highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/idea.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!--
+    ####################
+    # linked resources #
+    #################### -->
+    <link href="./css/tutorial.css" rel="stylesheet">
+  </head>
+  <body data-spy="scroll" data-target="#page-nav" class="tutorial">
+    <header> 
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+              <span class="sr-only"> Toggle navigation </span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html">3DCG Practicals</a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li>
+                <button type="button" data-toggle="dropdown"> Practicals <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="./practical_01.html">Pratical 1 - A quick & dirty introduction to OpenGL</a></li>
+                    <li><a href="./practical_02.html">Pratical 2 - 3D primitive modeling</a></li>
+                    <li><a href="./practical_03.html">Pratical 3 - Hierarchical modeling </a></li>
+                    <li><a href="./practical_04.html">Pratical 4 - Procedural animation </a></li>
+                    <li><a href="./practical_05.html">Pratical 5 - Physics-based animation </a></li>
+                    <li><a href="./practical_06.html">Pratical 6 - Local illumination </a></li>
+                    <li><a href="./practical_07.html">Pratical 7 - Texturing </a></li>
+                </ul>
+              <li><a href="./project.html"> Project</a></li>
+              <li><a href="./../api_doc/index.html"> Documentation </a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <div class="header">
+      <div class="container">
+        <span class="title"> 3D Computer Graphics Practicals </span>
+        <p> 
+            Introduction to Computer Graphics with OpenGL 4 and C++
+        </p>
+      </div>
+    </div>   
+      
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10" role="main">
+            <header><h1> Practical 4 - Procedural animation</h1></header>
+            
+            <img id="keyframeAnimtion1" src="./images/keyframe_animation.png" class="tutorial-img img-rounded img-responsive" style="style= max-width: 100%" alt="Keyframe animation">
+            
+            <p> Procedural animation, also known as descriptive animation, keyframed animation or forward kinematic, consists in describing the motion of an object by specifying key postures of this objects. The motion between the key postures, also called keyframes, is interpolated.
+            </p>
+      
+            <p>In Computer Graphics, any parameters of an object can be keyframed to create an animation, e.g. position, orientation, scale, colors and visibility.
+            </p>
+      
+            <p>
+                The focus of this practical is to be able to keyframe the transformation matrices of a renderable in order to animate them.
+            </p>
+
+            <h2 id="about">1. About keyframe animation</h2>
+            <p>
+                Below, we quickly illustrate the keyframe process for a 1D point described by a \(x\) coordinates.
+            </p>
+            <p>
+                Let's imagine that you want to animate a bouncing ball. You have in mind the trajectory of this ball (the blue line) but you do not want to specify manually the position of the ball at each frame. Instead, you discretize the trajectory into keyframes (the yellow squares), which means that you specify the position of your object at specific times. By linearly interpolating the position of your object between the keyframes, you can approximate the trajectory you wanted (red line). The more keyframes you have, the more control you have (but also more work you have to do!).
+            </p>
+            <img id="keyframeAnimtion2" src="./images/keyframeAnimation.png" class="tutorial-img img-rounded img-responsive" style="style= max-width: 100%" alt="Keyframe interpolation">
+
+            <p>For a time \(t \in [t_{i}, t_{i+1}] \), the position \(x\) of the point is linearly interpolated between the corresponding keyframed positions \(\left\lbrace x_{i}, x_{i+1} \right\rbrace\): </p>
+            \[
+            x(t) = \displaystyle 
+            \frac{t_{i+1}-t}{t_{i+1}-t_{i}}x_{t_{i}} +
+            \frac{t-t_{i}}{t_{i+1}-t_{i}}x_{t_{i+1}}
+                 = \displaystyle
+             (1 - f)\cdot x_{t_i} + f\cdot x_{t_{i+1}}
+            \]
+          
+          <p>with \(f = \frac{t - t_{i}}{t_{i+1} -t_i} \in[0,1]\)</p>
+            
+          <p> Such interpolations are quite efficient since they are linear. This is why we use as much as possible linear interpolation to achieve real-time or interactive performance.</p>
+            <h2 id="about_geom">2. About geometric transformation interpolation</h2>
+            <p> In this practical, we propose you a keyframe system that can be applied to the local and parent transformations of HierarchicalRenderable. This means that at specific times, the transformation matrices are defined and the system interpolates between those keyframes to compute transformation matrices at any time. This will be use to animate our renderables. </p>
+            <p> Well, how can we interpolate between two transformation matrices?</p>
+          
+            <h3 id="naive_matrices"> 2.1 Linear interpolation of matrices is not enough </h3>
+          
+            <p>
+                Let's have a look to the two following matrices. One is the identity matrix and the other one represents a rotation of 90 degrees arround the \(X\) axis: 
+            </p>
+            \[
+            \begin{array}{cccc}
+            M_{1} = 
+            \begin{pmatrix}
+            1 & 0 & 0 & 0 \\
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
+            0 & 0 & 0 & 1 
+            \end{pmatrix}
+            &
+            &
+            M_{2} = 
+            \begin{pmatrix}
+            1 & 0 & 0 & 0 \\
+            0 & 0 & -1 & 0 \\
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 0 & 1
+            \end{pmatrix}
+            \end{array}
+            \]
+            <p>
+                Now, suppose we want to interpolate between these two matrices, so we create a animated rotation. Half the way, we expect the transformation to be a 45 degree rotation arround the axis \(X\), something like this:
+            </p>
+            \[
+            M = 
+            \begin{pmatrix}
+            1 & 0 & 0 & 0 \\
+            0 & \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} & 0 \\
+            0 & \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} & 0 \\
+            0 & 0 & 0 & 1
+            \end{pmatrix}
+            \]
+            <p>
+            However, if we naively use linear interpolation, we get:
+            </p>
+            \[
+            M = 0.5M_{1}+0.5M_{2} =  
+            \begin{pmatrix}
+            1 & 0 & 0 & 0 \\
+            0 & 0.5 & -0.5 & 0 \\
+            0 & 0.5 & 0.5 & 0 \\
+            0 & 0 & 0 & 1
+            \end{pmatrix}
+            \]
+          
+            <h3 id="sol_decomp"> 2.2 The solution: Decomposition </h3>
+
+            <p>
+                To correctly interpolate geometric transformations, a commonly used solution is to decompose the transformations into three components (translation, scale and rotation) and interpolate each of them separately.
+            </p>
+            
+            <p>
+                A transformation matrix \(M\) can be composed as follow:
+            </p>
+            
+            \[
+            M = 
+            \begin{pmatrix}
+            R_{xx} \times s_{x} & R_{xy} \times s_{y} &  R_{xz} \times s_{z}  & t_{x} \\
+            R_{yx} \times s_{x} & R_{yy} \times s_{y} &  R_{yz} \times s_{z} & t_{y} \\
+            R_{zx} \times s_{x} & R_{zy} \times s_{y} &  R_{zz} \times s_{z} & t_{z} \\
+            0 & 0 &  0 & 1 \\
+            \end{pmatrix}
+            = TRS
+            \]
+            
+            <p>with</p>
+            \[
+            \begin{array}{ccc}
+            T = \begin{pmatrix} t_{x} & t_{y} & t_{z} \end{pmatrix} &
+            S = \begin{pmatrix} s_{x} & s_{y} & s_{z} \end{pmatrix} &
+            R = \begin{pmatrix} 
+            R_{xx}  & R_{xy} & R_{xz} \\
+            R_{yx}  & R_{yy} & R_{yz} \\
+            R_{zx}  & R_{zy} & R_{zz} \\
+            \end{pmatrix}
+            \\
+            \text{Translation} & \text{Scale} & \text{Rotation}
+            \end{array}
+            \]
+            
+            <p>
+                Thus, the rotation component can be converted into a quaternion which is better suited for interpolation. For this practical, no deep understanding of the quaternions is required. Just remember that they alleviate the matrix interpolation issue and must be of unit length to represent a valid rotation.
+            </p>
+            <!--<p> Let's ignore any shearing transformation, since you are not likely to use them in the project. 
+          A geometric transformation \(G\) is then composed of a translation component \(T=(t_{x},t_{y},t_z)\), a scale component \(S=(s_x,s_y,s_z)\) and a \(R\) rotation component
+          (3 by 3 matrix). It's corresponding transformation matrix \(M\) is given as follows:</p>
+          \[
+            M_1 = \left(
+            \begin{array}{ccc|c}
+              C_1 & C_2 & C_2 & {T}^T \\
+              \hline
+              0 & 0 & 0 & 1
+            \end{array}
+            \right),\\ \text{with } S = (\|C_1\|, \|C_2\|, \|C_2\|) \text{ and } R=\left(\begin{array}{c|c|c}
+            \frac{C_1}{s_x} & \frac{C_2}{s_y} &\frac{C_3}{s_z} 
+          \end{array}\right)
+          \]
+          
+            <p> A geometric transformation matrix can easily be decomposed in and recomposed from the components \(T\), \(S\) and \(R\). The linear interpolation are performed on each component. However, as we have seen earlier, a linear interpolation on a rotation represented by a matrix is an issue. This is where we need quaternions. </p>
+          -->
+            
+            <!--
+          <h3> 2.3 Quaternions for rotations </h3>
+          <p> If you are new to quaternions, we invite you to document yourself about those objects.
+          We will not give much details about quaternions since this is not the purpose of this practical lesson.</p>
+          
+          <p> Any 3D rotation can be expressed as the rotation around a unit axe \(V=(v_x,v_y,v_z)\) with an angle of \(\alpha\).
+            This rotation can be represented by the unit quaternion \(q=(w=\cos(\frac{\alpha}{2}),(x,y,z)=\sin(\frac{\alpha}{2})v)\). </p>
+          
+          <p> The nice thing about quaternion is that they are linear interpolation friendly. The only thing to remember, however, is that
+          a quaternion must be of unit length to represent a valid rotation. Thus, the interpolation of two rotations defined by the quaternions
+          \(q_1\) and \(q_2\) is:</p>
+          \[
+            q = \frac{(1 - f)\cdot q_1 + f\cdot q_2}{\|(1 - f)\cdot q_1 + f\cdot q_2\|}
+          \]
+-->
+          <!--
+          <h3> 2.4 GLM and quaternions </h3>
+          
+          <p> Fortunately, quaternions are defined in the GLM library and you need to know only a few functions:</p>
+          <ul>
+            <li> <code>glm::quat glm::quat( const glm::vec3& eulerAngles )</code> to construct a quaternion from Euler angles </li>
+            <li> <code>glm::quat glm::normalize( const glm::quat& q )</code> to normalize a quaternion</li>
+            <li> <code>glm::mat4 glm::mat4_cast( const glm::quat& q )</code> to convert a quaternion to a 4 by 4 rotation matrix</li>
+          </ul>
+-->
+<!--
+            <p>
+                In order to get what we expected, we need to decompose the transformation matrix into its translation, rotation and scaling part:
+            </p>
+            \[
+            \begin{array}{ccc}
+            M_{1} = T_{1}R_{1}S_{1}
+            &
+            M_{2}  = T_{2}R_{2}S_{2}
+            \end{array} 
+            \]
+            <p>
+                Use quaternion to describe rotation instead of matrices, so that we can use linear interpolation. Let's call \(Q\) the function that transforms a rotation matrix into a quaternion, \(O\) the function that transforms a quaternion in a rotation matrix, \(N\) the function that normalizes the quaternion. Then we have :
+            </p>
+            \[
+            R = O(N(Q(R)))
+            \]
+            <p>
+                Then perform the linear interpolation on these parts: 
+            </p>
+            \[
+            \begin{array}{c}
+            T = 0.5*T_{1} + 0.5*T_{2} \\
+            R = O(N(0.5*Q(R_{1}) + 0.5*Q(R_{2}))) \\
+            S = 0.5*S_{1} + 0.5*S_{2}
+            \end{array}
+            \]            
+            <p>
+                And finally recompose the whole transformation:
+            </p>
+            \[
+            M  = TRS        
+            \]
+-->
+            <h2 id="reminder">3. Reminder: How to compile from scratch</h2>
+
+<pre><code class="bash">#Switch to a C++11 compiler (at ENSIMAG only)
+source gcc493.sh
+
+#Compile external libraries (if new lib has been added)
+cd extlib/
+make clean_all
+make
+
+#Compile project
+cd ../
+rm -rf build/
+mkdir build/
+cd build/
+cmake ..
+make -j 8
+</code></pre>
+            
+            <h2 id="additional">4. Additional files</h2>
+            <ul>
+                <li>Download the source of the practical <a href="./../resources/practical4.zip"> here </a>.</li>
+                <li>Unzip it.</li>
+                <li>Copy the <samp>extlib</samp> directory from you previous practical in this new directory called <samp>practical4</samp>.
+                Alternatively, you can simple create a symbolic link to the existing libraries. <br>
+                For example: <samp>cd practical4</samp> then <samp>ln -s ../practical1/extlib</samp></li>
+                <li>Compile your project by following the <a href="#reminder">previous instructions</a>.</li>
+            </ul>
+            
+            <h2 id="exo1">Exercice 1: Complete the interpolation framework</h2>
+            
+            <ul>
+                <li>Read carefully the documentations and comments of <samp>KeyframedCylinder.hpp/cpp</samp> and <samp>KeyframeCollection.hpp/cpp.</samp></li>
+                <li>Read the todos markups and implement the function <code>KeyframeCollection::interpolateTransformation()</code>.</li>
+                <li>Read carefully the file <samp>practical_04_scene.cpp</samp> to understand how to build a keyframed animation with the framework.</li>
+            </ul>
+            
+            <h2 id="exo2">Exercice 2: Project-related assignment.</h2>
+            <p>
+                Once the framework completed and the given examples running, you should be ready to start working on the animation of your project.
+            </p>
+            
+        </div>
+        <div class="col-md-2 scrollspy" role="complementary" id="page-nav">
+          <nav class="hidden-xs hidden-sm hidden-print" data-spy="affix">
+            <ul class="nav">
+              <li> <a href="#about"> 1. About keyframe animation</a> </li>
+              <li> 
+                <a href="#about_geom"> 2. About geometric transformation interpolation</a>
+                <ul class="nav">
+                  <li> 
+                    <a href="#naive_matrices"> &gt;  2.1 Linear interpolation of matrices is not enough</a>
+                  </li>                  
+                  <li> 
+                    <a href="#sol_decomp"> &gt; 2.2 The solution: Decomposition  </a>
+                  </li>
+
+                </ul>
+              </li>
+              <li> <a href="#reminder">3. Reminder: How to compile from scratch</a> </li>
+              <li> <a href="#additional">4. Additional files </a> </li>
+              <li> <a href="#exo1">Exercice 1: Complete the interpolation framework</a> </li>
+              <li> <a href="#exo2">Exercice 2: Project-related assigment</a> </li>              
+              <li> <a href="../api_doc/index.html"> API's documentation </a> </li>
+              <li> <a class="to-top" href="#top"><span class="glyphicon glyphicon-menu-up"></span>Back to top </a> </li>
+            </ul>
+          </nav>
+        </div> <!-- end scrollspy sidebare-->
+      </div> <!-- end of row -->
+    </div> <!-- end of container -->
+    <footer>
+      <p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
+          </a>
+          <span property="dct:title"> CG3D practicals</span> by 
+          <span property="cc:attributionName">Pierre-Luc Manteaux</span> and 
+          <span property="cc:attributionName">Thomas Delame</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+    </footer>
+  </body>

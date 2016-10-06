@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Project</title>
+    
+    <!-- metadata -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ENSIMAG Computer Graphics 3D Tutorials.">
+    <meta name="author" content="Pierre-Luc Manteaux">
+    <meta name="author" content="Thomas Delame">
+    
+    <!-- 
+    #############
+    # libraries #
+    #############
+      bootstrap for style/appearance
+      jquery for interactions
+      mathjax for mathematic symbols (basically latex in html) 
+      highlight for code highlighting -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['\\(', '\\)']]
+        }
+      });
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="./javascript/mathjax_local.js"></script>
+    <!-- Highlight package for code highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/idea.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!--
+    ####################
+    # linked resources #
+    #################### -->
+    <link href="./css/tutorial.css" rel="stylesheet">
+  </head>
+  <body data-spy="scroll" data-target="#page-nav" class="tutorial">
+    <header> 
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+              <span class="sr-only"> Toggle navigation </span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html">3DCG Practicals</a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li>
+                <button type="button" data-toggle="dropdown"> Practicals <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="./practical_01.html">Pratical 1 - A quick & dirty introduction to OpenGL</a></li>
+                    <li><a href="./practical_02.html">Pratical 2 - 3D primitive modeling</a></li>
+                    <li><a href="./practical_03.html">Pratical 3 - Hierarchical modeling </a></li>
+                    <li><a href="./practical_04.html">Pratical 4 - Procedural animation </a></li>
+                    <li><a href="./practical_05.html">Pratical 5 - Physics-based animation </a></li>
+                    <li><a href="./practical_06.html">Pratical 6 - Local illumination </a></li>
+                    <li><a href="./practical_07.html">Pratical 7 - Texturing </a></li>
+                </ul>
+              <li><a href="./project.html"> Project</a></li>
+              <li><a href="./../api_doc/index.html"> Documentation </a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <div class="header">
+      <div class="container">
+        <span class="title"> 3D Computer Graphics Practicals </span>
+        <p> 
+            Introduction to Computer Graphics with OpenGL 4 and C++
+        </p>
+      </div>
+    </div>   
+      
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10" role="main">
+            <header><h1> Project - Kart Game </h1></header>
+            <p> This worksheet describes the project assignment you will supply for the end of semester.
+                You will work on this project during the practical sessions.
+                You are asked to provide solutions for the modeling, rendering, animation and interaction of a 3D kart game.
+                You will present your work during a short defence at the end of the semester.
+                Please check this page periodically for additional guidelines, as we will update it.
+            </p>
+
+            <h2> 1. Practicalities </h2>
+            
+            <h3> 1.1 Grading Criteria </h3>
+            <ul>
+                <li> Pertinence of proposed choices and solutions </li>
+                <li> Quality and difficulty of implemented techniques </li>
+                <li> Elegance and efficiency of the proposed code </li>
+            </ul>
+            
+            <h3> 1.2 Teamwork </h3>
+            <p> Projects are made by groups of <strong>three</strong> students. 
+                For parity reasons, a small number of two students groups are allowed.
+                The project is meant to be done in teamwork, this will be verified during the presentation.
+                If a difficulty arises in the group, be sure to notify it to your professor as soon as possible (i.e. not the day before the assignment deadline).
+                Be efficient during the practical sessions as it might save a great quantity of time, that you might use for other semester projects.
+                <strong>Do not wait until the last minute! </strong>
+            </p>
+            
+            <h3> 1.3 Project deposit </h3>
+            <p> You will deposit an archive of your project on Teide on <strong>Friday 15th April</strong>.
+                The code must easily compile and run on Ensimag PCs as reference platform.
+                You can still code at home as long as you ensure compatibility.
+                The archive can also contain a presentation video of your project to showcase the behavior of your program.
+            </p>
+            
+            <p> The archive should be name according to the following pattern: <code class="bash">3DCG_name1_name2_name3.tgz</code>,
+            where <code class="bash">name*</code> are group member last names. This archive should decompress as a folder named
+            <code class="bash">3DCG_name1_name2_name3/</code>. Please, avoid spaces (replace them with -) and any non US ASCII character
+            in the names. The code should compile and execute the same way the practical codes do:</p>
+            
+            <pre><code class="bash">mkdir build
+cd build/
+cmake ..
+make                
+./main</code></pre> 
+            <p> Every year, students ignore these rules. 
+                Keep in mind that we will have a bunch of projects to examine and grade. 
+                It saves us a lot of time if we can process your projects with scripts, e.g. to compile and launch the binaries.
+                Also, the naming convention ensure we will not have issues <strong>1)</strong> knowing who worked on the project
+                and <strong>2)</strong> opening the archive. For such reasons, ignoring those rules might severely reduce our
+                ability to enjoy your work.  
+            </p>
+            
+            <h3> 1.4 Presentations </h3>
+            <p> Each group will present its project in front of professors and the remaining of the class. 
+                They will make a demonstration of the project based on the code put on Teide. 
+                The whole presentation will last 10-15 minutes and will cover the work, the ideas and contributions,
+                including perhaps code fragments that illustrate the choices.
+                You may prepare a set of slides to go along with the presentation, but this is not mandatory.
+                However, we expect to see a live demonstration of the project and may ask to navigate the code.
+            </p>        
+            
+            <h2> Subject description (TODO)</h2>
+            
+            <h3> General Guidelines </h3>
+            <p> This year's project will be interactive: a 3D kart game. You will have to model the karts, the drivers, the roads and the level. There will be at least two drivers: one controlled by the computer and the other one by a human.
+            </p>
+            
+            <h3> Minimal project content </h3>
+            <h4>Modeling</h4>
+            <ul>    
+                <li> Model at least one kart with <strong>basic</strong> primitives</li>
+                <li> Model at least one driver with <strong>basic</strong> primitives.</li>
+                <li> Model a terrain for the road.</li>
+            </ul>
+            
+            <h4>Animation</h4>
+            <ul>
+                <li>Keyboard control of one of the cart</li>
+                <li>Kinematic animation of the driver (eg: win/lose/attack/break/turn/... events).</li>
+                <li>Physics-based animation effects (eg: smoke, obstacles, projectile, collisions...).</li>
+                <li>Non-human kart should at least follow a predetermined trajectory.</li>
+            </ul>
+            
+            <h4>Rendering</h4>
+            <ul>
+                <li>Textured objects</li>
+                <li>Billboards</li>
+                <li>Several lights and materials</li>
+            </ul>
+            <h3> Suggestions for improvement </h3>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
+          </a>
+          <span property="dct:title"> CG3D practicals</span> by 
+          <span property="cc:attributionName">Pierre-Luc Manteaux</span> and 
+          <span property="cc:attributionName">Thomas Delame</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+    </footer>
+  </body>
